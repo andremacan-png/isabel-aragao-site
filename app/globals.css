@@ -1,26 +1,42 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-primary-50:  #f3f0f8;
+  --color-primary-100: #e7e1f1;
+  --color-primary-200: #d0c3e3;
+  --color-primary-300: #b8a5d5;
+  --color-primary-400: #9f87c7;
+  --color-primary-500: #8769b9;
+  --color-primary-600: #695192;
+  --color-primary-700: #5a4480;
+  --color-primary-800: #4a376e;
+  --color-primary-900: #3b2b5c;
+  --color-cream: #F7F3EF;
+  --color-sand: #E8E0D5;
+  --font-playfair: var(--font-playfair), Georgia, serif;
+  --font-sans: var(--font-inter), system-ui, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(31 41 55);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: #695192;
+  color: white;
+}
+
+.hero-photo-wrapper::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 1.5rem;
+  background: linear-gradient(to bottom, transparent 60%, rgba(105, 81, 146, 0.08) 100%);
+  pointer-events: none;
 }
