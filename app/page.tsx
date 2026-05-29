@@ -122,12 +122,12 @@ export default function Home() {
         <div className="absolute -bottom-16 -left-16 w-72 h-72 bg-[#E8823A]/6 rounded-full blur-3xl pointer-events-none" />
 
         <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-10 lg:gap-16 items-center py-10 md:py-14 relative z-10">
-          <div className="order-2 md:order-1">
+          <div className="order-1">
             <span className="inline-flex items-center gap-2 bg-[#E8823A]/10 text-[#C4621A] text-xs font-bold px-4 py-2 rounded-full mb-5 tracking-wider uppercase">
               <span className="w-1.5 h-1.5 rounded-full bg-[#E8823A]" />
               Especialização Albert Einstein · CRM-SC 26.139
             </span>
-            <h1 className="font-playfair text-5xl lg:text-[3.5rem] font-black text-gray-900 leading-[1.1] tracking-tight mb-4">
+            <h1 className="font-playfair text-3xl sm:text-4xl lg:text-[3.5rem] font-black text-gray-900 leading-[1.1] tracking-tight mb-4">
               Emagrecimento médico,{' '}
               <span className="text-primary-600 relative inline-block">
                 individualizado
@@ -155,7 +155,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="order-1 md:order-2 flex justify-center md:justify-end">
+          <div className="order-2 flex justify-center md:justify-end">
             <div className="relative w-full max-w-xs md:max-w-sm">
               <div className="absolute inset-0 bg-primary-100 rounded-[2rem] transform translate-x-4 translate-y-4" />
               <div className="absolute -top-3 -right-3 w-20 h-20 bg-[#E8823A]/15 rounded-full blur-2xl" />
@@ -184,7 +184,7 @@ export default function Home() {
             ].map((stat, i) => (
               <div key={i} className="bg-white/5 border border-white/10 rounded-2xl px-6 py-5 flex items-center justify-between gap-4">
                 <div className="text-white/45 text-xs leading-relaxed whitespace-pre-line">{stat.label}</div>
-                <div className={`font-black text-white leading-none flex-shrink-0 ${stat.serif ? 'font-playfair text-3xl md:text-4xl' : 'text-5xl md:text-6xl'}`}>
+                <div className={`font-black text-white leading-none flex-shrink-0 ${stat.serif ? 'font-playfair text-2xl md:text-4xl' : 'text-4xl md:text-6xl'}`}>
                   {stat.value}
                 </div>
               </div>
@@ -197,7 +197,7 @@ export default function Home() {
       <section className="bg-[#F7F3EF] py-12">
         <div className="max-w-5xl mx-auto px-6 text-center">
           <span className="inline-block text-[#C4621A] text-xs font-bold tracking-widest uppercase mb-3">Você já tentou de tudo</span>
-          <h2 className="font-playfair text-4xl md:text-5xl font-black text-gray-900 tracking-tight mb-3">
+          <h2 className="font-playfair text-2xl sm:text-3xl md:text-5xl font-black text-gray-900 tracking-tight mb-3">
             E ainda assim o resultado<br />não vem — ou vai embora.
           </h2>
           <p className="text-gray-500 mb-7 max-w-xl mx-auto">
@@ -231,7 +231,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-9">
             <span className="inline-block text-[#C4621A] text-xs font-bold tracking-widest uppercase mb-3">Por que médica</span>
-            <h2 className="font-playfair text-4xl md:text-5xl font-black text-gray-900 tracking-tight mb-3">
+            <h2 className="font-playfair text-2xl sm:text-3xl md:text-5xl font-black text-gray-900 tracking-tight mb-3">
               Não é dieta. É medicina.
             </h2>
             <p className="text-gray-500 max-w-xl mx-auto">
@@ -286,7 +286,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-9">
             <span className="inline-block text-[#C4621A] text-xs font-bold tracking-widest uppercase mb-3">Como funciona</span>
-            <h2 className="font-playfair text-4xl md:text-5xl font-black text-gray-900 tracking-tight">
+            <h2 className="font-playfair text-2xl sm:text-3xl md:text-5xl font-black text-gray-900 tracking-tight">
               Do primeiro contato<br className="md:hidden" /> à transformação
             </h2>
           </div>
@@ -317,7 +317,7 @@ export default function Home() {
             <span className="inline-flex items-center bg-primary-600 text-white text-xs font-bold px-5 py-2 rounded-full mb-4 tracking-wider uppercase">
               Nossa metodologia
             </span>
-            <h2 className="font-playfair text-4xl md:text-5xl font-black text-gray-900 tracking-tight mb-3">
+            <h2 className="font-playfair text-2xl sm:text-3xl md:text-5xl font-black text-gray-900 tracking-tight mb-3">
               O Método LEVE
             </h2>
             <p className="text-gray-500 max-w-xl mx-auto">
@@ -364,7 +364,7 @@ export default function Home() {
             </div>
             <div>
               <span className="inline-block text-[#C4621A] text-xs font-bold tracking-widest uppercase mb-4">Sobre a médica</span>
-              <h2 className="font-playfair text-4xl md:text-5xl font-black text-gray-900 tracking-tight mb-5">
+              <h2 className="font-playfair text-2xl sm:text-3xl md:text-5xl font-black text-gray-900 tracking-tight mb-5">
                 Dra. Isabel Aragão
               </h2>
               <p className="text-gray-500 leading-relaxed mb-4">
@@ -400,7 +400,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-9">
             <span className="inline-block text-[#E8823A] text-xs font-bold tracking-widest uppercase mb-3">Avaliações Google</span>
-            <h2 className="font-playfair text-4xl md:text-5xl font-black text-white tracking-tight mb-1">
+            <h2 className="font-playfair text-2xl sm:text-3xl md:text-5xl font-black text-white tracking-tight mb-1">
               O que dizem os pacientes
             </h2>
             <p className="text-white/35 text-sm">+50 avaliações 5 estrelas</p>
@@ -440,7 +440,7 @@ export default function Home() {
         <div className="max-w-5xl mx-auto px-6">
           <div className="text-center mb-9">
             <span className="inline-block text-[#C4621A] text-xs font-bold tracking-widest uppercase mb-3">Atendimento</span>
-            <h2 className="font-playfair text-4xl md:text-5xl font-black text-gray-900 tracking-tight">Modalidades de consulta</h2>
+            <h2 className="font-playfair text-2xl sm:text-3xl md:text-5xl font-black text-gray-900 tracking-tight">Modalidades de consulta</h2>
           </div>
           <div className="grid md:grid-cols-2 gap-5">
             {/* Primeira consulta */}
@@ -528,7 +528,7 @@ export default function Home() {
         <div className="max-w-3xl mx-auto px-6">
           <div className="text-center mb-9">
             <span className="inline-block text-[#C4621A] text-xs font-bold tracking-widest uppercase mb-3">Dúvidas</span>
-            <h2 className="font-playfair text-4xl md:text-5xl font-black text-gray-900 tracking-tight">Perguntas frequentes</h2>
+            <h2 className="font-playfair text-2xl sm:text-3xl md:text-5xl font-black text-gray-900 tracking-tight">Perguntas frequentes</h2>
           </div>
           <div className="space-y-2">
             {faqItems.map((item, index) => (
@@ -557,7 +557,7 @@ export default function Home() {
           <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
             <div className="flex-1">
               <span className="inline-block text-[#E8823A] text-xs font-bold tracking-widest uppercase mb-3">Próximo passo</span>
-              <h2 className="font-playfair text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">
+              <h2 className="font-playfair text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">
                 Pronta para entender o que está<br className="hidden md:block" /> travando seu emagrecimento?
               </h2>
             </div>
