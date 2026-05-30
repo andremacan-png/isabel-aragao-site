@@ -52,7 +52,7 @@ const jornada = [
 
 const faqItems = [
   {
-    q: 'A Dra. Isabel prescreve e aplica tirzepatida ou semaglutida?',
+    q: 'A Dra. Isabel prescreve e aplica tirzepatida?',
     a: 'Tudo é sempre avaliado em consulta, visto que cada paciente é único. Quando necessária aplicação de algum medicamento ou vitaminas, trabalhamos com alternativas de aplicação em clínica ou receita e instrução de aplicação em casa pelo próprio paciente.',
   },
   {
@@ -122,8 +122,11 @@ export default function Home() {
         <div className="absolute -bottom-16 -left-16 w-72 h-72 bg-[#E8823A]/6 rounded-full blur-3xl pointer-events-none" />
 
         <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-10 lg:gap-16 items-center py-10 md:py-14 relative z-10">
+
+          {/* Headline + texto — sempre primeiro */}
           <div className="order-1">
-            <span className="inline-flex items-center gap-2 bg-[#E8823A]/10 text-[#C4621A] text-xs font-bold px-4 py-2 rounded-full mb-5 tracking-wider uppercase">
+            {/* Badge: só aparece no desktop, acima do headline */}
+            <span className="hidden md:inline-flex items-center gap-2 bg-[#E8823A]/10 text-[#C4621A] text-xs font-bold px-4 py-2 rounded-full mb-5 tracking-wider uppercase">
               <span className="w-1.5 h-1.5 rounded-full bg-[#E8823A]" />
               Especialização Albert Einstein · CRM-SC 26.139
             </span>
@@ -135,14 +138,15 @@ export default function Home() {
               </span>{' '}
               e sustentável
             </h1>
-            <p className="text-lg text-gray-500 mb-5 leading-relaxed">
+            <p className="text-lg text-gray-500 leading-relaxed">
               Descubra por que seu corpo resiste à perda de peso e como destravar esse processo com segurança — com acompanhamento médico real, baseado em ciência e no seu histórico único.
             </p>
-            <p className="text-sm text-gray-400 mb-7 flex flex-wrap gap-x-5 gap-y-1">
+            {/* Localização + CTAs: só no desktop */}
+            <p className="hidden md:flex text-sm text-gray-400 mt-5 mb-7 flex-wrap gap-x-5 gap-y-1">
               <span>📍 Presencial · São José / Grande Florianópolis</span>
               <span>💻 Online · Todo o Brasil</span>
             </p>
-            <div className="flex flex-col sm:flex-row gap-3">
+            <div className="hidden md:flex flex-col sm:flex-row gap-3">
               <a href={WA} target="_blank" rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2.5 bg-[#E8823A] text-white px-8 py-4 rounded-full text-base font-bold hover:bg-[#d4691e] transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5">
                 <WAIcon />
@@ -155,7 +159,8 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="order-2 flex justify-center md:justify-end">
+          {/* Foto — segundo no mobile, segundo no desktop */}
+          <div className="order-2 flex justify-center md:justify-end mt-6 md:mt-0">
             <div className="relative w-full max-w-xs md:max-w-sm">
               <div className="absolute inset-0 bg-primary-100 rounded-[2rem] transform translate-x-4 translate-y-4" />
               <div className="absolute -top-3 -right-3 w-20 h-20 bg-[#E8823A]/15 rounded-full blur-2xl" />
@@ -170,6 +175,30 @@ export default function Home() {
               />
             </div>
           </div>
+
+          {/* Badge + Localização + CTAs — só mobile, abaixo da foto */}
+          <div className="order-3 md:hidden">
+            <span className="inline-flex items-center gap-2 bg-[#E8823A]/10 text-[#C4621A] text-xs font-bold px-4 py-2 rounded-full mb-4 tracking-wider uppercase">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#E8823A]" />
+              Especialização Albert Einstein · CRM-SC 26.139
+            </span>
+            <p className="text-sm text-gray-400 mb-6 flex flex-wrap gap-x-5 gap-y-1">
+              <span>📍 Presencial · São José / Grande Florianópolis</span>
+              <span>💻 Online · Todo o Brasil</span>
+            </p>
+            <div className="flex flex-col gap-3">
+              <a href={WA} target="_blank" rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2.5 bg-[#E8823A] text-white px-8 py-4 rounded-full text-base font-bold hover:bg-[#d4691e] transition-all shadow-lg">
+                <WAIcon />
+                Agendar Consulta
+              </a>
+              <a href="#sobre"
+                className="flex items-center justify-center border-2 border-primary-600 text-primary-600 px-8 py-4 rounded-full text-base font-semibold hover:bg-primary-50 transition-colors">
+                Conheça a Dra. Isabel
+              </a>
+            </div>
+          </div>
+
         </div>
       </section>
 
@@ -251,8 +280,8 @@ export default function Home() {
                 headerBg: 'bg-[#E8823A]',
                 icon: '💉',
                 title: 'Protocolos médicos',
-                desc: 'Quando indicado, prescrevemos e aplicamos medicações modernas (GLP-1, tirzepatida, semaglutida) no consultório ou com instrução para uso em casa.',
-                tags: ['GLP-1', 'Tirzepatida', 'Semaglutida'],
+                desc: 'Quando indicado, prescrevemos e aplicamos medicações modernas (GLP-1, tirzepatida) no consultório ou com instrução para uso em casa.',
+                tags: ['GLP-1', 'Tirzepatida'],
               },
               {
                 headerBg: 'bg-[#12082a]',
@@ -380,7 +409,8 @@ export default function Home() {
                 {[
                   'Médica formada pela UNIVALI-SC · CRM-SC 26.139',
                   'Especialista em Obesidade e Emagrecimento — Hospital Albert Einstein',
-                  'Formação complementar em equilíbrio hormonal e qualidade de vida',
+                  '7 anos de experiência em atendimento em unidade básica de saúde',
+                  'Cursos especializados em obesidade e emagrecimento: Obesidade 360 e Padrões Alimentares',
                 ].map((item) => (
                   <div key={item} className="flex items-start gap-3">
                     <div className="w-5 h-5 rounded-full bg-primary-600 flex items-center justify-center flex-shrink-0 mt-0.5">

@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     'médica emagrecimento florianópolis',
     'médica emagrecimento são josé sc',
     'obesidade tratamento florianópolis',
-    'semaglutida tirzepatida florianópolis',
+    'tirzepatida florianópolis',
     'emagrecimento médico sc',
   ],
   openGraph: {
