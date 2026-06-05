@@ -71,20 +71,17 @@ export default function TirzepatidaPage() {
             Tratamento médico supervisionado · São José/SC e online
           </div>
           <h1 className="font-playfair text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-5">
-            Você já tentou de tudo e o peso não sai — ou volta logo que para
+            Você faz tudo certo durante a semana — e na sexta à noite desfaz tudo, sem conseguir parar
           </h1>
           <p className="text-white/70 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto mb-8">
-            Dietas, exercícios, força de vontade. E ainda assim o corpo parece resistir.
-            Muitas vezes, a causa é biológica — hormônios, metabolismo, inflamação — e precisa de tratamento médico, não de mais esforço.
+            Não é falta de disciplina. É biologia. A fome que você sente, a compulsão que aparece à noite, a resistência do corpo a emagrecer — tudo isso tem causa, e tem tratamento médico.
           </p>
           <a
-            href={WA}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#sobre-tratamento"
             className="inline-flex items-center gap-2 bg-[#E8823A] hover:bg-[#d4732e] text-white font-semibold px-7 py-3.5 rounded-full text-base transition-colors"
           >
-            Quero entender o que está acontecendo com meu corpo
-            <span>→</span>
+            Entender o tratamento
+            <span>↓</span>
           </a>
         </div>
       </section>
@@ -115,7 +112,7 @@ export default function TirzepatidaPage() {
       </section>
 
       {/* Isabel — apresentação */}
-      <section className="py-16 px-4 sm:px-6 bg-[#12082a] text-white">
+      <section id="sobre-tratamento" className="py-16 px-4 sm:px-6 bg-[#12082a] text-white">
         <div className="max-w-3xl mx-auto">
           <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 mb-8">
             <div className="w-20 h-20 rounded-full bg-[#695192] shrink-0 flex items-center justify-center text-white text-2xl font-playfair font-bold">
@@ -158,41 +155,41 @@ export default function TirzepatidaPage() {
           <div className="grid sm:grid-cols-2 gap-5">
             <div className="bg-[#12082a] text-white rounded-3xl p-7 relative overflow-hidden">
               <div className="absolute -top-4 -right-4 text-8xl opacity-10 font-playfair font-bold">L</div>
-              <div className="text-3xl mb-4">🔬</div>
+              <div className="text-3xl mb-4">🎙️</div>
               <div className="inline-block bg-white/10 rounded-full px-3 py-1 text-xs text-white/60 mb-3">Passo 1</div>
-              <h3 className="font-playfair text-xl font-bold mb-2">Leveza clínica</h3>
+              <h3 className="font-playfair text-xl font-bold mb-2">Levantamento</h3>
               <p className="text-white/70 text-sm leading-relaxed">
-                Exames laboratoriais, avaliação hormonal, bioimpedância e histórico completo. A causa real do ganho de peso nem sempre está no prato.
+                Sua história, rotina, tentativas anteriores e relação com o corpo. Ouvida sem pressa e sem julgamento.
               </p>
             </div>
 
             <div className="bg-[#E8823A] text-white rounded-3xl p-7 relative overflow-hidden">
               <div className="absolute -top-4 -right-4 text-8xl opacity-10 font-playfair font-bold">E</div>
-              <div className="text-3xl mb-4">🥗</div>
+              <div className="text-3xl mb-4">🔬</div>
               <div className="inline-block bg-white/20 rounded-full px-3 py-1 text-xs text-white/80 mb-3">Passo 2</div>
-              <h3 className="font-playfair text-xl font-bold mb-2">Equilíbrio alimentar</h3>
+              <h3 className="font-playfair text-xl font-bold mb-2">Exames</h3>
               <p className="text-white/80 text-sm leading-relaxed">
-                Diretrizes individualizadas, sem proibições absolutas. Alimentação que você consegue manter — não uma dieta que dura 2 semanas.
+                Exames laboratoriais e bioimpedância de alta precisão para entender como seu metabolismo funciona de verdade.
               </p>
             </div>
 
             <div className="bg-[#695192] text-white rounded-3xl p-7 relative overflow-hidden">
               <div className="absolute -top-4 -right-4 text-8xl opacity-10 font-playfair font-bold">V</div>
-              <div className="text-3xl mb-4">🌿</div>
+              <div className="text-3xl mb-4">🎯</div>
               <div className="inline-block bg-white/10 rounded-full px-3 py-1 text-xs text-white/60 mb-3">Passo 3</div>
-              <h3 className="font-playfair text-xl font-bold mb-2">Vida como um todo</h3>
+              <h3 className="font-playfair text-xl font-bold mb-2">Visão</h3>
               <p className="text-white/70 text-sm leading-relaxed">
-                Sono, estresse, movimento, saúde emocional. Tudo isso impacta o metabolismo — e faz parte do plano de tratamento.
+                Metas reais, objetivos possíveis e um plano de ação que respeita seus limites e te impulsiona com clareza.
               </p>
             </div>
 
             <div className="bg-white border-2 border-[#12082a] rounded-3xl p-7 relative overflow-hidden">
               <div className="absolute -top-4 -right-4 text-8xl opacity-5 font-playfair font-bold text-[#12082a]">E</div>
-              <div className="text-3xl mb-4">📈</div>
+              <div className="text-3xl mb-4">📋</div>
               <div className="inline-block bg-primary-100 rounded-full px-3 py-1 text-xs text-[#695192] mb-3">Passo 4</div>
-              <h3 className="font-playfair text-xl font-bold text-[#12082a] mb-2">Evolução contínua</h3>
+              <h3 className="font-playfair text-xl font-bold text-[#12082a] mb-2">Estratégia</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
-                Consultas regulares com bioimpedância para acompanhar composição corporal, ajustar doses e garantir que os resultados sejam reais e duradouros.
+                Alimentação, rotina, suplementação e protocolos individualizados. Você sai com um plano claro e acompanhamento real.
               </p>
             </div>
           </div>
