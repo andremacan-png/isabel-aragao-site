@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 const WA = 'https://wa.me/5548991593468?text=Ol%C3%A1%2C+gostaria+de+marcar+uma+consulta+com+a+Dra.+Isabel+Arag%C3%A3o%2C+vim+do+seu+site.'
 
@@ -115,8 +116,8 @@ export default function TirzepatidaPage() {
       <section id="sobre-tratamento" className="py-16 px-4 sm:px-6 bg-[#12082a] text-white">
         <div className="max-w-3xl mx-auto">
           <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 mb-8">
-            <div className="w-20 h-20 rounded-full bg-[#695192] shrink-0 flex items-center justify-center text-white text-2xl font-playfair font-bold">
-              IA
+            <div className="w-20 h-20 rounded-full overflow-hidden shrink-0 border-2 border-[#695192]">
+              <Image src="/images/hero.jpg" alt="Dra. Isabel Aragão" width={80} height={80} className="w-full h-full object-cover object-top" />
             </div>
             <div>
               <p className="text-[#E8823A] text-sm font-medium mb-1">Quem vai cuidar de você</p>

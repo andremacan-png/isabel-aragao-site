@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 const WA = 'https://wa.me/5548991593468?text=Ol%C3%A1%2C+gostaria+de+marcar+uma+consulta+com+a+Dra.+Isabel+Arag%C3%A3o%2C+vim+do+seu+site.'
 
@@ -212,7 +213,9 @@ export default function TirzepatidaV2Page() {
             </blockquote>
 
             <div className="flex items-center gap-4 mb-6">
-              <div className="w-14 h-14 rounded-full bg-[#695192] flex items-center justify-center text-white font-playfair font-bold text-lg shrink-0">IA</div>
+              <div className="w-14 h-14 rounded-full overflow-hidden shrink-0 border-2 border-[#695192]">
+                <Image src="/images/hero.jpg" alt="Dra. Isabel Aragão" width={56} height={56} className="w-full h-full object-cover object-top" />
+              </div>
               <div>
                 <p className="font-semibold text-[#12082a]">Dra. Isabel Aragão</p>
                 <p className="text-xs text-gray-500">CRM-SC 26.139 · Especialização em Obesidade — Hospital Albert Einstein</p>
