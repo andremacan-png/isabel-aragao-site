@@ -8,12 +8,12 @@ const WA = 'https://wa.me/5548991593468?text=Ol%C3%A1%2C+gostaria+de+marcar+uma+
 
 const faqItems = [
   {
-    q: 'Usar tirzepatida é "caminho fácil"?',
-    a: 'Não existe caminho fácil para algo que tem causa biológica. Tirzepatida corrige um desequilíbrio nos sinais de fome e saciedade — da mesma forma que insulina corrige o desequilíbrio do diabetes. Chamar isso de caminho fácil seria como dizer que tratar pressão alta com medicamento é preguiça.',
+    q: 'Usar medicamento injetável é "caminho fácil"?',
+    a: 'Não existe caminho fácil para algo que tem causa biológica. O tratamento injetável corrige um desequilíbrio nos sinais de fome e saciedade — da mesma forma que insulina corrige o desequilíbrio do diabetes. Chamar isso de caminho fácil seria como dizer que tratar pressão alta com medicamento é preguiça.',
   },
   {
     q: 'Vou depender do medicamento para sempre?',
-    a: 'Depende do que você quer dizer com "depender". O objetivo do tratamento é construir novos hábitos e equilíbrio metabólico enquanto o medicamento reduz a resistência biológica. Para alguns pacientes, o uso pode ser longo; para outros, temporário. O que não funciona é tratar a tirzepatida como solução isolada — ela é parte de um processo.',
+    a: 'Depende do que você quer dizer com "depender". O objetivo do tratamento é construir novos hábitos e equilíbrio metabólico enquanto o medicamento reduz a resistência biológica. Para alguns pacientes, o uso pode ser longo; para outros, temporário. O que não funciona é tratar o medicamento como solução isolada — ele é parte de um processo.',
   },
   {
     q: 'Quais são os efeitos colaterais reais?',
@@ -33,7 +33,7 @@ const faqItems = [
   },
 ]
 
-export default function TirzepatidaV2Page() {
+export default function EmagrecimentoPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null)
 
   return (
@@ -129,7 +129,7 @@ export default function TirzepatidaV2Page() {
               Em muitos pacientes com resistência ao emagrecimento, esses sinais estão enfraquecidos — a mensagem "estou satisfeita" simplesmente não chega com força suficiente. Resultado: fome constante, saciedade que dura pouco, e um metabolismo que insiste em poupar energia.
             </p>
             <p>
-              A tirzepatida (Mounjaro) age diretamente nesses dois receptores — restaurando sinais que deveriam estar lá. Não suprime artificialmente o apetite. Ela devolve ao sistema o que estava faltando.
+              O tratamento injetável age diretamente nesses dois receptores — restaurando sinais que deveriam estar lá. Não suprime artificialmente o apetite. Ele devolve ao sistema o que estava faltando.
             </p>
           </div>
 
@@ -227,7 +227,7 @@ export default function TirzepatidaV2Page() {
                 Médica formada pela UNIVALI-SC, com especialização em Obesidade e Emagrecimento pelo Hospital Albert Einstein. 7 anos de experiência clínica, incluindo atendimento em unidade básica de saúde — onde aprendeu que o problema do peso raramente é o que parece na superfície.
               </p>
               <p>
-                Sua abordagem parte de uma investigação real: exames, histórico, composição corporal, padrão de sono, estresse. Só depois de entender o que está acontecendo no organismo de cada paciente é que o protocolo — incluindo ou não a tirzepatida — é montado.
+                Sua abordagem parte de uma investigação real: exames, histórico, composição corporal, padrão de sono, estresse. Só depois de entender o que está acontecendo no organismo de cada paciente é que o protocolo — incluindo ou não o tratamento injetável — é montado.
               </p>
             </div>
 
@@ -259,7 +259,7 @@ export default function TirzepatidaV2Page() {
               {
                 num: '02',
                 titulo: 'Protocolo individualizado',
-                desc: 'Se a tirzepatida for indicada, a progressão de doses é feita no seu ritmo — começando abaixo do padrão quando necessário para minimizar efeitos colaterais. Aplicação em clínica disponível.',
+                desc: 'Se o tratamento injetável for indicado, a progressão de doses é feita no seu ritmo — começando abaixo do padrão quando necessário para minimizar efeitos colaterais. Aplicação em clínica disponível.',
                 cor: 'border-[#695192]',
               },
               {
@@ -369,7 +369,7 @@ export default function TirzepatidaV2Page() {
             Pronta para entender o que está acontecendo de verdade?
           </h2>
           <p className="text-white/60 text-sm leading-relaxed mb-8 max-w-lg">
-            A primeira consulta é uma investigação — não uma prescrição imediata. Se a tirzepatida fizer sentido para o seu caso, vai fazer parte de um plano que respeita a sua biologia.
+            A primeira consulta é uma investigação — não uma prescrição imediata. Se o tratamento injetável fizer sentido para o seu caso, vai fazer parte de um plano que respeita a sua biologia.
           </p>
           <a href={WA} target="_blank" rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-[#E8823A] hover:bg-[#d4732e] text-white font-semibold px-8 py-4 rounded-full text-base transition-colors">

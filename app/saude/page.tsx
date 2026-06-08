@@ -8,11 +8,7 @@ const WA = 'https://wa.me/5548991593468?text=Ol%C3%A1%2C+gostaria+de+marcar+uma+
 
 const faqItems = [
   {
-    q: 'Tirzepatida é o mesmo que Mounjaro?',
-    a: 'Sim. Mounjaro é o nome comercial do medicamento cujo princípio ativo é a tirzepatida, fabricado pela Eli Lilly. No Brasil, tem registro na ANVISA desde 2023.',
-  },
-  {
-    q: 'Posso usar tirzepatida sem consulta médica?',
+    q: 'Posso usar o tratamento injetável sem consulta médica?',
     a: 'Não. É um medicamento de prescrição retido na farmácia. O uso sem avaliação prévia expõe o paciente a riscos sérios — especialmente se houver contraindicações não identificadas como histórico tireoidiano ou uso de outros medicamentos.',
   },
   {
@@ -41,7 +37,7 @@ const faqItems = [
   },
 ]
 
-export default function TirzepatidaPage() {
+export default function SaudePage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null)
 
   return (
@@ -98,7 +94,7 @@ export default function TirzepatidaPage() {
               { icone: '😴', texto: 'Dorme mal, acorda cansada e tem fome o dia todo' },
               { icone: '⚖️', texto: 'A balança não se move mesmo com dieta e exercício' },
               { icone: '🧠', texto: 'Sente que a fome é maior do que a vontade de emagrecer' },
-              { icone: '💊', texto: 'Ouviu falar em tirzepatida ou Mounjaro mas não sabe se é para você' },
+              { icone: '💊', texto: 'Ouviu falar em tratamento injetável para emagrecer mas não sabe se é para você' },
             ].map((item, i) => (
               <div key={i} className="flex items-start gap-3 bg-cream rounded-2xl p-4 border border-[#E8E0D5]">
                 <span className="text-xl shrink-0">{item.icone}</span>
@@ -197,22 +193,22 @@ export default function TirzepatidaPage() {
         </div>
       </section>
 
-      {/* Tirzepatida — o papel dentro do tratamento */}
+      {/* Tratamento injetável — o papel dentro do tratamento */}
       <section className="py-16 px-4 sm:px-6 bg-white">
         <div className="max-w-3xl mx-auto">
           <p className="text-[#E8823A] text-sm font-medium mb-2 uppercase tracking-widest">A ferramenta</p>
           <h2 className="font-playfair text-2xl sm:text-3xl font-bold text-[#12082a] mb-5">
-            Tirzepatida: quando a biologia precisa de apoio médico
+            Tratamento injetável: quando a biologia precisa de apoio médico
           </h2>
           <div className="space-y-4 text-gray-700 leading-relaxed">
             <p>
-              A tirzepatida (Mounjaro) é um medicamento injetável com aprovação da ANVISA que age diretamente nos mecanismos biológicos da fome, saciedade e metabolismo. Para pacientes que têm resistência biológica ao emagrecimento, ela pode ser o que faltava para o corpo responder.
+              Este medicamento injetável tem aprovação da ANVISA e age diretamente nos mecanismos biológicos da fome, saciedade e metabolismo. Para pacientes que têm resistência biológica ao emagrecimento, ele pode ser o que faltava para o corpo responder.
             </p>
             <p>
               Os estudos clínicos mostram resultados expressivos — com perdas médias de peso que superam qualquer outro medicamento disponível até hoje. Mas esses resultados acontecem <strong>dentro de um tratamento completo</strong>, não de forma isolada.
             </p>
             <div className="bg-primary-50 border border-primary-100 rounded-2xl p-6 my-6">
-              <h3 className="font-semibold text-[#12082a] mb-4 text-sm">O que a tirzepatida faz pelo seu corpo</h3>
+              <h3 className="font-semibold text-[#12082a] mb-4 text-sm">O que o tratamento faz pelo seu corpo</h3>
               <div className="space-y-3">
                 {[
                   'Reduz significativamente a sensação de fome ao longo do dia',
@@ -257,7 +253,7 @@ export default function TirzepatidaPage() {
               {
                 icone: '🍷',
                 titulo: 'Menos compulsão e álcool',
-                desc: 'A tirzepatida age nos receptores do sistema de recompensa do cérebro. Muitos pacientes relatam redução espontânea do consumo de álcool e de comportamentos compulsivos com comida.',
+                desc: 'O medicamento age nos receptores do sistema de recompensa do cérebro. Muitos pacientes relatam redução espontânea do consumo de álcool e de comportamentos compulsivos com comida.',
               },
               {
                 icone: '🩸',
@@ -302,7 +298,7 @@ export default function TirzepatidaPage() {
               A balança mostra um número. A bioimpedância mostra o que esse número significa — quanto é gordura, quanto é músculo, qual é a sua hidratação e como está o seu metabolismo.
             </p>
             <p>
-              Isso é fundamental durante o tratamento com tirzepatida. O medicamento ajuda o corpo a perder peso, mas sem acompanhamento, parte dessa perda pode vir do músculo — e não da gordura. E perder músculo é exatamente o que vai dificultar manter o resultado depois.
+              Isso é fundamental durante o tratamento injetável. O medicamento ajuda o corpo a perder peso, mas sem acompanhamento, parte dessa perda pode vir do músculo — e não da gordura. E perder músculo é exatamente o que vai dificultar manter o resultado depois.
             </p>
             <div className="grid sm:grid-cols-2 gap-4 my-6">
               <div className="bg-white border border-[#E8E0D5] rounded-2xl p-5">
@@ -332,7 +328,7 @@ export default function TirzepatidaPage() {
           </h2>
           <div className="space-y-4 text-gray-700 leading-relaxed">
             <p>
-              Um dos maiores motivos de abandono do tratamento com tirzepatida são os efeitos colaterais no início — especialmente náuseas. E eles são quase sempre dose-dependentes: acontecem quando o corpo recebe mais do que está pronto para receber.
+              Um dos maiores motivos de abandono do tratamento injetável são os efeitos colaterais no início — especialmente náuseas. E eles são quase sempre dose-dependentes: acontecem quando o corpo recebe mais do que está pronto para receber.
             </p>
             <p>
               Trabalhamos com uma progressão cuidadosa e personalizada, começando com doses abaixo do protocolo padrão quando necessário, e avançando de acordo com a tolerância de cada paciente.
@@ -365,7 +361,7 @@ export default function TirzepatidaPage() {
           </h2>
           <div className="space-y-5 text-gray-700 leading-relaxed">
             <p>
-              Com o crescimento da demanda, virou comum ver tirzepatida sendo vendida sem receita, vinda do Paraguai, ou por canais online sem procedência. A lógica parece simples: é o mesmo medicamento, mais barato.
+              Com o crescimento da demanda, virou comum ver medicamentos para emagrecimento sendo vendidos sem receita, vindos do Paraguai, ou por canais online sem procedência. A lógica parece simples: é o mesmo medicamento, mais barato.
             </p>
             <p>Não é bem assim.</p>
             <div className="grid sm:grid-cols-2 gap-4 my-4">
@@ -445,11 +441,11 @@ export default function TirzepatidaPage() {
         <div className="max-w-3xl mx-auto">
           <p className="text-gray-400 text-xs uppercase tracking-widest mb-3">Para quem quer entender mais</p>
           <h2 className="font-playfair text-2xl font-bold text-[#12082a] mb-5">
-            Como a tirzepatida age no organismo
+            Como o tratamento injetável age no organismo
           </h2>
           <div className="space-y-4 text-gray-600 text-sm leading-relaxed">
             <p>
-              A tirzepatida age em dois receptores no organismo simultaneamente — GLP-1 e GIP — o que a diferencia dos medicamentos anteriores, que agiam em apenas um. Essa ação dupla potencializa os efeitos sobre o apetite, a saciedade e o metabolismo.
+              O medicamento age em dois receptores no organismo simultaneamente — GLP-1 e GIP — o que o diferencia dos tratamentos anteriores, que agiam em apenas um. Essa ação dupla potencializa os efeitos sobre o apetite, a saciedade e o metabolismo.
             </p>
             <p>
               Na prática, o organismo recebe sinais mais intensos de que está satisfeito, o esvaziamento gástrico fica mais lento (a comida "fica" mais tempo no estômago), e o metabolismo da glicose melhora. O resultado é que comer menos se torna mais natural — não uma luta constante.
@@ -499,7 +495,7 @@ export default function TirzepatidaPage() {
           </h2>
           <p className="text-white/70 text-base mb-8 leading-relaxed">
             A consulta com a Dra. Isabel começa por uma investigação completa — sem promessas, sem pressa, sem protocolo genérico.
-            Se a tirzepatida for indicada para você, vai fazer parte de um plano que faz sentido para a sua vida.
+            Se o tratamento injetável for indicado para você, vai fazer parte de um plano que faz sentido para a sua vida.
           </p>
           <a
             href={WA}
