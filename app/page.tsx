@@ -52,7 +52,7 @@ const jornada = [
 
 const faqItems = [
   {
-    q: 'A Dra. Isabel prescreve e aplica tirzepatida?',
+    q: 'A Dra. Isabel prescreve e aplica medicamentos injetáveis para emagrecer?',
     a: 'Tudo é sempre avaliado em consulta, visto que cada paciente é único. Quando necessária aplicação de algum medicamento ou vitaminas, trabalhamos com alternativas de aplicação em clínica ou receita e instrução de aplicação em casa pelo próprio paciente.',
   },
   {
@@ -280,8 +280,8 @@ export default function Home() {
                 headerBg: 'bg-[#E8823A]',
                 icon: '💉',
                 title: 'Protocolos médicos',
-                desc: 'Quando indicado, prescrevemos e aplicamos medicações modernas (GLP-1, tirzepatida) no consultório ou com instrução para uso em casa.',
-                tags: ['GLP-1', 'Tirzepatida'],
+                desc: 'Quando indicado, prescrevemos e aplicamos medicações modernas (agonistas de GLP-1/GIP) no consultório ou com instrução para uso em casa.',
+                tags: ['GLP-1', 'Injetáveis'],
               },
               {
                 headerBg: 'bg-[#12082a]',
