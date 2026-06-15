@@ -4,8 +4,8 @@ import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 
-// Mensagem com a origem ("página de Emagrecimento") pra atribuição de lead na revisão diária do WhatsApp
-const WA = 'https://wa.me/5548991593468?text=Ol%C3%A1!%20Vim%20pela%20p%C3%A1gina%20de%20Emagrecimento%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o.'
+// Atribuição sutil de origem (só a clínica percebe): "site da Dra. Isabel Aragão" (nome completo) = /emagrecimento
+const WA = 'https://wa.me/5548991593468?text=Ol%C3%A1%2C%20vim%20do%20site%20da%20Dra.%20Isabel%20Arag%C3%A3o%20e%20gostaria%20de%20saber%20mais%20sobre%20agendamento%20de%20consulta'
 
 const faqItems = [
   {
