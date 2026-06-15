@@ -65,8 +65,8 @@ export default function SaudePage() {
       <section className="bg-[#12082a] text-white pt-14 pb-16 px-4 sm:px-6">
         <div className="max-w-3xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-1.5 text-sm text-white/80 mb-6">
-            <span className="w-2 h-2 bg-[#E8823A] rounded-full" />
-            Tratamento médico supervisionado · São José/SC e online
+            <span className="w-2 h-2 bg-[#E8823A] rounded-full shrink-0" />
+            <span>Tratamento médico supervisionado ·{' '}<span className="whitespace-nowrap">São José/SC e online</span></span>
           </div>
           <h1 className="font-playfair text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-5">
             Você faz tudo certo durante a semana — e na sexta à noite desfaz tudo, sem conseguir parar
