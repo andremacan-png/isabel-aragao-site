@@ -4,7 +4,8 @@ import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 
-const WA = 'https://wa.me/5548991593468?text=Ol%C3%A1%2C+gostaria+de+marcar+uma+consulta+com+a+Dra.+Isabel+Arag%C3%A3o%2C+vim+do+seu+site.'
+// Mensagem com a origem ("página de Saúde") pra atribuição de lead na revisão diária do WhatsApp
+const WA = 'https://wa.me/5548991593468?text=Ol%C3%A1!%20Vim%20pela%20p%C3%A1gina%20de%20Sa%C3%BAde%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o.'
 
 const faqItems = [
   {

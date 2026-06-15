@@ -3,7 +3,8 @@
 import { useState } from 'react'
 import Image from 'next/image'
 
-const WA = 'https://wa.me/5548991593468?text=Ol%C3%A1%2C+vim+do+seu+site+e+gostaria+de+marcar+uma+consulta+com+a+Dra.+Isabel+Arag%C3%A3o'
+// Mensagem com a origem ("site") pra atribuição de lead na revisão diária do WhatsApp
+const WA = 'https://wa.me/5548991593468?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Dra.%20Isabel%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o.'
 const INSTAGRAM = 'https://www.instagram.com/dra.isabelaragao/'
 const GOOGLE_REVIEWS = 'https://www.google.com/search?q=isabel+arag%C3%A3o+sa%C3%BAde+emagrecimento+s%C3%A3o+jos%C3%A9'
 
