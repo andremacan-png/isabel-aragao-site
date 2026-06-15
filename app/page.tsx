@@ -117,7 +117,7 @@ export default function Home() {
           </a>
         </div>
         <AnchorBar links={[
-          { href: '#metodo', label: 'Método LEVE' },
+          { href: '#metodo', label: 'Método' },
           { href: '#sobre', label: 'Sobre a Dra.' },
           { href: '#servicos', label: 'Atendimento' },
           { href: '#faq', label: 'Dúvidas' },
@@ -158,7 +158,7 @@ export default function Home() {
               <a href={WA} target="_blank" rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2.5 bg-[#E8823A] text-white px-8 py-4 rounded-full text-base font-bold hover:bg-[#d4691e] transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5">
                 <WAIcon />
-                Falar com a equipe no WhatsApp
+                Falar com a equipe
               </a>
               <a href="#sobre"
                 className="flex items-center justify-center border-2 border-primary-600 text-primary-600 px-8 py-4 rounded-full text-base font-semibold hover:bg-primary-50 transition-colors">
@@ -198,7 +198,7 @@ export default function Home() {
               <a href={WA} target="_blank" rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2.5 bg-[#E8823A] text-white px-8 py-4 rounded-full text-base font-bold hover:bg-[#d4691e] transition-all shadow-lg">
                 <WAIcon />
-                Falar com a equipe no WhatsApp
+                Falar com a equipe
               </a>
               <a href="#sobre"
                 className="flex items-center justify-center border-2 border-primary-600 text-primary-600 px-8 py-4 rounded-full text-base font-semibold hover:bg-primary-50 transition-colors">
@@ -509,7 +509,7 @@ export default function Home() {
               <a href={WA} target="_blank" rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 bg-[#E8823A] text-white px-8 py-4 rounded-full font-bold hover:bg-[#d4691e] transition-colors w-full">
                 <WAIcon />
-                Falar com a equipe no WhatsApp
+                Falar com a equipe
               </a>
             </div>
 
@@ -541,7 +541,7 @@ export default function Home() {
               <a href={WA} target="_blank" rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 border-2 border-primary-600 text-primary-600 px-8 py-4 rounded-full font-bold hover:bg-primary-50 transition-colors w-full">
                 <WAIcon />
-                Falar com a equipe no WhatsApp
+                Falar com a equipe
               </a>
             </div>
           </div>
@@ -603,7 +603,7 @@ export default function Home() {
               <a href={WA} target="_blank" rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 bg-[#E8823A] text-white px-10 py-5 rounded-full text-lg font-bold hover:bg-[#d4691e] transition-all shadow-2xl hover:-translate-y-0.5">
                 <WAIcon className="w-6 h-6" />
-                Falar com a equipe no WhatsApp
+                Falar com a equipe
               </a>
               <p className="text-white/55 text-xs">Respondemos em minutos no horário comercial (seg–sex) · Presencial em São José/SC · Online no Brasil</p>
             </div>

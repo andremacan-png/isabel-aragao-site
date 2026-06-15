@@ -510,7 +510,7 @@ export default function SaudePage() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-[#E8823A] hover:bg-[#d4732e] text-white font-semibold px-8 py-4 rounded-full text-base transition-colors"
           >
-            Falar com a equipe no WhatsApp
+            Falar com a equipe
             <span>→</span>
           </a>
           <p className="text-white/40 text-xs mt-4">

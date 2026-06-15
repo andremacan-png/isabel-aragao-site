@@ -19,6 +19,8 @@
 
 html {
   scroll-behavior: smooth;
+  /* impede que o menu fixo (2 linhas) cubra o topo da seção ao clicar numa âncora */
+  scroll-padding-top: 120px;
 }
 
 body {
