@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
+import AnchorBar from '../components/AnchorBar'
 
 // Atribuição sutil de origem (só a clínica percebe): "site da Dra. Isabel" = home
 const WA = 'https://wa.me/5548991593468?text=Ol%C3%A1%2C%20vim%20do%20site%20da%20Dra.%20Isabel%20e%20gostaria%20de%20saber%20mais%20sobre%20agendamento%20de%20consulta'
@@ -104,21 +105,27 @@ export default function Home() {
   return (
     <div className="font-sans text-gray-800 overflow-x-hidden">
 
-      {/* ── NAVBAR ── */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-[#12082a] shadow-lg shadow-black/20 py-3.5">
-        <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
+      {/* ── NAVBAR (2 linhas: marca+CTA e menu de âncoras) ── */}
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-[#12082a] shadow-lg shadow-black/20">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between py-3">
           <span className="font-playfair text-lg font-bold text-white tracking-tight">
             Dra. Isabel Aragão
           </span>
           <a href={WA} target="_blank" rel="noopener noreferrer"
             className="bg-white text-[#12082a] px-5 py-2 rounded-full text-sm font-bold hover:bg-gray-100 transition-colors">
-            Agendar Consulta
+            Agendar consulta
           </a>
         </div>
+        <AnchorBar links={[
+          { href: '#metodo', label: 'Método LEVE' },
+          { href: '#sobre', label: 'Sobre a Dra.' },
+          { href: '#servicos', label: 'Atendimento' },
+          { href: '#faq', label: 'Dúvidas' },
+        ]} />
       </nav>
 
       {/* ── HERO ── */}
-      <section className="min-h-screen bg-white relative overflow-hidden flex items-center pt-[56px]">
+      <section className="min-h-screen bg-white relative overflow-hidden flex items-center pt-[104px]">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-bl from-primary-50/60 to-transparent pointer-events-none" />
         <div className="absolute -bottom-16 -left-16 w-72 h-72 bg-[#E8823A]/6 rounded-full blur-3xl pointer-events-none" />
 
@@ -151,7 +158,7 @@ export default function Home() {
               <a href={WA} target="_blank" rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2.5 bg-[#E8823A] text-white px-8 py-4 rounded-full text-base font-bold hover:bg-[#d4691e] transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5">
                 <WAIcon />
-                Agendar Consulta
+                Falar com a equipe no WhatsApp
               </a>
               <a href="#sobre"
                 className="flex items-center justify-center border-2 border-primary-600 text-primary-600 px-8 py-4 rounded-full text-base font-semibold hover:bg-primary-50 transition-colors">
@@ -191,7 +198,7 @@ export default function Home() {
               <a href={WA} target="_blank" rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2.5 bg-[#E8823A] text-white px-8 py-4 rounded-full text-base font-bold hover:bg-[#d4691e] transition-all shadow-lg">
                 <WAIcon />
-                Agendar Consulta
+                Falar com a equipe no WhatsApp
               </a>
               <a href="#sobre"
                 className="flex items-center justify-center border-2 border-primary-600 text-primary-600 px-8 py-4 rounded-full text-base font-semibold hover:bg-primary-50 transition-colors">
@@ -228,7 +235,7 @@ export default function Home() {
         <div className="max-w-5xl mx-auto px-6 text-center">
           <span className="inline-block text-[#C4621A] text-xs font-bold tracking-widest uppercase mb-3">Você já tentou de tudo</span>
           <h2 className="font-playfair text-2xl sm:text-3xl md:text-5xl font-black text-gray-900 tracking-tight mb-3">
-            E ainda assim o resultado<br />não vem — ou vai embora.
+            E ainda assim o resultado{' '}<br className="hidden sm:block" />não vem — ou vai embora.
           </h2>
           <p className="text-gray-500 mb-7 max-w-xl mx-auto">
             Dieta, academia, shakes, nutricionista, remédio por conta própria… nada se sustenta. E a culpa recai sobre você.
@@ -502,7 +509,7 @@ export default function Home() {
               <a href={WA} target="_blank" rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 bg-[#E8823A] text-white px-8 py-4 rounded-full font-bold hover:bg-[#d4691e] transition-colors w-full">
                 <WAIcon />
-                Agendar pelo WhatsApp
+                Falar com a equipe no WhatsApp
               </a>
             </div>
 
@@ -534,7 +541,7 @@ export default function Home() {
               <a href={WA} target="_blank" rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 border-2 border-primary-600 text-primary-600 px-8 py-4 rounded-full font-bold hover:bg-primary-50 transition-colors w-full">
                 <WAIcon />
-                Agendar pelo WhatsApp
+                Falar com a equipe no WhatsApp
               </a>
             </div>
           </div>
@@ -596,9 +603,9 @@ export default function Home() {
               <a href={WA} target="_blank" rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 bg-[#E8823A] text-white px-10 py-5 rounded-full text-lg font-bold hover:bg-[#d4691e] transition-all shadow-2xl hover:-translate-y-0.5">
                 <WAIcon className="w-6 h-6" />
-                Agendar pelo WhatsApp
+                Falar com a equipe no WhatsApp
               </a>
-              <p className="text-white/30 text-xs">Presencial · São José/SC · Online · Brasil inteiro</p>
+              <p className="text-white/55 text-xs">Respondemos em minutos no horário comercial (seg–sex) · Presencial em São José/SC · Online no Brasil</p>
             </div>
           </div>
         </div>
