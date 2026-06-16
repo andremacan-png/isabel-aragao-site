@@ -29,8 +29,9 @@ export const PERIODOS = {
 export type PeriodoKey = keyof typeof PERIODOS
 
 // Versão da API Google Ads. Se o Google atualizar e a consulta falhar,
-// basta subir este número (ex.: v19, v20) — a página continua no snapshot até lá.
-const API_VERSION = 'v18'
+// basta subir este número (ex.: v22, v23) — a página continua no snapshot até lá.
+// Obs.: o Google aposenta versões ~anualmente; v18/v19/v20 já foram bloqueadas.
+const API_VERSION = 'v21'
 
 // Snapshot de fallback (acumulado até 11/06/2026).
 const SNAPSHOT: Campanha[] = [
@@ -92,7 +93,7 @@ export async function getPainelData(periodo: PeriodoKey): Promise<PainelData> {
     const res = await fetch(`https://googleads.googleapis.com/${API_VERSION}/customers/${cid}/googleAds:search`, {
       method: 'POST',
       headers,
-      body: JSON.stringify({ query, pageSize: 1000 }),
+      body: JSON.stringify({ query }),
       cache: 'no-store',
     })
     if (!res.ok) return snapshotData()
