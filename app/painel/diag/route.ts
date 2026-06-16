@@ -51,7 +51,7 @@ export async function GET(req: Request) {
     }
     report.oauth = oauth
 
-    // Passo 2 — Ads API: consulta as campanhas
+    // Passo 2 — Ads API: descobre qual versão da API responde (a v18 saiu do ar).
     if (token) {
       const cid = (env.GOOGLE_ADS_CUSTOMER_ID || '').replace(/\D/g, '')
       const query =
@@ -62,25 +62,40 @@ export async function GET(req: Request) {
         'Content-Type': 'application/json',
       }
       if (env.GOOGLE_ADS_LOGIN_CUSTOMER_ID) headers['login-customer-id'] = env.GOOGLE_ADS_LOGIN_CUSTOMER_ID.replace(/\D/g, '')
-      const r2 = await fetch(`https://googleads.googleapis.com/${API_VERSION}/customers/${cid}/googleAds:search`, {
-        method: 'POST',
-        headers,
-        body: JSON.stringify({ query, pageSize: 50 }),
-        cache: 'no-store',
-      })
-      const t2 = await r2.text()
-      const ads: Record<string, unknown> = { status: r2.status, ok: r2.ok, customerId: cid }
-      if (r2.ok) {
+
+      const versoes = ['v16', 'v17', 'v18', 'v19', 'v20', 'v21', 'v22', 'v23', 'v24']
+      const probe: Record<string, unknown>[] = []
+      for (const v of versoes) {
         try {
-          const j = JSON.parse(t2)
-          const rows: unknown[] = j.results ?? []
-          ads.rowCount = rows.length
-          ads.campanhas = rows.map((x) => (x as { campaign?: { name?: string } }).campaign?.name)
-        } catch { ads.parseError = true }
-      } else {
-        ads.body = t2.slice(0, 700)
+          const r2 = await fetch(`https://googleads.googleapis.com/${v}/customers/${cid}/googleAds:search`, {
+            method: 'POST',
+            headers,
+            body: JSON.stringify({ query, pageSize: 50 }),
+            cache: 'no-store',
+          })
+          const t2 = await r2.text()
+          const isHtml404 = t2.trimStart().startsWith('<')
+          const entry: Record<string, unknown> = { v, status: r2.status, html404: isHtml404 }
+          if (!isHtml404) {
+            // versão existe — reporta o resultado JSON (dados ou erro estruturado)
+            try {
+              const j = JSON.parse(t2)
+              if (r2.ok) {
+                const rows: unknown[] = j.results ?? []
+                entry.rowCount = rows.length
+                entry.campanhas = rows.map((x) => (x as { campaign?: { name?: string } }).campaign?.name)
+              } else {
+                entry.apiError = j?.error?.status ?? j?.error?.code
+                entry.apiMessage = (j?.error?.message ?? '').slice(0, 200)
+              }
+            } catch { entry.bodyHead = t2.slice(0, 150) }
+          }
+          probe.push(entry)
+        } catch (e) {
+          probe.push({ v, fetchError: String((e as Error)?.message ?? e) })
+        }
       }
-      report.ads = ads
+      report.adsProbe = probe
     }
   } catch (e) {
     report.exception = String((e as Error)?.message ?? e)
