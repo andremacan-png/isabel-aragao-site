@@ -63,7 +63,7 @@ export async function GET(req: Request) {
       }
       if (env.GOOGLE_ADS_LOGIN_CUSTOMER_ID) headers['login-customer-id'] = env.GOOGLE_ADS_LOGIN_CUSTOMER_ID.replace(/\D/g, '')
 
-      const versoes = ['v16', 'v17', 'v18', 'v19', 'v20', 'v21', 'v22', 'v23', 'v24']
+      const versoes = ['v20', 'v21']
       const probe: Record<string, unknown>[] = []
       for (const v of versoes) {
         try {
@@ -87,6 +87,7 @@ export async function GET(req: Request) {
               } else {
                 entry.apiError = j?.error?.status ?? j?.error?.code
                 entry.apiMessage = (j?.error?.message ?? '').slice(0, 200)
+                entry.errorDetails = JSON.stringify(j?.error?.details ?? null).slice(0, 700)
               }
             } catch { entry.bodyHead = t2.slice(0, 150) }
           }
