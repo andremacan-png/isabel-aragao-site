@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Playfair_Display, Inter } from 'next/font/google'
 import './globals.css'
 import Script from 'next/script'
+import ClarityInit from '@/components/ClarityInit'
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
@@ -89,14 +90,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
           })(window,document,'script','dataLayer','GTM-P65FQQ9K');
         `}</Script>
-        {/* Microsoft Clarity — heatmaps, gravações de sessão, scroll depth */}
-        <Script id="clarity" strategy="afterInteractive">{`
-          (function(c,l,a,r,i,t,y){
-            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-          })(window, document, "clarity", "script", "x7i914kkj3");
-        `}</Script>
+        {/* Microsoft Clarity agora é inicializado no client via <ClarityInit /> (components/ClarityInit.tsx) */}
       </head>
       <body className={inter.className}>
         {/* GTM noscript fallback */}
@@ -108,6 +102,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             style={{ display: 'none', visibility: 'hidden' }}
           />
         </noscript>
+        <ClarityInit />
         {children}
       </body>
     </html>
