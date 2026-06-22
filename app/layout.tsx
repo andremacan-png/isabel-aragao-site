@@ -45,6 +45,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="pt-BR" className={`${playfair.variable} ${inter.variable}`}>
       <head>
+        {/* Verificação de domínio — Meta (Facebook Business) */}
+        <meta name="facebook-domain-verification" content="608btqq6keuar29nrfsdt67wecuim1" />
         {/* Schema Markup — LocalBusiness + Physician */}
         <script
           type="application/ld+json"
