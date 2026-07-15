@@ -47,6 +47,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         {/* Verificação de domínio — Meta (Facebook Business) */}
         <meta name="facebook-domain-verification" content="608btqq6keuar29nrfsdt67wecuim1" />
+        {/* Verificação de propriedade — Google Search Console */}
+        <meta name="google-site-verification" content="Ym99QkOwRJa6E_pbYn3_NXgD21RISGYy8uUv9V5j-fo" />
         {/* Schema Markup — LocalBusiness + Physician */}
         <script
           type="application/ld+json"
