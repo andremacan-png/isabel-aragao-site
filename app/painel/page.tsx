@@ -231,42 +231,52 @@ export default async function PainelPage({ searchParams }: { searchParams: Promi
         {gsc && (
           <>
             <SectionLabel>🔍 SEO orgânico — Search Console (últimos 28 dias)</SectionLabel>
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
-              <Kpi icone="👆" label="Cliques orgânicos" valor={gsc.totais.cliques.toLocaleString('pt-BR')} />
-              <Kpi icone="👁️" label="Impressões" valor={gsc.totais.impressoes.toLocaleString('pt-BR')} />
-              <Kpi icone="📊" label="CTR médio" valor={gsc.paginas.length ? pct(gsc.paginas.reduce((s, p) => s + p.ctr, 0) / gsc.paginas.length * 100) : '—'} />
-              <Kpi icone="📍" label="Posição média" valor={gsc.paginas.length ? (gsc.paginas.reduce((s, p) => s + p.posicao * p.impressoes, 0) / Math.max(1, gsc.paginas.reduce((s, p) => s + p.impressoes, 0))).toLocaleString('pt-BR', { maximumFractionDigits: 1 }) : '—'} />
-            </div>
-            <div className="bg-white rounded-2xl border border-[#E8E0D5] overflow-x-auto mb-8">
-              <table className="w-full text-sm min-w-[560px]">
-                <thead>
-                  <tr className="text-left text-gray-500 border-b border-[#E8E0D5]">
-                    <th className="py-3 px-4 font-medium">Página</th>
-                    <th className="py-3 px-4 font-medium text-right">Cliques</th>
-                    <th className="py-3 px-4 font-medium text-right">Impressões</th>
-                    <th className="py-3 px-4 font-medium text-right">CTR</th>
-                    <th className="py-3 px-4 font-medium text-right">Posição</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {gsc.paginas.map((p) => {
-                    const isBlog = p.slug.startsWith('/blog/')
-                    return (
-                      <tr key={p.slug} className="border-b border-[#F2EFE8] last:border-0">
-                        <td className={`py-3 px-4 font-medium max-w-[260px] truncate ${isBlog ? 'text-[#b8651f]' : 'text-[#12082a]'}`} title={p.slug}>
-                          {p.slug}
-                        </td>
-                        <td className="py-3 px-4 text-right text-gray-700">{p.cliques}</td>
-                        <td className="py-3 px-4 text-right text-gray-700">{p.impressoes.toLocaleString('pt-BR')}</td>
-                        <td className="py-3 px-4 text-right text-gray-700">{pct(p.ctr * 100)}</td>
-                        <td className="py-3 px-4 text-right text-gray-700">{p.posicao.toLocaleString('pt-BR', { maximumFractionDigits: 1 })}</td>
+            {gsc.paginas.length === 0 ? (
+              <div className="bg-white rounded-2xl border border-[#E8E0D5] p-8 mb-8 text-center">
+                <p className="text-2xl mb-3">⏳</p>
+                <p className="text-[#12082a] font-semibold mb-1">Search Console conectado</p>
+                <p className="text-sm text-gray-500">O Google ainda está processando os dados do site. Volte em 24–48h — as métricas de cliques orgânicos aparecerão aqui automaticamente.</p>
+              </div>
+            ) : (
+              <>
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
+                  <Kpi icone="👆" label="Cliques orgânicos" valor={gsc.totais.cliques.toLocaleString('pt-BR')} />
+                  <Kpi icone="👁️" label="Impressões" valor={gsc.totais.impressoes.toLocaleString('pt-BR')} />
+                  <Kpi icone="📊" label="CTR médio" valor={pct(gsc.paginas.reduce((s, p) => s + p.ctr, 0) / gsc.paginas.length * 100)} />
+                  <Kpi icone="📍" label="Posição média" valor={(gsc.paginas.reduce((s, p) => s + p.posicao * p.impressoes, 0) / Math.max(1, gsc.paginas.reduce((s, p) => s + p.impressoes, 0))).toLocaleString('pt-BR', { maximumFractionDigits: 1 })} />
+                </div>
+                <div className="bg-white rounded-2xl border border-[#E8E0D5] overflow-x-auto mb-8">
+                  <table className="w-full text-sm min-w-[560px]">
+                    <thead>
+                      <tr className="text-left text-gray-500 border-b border-[#E8E0D5]">
+                        <th className="py-3 px-4 font-medium">Página</th>
+                        <th className="py-3 px-4 font-medium text-right">Cliques</th>
+                        <th className="py-3 px-4 font-medium text-right">Impressões</th>
+                        <th className="py-3 px-4 font-medium text-right">CTR</th>
+                        <th className="py-3 px-4 font-medium text-right">Posição</th>
                       </tr>
-                    )
-                  })}
-                </tbody>
-              </table>
-            </div>
-            <p className="text-xs text-gray-400 mb-6">Período: {gsc.periodo} · páginas em laranja = posts do blog · posição = média ponderada por impressões.</p>
+                    </thead>
+                    <tbody>
+                      {gsc.paginas.map((p) => {
+                        const isBlog = p.slug.startsWith('/blog/')
+                        return (
+                          <tr key={p.slug} className="border-b border-[#F2EFE8] last:border-0">
+                            <td className={`py-3 px-4 font-medium max-w-[260px] truncate ${isBlog ? 'text-[#b8651f]' : 'text-[#12082a]'}`} title={p.slug}>
+                              {p.slug}
+                            </td>
+                            <td className="py-3 px-4 text-right text-gray-700">{p.cliques}</td>
+                            <td className="py-3 px-4 text-right text-gray-700">{p.impressoes.toLocaleString('pt-BR')}</td>
+                            <td className="py-3 px-4 text-right text-gray-700">{pct(p.ctr * 100)}</td>
+                            <td className="py-3 px-4 text-right text-gray-700">{p.posicao.toLocaleString('pt-BR', { maximumFractionDigits: 1 })}</td>
+                          </tr>
+                        )
+                      })}
+                    </tbody>
+                  </table>
+                </div>
+                <p className="text-xs text-gray-400 mb-6">Período: {gsc.periodo} · páginas em laranja = posts do blog · posição = média ponderada por impressões.</p>
+              </>
+            )}
           </>
         )}
 
