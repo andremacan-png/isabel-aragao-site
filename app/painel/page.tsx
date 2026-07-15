@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { getPainelData, PERIODOS, type PeriodoKey } from './adsData'
 import { getMetaData } from './metaAdsData'
+import { getGscData } from './gscData'
 
 export const metadata: Metadata = {
   title: 'Painel de Tráfego — Dra. Isabel',
@@ -31,7 +32,7 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 export default async function PainelPage({ searchParams }: { searchParams: Promise<{ periodo?: string }> }) {
   const sp = await searchParams
   const periodo: PeriodoKey = sp.periodo && sp.periodo in PERIODOS ? (sp.periodo as PeriodoKey) : '7d'
-  const [data, meta] = await Promise.all([getPainelData(periodo), getMetaData(periodo)])
+  const [data, meta, gsc] = await Promise.all([getPainelData(periodo), getMetaData(periodo), getGscData()])
   const live = data.fonte === 'live'
 
   const saude = data.campanhas.find((c) => /sa[uú]de/i.test(c.nome))
@@ -226,10 +227,54 @@ export default async function PainelPage({ searchParams }: { searchParams: Promi
           </>
         )}
 
+        {/* ===================== SEO ORGÂNICO (Search Console) ===================== */}
+        {gsc && (
+          <>
+            <SectionLabel>🔍 SEO orgânico — Search Console (últimos 28 dias)</SectionLabel>
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
+              <Kpi icone="👆" label="Cliques orgânicos" valor={gsc.totais.cliques.toLocaleString('pt-BR')} />
+              <Kpi icone="👁️" label="Impressões" valor={gsc.totais.impressoes.toLocaleString('pt-BR')} />
+              <Kpi icone="📊" label="CTR médio" valor={gsc.paginas.length ? pct(gsc.paginas.reduce((s, p) => s + p.ctr, 0) / gsc.paginas.length * 100) : '—'} />
+              <Kpi icone="📍" label="Posição média" valor={gsc.paginas.length ? (gsc.paginas.reduce((s, p) => s + p.posicao * p.impressoes, 0) / Math.max(1, gsc.paginas.reduce((s, p) => s + p.impressoes, 0))).toLocaleString('pt-BR', { maximumFractionDigits: 1 }) : '—'} />
+            </div>
+            <div className="bg-white rounded-2xl border border-[#E8E0D5] overflow-x-auto mb-8">
+              <table className="w-full text-sm min-w-[560px]">
+                <thead>
+                  <tr className="text-left text-gray-500 border-b border-[#E8E0D5]">
+                    <th className="py-3 px-4 font-medium">Página</th>
+                    <th className="py-3 px-4 font-medium text-right">Cliques</th>
+                    <th className="py-3 px-4 font-medium text-right">Impressões</th>
+                    <th className="py-3 px-4 font-medium text-right">CTR</th>
+                    <th className="py-3 px-4 font-medium text-right">Posição</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {gsc.paginas.map((p) => {
+                    const isBlog = p.slug.startsWith('/blog/')
+                    return (
+                      <tr key={p.slug} className="border-b border-[#F2EFE8] last:border-0">
+                        <td className={`py-3 px-4 font-medium max-w-[260px] truncate ${isBlog ? 'text-[#b8651f]' : 'text-[#12082a]'}`} title={p.slug}>
+                          {p.slug}
+                        </td>
+                        <td className="py-3 px-4 text-right text-gray-700">{p.cliques}</td>
+                        <td className="py-3 px-4 text-right text-gray-700">{p.impressoes.toLocaleString('pt-BR')}</td>
+                        <td className="py-3 px-4 text-right text-gray-700">{pct(p.ctr * 100)}</td>
+                        <td className="py-3 px-4 text-right text-gray-700">{p.posicao.toLocaleString('pt-BR', { maximumFractionDigits: 1 })}</td>
+                      </tr>
+                    )
+                  })}
+                </tbody>
+              </table>
+            </div>
+            <p className="text-xs text-gray-400 mb-6">Período: {gsc.periodo} · páginas em laranja = posts do blog · posição = média ponderada por impressões.</p>
+          </>
+        )}
+
         <p className="text-xs text-gray-400 leading-relaxed">
           Página de uso interno · não indexada. No Google, &quot;contatos&quot; = conversões (clique no WhatsApp); no Meta, &quot;conversas&quot; = mensagens iniciadas no WhatsApp.{' '}
           {live ? `Dados ao vivo (${data.periodoLabel}).` : `Mostrando snapshot (${data.periodoLabel}) — conecta à API quando os segredos forem configurados na Vercel.`}
           {!meta && ' Meta ainda não conectado (faltam as env vars META_ADS_ACCESS_TOKEN / META_AD_ACCOUNT_ID na Vercel).'}
+          {!gsc && ' SEO orgânico não conectado (faltam GSC_REFRESH_TOKEN e GSC_SITE_URL na Vercel).'}
         </p>
       </div>
     </div>
