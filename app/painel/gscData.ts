@@ -21,6 +21,7 @@ async function getGscToken(): Promise<string | null> {
   // GSC usa o novo client secret (****g7_X); Ads usa o antigo (****BBGF)
   const clientSecret = process.env.GSC_CLIENT_SECRET ?? process.env.GOOGLE_ADS_CLIENT_SECRET
   const refreshToken = process.env.GSC_REFRESH_TOKEN
+  console.log('[GSC] vars:', { hasId: !!clientId, hasSecret: !!clientSecret, secretSrc: process.env.GSC_CLIENT_SECRET ? 'GSC_CLIENT_SECRET' : 'GOOGLE_ADS_CLIENT_SECRET', hasToken: !!refreshToken })
   if (!clientId || !clientSecret || !refreshToken) return null
   const res = await fetch('https://oauth2.googleapis.com/token', {
     method: 'POST',
@@ -33,8 +34,14 @@ async function getGscToken(): Promise<string | null> {
     }),
     cache: 'no-store',
   })
-  if (!res.ok) return null
+  console.log('[GSC] token status:', res.status)
+  if (!res.ok) {
+    const txt = await res.text()
+    console.log('[GSC] token error:', txt.slice(0, 200))
+    return null
+  }
   const j = await res.json()
+  console.log('[GSC] access_token ok:', !!j.access_token)
   return j.access_token ?? null
 }
 
@@ -77,10 +84,14 @@ export async function getGscData(): Promise<GscData | null> {
         cache: 'no-store',
       }
     )
-    if (!res.ok) return null
+    if (!res.ok) {
+      console.log('[GSC] search status:', res.status, await res.text().then(t => t.slice(0, 200)))
+      return null
+    }
 
     const j = await res.json()
     const rows: any[] = j.rows ?? []
+    console.log('[GSC] rows:', rows.length)
     if (!rows.length) return null
 
     const site = GSC_SITE_URL.replace(/\/$/, '')
