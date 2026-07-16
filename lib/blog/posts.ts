@@ -33,7 +33,6 @@ export const POSTS: Post[] = [
 <p>Na prática, isso envolve:</p>
 <ul>
   <li><strong>Avaliação da composição corporal por bioimpedância</strong> — análise precisa de gordura, músculo, hidratação e metabolismo de repouso</li>
-  <li><strong>Investigação hormonal e metabólica</strong> — resistência à insulina, função tireoidiana, perfil lipídico e glicemia</li>
   <li><strong>Histórico de tentativas anteriores</strong> — o que funcionou, o que não funcionou e por quê</li>
   <li><strong>Avaliação de condições associadas</strong> — hipertensão, diabetes, apneia do sono, síndrome dos ovários policísticos</li>
   <li><strong>Fatores comportamentais e emocionais</strong> — padrão de sono, nível de estresse, relação com a alimentação</li>
@@ -44,7 +43,7 @@ export const POSTS: Post[] = [
 <!--CTA-->
 <h2>Por que o atendimento presencial faz diferença</h2>
 <p>O atendimento presencial permite uma avaliação muito mais completa. A bioimpedância, por exemplo, exige presença física e equipamento calibrado. Além disso, a relação médico-paciente se aprofunda quando há contato direto — fundamental em um tratamento que envolve aspectos emocionais e comportamentais.</p>
-<p>Para quem está em São José ou na Grande Florianópolis, a Clínica da Dra. Isabel Aragão (CRM-SC 26139) oferece atendimento presencial com equipe completa, incluindo a Enf. Maria Fernanda.</p>
+<p>Para quem está em São José ou na Grande Florianópolis, a Clínica da Dra. Isabel Aragão (CRM-SC 26139) oferece atendimento presencial com equipe completa, incluindo a Enf. Maria Fernanda Loccioni.</p>
 <h2>O que esperar nos primeiros meses</h2>
 <p>O objetivo não é só a balança. É melhorar a composição corporal — perder gordura enquanto preserva músculo —, regularizar os indicadores metabólicos e criar uma base que sustente o resultado a longo prazo. Com acompanhamento médico adequado, o resultado que vem é o resultado que fica.</p>`,
   },
@@ -143,7 +142,7 @@ export const POSTS: Post[] = [
   <li>Se você quer tratamento completo de emagrecimento com acompanhamento próximo → <strong>médico com foco em obesidade e emagrecimento</strong></li>
   <li>Muitas vezes, a abordagem mais eficiente combina mais de um profissional em equipe</li>
 </ul>
-<p>A Dra. Isabel Aragão (CRM-SC 26139) atua com foco em emagrecimento e obesidade, com avaliação completa que inclui bioimpedância e investigação metabólica. O objetivo é entender por que cada paciente está com dificuldade de emagrecer — e não aplicar um protocolo genérico.</p>`,
+<p>A Dra. Isabel Aragão (CRM-SC 26139) atua com foco em emagrecimento e obesidade, com avaliação completa que inclui bioimpedância e análise individualizada. O objetivo é entender por que cada paciente está com dificuldade de emagrecer — e não aplicar um protocolo genérico.</p>`,
   },
   {
     slug: 'por-que-dieta-sozinha-falha',
@@ -197,16 +196,14 @@ export const POSTS: Post[] = [
     content: `
 <p>Quando as pessoas pensam em acompanhamento médico para emagrecer, muitas imaginam uma consulta onde o médico passa uma dieta e um remédio — e pronto. Na prática, um tratamento bem feito é muito mais do que isso.</p>
 <h2>A primeira consulta</h2>
-<p>A primeira consulta costuma durar entre 45 minutos e 1 hora. O objetivo é fazer uma avaliação completa antes de tomar qualquer decisão de tratamento. Isso inclui:</p>
+<p>A primeira consulta costuma durar entre 45 minutos e 1 hora. O objetivo é fazer uma avaliação completa e já começar a montar um plano. Isso inclui:</p>
 <ul>
   <li><strong>Bioimpedância:</strong> composição corporal completa — gordura, músculo, hidratação, taxa metabólica basal</li>
   <li><strong>Anamnese detalhada:</strong> histórico de peso, tentativas anteriores, histórico familiar, uso de medicamentos, padrão de sono e estresse</li>
-  <li><strong>Pedido de exames:</strong> glicemia, insulina, hemograma, perfil lipídico, função tireoidiana e outros conforme o caso</li>
+  <li><strong>Revisão de exames recentes:</strong> se você trouxer exames dos últimos 12 meses, a médica já os inclui na avaliação do dia</li>
   <li><strong>Avaliação de comorbidades:</strong> pressão arterial, condições associadas ao excesso de peso</li>
 </ul>
-<p>Você sai da primeira consulta com uma orientação inicial e um pedido de exames. O plano completo é montado após o resultado dos exames.</p>
-<h2>A consulta de retorno (4 a 6 semanas depois)</h2>
-<p>Com os exames em mãos, a médica interpreta os resultados e monta o plano individualizado. Aqui entram os ajustes específicos para o seu caso: se há resistência à insulina, alteração tireoidiana, deficiências nutricionais ou outros fatores que precisam ser endereçados.</p>
+<p>Você sai da primeira consulta com uma avaliação completa e uma orientação inicial de tratamento. Trazer exames recentes ajuda a tornar esse primeiro encontro mais produtivo.</p>
 <!--CTA-->
 <h2>As revisitas mensais ou bimestrais</h2>
 <p>O acompanhamento regular é o coração do tratamento. Em cada revisita:</p>
@@ -293,13 +290,13 @@ export const POSTS: Post[] = [
 <p>A abordagem precisa mudar. Os pilares de um tratamento eficiente nessa faixa etária:</p>
 <ul>
   <li><strong>Preservar massa muscular:</strong> não só a quantidade de gordura que perde, mas a composição — a bioimpedância acompanha isso</li>
-  <li><strong>Investigação hormonal:</strong> avaliar se há deficiências ou desequilíbrios hormonais que estão dificultando o processo</li>
+  <li><strong>Avaliação clínica completa:</strong> identificar condições que podem estar dificultando o processo, como hipotireoidismo ou resistência à insulina</li>
   <li><strong>Proteína adequada:</strong> ingestão de proteína é ainda mais importante após os 40 para preservar músculo</li>
   <li><strong>Treinamento de força:</strong> é o principal estímulo para manutenção e recuperação de massa muscular</li>
   <li><strong>Qualidade do sono:</strong> sono adequado tem impacto direto nos hormônios do apetite</li>
 </ul>
 <h2>A avaliação médica importa mais aqui</h2>
-<p>Após os 40, a avaliação médica completa é ainda mais importante antes de começar um tratamento. Hipotireoidismo, resistência à insulina, deficiências de vitaminas e minerais — condições comuns nessa faixa etária — interferem diretamente no peso e precisam ser diagnosticadas e tratadas. A Dra. Isabel Aragão (CRM-SC 26139) faz essa investigação na consulta inicial.</p>`,
+<p>Após os 40, a avaliação médica completa é ainda mais importante antes de começar um tratamento. Hipotireoidismo, resistência à insulina, deficiências de vitaminas e minerais — condições comuns nessa faixa etária — interferem diretamente no peso e precisam ser diagnosticadas e tratadas. A Dra. Isabel Aragão (CRM-SC 26139) faz essa avaliação na primeira consulta.</p>`,
   },
   {
     slug: 'hormonios-ganho-de-peso',
@@ -387,7 +384,7 @@ export const POSTS: Post[] = [
     category: 'Tratamento',
     readTime: '4 min',
     date: 'Julho 2026',
-    metaDesc: 'O que acontece na primeira consulta com médica de emagrecimento: bioimpedância, anamnese, exames solicitados, o que levar e o que esperar ao sair. Clínica Dra. Isabel Aragão — São José/SC.',
+    metaDesc: 'O que acontece na primeira consulta com médica de emagrecimento: bioimpedância, anamnese, avaliação completa, o que levar e o que esperar ao sair. Clínica Dra. Isabel Aragão — São José/SC.',
     related: ['medica-emagrecimento-sao-jose', 'como-funciona-acompanhamento-medico-emagrecimento', 'bioimpedancia-o-que-e', 'quando-procurar-medico-para-emagrecer'],
     content: `
 <p>Muitas pessoas adiam a consulta porque não sabem o que vai acontecer — e o desconhecido gera ansiedade. Este artigo detalha exatamente o que você vai encontrar, para que você chegue preparada e aproveite ao máximo o tempo com a médica.</p>
@@ -402,18 +399,17 @@ export const POSTS: Post[] = [
 <p><strong>Bioimpedância:</strong> realizada no início da consulta. Você fica descalça sobre o equipamento por cerca de 30 segundos. O laudo mostra composição corporal completa — gordura, músculo, hidratação, metabolismo basal.</p>
 <p><strong>Anamnese:</strong> a médica vai perguntar sobre histórico de peso, tentativas anteriores, como é sua alimentação, sono, nível de estresse, atividade física, condições de saúde e uso de medicamentos. É uma conversa, não um interrogatório — e quanto mais honesta você for, melhor o plano que será montado.</p>
 <p><strong>Exame físico básico:</strong> pressão arterial, avaliação geral do estado de saúde.</p>
-<p><strong>Pedido de exames:</strong> mesmo que você já tenha exames, a médica provavelmente vai pedir um painel mais completo para ter todos os dados necessários.</p>
+<p><strong>Revisão de exames:</strong> se você trouxer exames recentes (dos últimos 12 meses), a médica já os inclui na avaliação do mesmo dia.</p>
 <!--CTA-->
 <h2>O que você vai ouvir que pode surpreender</h2>
 <p>Uma coisa que muitas pacientes relatam da primeira consulta com a Dra. Isabel: a ausência de julgamento. Não há crítica sobre o peso, sobre tentativas anteriores que não funcionaram ou sobre escolhas alimentares. O objetivo é entender, não culpar — e construir juntas uma estratégia que funcione para a sua realidade.</p>
 <h2>O que você vai sair com</h2>
 <ul>
   <li>O laudo da bioimpedância explicado</li>
-  <li>Pedido de exames de sangue</li>
-  <li>Orientações iniciais para o período até o retorno</li>
-  <li>Data do retorno (geralmente em 3 a 4 semanas, quando os exames ficam prontos)</li>
+  <li>Uma avaliação completa do seu quadro de saúde</li>
+  <li>Orientações iniciais de tratamento</li>
 </ul>
-<p>O plano completo — incluindo todas as estratégias do tratamento — é montado no retorno, quando a médica tem o quadro completo em mãos. A primeira consulta é a investigação; o retorno é o planejamento.</p>
+<p>Você sai da primeira consulta com uma avaliação completa e uma orientação inicial de tratamento — não precisa esperar uma segunda consulta para começar.</p>
 <h2>Dúvidas frequentes antes da consulta</h2>
 <p><strong>"Tenho vergonha do meu peso."</strong> É a dúvida mais comum. E é completamente desnecessária. A médica já cuidou de pacientes com todos os perfis de peso e de trajetória — e o consultório é um espaço de acolhimento, não de julgamento.</p>
 <p><strong>"Preciso chegar com tudo organizado?"</strong> Não. Venha como você está. Qualquer informação que faltar, a médica pergunta na consulta.</p>`,
@@ -452,7 +448,7 @@ export const POSTS: Post[] = [
 <ul>
   <li><strong>Bioimpedância:</strong> análise precisa de composição corporal — gordura, músculo, hidratação, metabolismo basal</li>
   <li><strong>Histórico metabólico:</strong> quantas vezes você emagreceu e engordou, como seu corpo respondeu</li>
-  <li><strong>Exames laboratoriais:</strong> resistência à insulina, função tireoidiana, hormônios</li>
+  <li><strong>Exames laboratoriais:</strong> análise do estado metabólico geral para identificar condições que dificultam o emagrecimento</li>
   <li><strong>Fatores comportamentais:</strong> sono, estresse, padrões alimentares</li>
 </ul>
 <h2>Não espere mais</h2>
@@ -547,7 +543,7 @@ export const POSTS: Post[] = [
 </ul>
 <h2>Uma relação de longo prazo</h2>
 <p>O tratamento de emagrecimento não é um episódio — é um processo. O médico certo é aquele com quem você vai construir uma relação de confiança ao longo do tempo. Vale investir na escolha certa desde o início.</p>
-<p>A Dra. Isabel Aragão (CRM-SC 26139) atende em São José/SC com avaliação completa, bioimpedância e acompanhamento individualizado. A consulta inicial é a investigação — o plano vem depois.</p>`,
+<p>A Dra. Isabel Aragão (CRM-SC 26139) atende em São José/SC com avaliação completa, bioimpedância e acompanhamento individualizado. Você sai da primeira consulta com uma avaliação completa e uma orientação inicial de tratamento.</p>`,
   },
 ]
 
