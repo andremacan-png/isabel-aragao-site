@@ -545,6 +545,245 @@ export const POSTS: Post[] = [
 <p>O tratamento de emagrecimento não é um episódio — é um processo. O médico certo é aquele com quem você vai construir uma relação de confiança ao longo do tempo. Vale investir na escolha certa desde o início.</p>
 <p>A Dra. Isabel Aragão (CRM-SC 26139) atende em São José/SC com avaliação completa, bioimpedância e acompanhamento individualizado. Você sai da primeira consulta com uma avaliação completa e uma orientação inicial de tratamento.</p>`,
   },
+  {
+    slug: 'tirzepatida-florianopolis',
+    num: 13,
+    title: 'Tirzepatida em Florianópolis e São José/SC — Médica, Prescrição e Acompanhamento',
+    shortTitle: 'Tirzepatida em Florianópolis',
+    intro: 'Se você está procurando tirzepatida em Florianópolis ou na região de São José/SC, este artigo explica o que você precisa saber sobre o tratamento e onde encontrar acompanhamento adequado.',
+    category: 'Medicamentos',
+    readTime: '5 min',
+    date: 'Julho 2026',
+    metaDesc: 'Tirzepatida em Florianópolis e São José/SC: como funciona, quem pode usar, por que exige prescrição e acompanhamento médico, e onde encontrar médica especializada na Grande Florianópolis.',
+    related: ['mounjaro-florianopolis', 'ozempic-florianopolis-prescricao', 'aplicacao-injecao-emagrecer-sao-jose', 'medica-emagrecimento-sao-jose'],
+    content: `
+<p>Se você chegou até aqui buscando tirzepatida em Florianópolis ou na região de São José/SC, provavelmente já conhece o medicamento e está procurando onde iniciar ou continuar o tratamento com acompanhamento adequado. Este artigo explica o que você precisa saber.</p>
+<h2>O que é a tirzepatida</h2>
+<p>A tirzepatida é um medicamento injetável de uso semanal desenvolvido para o tratamento da obesidade. Ela pertence a uma nova geração de tratamentos: atua como agonista dual de GLP-1 e GIP — dois hormônios intestinais que influenciam o apetite, a saciedade e o controle da glicose no sangue. Essa ação dupla é o que diferencia a tirzepatida de outros medicamentos da mesma família.</p>
+<p>Os ensaios clínicos mostraram reduções médias de peso de 15% a 22% em 72 semanas de tratamento — resultados que colocam a tirzepatida entre os medicamentos mais eficazes disponíveis para obesidade.</p>
+<h2>Como funciona na prática</h2>
+<p>A aplicação é subcutânea (sob a pele), geralmente no abdômen, coxa ou parte de trás do braço, uma vez por semana. O tratamento começa com doses menores, que sobem gradualmente conforme a tolerância — protocolo necessário para minimizar os efeitos colaterais gastrointestinais mais comuns no início, como náusea e desconforto.</p>
+<p>Os primeiros efeitos costumam aparecer nas semanas iniciais: redução da fome, saciedade mais rápida durante as refeições e menos interesse em comer entre elas. Os resultados de composição corporal — perda de gordura com preservação de músculo — se consolidam ao longo de meses de tratamento contínuo.</p>
+<h2>Quem pode usar</h2>
+<p>A indicação geral é para adultos com IMC igual ou superior a 30 (obesidade), ou com IMC entre 27 e 30 associado a comorbidades como diabetes tipo 2, hipertensão ou alterações no colesterol. Existem contraindicações específicas — histórico pessoal ou familiar de carcinoma medular de tireoide e síndrome de neoplasia endócrina múltipla tipo 2, entre outras — que a avaliação médica identifica antes de qualquer prescrição.</p>
+<!--CTA-->
+<h2>Por que exige acompanhamento médico</h2>
+<p>A tirzepatida é um medicamento de uso controlado — não um suplemento. Exige prescrição e, mais do que isso, acompanhamento regular ao longo do tratamento. Os motivos são concretos:</p>
+<ul>
+  <li>A dose precisa ser ajustada progressivamente com base na tolerância e na resposta individual</li>
+  <li>Efeitos colaterais precisam ser monitorados e manejados — especialmente nos primeiros meses</li>
+  <li>A composição corporal deve ser acompanhada por bioimpedância para garantir perda de gordura, não de músculo</li>
+  <li>O medicamento é um recurso dentro de um plano de tratamento — não funciona de forma isolada com resultados duradouros</li>
+</ul>
+<p>Quem adquire tirzepatida sem acompanhamento médico frequentemente enfrenta efeitos colaterais sem suporte, ajuste inadequado de dose e perda significativa de massa muscular — comprometendo saúde e resultado.</p>
+<h2>Tirzepatida em Florianópolis e São José/SC</h2>
+<p>A Dra. Isabel Aragão (CRM-SC 26139) atende presencialmente em São José/SC com foco em emagrecimento e obesidade. A avaliação inicial inclui bioimpedância completa e revisão do histórico de saúde — o conjunto necessário para definir se a tirzepatida é indicada para o seu caso específico e, quando indicada, iniciar o tratamento com segurança e acompanhamento próximo.</p>
+<p>O atendimento também está disponível online para pacientes de outras regiões de Santa Catarina e do Brasil, com avaliação de composição corporal realizada por aplicativo.</p>
+<h2>O que esperar do tratamento</h2>
+<p>Com indicação correta e acompanhamento adequado, os primeiros resultados de composição corporal costumam aparecer nos três a seis primeiros meses. O objetivo não é um número específico na balança — é redução de gordura com preservação de massa muscular, melhora dos indicadores metabólicos e uma relação mais tranquila com a fome e a alimentação ao longo do tempo.</p>`,
+  },
+  {
+    slug: 'mounjaro-florianopolis',
+    num: 16,
+    title: 'Mounjaro em Florianópolis — O Que É, Onde Encontrar Médico e Como Funciona o Tratamento',
+    shortTitle: 'Mounjaro em Florianópolis',
+    intro: 'O Mounjaro é o nome de marca da tirzepatida. Se você está buscando Mounjaro em Florianópolis, este artigo explica o que está disponível e o que envolve iniciar o tratamento.',
+    category: 'Medicamentos',
+    readTime: '5 min',
+    date: 'Julho 2026',
+    metaDesc: 'Mounjaro em Florianópolis: o que é (tirzepatida), como funciona o tratamento, por que exige prescrição médica e onde encontrar médica especializada em São José/SC e na Grande Florianópolis.',
+    related: ['tirzepatida-florianopolis', 'ozempic-florianopolis-prescricao', 'aplicacao-injecao-emagrecer-sao-jose', 'medica-emagrecimento-sao-jose'],
+    content: `
+<p>O Mounjaro é o nome de marca da tirzepatida — medicamento injetável desenvolvido pelo laboratório Eli Lilly para o tratamento de obesidade e diabetes tipo 2. Se você está buscando Mounjaro em Florianópolis ou na Grande Florianópolis, este artigo explica o que está disponível e o que envolve iniciar o tratamento.</p>
+<h2>Mounjaro e tirzepatida: é o mesmo medicamento</h2>
+<p>Sim. Mounjaro é o nome comercial — a molécula ativa é a tirzepatida. As duas denominações circulam: médicos e pacientes com mais familiaridade com a literatura científica tendem a usar "tirzepatida"; a maioria dos pacientes busca pelo nome de marca. É importante saber isso porque na receita médica e na farmácia podem aparecer ambos os nomes.</p>
+<h2>Como o Mounjaro funciona</h2>
+<p>A tirzepatida/Mounjaro age como agonista dual de GLP-1 e GIP — dois hormônios produzidos pelo intestino após as refeições. Essa ação dupla distingue o Mounjaro de medicamentos que atuam apenas no GLP-1. Na prática:</p>
+<ul>
+  <li>Reduz a fome de forma significativa — a pessoa sente menos vontade de comer e se satisfaz mais rápido nas refeições</li>
+  <li>Retarda o esvaziamento do estômago — prolongando a saciedade após comer</li>
+  <li>Melhora a resposta à insulina e o controle glicêmico</li>
+  <li>Atua em regiões do cérebro relacionadas ao apetite</li>
+</ul>
+<p>Os ensaios clínicos mostraram reduções médias de 15% a 22% do peso corporal em 72 semanas — com manutenção dos resultados enquanto o tratamento continua.</p>
+<h2>Quem pode usar o Mounjaro</h2>
+<p>A indicação é para adultos com IMC igual ou superior a 30, ou com IMC entre 27 e 30 associado a condições como diabetes tipo 2, hipertensão ou dislipidemia. A avaliação médica define se há indicação e identifica eventuais contraindicações antes de qualquer prescrição.</p>
+<!--CTA-->
+<h2>O que envolve o tratamento</h2>
+<p>O Mounjaro é aplicado uma vez por semana por via subcutânea — geralmente no abdômen, coxa ou braço. O tratamento começa na dose mais baixa e sobe gradualmente ao longo de semanas, o que permite que o organismo se adapte e reduz os efeitos colaterais gastrointestinais comuns no início (náusea, desconforto).</p>
+<p>O tratamento exige acompanhamento médico regular para ajuste de dose, monitoramento de composição corporal por bioimpedância e avaliação periódica de exames. O Mounjaro é um recurso dentro de um plano de tratamento — não funciona de forma isolada a longo prazo.</p>
+<h2>Sobre a compra sem prescrição</h2>
+<p>O Mounjaro/tirzepatida é um medicamento de uso controlado. A compra sem receita médica válida é irregular e, mais importante, arriscada: sem avaliação prévia não há como confirmar a indicação, identificar contraindicações nem saber qual dose é adequada para o caso. O tratamento iniciado sem acompanhamento costuma gerar resultados menores e riscos maiores.</p>
+<h2>Onde encontrar médica para Mounjaro em Florianópolis</h2>
+<p>A Dra. Isabel Aragão (CRM-SC 26139) atende em São José/SC com foco em emagrecimento e obesidade. Na consulta inicial é feita uma avaliação completa — bioimpedância e histórico de saúde — para definir se o Mounjaro/tirzepatida é a opção mais adequada para o seu caso e iniciar o tratamento com segurança. O atendimento também está disponível online para pacientes de outras regiões do Brasil.</p>`,
+  },
+  {
+    slug: 'ozempic-florianopolis-prescricao',
+    num: 17,
+    title: 'Ozempic em Florianópolis — Médico para Prescrição, Acompanhamento e Alternativas ao Tratamento',
+    shortTitle: 'Ozempic em Florianópolis',
+    intro: 'Se você está procurando Ozempic em Florianópolis — para iniciar, continuar ou entender as opções de tratamento —, este artigo traz o que você precisa saber.',
+    category: 'Medicamentos',
+    readTime: '5 min',
+    date: 'Julho 2026',
+    metaDesc: 'Ozempic em Florianópolis: o que é (semaglutida), como funciona, por que exige prescrição médica, onde encontrar médica em São José/SC e quais alternativas existem para tratamento de obesidade.',
+    related: ['tirzepatida-florianopolis', 'mounjaro-florianopolis', 'medica-emagrecimento-sao-jose', 'glp1-medicamentos-injetaveis-emagrecer'],
+    content: `
+<p>O Ozempic é um dos medicamentos injetáveis mais buscados para emagrecimento no Brasil. Se você está procurando Ozempic em Florianópolis — para iniciar o tratamento, continuar com acompanhamento médico adequado ou entender as opções disponíveis —, este artigo traz o que você precisa saber.</p>
+<h2>O que é o Ozempic</h2>
+<p>O Ozempic é o nome de marca da semaglutida, desenvolvido pelo laboratório Novo Nordisk. Foi aprovado originalmente para o tratamento de diabetes tipo 2, mas tornou-se amplamente conhecido pelo efeito de redução de peso. A semaglutida age como agonista de GLP-1 — um hormônio intestinal que sinaliza saciedade ao cérebro, retarda o esvaziamento gástrico e melhora o controle glicêmico.</p>
+<h2>Ozempic e Wegovy: qual a diferença</h2>
+<p>A semaglutida existe em duas formulações com indicações distintas: o Ozempic (doses de até 2 mg) foi aprovado para diabetes tipo 2; o Wegovy (doses de até 2,4 mg) foi aprovado especificamente para obesidade. O princípio ativo é o mesmo — a diferença está na dose máxima e na indicação formal. Na prática clínica, o Ozempic é utilizado para tratamento de obesidade em muitos contextos, uso que exige avaliação individualizada pelo médico prescritor.</p>
+<h2>Ozempic versus tirzepatida (Mounjaro)</h2>
+<p>A tirzepatida (Mounjaro) é um medicamento mais recente que age em dois receptores — GLP-1 e GIP —, enquanto a semaglutida (Ozempic/Wegovy) age apenas no GLP-1. Os estudos comparativos mostram que a tirzepatida tende a produzir reduções de peso maiores em média, mas a escolha entre os dois depende do histórico clínico, tolerância, custo e disponibilidade de cada paciente — uma decisão médica, não de preferência pessoal.</p>
+<!--CTA-->
+<h2>Por que o Ozempic exige prescrição e acompanhamento</h2>
+<p>O Ozempic é um medicamento de uso controlado. Para além da obrigatoriedade legal da receita, o acompanhamento médico é necessário por razões clínicas concretas:</p>
+<ul>
+  <li>A dose precisa ser ajustada progressivamente ao longo do tratamento</li>
+  <li>Efeitos colaterais gastrointestinais são comuns no início e precisam de manejo adequado</li>
+  <li>A composição corporal deve ser monitorada — perda de gordura com preservação de músculo não é automática</li>
+  <li>Há contraindicações que precisam ser avaliadas antes do início do tratamento</li>
+</ul>
+<p>O uso sem acompanhamento frequentemente resulta em abandono por efeitos colaterais, perda de massa muscular não monitorada ou resultado abaixo do esperado por ausência de um plano estruturado.</p>
+<h2>Onde encontrar médica para prescrição em Florianópolis</h2>
+<p>A Dra. Isabel Aragão (CRM-SC 26139) atende em São José/SC com foco em emagrecimento e obesidade. Na consulta inicial é feita uma avaliação completa para definir qual medicamento é mais adequado para cada caso — semaglutida, tirzepatida ou outro recurso terapêutico — e iniciar o tratamento com a estrutura de acompanhamento necessária. O atendimento também está disponível online para pacientes de outras regiões do Brasil.</p>`,
+  },
+  {
+    slug: 'clinica-emagrecimento-sao-jose-sc',
+    num: 18,
+    title: 'Clínica de Emagrecimento em São José/SC — O Que Avaliar Antes de Escolher',
+    shortTitle: 'Clínica de Emagrecimento em São José/SC',
+    intro: 'Se você está pesquisando clínicas de emagrecimento em São José/SC, saber o que avaliar pode poupar meses de tratamento inadequado. Este artigo explica o que distingue uma abordagem séria.',
+    category: 'Tratamento',
+    readTime: '5 min',
+    date: 'Julho 2026',
+    metaDesc: 'Como escolher uma clínica de emagrecimento em São José/SC: o que avaliar na equipe, na abordagem e no acompanhamento, red flags a evitar e perguntas importantes para fazer antes de começar.',
+    related: ['medica-emagrecimento-sao-jose', 'primeira-consulta-medica-emagrecimento', 'como-escolher-medico-emagrecimento', 'bioimpedancia-sao-jose-sc'],
+    content: `
+<p>Se você está pesquisando clínica de emagrecimento em São José/SC ou na Grande Florianópolis, provavelmente já percebeu que a oferta é variada — e que as diferenças entre uma clínica e outra vão muito além do preço. Saber o que avaliar pode poupar meses de tratamento inadequado.</p>
+<h2>O que é uma clínica de emagrecimento</h2>
+<p>Uma clínica de emagrecimento é um espaço de saúde que oferece tratamento médico para perda de peso. Isso pode envolver avaliação clínica, exames, prescrição de medicamentos quando indicada e acompanhamento de composição corporal. O que diferencia uma clínica de qualidade não é o espaço físico nem a lista de serviços — é a abordagem. Tratamento sério de emagrecimento começa com avaliação, não com prescrição.</p>
+<h2>O que avaliar na equipe</h2>
+<p>Verifique se o médico responsável tem CRM ativo e experiência comprovada com obesidade. Você pode confirmar qualquer CRM no site do CFM (cfm.org.br). Desconfie de clínicas que não informam claramente quem é o responsável médico pelo tratamento.</p>
+<p>A presença de enfermeiro(a) qualificado(a) na equipe é um diferencial concreto: garante suporte especializado na aplicação de medicamentos injetáveis e no acompanhamento entre consultas.</p>
+<h2>O que avaliar na abordagem clínica</h2>
+<p>Uma abordagem séria inclui, no mínimo:</p>
+<ul>
+  <li><strong>Avaliação de composição corporal:</strong> bioimpedância ou método equivalente — não apenas o peso na balança</li>
+  <li><strong>Avaliação antes da prescrição:</strong> exames, histórico de saúde e condições associadas</li>
+  <li><strong>Plano individualizado:</strong> não um protocolo único para todos os pacientes</li>
+  <li><strong>Acompanhamento regular:</strong> revisitas com ajuste do plano conforme a resposta de cada paciente</li>
+</ul>
+<p>Se a proposta chega antes da avaliação — pacote já definido, medicamento prescrito sem exames —, é um sinal de alerta.</p>
+<!--CTA-->
+<h2>Red flags: o que evitar</h2>
+<ul>
+  <li>Promessas de resultado em tempo determinado ou garantias de número de quilos perdidos</li>
+  <li>Imagens de antes e depois de pacientes na comunicação (prática vedada pelo Código de Ética Médica)</li>
+  <li>Prescrição de medicamentos sem avaliação prévia completa</li>
+  <li>Ausência de acompanhamento após a prescrição inicial</li>
+  <li>Profissional sem CRM visível ou identificável</li>
+</ul>
+<h2>Perguntas para fazer antes de começar</h2>
+<ul>
+  <li>"Qual exame vocês fazem para avaliar a composição corporal?"</li>
+  <li>"Que exames são solicitados antes da prescrição?"</li>
+  <li>"Com que frequência são feitas as revisitas?"</li>
+  <li>"Como o plano é ajustado se o resultado não estiver vindo?"</li>
+</ul>
+<p>Respostas vagas ou evasivas a essas perguntas já dizem muito sobre o que esperar do tratamento.</p>
+<h2>Clínica de emagrecimento em São José/SC — o que a Dra. Isabel Aragão oferece</h2>
+<p>A Dra. Isabel Aragão (CRM-SC 26139) atende em São José/SC com foco exclusivo em emagrecimento e obesidade. O tratamento começa com avaliação completa — bioimpedância e histórico detalhado de saúde — antes de qualquer decisão de plano. O acompanhamento é feito com revisitas regulares e ajuste contínuo conforme a evolução de cada paciente. A equipe inclui a Enf. Maria Fernanda Loccioni (COREN/SC 441029), responsável pelas aplicações de medicamentos injetáveis. O atendimento também está disponível online.</p>`,
+  },
+  {
+    slug: 'lipedema-florianopolis-tratamento',
+    num: 19,
+    title: 'Lipedema em Florianópolis — Como é Feito o Diagnóstico e O Que o Tratamento Médico Oferece',
+    shortTitle: 'Lipedema em Florianópolis',
+    intro: 'O lipedema é frequentemente confundido com obesidade — e permanece sem diagnóstico por anos. Se você mora em Florianópolis e suspeita da condição, este artigo explica o que é e o que o tratamento oferece.',
+    category: 'Saúde',
+    readTime: '5 min',
+    date: 'Julho 2026',
+    metaDesc: 'Lipedema em Florianópolis: o que é, por que é diferente da obesidade comum, como é diagnosticado e o que o acompanhamento médico oferece para pacientes na Grande Florianópolis e São José/SC.',
+    related: ['medica-emagrecimento-sao-jose', 'quando-procurar-medico-para-emagrecer', 'emagrecimento-apos-40-anos', 'clinica-emagrecimento-sao-jose-sc'],
+    content: `
+<p>O lipedema é uma condição crônica caracterizada pelo acúmulo anormal e desproporcional de gordura — geralmente nos membros inferiores — que acomete principalmente mulheres. Apesar de relativamente comum, é frequentemente confundido com obesidade ou com "inchaço" e permanece sem diagnóstico por anos. Se você mora em Florianópolis ou na Grande Florianópolis e suspeita de lipedema, este artigo explica o que é a condição e o que o tratamento médico oferece.</p>
+<h2>O que é o lipedema</h2>
+<p>O lipedema é uma doença do tecido adiposo em que o acúmulo acontece em padrões específicos — principalmente quadris, coxas e pernas —, é simétrico nos dois lados do corpo e não responde da forma esperada à dieta ou ao exercício. A gordura do lipedema tem características distintas da gordura convencional: é dolorosa ao toque, causa formação fácil de hematomas e não diminui proporcionalmente com a perda de peso.</p>
+<p>É importante distinguir: lipedema não é obesidade. Uma mulher com lipedema pode ter peso e IMC normais no tronco e nos braços, com acúmulo desproporcional apenas nos membros inferiores. Esse padrão é uma pista diagnóstica importante.</p>
+<h2>Por que é frequentemente confundido e mal diagnosticado</h2>
+<p>O lipedema ainda é pouco reconhecido por profissionais de saúde em geral. Muitas pacientes passam anos ouvindo que "é só questão de dieta" ou "precisa se exercitar mais" — sem resultado, porque a condição tem causa diferente. Algumas recebem diagnóstico de obesidade ou linfedema (condição relacionada mas distinta) e seguem com tratamento inadequado para o seu caso.</p>
+<p>O diagnóstico correto muda completamente a abordagem — porque o que funciona para lipedema é diferente do que funciona para obesidade convencional.</p>
+<h2>Sintomas comuns</h2>
+<ul>
+  <li>Acúmulo de gordura desproporcional em membros inferiores (quadril, coxas, pernas), simétrico nos dois lados</li>
+  <li>Dor, sensibilidade ou desconforto ao toque nas áreas afetadas</li>
+  <li>Formação fácil de hematomas sem causa aparente</li>
+  <li>Sensação de peso e cansaço nas pernas ao longo do dia</li>
+  <li>Resultado insatisfatório de dietas e exercícios nas regiões afetadas</li>
+  <li>Desproporção visível entre os membros inferiores e o restante do corpo</li>
+</ul>
+<!--CTA-->
+<h2>Como é feito o diagnóstico</h2>
+<p>Não existe exame de sangue ou de imagem específico para diagnosticar lipedema. O diagnóstico é clínico — feito com base na apresentação dos sintomas, no exame físico e no descarte de outras condições. Por isso é fundamental buscar um profissional com experiência no reconhecimento da condição.</p>
+<h2>O que o tratamento médico oferece</h2>
+<p>O lipedema não tem cura, mas tem tratamento — e o cuidado adequado melhora significativamente a qualidade de vida. As abordagens incluem:</p>
+<ul>
+  <li><strong>Terapia de compressão:</strong> uso de meias compressivas para controlar o inchaço e o desconforto</li>
+  <li><strong>Drenagem linfática manual:</strong> realizada por profissional habilitado para reduzir a retenção de líquido</li>
+  <li><strong>Atividade física adaptada:</strong> exercícios de baixo impacto, aquáticos e de força — que ajudam sem agravar a condição</li>
+  <li><strong>Controle de peso associado:</strong> quando há obesidade coexistente, o controle do peso reduz a sobrecarga nos tecidos afetados, sem eliminar o lipedema em si</li>
+  <li><strong>Medicamentos:</strong> em casos selecionados, recursos que atuam na inflamação ou no controle de peso coexistente</li>
+</ul>
+<h2>Avaliação e acompanhamento em Florianópolis</h2>
+<p>A Dra. Isabel Aragão (CRM-SC 26139) atende em São José/SC e realiza avaliação de composição corporal e análise clínica para pacientes que suspeitam de lipedema ou que já têm diagnóstico e buscam acompanhamento médico estruturado. O objetivo é identificar corretamente a condição e montar um plano adequado para cada caso — não um protocolo genérico de emagrecimento.</p>`,
+  },
+  {
+    slug: 'aplicacao-injecao-emagrecer-sao-jose',
+    num: 20,
+    title: 'Aplicação de Injeção para Emagrecer em São José/SC — Como Funciona na Clínica',
+    shortTitle: 'Aplicação de Injeção para Emagrecer',
+    intro: 'Os medicamentos injetáveis para emagrecimento são aplicados semanalmente. Muitos pacientes preferem fazer a aplicação na clínica, especialmente no início. Veja como funciona em São José/SC.',
+    category: 'Tratamento',
+    readTime: '5 min',
+    date: 'Julho 2026',
+    metaDesc: 'Aplicação de injeção para emagrecer em São José/SC: quais medicamentos são injetáveis, como é feita a aplicação, diferença entre autoaplicação e clínica, e como funciona na Clínica Dra. Isabel Aragão.',
+    related: ['tirzepatida-florianopolis', 'mounjaro-florianopolis', 'ozempic-florianopolis-prescricao', 'glp1-medicamentos-injetaveis-emagrecer'],
+    content: `
+<p>Os medicamentos injetáveis para emagrecimento — os análogos de GLP-1 e GIP como tirzepatida e semaglutida — são aplicados uma vez por semana. Muitos pacientes preferem ou precisam fazer a aplicação na clínica. Este artigo explica como funciona esse processo em São José/SC e o que esperar de cada visita.</p>
+<h2>Quais medicamentos são aplicados por injeção</h2>
+<p>A classe de medicamentos mais utilizada atualmente para emagrecimento por via injetável inclui:</p>
+<ul>
+  <li><strong>Tirzepatida</strong> (nome de marca Mounjaro) — agonista dual GLP-1/GIP, aplicação semanal</li>
+  <li><strong>Semaglutida</strong> (nomes de marca Ozempic e Wegovy) — agonista de GLP-1, aplicação semanal</li>
+</ul>
+<p>Ambos são administrados por via subcutânea — uma agulha fina é inserida sob a pele, não no músculo. A aplicação é rápida, com canetas aplicadoras (pen) projetadas para mínimo desconforto e facilidade de uso.</p>
+<h2>Autoaplicação versus aplicação na clínica</h2>
+<p>A maioria dos pacientes aprende a se autoaplicar. As canetas aplicadoras são projetadas para uso domiciliar — e o treinamento de como manusear, armazenar e aplicar corretamente faz parte do protocolo de início do tratamento. Para muitas pessoas, a autoaplicação é prática e funciona bem ao longo do tempo.</p>
+<p>A aplicação na clínica é uma alternativa válida para quem:</p>
+<ul>
+  <li>Tem insegurança ou dificuldade com a autoaplicação</li>
+  <li>Está nas primeiras doses e quer se familiarizar com o processo com suporte profissional</li>
+  <li>Prefere o acompanhamento próximo a cada dose, especialmente no início do tratamento</li>
+  <li>Tem alguma limitação física que dificulta a aplicação sozinho</li>
+</ul>
+<!--CTA-->
+<h2>Como funciona a aplicação na clínica em São José/SC</h2>
+<p>Na Clínica da Dra. Isabel Aragão, as aplicações são realizadas pela Enf. Maria Fernanda Loccioni (COREN/SC 441029). O processo inclui:</p>
+<ul>
+  <li>Confirmação da dose prescrita pela médica</li>
+  <li>Verificação do armazenamento correto do medicamento (tirzepatida e semaglutida devem ser mantidos refrigerados entre 2°C e 8°C)</li>
+  <li>Orientação sobre o local de aplicação e rodízio de regiões — importante para evitar lipodistrofia local</li>
+  <li>Aplicação subcutânea com técnica adequada</li>
+  <li>Registro da aplicação e orientações pós-aplicação</li>
+</ul>
+<h2>O que esperar após a aplicação</h2>
+<p>Na maior parte dos casos, a aplicação é bem tolerada. Um leve desconforto local e passageiro pode ocorrer nas primeiras doses. Os efeitos do medicamento — redução do apetite, saciedade mais rápida — costumam se manifestar nas horas ou dias seguintes. Sintomas gastrointestinais (náusea, desconforto) são mais comuns nas primeiras semanas e tendem a diminuir com o tempo e o ajuste progressivo de dose.</p>
+<h2>Aplicação e acompanhamento: por que os dois andam juntos</h2>
+<p>A aplicação do medicamento é um componente do tratamento — não o tratamento completo. O acompanhamento médico regular com a Dra. Isabel permite ajustar a dose conforme a resposta, monitorar a composição corporal por bioimpedância e avaliar a evolução dos indicadores de saúde. A aplicação isolada, sem esse suporte, tende a gerar resultados menores e sem sustentabilidade ao longo do tempo.</p>
+<p>Para pacientes que já têm prescrição de outro médico e buscam o serviço de aplicação: entre em contato com a clínica para verificar disponibilidade e protocolos.</p>`,
+  },
 ]
 
 export function getPost(slug: string): Post | undefined {
