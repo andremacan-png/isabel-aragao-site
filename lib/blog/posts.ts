@@ -340,13 +340,13 @@ export const POSTS: Post[] = [
   {
     slug: 'perda-de-peso-saudavel-quantos-kg-por-mes',
     num: 10,
-    title: 'Perda de Peso Saudável: Quanto Kg por Mês é Seguro (e Por Que Emagrecer Rápido é Perigoso)',
+    title: 'Quantos Kg por Mês é Saudável Perder? O Ritmo Seguro e os Riscos da Pressa',
     shortTitle: 'Quanto Kg por Mês é Seguro Emagrecer',
-    intro: 'Emagrecer rápido parece ótimo — até você descobrir o preço. Perda de cabelo, perda de músculo, cálculos na vesícula e efeito sanfona. Entenda por que o ritmo certo é fundamental.',
+    intro: 'Emagrecer rápido parece ótimo, até você descobrir o preço. Perda de cabelo, perda de músculo, cálculos na vesícula e efeito sanfona. Entenda por que o ritmo certo é fundamental.',
     category: 'Saúde',
     readTime: '5 min',
     date: 'Julho 2026',
-    metaDesc: 'Quanto kg por mês é saudável perder: o ritmo ideal (0,5 a 1kg/semana), riscos do emagrecimento rápido (músculo, cabelo, vesícula), diferença entre perda de gordura e de peso.',
+    metaDesc: 'Quantos kg por mês é saudável perder? O ritmo seguro (0,5 a 1 kg por semana), os riscos de emagrecer rápido (músculo, cabelo, vesícula) e como saber se você perde gordura ou água.',
     related: ['bioimpedancia-o-que-e', 'por-que-dieta-sozinha-falha', 'como-funciona-acompanhamento-medico-emagrecimento', 'emagrecimento-apos-40-anos'],
     content: `
 <p>Toda paciente quer emagrecer o mais rápido possível. É compreensível — carregar peso extra é desconfortável, e a motivação no início do tratamento costuma ser alta. Mas a velocidade importa: emagrecer muito rápido cobra um preço que muitas pessoas não sabem que estão pagando.</p>
@@ -783,6 +783,191 @@ export const POSTS: Post[] = [
 <h2>Aplicação e acompanhamento: por que os dois andam juntos</h2>
 <p>A aplicação do medicamento é um componente do tratamento — não o tratamento completo. O acompanhamento médico regular com a Dra. Isabel permite ajustar a dose conforme a resposta, monitorar a composição corporal por bioimpedância e avaliar a evolução dos indicadores de saúde. A aplicação isolada, sem esse suporte, tende a gerar resultados menores e sem sustentabilidade ao longo do tempo.</p>
 <p>Para pacientes que já têm prescrição de outro médico e buscam o serviço de aplicação: entre em contato com a clínica para verificar disponibilidade e protocolos.</p>`,
+  },
+  {
+    slug: 'mounjaro-ou-ozempic-qual-escolher',
+    num: 21,
+    title: 'Mounjaro ou Ozempic: Qual a Diferença e Como Escolher o Melhor para Você',
+    shortTitle: 'Mounjaro ou Ozempic: Qual Escolher',
+    intro: 'Mounjaro e Ozempic são os dois injetáveis mais buscados para emagrecer. Eles não são iguais, e a escolha entre um e outro é uma decisão médica. Entenda as diferenças de forma clara.',
+    category: 'Medicamentos',
+    readTime: '5 min',
+    date: 'Julho 2026',
+    metaDesc: 'Mounjaro (tirzepatida) ou Ozempic (semaglutida): entenda a diferença entre os dois injetáveis para emagrecer, o que os estudos mostram sobre cada um e por que a escolha é uma decisão médica.',
+    related: ['tirzepatida-florianopolis', 'ozempic-florianopolis-prescricao', 'mounjaro-florianopolis', 'glp1-medicamentos-injetaveis-emagrecer'],
+    content: `
+<p>Se você está pesquisando tratamento injetável para emagrecer, provavelmente já se deparou com os dois nomes mais buscados: Mounjaro e Ozempic. Eles funcionam de formas parecidas, mas não são o mesmo medicamento, e a diferença entre eles importa na hora de decidir. Este artigo explica cada um em linguagem clara.</p>
+<h2>O que é cada um</h2>
+<p>Os dois são medicamentos injetáveis de uso semanal, mas têm princípios ativos diferentes:</p>
+<ul>
+  <li><strong>Ozempic</strong> é o nome de marca da <strong>semaglutida</strong>, do laboratório Novo Nordisk. Ela age como agonista de GLP-1, um hormônio intestinal que sinaliza saciedade ao cérebro e retarda o esvaziamento do estômago.</li>
+  <li><strong>Mounjaro</strong> é o nome de marca da <strong>tirzepatida</strong>, do laboratório Eli Lilly. Ela age em dois receptores ao mesmo tempo, GLP-1 e GIP, no que se chama de ação dual.</li>
+</ul>
+<p>Essa é a diferença central: o Ozempic atua em uma via, o Mounjaro em duas.</p>
+<h2>O que os estudos mostram</h2>
+<p>Nos ensaios clínicos, a tirzepatida (Mounjaro) tende a produzir reduções de peso maiores na média do que a semaglutida (Ozempic). Isso não significa que o Mounjaro seja sempre a melhor escolha para todo mundo: os estudos medem médias de grupos, e a resposta individual varia bastante de pessoa para pessoa.</p>
+<p>Vale um esclarecimento importante sobre nomes. A semaglutida existe em duas versões: o Ozempic (aprovado para diabetes tipo 2) e o Wegovy (aprovado especificamente para obesidade, em dose mais alta). O princípio ativo é o mesmo. Na prática clínica, o Ozempic é utilizado no tratamento de obesidade em muitos contextos, sempre com avaliação individual do médico prescritor.</p>
+<!--CTA-->
+<h2>Como a escolha é feita na prática</h2>
+<p>A decisão entre um e outro não se baseia só em qual emagrece mais. O médico considera vários fatores:</p>
+<ul>
+  <li><strong>Histórico de saúde e condições associadas</strong>, como diabetes, pressão alta e alterações no colesterol</li>
+  <li><strong>Tolerância aos efeitos colaterais</strong>, especialmente os gastrointestinais, mais comuns no início</li>
+  <li><strong>Resposta ao tratamento</strong>, avaliada ao longo das primeiras semanas</li>
+  <li><strong>Disponibilidade e custo</strong> de cada medicamento no momento</li>
+</ul>
+<p>Por isso, a mesma pergunta (qual é melhor?) tem respostas diferentes para pessoas diferentes. O que funciona muito bem para uma paciente pode não ser a melhor opção para outra.</p>
+<h2>Por que os dois exigem prescrição e acompanhamento</h2>
+<p>Tanto o Mounjaro quanto o Ozempic são medicamentos de uso controlado. Além da receita obrigatória, o acompanhamento médico é necessário porque a dose sobe de forma gradual, os efeitos colaterais precisam ser manejados e a composição corporal deve ser monitorada por bioimpedância, para garantir que a perda seja de gordura e não de músculo. Nenhum dos dois funciona de forma isolada e sustentável sem um plano por trás.</p>
+<h2>Onde avaliar qual é o mais indicado em Florianópolis</h2>
+<p>A Dra. Isabel Aragão (CRM-SC 26139) atende em São José/SC com foco em emagrecimento e obesidade. Na primeira consulta é feita uma avaliação completa, com bioimpedância e revisão do histórico de saúde, para definir se o tratamento injetável é indicado e, se for, qual opção faz mais sentido para o seu caso. O atendimento também está disponível online para pacientes de outras regiões do Brasil.</p>`,
+  },
+  {
+    slug: 'efeitos-colaterais-mounjaro-tirzepatida',
+    num: 22,
+    title: 'Efeitos Colaterais do Mounjaro (Tirzepatida): O Que é Normal e Quando se Preocupar',
+    shortTitle: 'Efeitos Colaterais do Mounjaro',
+    intro: 'Náusea, estômago cheio, mudança no apetite. Os efeitos colaterais do Mounjaro assustam quem está começando, mas a maioria é previsível e passageira. Entenda o que é esperado e o que merece atenção.',
+    category: 'Medicamentos',
+    readTime: '5 min',
+    date: 'Julho 2026',
+    metaDesc: 'Efeitos colaterais do Mounjaro (tirzepatida): quais são os mais comuns, por que acontecem, quanto tempo duram e quais sinais merecem atenção médica. Guia claro para quem vai começar ou já usa.',
+    related: ['tirzepatida-florianopolis', 'mounjaro-florianopolis', 'mounjaro-ou-ozempic-qual-escolher', 'glp1-medicamentos-injetaveis-emagrecer'],
+    content: `
+<p>Quem pensa em começar o tratamento com Mounjaro (tirzepatida) quase sempre tem a mesma dúvida: quais são os efeitos colaterais e o quanto eles atrapalham a vida. É uma preocupação legítima. A boa notícia é que a maioria dos efeitos é previsível, ligada ao início do tratamento, e tende a diminuir com o tempo. Este artigo explica o que costuma acontecer e o que merece atenção.</p>
+<p>Importante: este conteúdo é informativo e não substitui a orientação da sua médica. Qualquer sintoma que preocupe deve ser conversado com quem acompanha o seu tratamento.</p>
+<h2>Por que o Mounjaro causa efeitos colaterais</h2>
+<p>A tirzepatida age retardando o esvaziamento do estômago e reduzindo o apetite. É justamente esse mecanismo, o que ajuda no emagrecimento, que provoca os efeitos gastrointestinais mais comuns. Ou seja, sentir um pouco desses efeitos no começo faz parte do medicamento estar agindo. O objetivo do acompanhamento é manter isso dentro de um limite tolerável.</p>
+<h2>Os efeitos mais comuns (e geralmente passageiros)</h2>
+<ul>
+  <li><strong>Náusea:</strong> o efeito mais frequente, especialmente nas primeiras semanas e a cada aumento de dose. Costuma melhorar conforme o corpo se adapta.</li>
+  <li><strong>Sensação de estômago cheio:</strong> comer menos e se saciar rápido é esperado. Refeições menores ajudam.</li>
+  <li><strong>Prisão de ventre ou diarreia:</strong> alterações no ritmo intestinal são comuns no início.</li>
+  <li><strong>Desconforto abdominal, gases e arrotos:</strong> tendem a ser leves e temporários.</li>
+  <li><strong>Cansaço:</strong> pode aparecer nas primeiras semanas, ligado à redução da quantidade de comida.</li>
+</ul>
+<p>A maior parte desses sintomas é mais intensa logo após iniciar o tratamento ou subir a dose, e vai perdendo força nas semanas seguintes.</p>
+<h2>Como reduzir o desconforto</h2>
+<ul>
+  <li>Comer em menor quantidade e mais devagar, respeitando a saciedade</li>
+  <li>Evitar refeições muito gordurosas ou pesadas, que pioram a náusea</li>
+  <li>Manter boa hidratação ao longo do dia</li>
+  <li>Subir a dose de forma gradual, sempre conforme a orientação médica, sem pressa</li>
+</ul>
+<p>O aumento lento e progressivo da dose é uma das principais ferramentas para minimizar efeitos. Pular etapas para acelerar o resultado costuma trazer mais desconforto sem benefício real.</p>
+<!--CTA-->
+<h2>Sinais que merecem atenção médica</h2>
+<p>A maioria dos efeitos é leve, mas alguns sinais pedem contato com o médico:</p>
+<ul>
+  <li>Dor abdominal forte e persistente, especialmente se irradia para as costas</li>
+  <li>Vômitos intensos ou que impedem de se hidratar</li>
+  <li>Sinais de desidratação, como tontura e boca muito seca</li>
+  <li>Qualquer reação alérgica, como inchaço e falta de ar</li>
+</ul>
+<p>Esses casos são raros, mas conhecer os sinais faz parte de um tratamento seguro. É por isso que o Mounjaro não é um medicamento para usar por conta própria: o acompanhamento existe justamente para agir cedo se algo sair do esperado.</p>
+<h2>Por que o acompanhamento muda a experiência</h2>
+<p>A diferença entre um tratamento tranquilo e um tratamento sofrido costuma estar no acompanhamento. Com ajuste de dose no ritmo certo, orientação alimentar e um canal aberto para tirar dúvidas, os efeitos colaterais deixam de ser um obstáculo. A Dra. Isabel Aragão (CRM-SC 26139) atende em São José/SC e conduz o tratamento com injetáveis de forma individualizada, com atenção justamente a essa fase inicial. O atendimento também está disponível online.</p>`,
+  },
+  {
+    slug: 'wegovy-florianopolis',
+    num: 23,
+    title: 'Wegovy em Florianópolis: O Que É, Como Funciona e Onde Encontrar Médica',
+    shortTitle: 'Wegovy em Florianópolis',
+    intro: 'O Wegovy é a versão da semaglutida aprovada especificamente para obesidade. Se você procura Wegovy em Florianópolis, entenda o que é, como funciona e o que envolve começar o tratamento com acompanhamento.',
+    category: 'Medicamentos',
+    readTime: '5 min',
+    date: 'Julho 2026',
+    metaDesc: 'Wegovy em Florianópolis: o que é (semaglutida para obesidade), como funciona, a diferença para o Ozempic, por que exige prescrição e onde encontrar médica em São José/SC.',
+    related: ['ozempic-florianopolis-prescricao', 'mounjaro-ou-ozempic-qual-escolher', 'glp1-medicamentos-injetaveis-emagrecer', 'tirzepatida-florianopolis'],
+    content: `
+<p>O Wegovy é um dos medicamentos injetáveis mais associados ao tratamento da obesidade. Se você está buscando Wegovy em Florianópolis ou na Grande Florianópolis, este artigo explica o que ele é, como funciona e o que envolve iniciar o tratamento com acompanhamento adequado.</p>
+<h2>O que é o Wegovy</h2>
+<p>O Wegovy é o nome de marca da <strong>semaglutida</strong>, do laboratório Novo Nordisk, na formulação aprovada especificamente para o tratamento da obesidade. A semaglutida age como agonista de GLP-1, um hormônio intestinal que reduz o apetite, aumenta a saciedade e retarda o esvaziamento do estômago. O resultado, na prática, é comer menos e se sentir satisfeito por mais tempo.</p>
+<h2>Wegovy e Ozempic: qual a diferença</h2>
+<p>Essa é a confusão mais comum, e a resposta é simples: os dois têm o mesmo princípio ativo, a semaglutida. A diferença está na indicação e na dose:</p>
+<ul>
+  <li><strong>Ozempic:</strong> aprovado para diabetes tipo 2, em doses de até 2 mg.</li>
+  <li><strong>Wegovy:</strong> aprovado especificamente para obesidade, em dose mais alta (até 2,4 mg).</li>
+</ul>
+<p>Por ter sido desenhado para o tratamento do peso, o Wegovy é a formulação pensada para esse objetivo. Qual dos dois é mais indicado em cada caso é uma decisão do médico prescritor, considerando o histórico e os objetivos de cada paciente.</p>
+<h2>Wegovy e Mounjaro</h2>
+<p>Outra dúvida frequente é como o Wegovy se compara ao Mounjaro. O Wegovy (semaglutida) age em uma via, o GLP-1. O Mounjaro (tirzepatida) age em duas, GLP-1 e GIP. Nos estudos, a tirzepatida tende a mostrar reduções de peso maiores na média, mas a escolha depende de vários fatores individuais, não só desse número.</p>
+<!--CTA-->
+<h2>Como funciona o tratamento</h2>
+<p>O Wegovy é aplicado uma vez por semana, por via subcutânea (sob a pele), com caneta aplicadora. O tratamento começa na dose mais baixa e sobe gradualmente ao longo de semanas, o que permite ao organismo se adaptar e reduz os efeitos colaterais gastrointestinais mais comuns no início, como náusea e desconforto.</p>
+<p>Como todo medicamento dessa classe, o Wegovy exige acompanhamento médico regular: para ajustar a dose, monitorar a composição corporal por bioimpedância e garantir que a perda de peso seja de gordura, preservando a massa muscular. Ele é um recurso dentro de um plano de tratamento, não uma solução isolada.</p>
+<h2>Sobre uso sem prescrição</h2>
+<p>O Wegovy é um medicamento de uso controlado e exige receita. Mais do que uma exigência legal, a avaliação prévia é o que permite confirmar a indicação, identificar contraindicações e definir a dose adequada. Começar por conta própria costuma resultar em mais efeitos colaterais e menos resultado.</p>
+<h2>Onde encontrar médica para Wegovy em Florianópolis</h2>
+<p>A Dra. Isabel Aragão (CRM-SC 26139) atende em São José/SC com foco em emagrecimento e obesidade. Na primeira consulta é feita uma avaliação completa, com bioimpedância e revisão do histórico de saúde, para definir se o tratamento com semaglutida ou outro recurso é o mais indicado para o seu caso. O atendimento também está disponível online para pacientes de outras regiões do Brasil.</p>`,
+  },
+  {
+    slug: 'quanto-tempo-mounjaro-faz-efeito',
+    num: 24,
+    title: 'Em Quanto Tempo o Mounjaro Começa a Fazer Efeito? O Que Esperar',
+    shortTitle: 'Em Quanto Tempo o Mounjaro Faz Efeito',
+    intro: 'Uma das primeiras perguntas de quem começa o Mounjaro é: quando eu vou sentir o efeito? A resposta tem duas partes, e entender isso ajuda a ter expectativas realistas e a não desistir cedo demais.',
+    category: 'Medicamentos',
+    readTime: '4 min',
+    date: 'Julho 2026',
+    metaDesc: 'Em quanto tempo o Mounjaro (tirzepatida) começa a fazer efeito: o que esperar nas primeiras semanas, por que o resultado é gradual e por que a expectativa realista faz diferença no tratamento.',
+    related: ['tirzepatida-florianopolis', 'mounjaro-florianopolis', 'efeitos-colaterais-mounjaro-tirzepatida', 'perda-de-peso-saudavel-quantos-kg-por-mes'],
+    content: `
+<p>Entre as dúvidas mais comuns de quem vai começar o Mounjaro (tirzepatida), essa é quase sempre a primeira: em quanto tempo ele começa a fazer efeito? A resposta ajuda a criar expectativas realistas, e isso importa mais do que parece. Muita gente desiste cedo demais por esperar um resultado que ainda não era para ter aparecido.</p>
+<p>Antes de tudo, um aviso: os prazos abaixo são referências gerais, baseadas no que costuma acontecer e no que os estudos observam em grupos de pacientes. A resposta é individual e varia de pessoa para pessoa. Nada aqui é promessa de resultado.</p>
+<h2>O efeito no apetite aparece cedo</h2>
+<p>Há dois tipos de efeito, e eles acontecem em tempos diferentes. O primeiro é o efeito sobre o apetite, e esse costuma ser percebido logo. Já nas primeiras semanas, muitas pessoas relatam:</p>
+<ul>
+  <li>Menos fome ao longo do dia</li>
+  <li>Saciedade mais rápida durante as refeições</li>
+  <li>Menos vontade de beliscar entre as refeições</li>
+  <li>Uma relação mais tranquila com a comida, com menos pensamento constante em comer</li>
+</ul>
+<p>Esse é o sinal de que o medicamento está agindo. Ele aparece antes de qualquer mudança grande na balança.</p>
+<h2>A mudança no corpo é gradual</h2>
+<p>O segundo efeito, a mudança de composição corporal, é mais lento e progressivo. Isso é proposital e é o jeito saudável de acontecer. O tratamento começa em dose baixa e sobe aos poucos, ao longo de semanas, justamente para o organismo se adaptar com menos efeitos colaterais. É por isso que o resultado se constrói ao longo de meses, não de dias.</p>
+<p>Nos estudos clínicos, os resultados mais expressivos de composição corporal se consolidam ao longo de vários meses de tratamento contínuo. Querer antecipar isso subindo a dose rápido demais só aumenta o desconforto, sem ganho real.</p>
+<!--CTA-->
+<h2>Por que a expectativa realista protege o resultado</h2>
+<p>Entender esses dois tempos, o rápido (apetite) e o gradual (corpo), evita duas armadilhas comuns. A primeira é desanimar na terceira semana porque a balança não mudou o suficiente, quando o corpo está exatamente onde deveria estar. A segunda é a pressa de acelerar, que cobra o preço em náusea e desconforto. O tratamento bem conduzido respeita o ritmo do organismo.</p>
+<h2>O papel do acompanhamento</h2>
+<p>É no acompanhamento que essas expectativas ganham realidade. Com bioimpedância regular, dá para enxergar o que a balança sozinha esconde: se a perda está sendo de gordura, se a massa muscular está preservada, se o ritmo está adequado. A Dra. Isabel Aragão (CRM-SC 26139) atende em São José/SC e conduz o tratamento com injetáveis de forma individualizada, ajustando a dose conforme a resposta de cada paciente. O atendimento também está disponível online.</p>`,
+  },
+  {
+    slug: 'lipedema-ou-gordura-localizada',
+    num: 25,
+    title: 'Lipedema ou Gordura Localizada: Como Saber a Diferença',
+    shortTitle: 'Lipedema ou Gordura Localizada',
+    intro: 'Gordura que não sai com dieta nem exercício, concentrada nas pernas e dolorida ao toque. Pode ser lipedema, e não gordura localizada comum. Saber a diferença muda todo o tratamento.',
+    category: 'Saúde',
+    readTime: '5 min',
+    date: 'Julho 2026',
+    metaDesc: 'Lipedema ou gordura localizada: como diferenciar as duas, quais sinais apontam para lipedema (dor, simetria, resistência a dieta) e por que o diagnóstico correto muda o tratamento. Avaliação em São José/SC.',
+    related: ['lipedema-florianopolis-tratamento', 'bioimpedancia-o-que-e', 'medica-emagrecimento-sao-jose', 'quando-procurar-medico-para-emagrecer'],
+    content: `
+<p>Muita gente convive por anos com um acúmulo de gordura nas pernas que não responde a dieta nem a exercício, e ouve sempre a mesma explicação: é só se esforçar mais. Em parte dos casos, o problema não é falta de esforço. É lipedema, uma condição diferente da gordura localizada comum, que exige um olhar médico específico. Saber diferenciar as duas é o primeiro passo.</p>
+<h2>O que é gordura localizada</h2>
+<p>A gordura localizada é o acúmulo de gordura em regiões específicas do corpo, como abdômen, culote ou coxas. Ela é influenciada por genética, hormônios e estilo de vida e, apesar de teimosa, tende a responder, ainda que devagar, à perda de peso geral, à alimentação e ao exercício. É uma questão estética e metabólica comum, sem a dor característica do lipedema.</p>
+<h2>O que é lipedema</h2>
+<p>O lipedema é uma doença crônica do tecido adiposo que atinge principalmente mulheres. A gordura se acumula de forma anormal e desproporcional, quase sempre nos membros inferiores, e tem características que a gordura comum não tem. É mais do que um acúmulo: é uma condição de saúde que costuma passar anos sem diagnóstico.</p>
+<h2>Os sinais que apontam para lipedema</h2>
+<p>Alguns sinais ajudam a diferenciar o lipedema da gordura localizada comum:</p>
+<ul>
+  <li><strong>Simetria:</strong> o acúmulo acontece nos dois lados do corpo de forma parecida, não em um lugar só</li>
+  <li><strong>Dor e sensibilidade:</strong> a área afetada dói ou incomoda ao toque e à pressão, algo que a gordura comum não provoca</li>
+  <li><strong>Facilidade de hematomas:</strong> surgem manchas roxas sem lembrar de ter batido</li>
+  <li><strong>Resistência a dieta e exercício:</strong> mesmo emagrecendo no resto do corpo, as pernas quase não mudam</li>
+  <li><strong>Desproporção:</strong> tronco e braços em uma proporção, pernas e quadril em outra bem diferente</li>
+  <li><strong>Sensação de peso nas pernas</strong> ao longo do dia</li>
+</ul>
+<p>Se vários desses sinais soam familiares, vale uma avaliação com um profissional que reconheça a condição.</p>
+<!--CTA-->
+<h2>Por que a diferença muda o tratamento</h2>
+<p>Confundir lipedema com gordura localizada leva a anos de frustração, porque o que funciona para um não funciona para o outro. A gordura localizada comum melhora com controle de peso e mudança de estilo de vida. O lipedema não responde da mesma forma, e insistir só na dieta gera a sensação de fracasso, quando o problema era o diagnóstico. O cuidado do lipedema envolve outras abordagens, como terapia de compressão, drenagem, atividade física adaptada e controle de peso quando há obesidade associada.</p>
+<h2>Como é feito o diagnóstico</h2>
+<p>Não existe um exame de sangue ou de imagem que detecte o lipedema. O diagnóstico é clínico, feito com base na história da paciente, no exame físico e no descarte de outras condições. Por isso, o mais importante é buscar um profissional com experiência em reconhecer a condição, que muitas vezes passa despercebida.</p>
+<h2>Avaliação em São José/SC</h2>
+<p>A Dra. Isabel Aragão (CRM-SC 26139) atende em São José/SC e realiza avaliação de composição corporal e avaliação clínica para pacientes que suspeitam de lipedema ou que já têm o diagnóstico e buscam acompanhamento. O objetivo é identificar corretamente a condição e montar um plano adequado para cada caso, e não aplicar um protocolo genérico de emagrecimento. O atendimento também está disponível online.</p>`,
   },
 ]
 
