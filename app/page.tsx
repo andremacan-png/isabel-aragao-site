@@ -116,16 +116,19 @@ export default function Home() {
             Agendar consulta
           </a>
         </div>
-        <AnchorBar links={[
-          { href: '#metodo', label: 'Método' },
-          { href: '#sobre', label: 'Sobre a Dra.' },
-          { href: '#servicos', label: 'Atendimento' },
-          { href: '#faq', label: 'Dúvidas' },
-        ]} />
+        {/* Submenu de âncoras: só desktop (no mobile comia a dobra) */}
+        <div className="hidden md:block">
+          <AnchorBar links={[
+            { href: '#metodo', label: 'Método' },
+            { href: '#sobre', label: 'Sobre a Dra.' },
+            { href: '#servicos', label: 'Atendimento' },
+            { href: '#faq', label: 'Dúvidas' },
+          ]} />
+        </div>
       </nav>
 
       {/* ── HERO ── */}
-      <section className="min-h-screen bg-white relative overflow-hidden flex items-center pt-[104px]">
+      <section className="min-h-screen bg-white relative overflow-hidden flex items-center pt-[68px] md:pt-[104px]">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-bl from-primary-50/60 to-transparent pointer-events-none" />
         <div className="absolute -bottom-16 -left-16 w-72 h-72 bg-[#E8823A]/6 rounded-full blur-3xl pointer-events-none" />
 
@@ -158,7 +161,7 @@ export default function Home() {
             <div className="md:hidden mt-4">
               <div className="flex items-center gap-2 mb-4">
                 <span className="text-[#E8823A] text-base leading-none tracking-tight">★★★★★</span>
-                <span className="text-[#3A2C55] text-sm font-bold">+300 pacientes · +50 avaliações 5★ no Google</span>
+                <span className="text-[#3A2C55] text-sm font-bold">+500 pacientes · +50 avaliações 5★ no Google</span>
               </div>
               <a href={WA} target="_blank" rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2.5 bg-[#E8823A] text-white px-6 py-4 rounded-2xl text-base font-bold shadow-lg shadow-[#E8823A]/25 hover:bg-[#d4691e] transition-colors">
@@ -233,7 +236,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
             {[
-              { value: '+300', label: 'pacientes com qualidade\nde vida transformada' },
+              { value: '+500', label: 'pacientes com qualidade\nde vida transformada' },
               { value: '+50', label: 'avaliações 5 estrelas\nno Google' },
               { value: 'Einstein', label: 'especialização em obesidade\ne emagrecimento concluída', serif: true },
             ].map((stat, i) => (
