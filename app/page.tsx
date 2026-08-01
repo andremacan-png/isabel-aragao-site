@@ -127,8 +127,48 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* ── HERO ── */}
-      <section className="min-h-screen bg-white relative overflow-hidden flex items-center pt-[68px] md:pt-[104px]">
+      {/* ── HERO MOBILE — foto full-bleed com texto sobreposto ── */}
+      <section className="md:hidden relative mt-[60px] min-h-[600px] h-[calc(100dvh-60px)] flex flex-col justify-end overflow-hidden">
+        <Image
+          src="/images/hero-mobile.jpg"
+          alt="Dra. Isabel Aragão — Médica Especialista em Emagrecimento"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#150a34]/45 to-transparent" />
+        <div className="relative z-10 mx-4 mb-6 rounded-2xl bg-[#160a34]/58 backdrop-blur-md border border-white/10 shadow-2xl shadow-black/40 px-5 py-5">
+          <span className="inline-flex items-baseline gap-2 text-[#F5A623] text-[11px] font-extrabold mb-3 tracking-wider uppercase leading-tight">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#F5A623] flex-none translate-y-0.5" />
+            Médica de emagrecimento · São José/SC · Particular
+          </span>
+          <h1 className="font-playfair text-[27px] font-black text-white leading-[1.1] tracking-tight">
+            Emagrecimento médico,{' '}
+            <span className="text-[#C9A6FF] relative inline-block">
+              individualizado
+              <span className="absolute -bottom-0.5 left-0 w-full h-0.5 bg-[#F5A623]/80 rounded-full" />
+            </span>{' '}
+            e sustentável
+          </h1>
+          <p className="text-[15px] text-[#E4DAF0] leading-snug mt-3">
+            Acompanhamento de perto, feito para o seu corpo. Sem dieta genérica.
+          </p>
+          <div className="flex items-center gap-2 mt-4">
+            <span className="text-[#F5A623] text-base leading-none tracking-tight">★★★★★</span>
+            <span className="text-[#F0E9FA] text-[12.5px] font-bold leading-tight">+500 pacientes<br />+50 avaliações 5★ no Google</span>
+          </div>
+          <a href={WA} target="_blank" rel="noopener noreferrer"
+            className="flex items-center justify-center gap-2.5 bg-[#E8823A] text-white px-6 py-4 rounded-2xl text-base font-bold shadow-lg shadow-black/30 mt-4">
+            <WAIcon />
+            Falar no WhatsApp
+          </a>
+          <p className="text-center text-[12px] text-[#B7A9D4] font-medium mt-2.5">Resposta rápida · sem convênio</p>
+        </div>
+      </section>
+
+      {/* ── HERO DESKTOP (2 colunas) ── */}
+      <section className="hidden md:flex min-h-screen bg-white relative overflow-hidden items-center md:pt-[104px]">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-bl from-primary-50/60 to-transparent pointer-events-none" />
         <div className="absolute -bottom-16 -left-16 w-72 h-72 bg-[#E8823A]/6 rounded-full blur-3xl pointer-events-none" />
 
@@ -168,7 +208,7 @@ export default function Home() {
                 <WAIcon />
                 Falar no WhatsApp
               </a>
-              <p className="text-center text-xs text-gray-400 font-medium mt-2.5">Resposta rápida no horário comercial · sem convênio</p>
+              <p className="text-center text-xs text-gray-400 font-medium mt-2.5">Resposta rápida · sem convênio</p>
             </div>
             {/* Localização + CTAs: só no desktop */}
             <p className="hidden md:flex text-sm text-gray-400 mt-5 mb-7 flex-wrap gap-x-5 gap-y-1">
