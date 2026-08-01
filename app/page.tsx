@@ -138,6 +138,11 @@ export default function Home() {
               <span className="w-1.5 h-1.5 rounded-full bg-[#E8823A]" />
               Especialização Albert Einstein · CRM-SC 26.139
             </span>
+            {/* Eyebrow qualificador — só mobile (quem · onde · particular) */}
+            <span className="md:hidden inline-flex items-center gap-2 text-[#C4621A] text-[11px] font-extrabold mb-3 tracking-wider uppercase leading-tight">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#E8823A] flex-none" />
+              Médica de emagrecimento · São José/SC · Particular
+            </span>
             <h1 className="font-playfair text-3xl sm:text-4xl lg:text-[3.5rem] font-black text-gray-900 leading-[1.1] tracking-tight mb-4">
               Emagrecimento médico,{' '}
               <span className="text-primary-600 relative inline-block">
@@ -147,8 +152,21 @@ export default function Home() {
               e sustentável
             </h1>
             <p className="text-lg text-gray-500 leading-relaxed">
-              Descubra por que seu corpo resiste à perda de peso e como destravar esse processo com segurança — com acompanhamento médico real, baseado em ciência e no seu histórico único.
+              Acompanhamento de perto, feito para o seu corpo. Sem dieta genérica.
             </p>
+            {/* Prova social + CTA WhatsApp — só mobile, na dobra */}
+            <div className="md:hidden mt-4">
+              <div className="flex items-center gap-2 mb-4">
+                <span className="text-[#E8823A] text-base leading-none tracking-tight">★★★★★</span>
+                <span className="text-[#3A2C55] text-sm font-bold">+300 pacientes · +50 avaliações 5★ no Google</span>
+              </div>
+              <a href={WA} target="_blank" rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2.5 bg-[#E8823A] text-white px-6 py-4 rounded-2xl text-base font-bold shadow-lg shadow-[#E8823A]/25 hover:bg-[#d4691e] transition-colors">
+                <WAIcon />
+                Falar no WhatsApp
+              </a>
+              <p className="text-center text-xs text-gray-400 font-medium mt-2.5">Resposta rápida no horário comercial · sem convênio</p>
+            </div>
             {/* Localização + CTAs: só no desktop */}
             <p className="hidden md:flex text-sm text-gray-400 mt-5 mb-7 flex-wrap gap-x-5 gap-y-1">
               <span>📍 Presencial · São José / Grande Florianópolis</span>
@@ -215,7 +233,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
             {[
-              { value: '+200', label: 'pacientes com qualidade\nde vida transformada' },
+              { value: '+300', label: 'pacientes com qualidade\nde vida transformada' },
               { value: '+50', label: 'avaliações 5 estrelas\nno Google' },
               { value: 'Einstein', label: 'especialização em obesidade\ne emagrecimento concluída', serif: true },
             ].map((stat, i) => (
