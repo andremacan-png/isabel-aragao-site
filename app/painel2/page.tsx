@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { getPainelData, PERIODOS, type PeriodoKey } from '../painel/adsData'
 import { getMetaData } from '../painel/metaAdsData'
 import { getGscData } from '../painel/gscData'
-import { getPainel2Series, TAXA_CONTATO_CONSULTA, type SerieTot } from './painel2Data'
+import { getPainel2Series, TAXA_CONTATO_CONSULTA, CONSULTAS_MES_REF, CONTATOS_MES_REF, MES_REF_LABEL, type SerieTot } from './painel2Data'
 
 export const metadata: Metadata = {
   title: 'Painel de Tráfego 2.0 — Dra. Isabel',
@@ -189,7 +189,7 @@ export default async function Painel2Page({ searchParams }: { searchParams: Prom
   const sparkContatos = dias.map((d) => d.contatos)
   const sparkCpc = cpcSeries(dias)
 
-  // Fase 3b — custo estimado por consulta marcada
+  // Fase 3b — custo por consulta fechada = custo/contato ÷ taxa de agendamento medida
   const custoConsulta = totalCpc ? totalCpc / TAXA_CONTATO_CONSULTA : 0
 
   // Card Google × Meta
@@ -289,15 +289,18 @@ export default async function Painel2Page({ searchParams }: { searchParams: Prom
           />
         </div>
 
-        {/* Custo estimado por consulta marcada (planejamento) */}
-        <div className="mt-4 rounded-[18px] border border-dashed border-[#d8c9b4] bg-[#FBF7F0] px-5 py-4 flex flex-wrap items-center justify-between gap-x-6 gap-y-2">
+        {/* Do contato à consulta — taxa medida na agenda + custo por consulta fechada */}
+        <div className="mt-4 rounded-[18px] border border-[#e6dcc9] bg-[#FBF7F0] px-5 py-4 flex flex-wrap items-center justify-between gap-x-6 gap-y-3">
           <div>
-            <p className="text-[11.5px] font-bold uppercase tracking-[0.05em] text-[#a99274]">Estimativa · custo por consulta marcada</p>
+            <p className="text-[11.5px] font-bold uppercase tracking-[0.05em] text-[#a99274]">Do contato à consulta fechada · medido em {MES_REF_LABEL}</p>
             <p className="text-[13px] text-[#6b6076] mt-0.5">
-              Supondo que <b>{Math.round(TAXA_CONTATO_CONSULTA * 100)}%</b> dos contatos viram consulta marcada · ajustável conforme a agenda real
+              <b className="text-[#8a6a2f]">{Math.round(TAXA_CONTATO_CONSULTA * 100)}%</b> dos contatos fecharam consulta — {CONSULTAS_MES_REF} consultas / {CONTATOS_MES_REF} contatos (Google + Meta)
             </p>
           </div>
-          <p className="font-playfair text-[30px] font-extrabold text-[#8a6a2f] leading-none">{custoConsulta ? brl(custoConsulta) : '—'}</p>
+          <div className="text-right">
+            <p className="font-playfair text-[30px] font-extrabold text-[#8a6a2f] leading-none">{custoConsulta ? brl(custoConsulta) : '—'}</p>
+            <p className="text-[11px] text-[#a99274] font-semibold mt-1 uppercase tracking-[0.04em]">custo por consulta fechada</p>
+          </div>
         </div>
 
         {/* Google × Meta */}

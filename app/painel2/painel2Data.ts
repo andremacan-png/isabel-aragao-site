@@ -11,10 +11,14 @@ const CONV_ACTION = 'onsite_conversion.messaging_conversation_started_7d'
 // 'hoje' e 'ontem' não têm série comparável e caem no null (sem deltas).
 const DIAS: Record<string, number> = { '7d': 7, '14d': 14, '30d': 30 }
 
-// ── Fase 3b · estimativa de custo por consulta MARCADA ─────────────────────────
-// Não existe atribuição automática de contato→consulta (a origem é marcada à mão
-// no WhatsApp). Esta taxa é uma LENTE DE PLANEJAMENTO, ajuste conforme a agenda real.
-export const TAXA_CONTATO_CONSULTA = 0.5 // 50% dos contatos viram consulta marcada (estimativa)
+// ── Fase 3b · do contato à consulta (taxa MEDIDA) ──────────────────────────────
+// Não há atribuição automática contato→consulta (a origem é marcada à mão no
+// WhatsApp), então a taxa vem da CONTAGEM real da agenda. Atualize estes dois
+// números a cada mês fechado — a taxa e o custo/consulta se recalculam sozinhos.
+export const CONSULTAS_MES_REF = 26 // consultas fechadas em julho/2026 (Google + Meta)
+export const CONTATOS_MES_REF = 183 // contatos pagos no mesmo período (~30 dias: 56 Google + 127 Meta)
+export const MES_REF_LABEL = 'julho'
+export const TAXA_CONTATO_CONSULTA = CONSULTAS_MES_REF / CONTATOS_MES_REF // ≈ 14,2%
 
 export type SerieTot = { invest: number; contatos: number }
 export type PontoDia = { data: string; invest: number; contatos: number }
