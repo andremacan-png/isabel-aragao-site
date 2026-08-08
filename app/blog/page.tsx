@@ -5,6 +5,7 @@ import { POSTS } from '@/lib/blog/posts'
 export const metadata: Metadata = {
   title: 'Blog — Saúde & Emagrecimento | Dra. Isabel Aragão',
   description: 'Artigos sobre emagrecimento, obesidade, bioimpedância e saúde metabólica escritos pela Dra. Isabel Aragão (CRM-SC 26139), médica de emagrecimento em São José/SC.',
+  alternates: { canonical: 'https://isabelaragao.com.br/blog' },
 }
 
 const CATEGORIES = ['Todos', 'Tratamento', 'Ciência', 'Exames', 'Saúde', 'Especialidades', 'Medicamentos']
