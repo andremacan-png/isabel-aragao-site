@@ -119,16 +119,19 @@ async function googleDaily(n: number): Promise<ByDate | null> {
   }
   if (GOOGLE_ADS_LOGIN_CUSTOMER_ID) headers['login-customer-id'] = GOOGLE_ADS_LOGIN_CUSTOMER_ID.replace(/\D/g, '')
 
-  const res = await fetch(`https://googleads.googleapis.com/${GOOGLE_API_VERSION}/customers/${cid}/googleAds:search`, {
-    method: 'POST',
-    headers,
-    body: JSON.stringify({ query }),
-    cache: 'no-store',
-  })
-  if (!res.ok) return null
+  const url = `https://googleads.googleapis.com/${GOOGLE_API_VERSION}/customers/${cid}/googleAds:search`
+  let rows: any[] | null = null
+  for (let tentativa = 0; tentativa < 3; tentativa++) {
+    const res = await fetch(url, { method: 'POST', headers, body: JSON.stringify({ query }), cache: 'no-store' })
+    if (res.ok) {
+      const j = await res.json()
+      rows = j.results ?? []
+      break
+    }
+    if (tentativa < 2) await new Promise((r) => setTimeout(r, 400 * (tentativa + 1)))
+  }
+  if (rows === null) return null
 
-  const j = await res.json()
-  const rows: any[] = j.results ?? []
   const byDate: ByDate = new Map()
   for (const r of rows) {
     const d: string = r.segments?.date ?? ''
@@ -220,16 +223,20 @@ async function googleSpendRange(inicio: string, fim: string): Promise<number | n
   }
   if (GOOGLE_ADS_LOGIN_CUSTOMER_ID) headers['login-customer-id'] = GOOGLE_ADS_LOGIN_CUSTOMER_ID.replace(/\D/g, '')
 
-  const res = await fetch(`https://googleads.googleapis.com/${GOOGLE_API_VERSION}/customers/${cid}/googleAds:search`, {
-    method: 'POST',
-    headers,
-    body: JSON.stringify({ query }),
-    cache: 'no-store',
-  })
-  if (!res.ok) return null
-  const j = await res.json()
-  const rows: any[] = j.results ?? []
-  return rows.reduce((s, r) => s + Number(r.metrics?.costMicros ?? 0) / 1e6, 0)
+  // Retry com backoff: getPainelData + série + esta query batem no googleAds:search
+  // ao mesmo tempo e o limite de concorrência da API derruba uma. Quando as outras
+  // terminam, a re-tentativa passa.
+  const url = `https://googleads.googleapis.com/${GOOGLE_API_VERSION}/customers/${cid}/googleAds:search`
+  for (let tentativa = 0; tentativa < 3; tentativa++) {
+    const res = await fetch(url, { method: 'POST', headers, body: JSON.stringify({ query }), cache: 'no-store' })
+    if (res.ok) {
+      const j = await res.json()
+      const rows: any[] = j.results ?? []
+      return rows.reduce((s, r) => s + Number(r.metrics?.costMicros ?? 0) / 1e6, 0)
+    }
+    if (tentativa < 2) await new Promise((r) => setTimeout(r, 400 * (tentativa + 1)))
+  }
+  return null
 }
 
 async function metaSpendRange(inicio: string, fim: string): Promise<number | null> {
