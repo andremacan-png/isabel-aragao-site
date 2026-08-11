@@ -74,23 +74,34 @@ const LINHAS = { para: 208, serv: 494, msg: 754, de: 918 };  // medidas na arte
 
 function quebra(texto, fonte, maxw) {
   cx.font = fonte;
-  const palavras = texto.split(/\s+/).filter(Boolean);
-  const linhas = [];
-  let atual = '';
-  for (const p of palavras) {
-    const teste = atual ? atual + ' ' + p : p;
-    if (cx.measureText(teste).width > maxw && atual) { linhas.push(atual); atual = p; }
-    else atual = teste;
+  const out = [];
+  for (const bloco of texto.split('\n')) {           // Enter = quebra manual
+    const palavras = bloco.split(/[ 	]+/).filter(Boolean);
+    if (!palavras.length) { out.push(''); continue; }
+    let atual = '';
+    for (let pal of palavras) {
+      while (cx.measureText(pal).width > maxw) {      // palavra maior que a largura: fatia por caractere
+        if (atual) { out.push(atual); atual = ''; }
+        let i = 1;
+        while (i < pal.length && cx.measureText(pal.slice(0, i + 1)).width <= maxw) i++;
+        out.push(pal.slice(0, i));
+        pal = pal.slice(i);
+      }
+      const teste = atual ? atual + ' ' + pal : pal;
+      if (cx.measureText(teste).width > maxw && atual) { out.push(atual); atual = pal; }
+      else atual = teste;
+    }
+    if (atual) out.push(atual);
   }
-  if (atual) linhas.push(atual);
-  return linhas;
+  while (out.length && out[out.length - 1] === '') out.pop();
+  return out;
 }
 
 // desenha bloco alinhado pelo TOPO (1ª linha sempre logo abaixo do rótulo;
 // sobra fica em branco embaixo, sem escrever sobre a linha do campo)
 function blocoTopo(linhas, topoY, espacamento) {
   let y = topoY;
-  for (const l of linhas) { cx.fillText(l, X, y, 1360); y += espacamento; }
+  for (const l of linhas) { cx.fillText(l, X, y); y += espacamento; }
 }
 
 // auto-fit: reduz a fonte até caber em maxLinhas
