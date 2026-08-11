@@ -86,9 +86,10 @@ function quebra(texto, fonte, maxw) {
   return linhas;
 }
 
-// desenha bloco com fim ancorado logo acima da linha do campo
-function blocoAncorado(linhas, tam, linhaY, espacamento) {
-  let y = linhaY - 22 - (linhas.length - 1) * espacamento;
+// desenha bloco alinhado pelo TOPO (1ª linha sempre logo abaixo do rótulo;
+// sobra fica em branco embaixo, sem escrever sobre a linha do campo)
+function blocoTopo(linhas, topoY, espacamento) {
+  let y = topoY;
   for (const l of linhas) { cx.fillText(l, X, y, 1360); y += espacamento; }
 }
 
@@ -117,11 +118,11 @@ function desenhar() {
 
   const aServ = ajustar(serv, '700', 46, 34, 3, MAXW);
   cx.font = '700 ' + aServ.tam + 'px PJS';
-  blocoAncorado(aServ.linhas, aServ.tam, LINHAS.serv, aServ.tam + 14);
+  blocoTopo(aServ.linhas, 356, 58);
 
   const aMsg = ajustar(msg, 'italic 600', 44, 28, 3, MAXW);
   cx.font = 'italic 600 ' + aMsg.tam + 'px PJS';
-  blocoAncorado(aMsg.linhas, aMsg.tam, LINHAS.msg, aMsg.tam + 12);
+  blocoTopo(aMsg.linhas, 634, 54);
 
   cx.font = '800 52px PJS';
   cx.fillText(de, X, LINHAS.de - 20, MAXW);
