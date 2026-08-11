@@ -190,11 +190,10 @@ export default async function Painel2Page({ searchParams }: { searchParams: Prom
   const sparkContatos = dias.map((d) => d.contatos)
   const sparkCpc = cpcSeries(dias)
 
-  // Custo por consulta fechada · por canal (agosto): qual canal traz paciente mais barato
-  const metaMaisBarato =
-    !!canais && canais.meta.consultas > 0 && canais.google.consultas > 0 && canais.meta.custo <= canais.google.custo
-  const googleMaisBarato =
-    !!canais && canais.meta.consultas > 0 && canais.google.consultas > 0 && canais.google.custo < canais.meta.custo
+  // Custo por consulta fechada · por canal: só dá pra dizer "mais barato" quando AMBOS gastaram
+  const podeComparar = !!canais && canais.meta.invest > 0 && canais.google.invest > 0 && canais.meta.consultas > 0 && canais.google.consultas > 0
+  const metaMaisBarato = podeComparar && canais!.meta.custo <= canais!.google.custo
+  const googleMaisBarato = podeComparar && canais!.google.custo < canais!.meta.custo
 
   // Card Google × Meta
   const temComparacao = !!meta && mContatos > 0 && gContatos > 0
@@ -298,37 +297,12 @@ export default async function Painel2Page({ searchParams }: { searchParams: Prom
           <>
             <SectionLabel>Custo por consulta fechada · por canal ({canais.label}, do dia 1 até hoje)</SectionLabel>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              {/* Meta */}
-              <div className={`rounded-[20px] border p-5 sm:p-6 ${metaMaisBarato ? 'bg-gradient-to-br from-white via-white to-[#FFF3E6] border-[#F0C98E]' : 'bg-white border-[#EBE3D6]'}`}>
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2 text-[#7a6ea0] text-[12px] font-bold uppercase tracking-[0.05em]">
-                    <span className="w-2.5 h-2.5 rounded-[3px] bg-[#E8823A]" /> Meta · Instagram
-                  </div>
-                  {metaMaisBarato && <span className="text-[10.5px] font-extrabold px-2 py-0.5 rounded-full bg-[#E7F5EC] text-[#1E7A3E] uppercase tracking-[0.04em]">mais barato</span>}
-                </div>
-                <div className="font-playfair text-[40px] font-extrabold text-[#12082a] mt-2 leading-none">{canais.meta.consultas ? brl(canais.meta.custo) : '—'}</div>
-                <p className="text-[12.5px] text-[#8a7f92] mt-2">{canais.meta.consultas} consultas · {brl0(canais.meta.invest)} investidos</p>
-              </div>
-              {/* Google */}
-              <div className={`rounded-[20px] border p-5 sm:p-6 ${googleMaisBarato ? 'bg-gradient-to-br from-white via-white to-[#F3EFFa] border-[#CDBEE9]' : 'bg-white border-[#EBE3D6]'}`}>
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2 text-[#7a6ea0] text-[12px] font-bold uppercase tracking-[0.05em]">
-                    <span className="w-2.5 h-2.5 rounded-[3px] bg-[#695192]" /> Google · Site
-                  </div>
-                  {googleMaisBarato && <span className="text-[10.5px] font-extrabold px-2 py-0.5 rounded-full bg-[#E7F5EC] text-[#1E7A3E] uppercase tracking-[0.04em]">mais barato</span>}
-                </div>
-                <div className="font-playfair text-[40px] font-extrabold text-[#12082a] mt-2 leading-none">{canais.google.consultas ? brl(canais.google.custo) : '—'}</div>
-                <p className="text-[12.5px] text-[#8a7f92] mt-2">{canais.google.consultas} consultas · {brl0(canais.google.invest)} investidos</p>
-              </div>
-              {/* Total */}
-              <div className="rounded-[20px] border border-[#EBE3D6] bg-[#faf7f2] p-5 sm:p-6">
-                <div className="flex items-center gap-2 text-[#7a6ea0] text-[12px] font-bold uppercase tracking-[0.05em]">Total (Google + Meta)</div>
-                <div className="font-playfair text-[40px] font-extrabold text-[#12082a] mt-2 leading-none">{canais.total.consultas ? brl(canais.total.custo) : '—'}</div>
-                <p className="text-[12.5px] text-[#8a7f92] mt-2">{canais.total.consultas} consultas · {brl0(canais.total.invest)} investidos</p>
-              </div>
+              <CanalConsultaCard nome="Meta · Instagram" dot="#E8823A" canal={canais.meta} badge={metaMaisBarato} />
+              <CanalConsultaCard nome="Google · Site" dot="#695192" canal={canais.google} badge={googleMaisBarato} />
+              <CanalConsultaCard nome="Total (Google + Meta)" dot="" canal={canais.total} />
             </div>
             <p className="text-[12px] text-[#9a8f86] mt-3">
-              Consultas fechadas contadas por origem (Instagram × site) de 1º de {canais.label} até hoje, sobre a verba de cada canal no mesmo período. É amostra pequena no começo do mês, então o valor por consulta ainda oscila bastante.
+              Consultas fechadas contadas por origem (Instagram × site) de 1º de {canais.label} até hoje, sobre a verba de cada canal no mesmo período. Um canal com <b>R$ 0 em anúncios</b> teve consultas vindas do orgânico (SEO/direto), sem custo de mídia. É amostra pequena no começo do mês, então o valor por consulta ainda oscila bastante.
             </p>
           </>
         )}
@@ -591,6 +565,36 @@ export default async function Painel2Page({ searchParams }: { searchParams: Prom
           {!live && ` Mostrando snapshot (${data.periodoLabel}).`}
         </p>
       </div>
+    </div>
+  )
+}
+
+// Card de custo por consulta fechada por canal (trata o caso "sem anúncio/orgânico")
+function CanalConsultaCard({
+  nome,
+  dot,
+  canal,
+  badge = false,
+}: {
+  nome: string
+  dot: string
+  canal: { invest: number; consultas: number; custo: number; disponivel: boolean }
+  badge?: boolean
+}) {
+  const semAnuncio = canal.disponivel && canal.consultas > 0 && canal.invest < 0.5
+  const big = !canal.disponivel ? '—' : canal.consultas === 0 ? '—' : canal.invest >= 0.5 ? brl(canal.custo) : 'Orgânico'
+  const organico = big === 'Orgânico'
+  return (
+    <div className={`rounded-[20px] border p-5 sm:p-6 ${badge ? 'bg-gradient-to-br from-white via-white to-[#FFF3E6] border-[#F0C98E]' : 'bg-white border-[#EBE3D6]'}`}>
+      <div className="flex items-center justify-between gap-2">
+        <div className="flex items-center gap-2 text-[#7a6ea0] text-[12px] font-bold uppercase tracking-[0.05em]">
+          {dot && <span className="w-2.5 h-2.5 rounded-[3px]" style={{ background: dot }} />} {nome}
+        </div>
+        {badge && <span className="text-[10.5px] font-extrabold px-2 py-0.5 rounded-full bg-[#E7F5EC] text-[#1E7A3E] uppercase tracking-[0.04em] shrink-0">mais barato</span>}
+      </div>
+      <div className={`font-playfair font-extrabold mt-2 leading-none ${organico ? 'text-[26px] text-[#1E7A3E]' : 'text-[40px] text-[#12082a]'}`}>{big}</div>
+      <p className="text-[12.5px] text-[#8a7f92] mt-2">{canal.consultas} consultas · {brl0(canal.invest)} em anúncios</p>
+      {semAnuncio && <p className="text-[11.5px] text-[#1E7A3E] font-semibold mt-1">sem gasto em anúncio (vieram do orgânico)</p>}
     </div>
   )
 }

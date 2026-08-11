@@ -164,7 +164,7 @@ export const CONSULTAS_MES = {
   meta: 4, // consultas fechadas que vieram do INSTAGRAM (Meta)
 }
 
-export type CanalCusto = { invest: number; consultas: number; custo: number }
+export type CanalCusto = { invest: number; consultas: number; custo: number; disponivel: boolean }
 export type CustoConsultaCanais = {
   label: string
   desde: string
@@ -234,18 +234,21 @@ export async function getCustoConsultaCanais(): Promise<CustoConsultaCanais | nu
 
     const gInvest = g ?? 0
     const mInvest = m ?? 0
-    const canal = (invest: number, consultas: number): CanalCusto => ({
+    // custo só faz sentido quando houve GASTO em anúncio; sem gasto (invest≈0) as
+    // consultas vieram do orgânico e o custo de mídia é zero, não "barato".
+    const canal = (invest: number, consultas: number, disponivel: boolean): CanalCusto => ({
       invest,
       consultas,
-      custo: consultas ? invest / consultas : 0,
+      custo: invest > 0 && consultas ? invest / consultas : 0,
+      disponivel,
     })
     return {
       label: CONSULTAS_MES.label,
       desde: inicio,
       ate: fim,
-      google: canal(gInvest, CONSULTAS_MES.google),
-      meta: canal(mInvest, CONSULTAS_MES.meta),
-      total: canal(gInvest + mInvest, CONSULTAS_MES.google + CONSULTAS_MES.meta),
+      google: canal(gInvest, CONSULTAS_MES.google, g !== null),
+      meta: canal(mInvest, CONSULTAS_MES.meta, m !== null),
+      total: canal(gInvest + mInvest, CONSULTAS_MES.google + CONSULTAS_MES.meta, g !== null || m !== null),
     }
   } catch {
     return null
