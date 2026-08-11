@@ -4,20 +4,22 @@ import { POSTS } from '@/lib/blog/posts'
 const BASE = 'https://isabelaragao.com.br'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const lastModified = new Date()
+  const now = new Date()
 
-  const blogPosts: MetadataRoute.Sitemap = POSTS.map((post) => ({
-    url: `${BASE}/blog/${post.slug}`,
-    lastModified,
-    changeFrequency: 'monthly' as const,
-    priority: 0.8,
+  const paginas: MetadataRoute.Sitemap = [
+    { url: BASE, lastModified: now, changeFrequency: 'weekly', priority: 1 },
+    { url: `${BASE}/saude`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${BASE}/emagrecimento`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${BASE}/blog`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
+    { url: `${BASE}/politica`, lastModified: now, changeFrequency: 'yearly', priority: 0.3 },
+  ]
+
+  const posts: MetadataRoute.Sitemap = POSTS.map((p) => ({
+    url: `${BASE}/blog/${p.slug}`,
+    lastModified: now,
+    changeFrequency: 'monthly',
+    priority: 0.6,
   }))
 
-  return [
-    { url: BASE, lastModified, changeFrequency: 'monthly', priority: 1 },
-    { url: `${BASE}/saude`, lastModified, changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${BASE}/emagrecimento`, lastModified, changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${BASE}/blog`, lastModified, changeFrequency: 'weekly', priority: 0.85 },
-    ...blogPosts,
-  ]
+  return [...paginas, ...posts]
 }

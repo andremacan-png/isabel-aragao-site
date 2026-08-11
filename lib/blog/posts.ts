@@ -340,14 +340,14 @@ export const POSTS: Post[] = [
   {
     slug: 'perda-de-peso-saudavel-quantos-kg-por-mes',
     num: 10,
-    title: 'Quantos Kg por Mês é Saudável Perder? O Ritmo Seguro e os Riscos da Pressa',
+    title: 'Quantos Kg por Mês é Saudável Perder? A Resposta é 2 a 4 kg',
     shortTitle: 'Quanto Kg por Mês é Seguro Emagrecer',
     intro: 'Emagrecer rápido parece ótimo, até você descobrir o preço. Perda de cabelo, perda de músculo, cálculos na vesícula e efeito sanfona. Entenda por que o ritmo certo é fundamental.',
     category: 'Saúde',
     readTime: '5 min',
     date: 'Julho 2026',
-    metaDesc: 'Quantos kg por mês é saudável perder? O ritmo seguro (0,5 a 1 kg por semana), os riscos de emagrecer rápido (músculo, cabelo, vesícula) e como saber se você perde gordura ou água.',
-    related: ['bioimpedancia-o-que-e', 'por-que-dieta-sozinha-falha', 'como-funciona-acompanhamento-medico-emagrecimento', 'emagrecimento-apos-40-anos'],
+    metaDesc: 'Quantos kg por mês dá para perder com saúde? O ritmo seguro é de 2 a 4 kg. Veja os riscos da pressa (perda de músculo, queda de cabelo, vesícula) e como saber se você perde gordura ou água.',
+    related: ['bioimpedancia-o-que-e', 'como-funciona-acompanhamento-medico-emagrecimento', 'medica-emagrecimento-sao-jose', 'clinica-emagrecimento-sao-jose-sc'],
     content: `
 <p>Toda paciente quer emagrecer o mais rápido possível. É compreensível — carregar peso extra é desconfortável, e a motivação no início do tratamento costuma ser alta. Mas a velocidade importa: emagrecer muito rápido cobra um preço que muitas pessoas não sabem que estão pagando.</p>
 <h2>O ritmo saudável segundo as evidências</h2>
@@ -373,7 +373,7 @@ export const POSTS: Post[] = [
 <p>A balança mede peso total: gordura, músculo, água, ossos. Você pode perder 3 kg de músculo e água e ganhar 1 kg de gordura — e a balança vai mostrar que você "emagreceu" 2 kg. A bioimpedância desfaz essa confusão: ela mede separadamente cada componente e mostra se o processo está indo no caminho certo.</p>
 <p>Por isso, o acompanhamento médico com bioimpedância regular é tão importante: ele garante que a perda que está acontecendo é a perda que importa.</p>
 <h2>O número que não aparece na balança</h2>
-<p>A meta não é um número na balança — é uma composição corporal mais saudável. Com o tratamento adequado, é possível reduzir gordura enquanto mantém (ou até aumenta) massa muscular. Isso não se consegue com dietas radicais: se consegue com um plano individualizado e bem monitorado.</p>`,
+<p>A meta não é um número na balança, e sim uma composição corporal mais saudável. Com o tratamento adequado, é possível reduzir gordura enquanto se mantém (ou até se aumenta) a massa muscular. Isso não se consegue com dietas radicais: se consegue com um <a href="/blog/como-funciona-acompanhamento-medico-emagrecimento">plano individualizado e bem monitorado</a>. Se você está na Grande Florianópolis, veja como isso funciona na prática em uma <a href="/blog/clinica-emagrecimento-sao-jose-sc">clínica de emagrecimento em São José/SC</a>.</p>`,
   },
   {
     slug: 'primeira-consulta-medica-emagrecimento',
@@ -652,13 +652,13 @@ export const POSTS: Post[] = [
   {
     slug: 'clinica-emagrecimento-sao-jose-sc',
     num: 18,
-    title: 'Clínica de Emagrecimento em São José/SC — O Que Avaliar Antes de Escolher',
+    title: 'Clínica de Emagrecimento em São José/SC: Como Funciona e Como Escolher',
     shortTitle: 'Clínica de Emagrecimento em São José/SC',
     intro: 'Se você está pesquisando clínicas de emagrecimento em São José/SC, saber o que avaliar pode poupar meses de tratamento inadequado. Este artigo explica o que distingue uma abordagem séria.',
     category: 'Tratamento',
     readTime: '5 min',
     date: 'Julho 2026',
-    metaDesc: 'Como escolher uma clínica de emagrecimento em São José/SC: o que avaliar na equipe, na abordagem e no acompanhamento, red flags a evitar e perguntas importantes para fazer antes de começar.',
+    metaDesc: 'Procura clínica de emagrecimento em São José/SC? Veja como funciona o tratamento (avaliação, bioimpedância, plano individual), o que avaliar antes de escolher e como agendar.',
     related: ['medica-emagrecimento-sao-jose', 'primeira-consulta-medica-emagrecimento', 'como-escolher-medico-emagrecimento', 'bioimpedancia-sao-jose-sc'],
     content: `
 <p>Se você está pesquisando clínica de emagrecimento em São José/SC ou na Grande Florianópolis, provavelmente já percebeu que a oferta é variada — e que as diferenças entre uma clínica e outra vão muito além do preço. Saber o que avaliar pode poupar meses de tratamento inadequado.</p>
@@ -904,13 +904,13 @@ export const POSTS: Post[] = [
   {
     slug: 'quanto-tempo-mounjaro-faz-efeito',
     num: 24,
-    title: 'Em Quanto Tempo o Mounjaro Começa a Fazer Efeito? O Que Esperar',
+    title: 'Em Quanto Tempo o Mounjaro Faz Efeito? Da 1ª Semana aos 3 Meses',
     shortTitle: 'Em Quanto Tempo o Mounjaro Faz Efeito',
     intro: 'Uma das primeiras perguntas de quem começa o Mounjaro é: quando eu vou sentir o efeito? A resposta tem duas partes, e entender isso ajuda a ter expectativas realistas e a não desistir cedo demais.',
     category: 'Medicamentos',
     readTime: '4 min',
     date: 'Julho 2026',
-    metaDesc: 'Em quanto tempo o Mounjaro (tirzepatida) começa a fazer efeito: o que esperar nas primeiras semanas, por que o resultado é gradual e por que a expectativa realista faz diferença no tratamento.',
+    metaDesc: 'Em quanto tempo o Mounjaro (tirzepatida) faz efeito? O que você sente já nas primeiras semanas, quando a balança começa a mudar e por que o resultado real se constrói ao longo de meses.',
     related: ['tirzepatida-florianopolis', 'mounjaro-florianopolis', 'efeitos-colaterais-mounjaro-tirzepatida', 'perda-de-peso-saudavel-quantos-kg-por-mes'],
     content: `
 <p>Entre as dúvidas mais comuns de quem vai começar o Mounjaro (tirzepatida), essa é quase sempre a primeira: em quanto tempo ele começa a fazer efeito? A resposta ajuda a criar expectativas realistas, e isso importa mais do que parece. Muita gente desiste cedo demais por esperar um resultado que ainda não era para ter aparecido.</p>
@@ -931,7 +931,7 @@ export const POSTS: Post[] = [
 <h2>Por que a expectativa realista protege o resultado</h2>
 <p>Entender esses dois tempos, o rápido (apetite) e o gradual (corpo), evita duas armadilhas comuns. A primeira é desanimar na terceira semana porque a balança não mudou o suficiente, quando o corpo está exatamente onde deveria estar. A segunda é a pressa de acelerar, que cobra o preço em náusea e desconforto. O tratamento bem conduzido respeita o ritmo do organismo.</p>
 <h2>O papel do acompanhamento</h2>
-<p>É no acompanhamento que essas expectativas ganham realidade. Com bioimpedância regular, dá para enxergar o que a balança sozinha esconde: se a perda está sendo de gordura, se a massa muscular está preservada, se o ritmo está adequado. A Dra. Isabel Aragão (CRM-SC 26139) atende em São José/SC e conduz o tratamento com injetáveis de forma individualizada, ajustando a dose conforme a resposta de cada paciente. O atendimento também está disponível online.</p>`,
+<p>É no acompanhamento que essas expectativas ganham realidade. Com bioimpedância regular, dá para enxergar o que a balança sozinha esconde: se a perda está sendo de gordura, se a massa muscular está preservada, se o ritmo está adequado. A Dra. Isabel Aragão (CRM-SC 26139) atende em São José/SC e conduz o <a href="/blog/aplicacao-tirzepatida-sao-jose">tratamento com injetáveis como a tirzepatida</a> de forma individualizada, ajustando a dose conforme a resposta de cada paciente. Também atende quem é de <a href="/blog/mounjaro-florianopolis">Florianópolis</a> e região, presencialmente e online.</p>`,
   },
   {
     slug: 'lipedema-ou-gordura-localizada',
@@ -968,6 +968,192 @@ export const POSTS: Post[] = [
 <p>Não existe um exame de sangue ou de imagem que detecte o lipedema. O diagnóstico é clínico, feito com base na história da paciente, no exame físico e no descarte de outras condições. Por isso, o mais importante é buscar um profissional com experiência em reconhecer a condição, que muitas vezes passa despercebida.</p>
 <h2>Avaliação em São José/SC</h2>
 <p>A Dra. Isabel Aragão (CRM-SC 26139) atende em São José/SC e realiza avaliação de composição corporal e avaliação clínica para pacientes que suspeitam de lipedema ou que já têm o diagnóstico e buscam acompanhamento. O objetivo é identificar corretamente a condição e montar um plano adequado para cada caso, e não aplicar um protocolo genérico de emagrecimento. O atendimento também está disponível online.</p>`,
+  },
+  {
+    slug: 'medica-emagrecimento-florianopolis',
+    num: 26,
+    title: 'Médica de Emagrecimento em Florianópolis: Como Funciona o Tratamento',
+    shortTitle: 'Médica de Emagrecimento em Florianópolis',
+    intro: 'Se você mora em Florianópolis e procura tratamento médico para emagrecer, entender como funciona ajuda a escolher com segurança. A clínica da Dra. Isabel Aragão fica em São José, a poucos minutos da Ilha.',
+    category: 'Tratamento',
+    readTime: '5 min',
+    date: 'Agosto 2026',
+    metaDesc: 'Médica de emagrecimento para quem é de Florianópolis: avaliação com bioimpedância, plano individualizado e acompanhamento com a Dra. Isabel Aragão (CRM-SC 26139), em São José, ao lado da Ilha.',
+    related: ['medica-emagrecimento-sao-jose', 'aplicacao-tirzepatida-florianopolis', 'como-funciona-acompanhamento-medico-emagrecimento', 'clinica-emagrecimento-sao-jose-sc'],
+    content: `
+<p>Quem mora em Florianópolis e busca tratamento médico para emagrecer tem uma boa notícia: não é preciso encarar trânsito longo para ter acompanhamento de qualidade. A Dra. Isabel Aragão (CRM-SC 26139) atende em São José, na Grande Florianópolis, a poucos minutos da Ilha pela BR-282, e também oferece acompanhamento online.</p>
+<h2>Atendimento para quem é de Florianópolis</h2>
+<p>São José faz divisa com Florianópolis e é um dos acessos mais rápidos para quem vem do continente ou da Ilha. Para pacientes do centro, da Trindade, do sul ou do norte da Ilha, a clínica é uma alternativa próxima e sem a disputa por vaga das regiões mais concentradas. Quem prefere não se deslocar toda semana pode fazer parte do acompanhamento a distância.</p>
+<h2>O que faz uma médica de emagrecimento</h2>
+<p>Diferente de uma dieta genérica, o atendimento médico começa por uma investigação. A ideia é entender por que aquele corpo específico tem dificuldade de perder peso, em vez de aplicar o mesmo protocolo para todo mundo. Na prática, isso envolve:</p>
+<ul>
+  <li>Avaliação da composição corporal por bioimpedância (gordura, massa muscular, água e metabolismo de repouso)</li>
+  <li>Histórico de tentativas anteriores: o que funcionou, o que não funcionou e por quê</li>
+  <li>Avaliação de condições associadas, como resistência à insulina, hipertensão e alterações da tireoide</li>
+  <li>Fatores de rotina, sono e relação com a comida</li>
+</ul>
+<p>A obesidade é reconhecida como doença crônica, e emagrecer de forma saudável é bem mais do que força de vontade.</p>
+<!--CTA-->
+<h2>Como funciona o tratamento na prática</h2>
+<p>A partir da avaliação, a médica monta um plano individualizado, que pode combinar orientação alimentar, mudança de hábitos e, quando indicado, tratamento medicamentoso. O acompanhamento é de perto: revisões periódicas com bioimpedância para conferir se a perda é de gordura, se a massa muscular está preservada e se o ritmo está adequado.</p>
+<p>Não é falta de disciplina. É biologia. Quando o corpo trava, existe um motivo, e ele pode ser tratado com método.</p>
+<h2>Quando vale procurar</h2>
+<p>Se você já tentou várias vezes sem resultado duradouro, sente fome o tempo todo, tem IMC acima de 30 ou condições ligadas ao peso, vale uma avaliação. Você pode ler os <a href="/blog/quando-procurar-medico-para-emagrecer">sinais de que a dieta sozinha não basta</a> e entender <a href="/blog/como-funciona-acompanhamento-medico-emagrecimento">como funciona o acompanhamento</a> do começo ao fim.</p>
+<h2>Agende de Florianópolis</h2>
+<p>A avaliação com a Dra. Isabel acontece em São José, ao lado da Ilha, com bioimpedância e plano individualizado. Para quem prefere, parte do acompanhamento pode ser feita online. Fale pelo WhatsApp para entender o passo a passo, sem compromisso.</p>`,
+  },
+  {
+    slug: 'medica-emagrecimento-palhoca',
+    num: 27,
+    title: 'Médica de Emagrecimento em Palhoça: Avaliação e Acompanhamento',
+    shortTitle: 'Médica de Emagrecimento em Palhoça',
+    intro: 'Mora em Palhoça e quer tratar o emagrecimento com acompanhamento médico de verdade? A clínica da Dra. Isabel Aragão fica na vizinha São José, com acesso rápido pela BR-101.',
+    category: 'Tratamento',
+    readTime: '5 min',
+    date: 'Agosto 2026',
+    metaDesc: 'Médica de emagrecimento para quem é de Palhoça: avaliação com bioimpedância, plano individualizado e acompanhamento com a Dra. Isabel Aragão (CRM-SC 26139), na vizinha São José.',
+    related: ['medica-emagrecimento-sao-jose', 'aplicacao-tirzepatida-palhoca', 'clinica-emagrecimento-sao-jose-sc', 'por-que-dieta-sozinha-falha'],
+    content: `
+<p>Se você é de Palhoça e quer tratar o emagrecimento com acompanhamento médico, a boa notícia é que a clínica da Dra. Isabel Aragão (CRM-SC 26139) fica logo ao lado, em São José, com acesso rápido pela BR-101. E parte do acompanhamento pode ser feita online, para quem prefere.</p>
+<h2>Atendimento para quem é de Palhoça</h2>
+<p>Palhoça e São José são cidades vizinhas, ligadas pela BR-101 e por vias que tornam o deslocamento curto para a maior parte dos bairros, do centro ao Pagani e à Enseada de Brito. Para quem já circula por São José no dia a dia, encaixar a consulta fica simples. E quem prefere resolver de casa pode fazer o acompanhamento a distância.</p>
+<h2>Por que tratar com médico, e não só com dieta</h2>
+<p>Emagrecer de forma sustentável raramente é questão de força de vontade. A obesidade é uma doença crônica, com causas hormonais, metabólicas e comportamentais. O papel da médica de emagrecimento é investigar por que aquele corpo trava e montar um plano para o caso, não um protocolo igual para todos. Esse trabalho inclui:</p>
+<ul>
+  <li>Bioimpedância para medir gordura, massa muscular, água e metabolismo de repouso</li>
+  <li>Revisão do histórico de tentativas e do estilo de vida</li>
+  <li>Avaliação de fatores associados, como resistência à insulina e tireoide</li>
+  <li>Plano individualizado, com tratamento medicamentoso quando indicado</li>
+</ul>
+<!--CTA-->
+<h2>Como funciona o acompanhamento</h2>
+<p>Depois da avaliação inicial, o tratamento segue com revisões periódicas. A cada etapa, a bioimpedância mostra se a perda é de gordura e se a massa muscular está preservada, o que a balança sozinha não revela. É esse acompanhamento de perto que separa o emagrecimento saudável do efeito sanfona. Você pode entender melhor <a href="/blog/como-funciona-acompanhamento-medico-emagrecimento">como funciona o acompanhamento do começo ao fim</a>.</p>
+<h2>Quando vale procurar</h2>
+<p>Vale marcar uma avaliação se você já tentou várias vezes sem resultado que se mantenha, sente fome constante, tem IMC acima de 30 ou condições ligadas ao peso. Nada aqui é promessa de número na balança: é cuidado médico sério, com método e sem julgamento.</p>
+<h2>Agende de Palhoça</h2>
+<p>A avaliação com a Dra. Isabel acontece na vizinha São José, com bioimpedância e plano individualizado. Fale pelo WhatsApp para conhecer o passo a passo, sem compromisso.</p>`,
+  },
+  {
+    slug: 'medica-emagrecimento-biguacu',
+    num: 28,
+    title: 'Médica de Emagrecimento em Biguaçu: Como Começar o Tratamento',
+    shortTitle: 'Médica de Emagrecimento em Biguaçu',
+    intro: 'Mora em Biguaçu e busca uma médica de emagrecimento? A Dra. Isabel Aragão atende na vizinha São José, poucos minutos ao sul pela BR-101, com opção de acompanhamento online.',
+    category: 'Tratamento',
+    readTime: '5 min',
+    date: 'Agosto 2026',
+    metaDesc: 'Médica de emagrecimento para quem é de Biguaçu: avaliação com bioimpedância, plano individualizado e acompanhamento com a Dra. Isabel Aragão (CRM-SC 26139), na vizinha São José.',
+    related: ['medica-emagrecimento-sao-jose', 'aplicacao-tirzepatida-biguacu', 'clinica-emagrecimento-sao-jose-sc', 'quando-procurar-medico-para-emagrecer'],
+    content: `
+<p>Para quem mora em Biguaçu e busca tratamento médico para emagrecer, não é preciso ir longe: a Dra. Isabel Aragão (CRM-SC 26139) atende na vizinha São José, poucos minutos ao sul pela BR-101, com opção de acompanhamento online.</p>
+<h2>Atendimento para quem é de Biguaçu</h2>
+<p>Biguaçu fica na entrada norte da Grande Florianópolis, colada a São José pela BR-101. Para pacientes do centro, do bairro Universitário ou das localidades ao longo da rodovia, chegar à clínica é rápido, sem enfrentar o trânsito das regiões mais concentradas. Quem prefere pode iniciar e manter parte do acompanhamento de casa.</p>
+<h2>O que muda quando o emagrecimento é médico</h2>
+<p>Um tratamento médico não entrega uma dieta pronta. Ele começa investigando a causa: por que aquele corpo específico não perde peso com facilidade. A obesidade é uma doença crônica, e o cuidado envolve:</p>
+<ul>
+  <li>Avaliação da composição corporal por bioimpedância</li>
+  <li>Análise do histórico de tentativas e da rotina</li>
+  <li>Investigação de fatores hormonais e metabólicos associados</li>
+  <li>Plano individualizado, com medicação quando houver indicação</li>
+</ul>
+<p>Não é falta de disciplina. Quando o corpo resiste, existe um motivo, e ele pode ser tratado.</p>
+<!--CTA-->
+<h2>Como funciona o tratamento</h2>
+<p>A partir da avaliação, a médica define o plano e acompanha de perto, com revisões e bioimpedância periódica para garantir que a perda é de gordura e que a massa muscular está preservada. Se quiser saber se é a sua hora, veja os <a href="/blog/quando-procurar-medico-para-emagrecer">sinais de que a dieta sozinha não basta</a>.</p>
+<h2>Agende de Biguaçu</h2>
+<p>A consulta com a Dra. Isabel acontece na vizinha São José, com avaliação completa, bioimpedância e plano individualizado. Fale pelo WhatsApp e entenda como começar, sem compromisso.</p>`,
+  },
+  {
+    slug: 'aplicacao-tirzepatida-sao-jose',
+    num: 29,
+    title: 'Aplicação de Tirzepatida em São José/SC: Como Funciona com Acompanhamento',
+    shortTitle: 'Aplicação de Tirzepatida em São José/SC',
+    intro: 'A tirzepatida virou um dos injetáveis mais procurados para emagrecer. Em São José/SC, a aplicação pode ser feita com prescrição, ajuste de dose e acompanhamento médico.',
+    category: 'Medicamentos',
+    readTime: '5 min',
+    date: 'Agosto 2026',
+    metaDesc: 'Aplicação de tirzepatida em São José/SC com acompanhamento médico: o que é, por que exige prescrição, como funciona a aplicação acompanhada e o ajuste de dose com a Dra. Isabel Aragão.',
+    related: ['tirzepatida-florianopolis', 'aplicacao-injecao-emagrecer-sao-jose', 'efeitos-colaterais-mounjaro-tirzepatida', 'quanto-tempo-mounjaro-faz-efeito'],
+    content: `
+<p>A tirzepatida se tornou um dos tratamentos injetáveis mais procurados para emagrecer. Em São José/SC, a aplicação pode ser feita com acompanhamento médico, o que faz diferença: prescrição correta, ajuste de dose e monitoramento dos resultados. A Dra. Isabel Aragão (CRM-SC 26139) conduz esse tratamento de forma individualizada.</p>
+<h2>O que é a tirzepatida</h2>
+<p>A tirzepatida é uma medicação injetável de aplicação semanal que age em receptores ligados ao apetite e ao controle da glicose. Na prática, a maioria das pessoas sente menos fome, mais saciedade e uma relação mais tranquila com a comida. Ela é uma ferramenta do tratamento, e não um substituto do acompanhamento e das mudanças de hábito. Para entender melhor a categoria, veja o texto sobre <a href="/blog/glp1-medicamentos-injetaveis-emagrecer">os injetáveis para emagrecer</a>.</p>
+<h2>Como funciona a aplicação acompanhada</h2>
+<p>O tratamento começa em dose baixa e sobe aos poucos, ao longo das semanas, para o organismo se adaptar com menos efeitos colaterais. A aplicação é simples e subcutânea, e pode ser feita na clínica ou orientada para autoaplicação. Fazer com acompanhamento garante que a dose suba na hora certa e que a resposta seja avaliada com bioimpedância, não apenas pela balança.</p>
+<!--CTA-->
+<h2>Por que exige prescrição e acompanhamento</h2>
+<p>A tirzepatida é um medicamento de prescrição. Ela não serve para todo mundo e tem contraindicações que precisam ser avaliadas por um médico antes de começar. O acompanhamento também cuida dos <a href="/blog/efeitos-colaterais-mounjaro-tirzepatida">efeitos colaterais mais comuns</a> e do ajuste de dose, o que torna o tratamento mais seguro e confortável. E ajuda a manter <a href="/blog/quanto-tempo-mounjaro-faz-efeito">expectativas realistas sobre o tempo de resposta</a>.</p>
+<h2>Aplicação de tirzepatida em São José/SC</h2>
+<p>Na clínica da Dra. Isabel, em São José, a tirzepatida é conduzida do início ao fim: avaliação, prescrição, orientação de aplicação e acompanhamento com bioimpedância. Nada aqui é promessa de resultado: é tratamento médico sério e individualizado. Fale pelo WhatsApp para entender o passo a passo.</p>`,
+  },
+  {
+    slug: 'aplicacao-tirzepatida-florianopolis',
+    num: 30,
+    title: 'Aplicação de Tirzepatida em Florianópolis: Onde Fazer com Acompanhamento',
+    shortTitle: 'Aplicação de Tirzepatida em Florianópolis',
+    intro: 'Quem é de Florianópolis pode fazer a aplicação de tirzepatida com acompanhamento médico em São José, ao lado da Ilha. Prescrição, ajuste de dose e monitoramento fazem toda a diferença.',
+    category: 'Medicamentos',
+    readTime: '5 min',
+    date: 'Agosto 2026',
+    metaDesc: 'Aplicação de tirzepatida para quem é de Florianópolis: acompanhamento médico, prescrição e ajuste de dose com a Dra. Isabel Aragão (CRM-SC 26139), em São José, ao lado da Ilha.',
+    related: ['aplicacao-tirzepatida-sao-jose', 'tirzepatida-florianopolis', 'mounjaro-florianopolis', 'efeitos-colaterais-mounjaro-tirzepatida'],
+    content: `
+<p>Quem é de Florianópolis e quer fazer a aplicação de tirzepatida com acompanhamento médico tem uma opção próxima: a Dra. Isabel Aragão (CRM-SC 26139) atende em São José, ao lado da Ilha, com prescrição, ajuste de dose e monitoramento. Parte do acompanhamento também pode ser feita online.</p>
+<h2>Aplicação com acompanhamento, e não por conta própria</h2>
+<p>A tirzepatida é um injetável semanal que reduz o apetite e aumenta a saciedade. O ponto que muita gente subestima é que o resultado seguro depende do acompanhamento: dose que sobe no tempo certo, avaliação da resposta e atenção aos efeitos colaterais. Comprar e aplicar por conta própria, sem prescrição, é arriscado. Vale entender <a href="/blog/glp1-medicamentos-injetaveis-emagrecer">como os injetáveis funcionam</a> antes de começar.</p>
+<h2>Perto de Florianópolis, em São José</h2>
+<p>São José faz divisa com Florianópolis e é um dos acessos mais rápidos para quem vem da Ilha pela BR-282. Para pacientes do centro, da Trindade ou do sul da Ilha, a clínica é uma alternativa próxima. Quem prefere não se deslocar toda semana pode combinar consultas presenciais com acompanhamento online.</p>
+<!--CTA-->
+<h2>Como funciona o tratamento</h2>
+<p>O tratamento começa em dose baixa e sobe gradualmente. A cada etapa, a bioimpedância mostra se a perda é de gordura e se a massa muscular está preservada. Esse acompanhamento também cuida dos <a href="/blog/efeitos-colaterais-mounjaro-tirzepatida">efeitos colaterais</a> e mantém <a href="/blog/quanto-tempo-mounjaro-faz-efeito">expectativas realistas sobre o tempo de resposta</a>. A tirzepatida é a mesma substância do <a href="/blog/mounjaro-florianopolis">Mounjaro</a>.</p>
+<h2>Agende de Florianópolis</h2>
+<p>A aplicação de tirzepatida com acompanhamento acontece em São José, ao lado da Ilha. Fale pelo WhatsApp para conhecer o passo a passo, sem compromisso. Nada aqui é promessa de resultado: é tratamento médico individualizado.</p>`,
+  },
+  {
+    slug: 'aplicacao-tirzepatida-palhoca',
+    num: 31,
+    title: 'Aplicação de Tirzepatida em Palhoça: Como Funciona a Aplicação Acompanhada',
+    shortTitle: 'Aplicação de Tirzepatida em Palhoça',
+    intro: 'Se você é de Palhoça e pensa na aplicação de tirzepatida, começar com prescrição e acompanhamento é o caminho seguro. A Dra. Isabel Aragão atende na vizinha São José.',
+    category: 'Medicamentos',
+    readTime: '5 min',
+    date: 'Agosto 2026',
+    metaDesc: 'Aplicação de tirzepatida para quem é de Palhoça: acompanhamento médico, prescrição e ajuste de dose com a Dra. Isabel Aragão (CRM-SC 26139), na vizinha São José.',
+    related: ['aplicacao-tirzepatida-sao-jose', 'medica-emagrecimento-palhoca', 'tirzepatida-florianopolis', 'efeitos-colaterais-mounjaro-tirzepatida'],
+    content: `
+<p>Se você é de Palhoça e pensa em fazer a aplicação de tirzepatida, o ideal é começar do jeito certo: com prescrição e acompanhamento médico. A Dra. Isabel Aragão (CRM-SC 26139) atende na vizinha São José, com acesso rápido pela BR-101, e conduz o tratamento de forma individualizada.</p>
+<h2>Por que aplicar com acompanhamento</h2>
+<p>A tirzepatida é um injetável semanal que reduz o apetite e aumenta a saciedade, e virou um dos tratamentos mais procurados para emagrecer. Mas ela é medicamento de prescrição, com contraindicações e efeitos colaterais que precisam de avaliação médica. Fazer com acompanhamento garante a dose certa no tempo certo e a leitura da resposta por bioimpedância. Entenda antes <a href="/blog/glp1-medicamentos-injetaveis-emagrecer">como os injetáveis para emagrecer funcionam</a>.</p>
+<h2>De Palhoça para São José</h2>
+<p>Palhoça e São José são vizinhas, ligadas pela BR-101, o que torna o deslocamento curto para a maioria dos bairros. Para quem já circula por São José, encaixar as consultas fica simples, e parte do acompanhamento pode ser feita online.</p>
+<!--CTA-->
+<h2>Como funciona a aplicação</h2>
+<p>O tratamento começa em dose baixa e sobe aos poucos, para o corpo se adaptar com menos desconforto. A aplicação é subcutânea e pode ser feita na clínica ou por autoaplicação orientada. O acompanhamento cuida dos <a href="/blog/efeitos-colaterais-mounjaro-tirzepatida">efeitos colaterais</a> e do ajuste de dose ao longo das semanas. Se você busca também acompanhamento geral de emagrecimento, veja a <a href="/blog/medica-emagrecimento-palhoca">médica de emagrecimento para quem é de Palhoça</a>.</p>
+<h2>Agende de Palhoça</h2>
+<p>A aplicação de tirzepatida com acompanhamento acontece na vizinha São José. Fale pelo WhatsApp e entenda o passo a passo. Nada aqui é promessa de resultado: é cuidado médico individualizado.</p>`,
+  },
+  {
+    slug: 'aplicacao-tirzepatida-biguacu',
+    num: 32,
+    title: 'Aplicação de Tirzepatida em Biguaçu: Aplicação com Acompanhamento Médico',
+    shortTitle: 'Aplicação de Tirzepatida em Biguaçu',
+    intro: 'Para quem é de Biguaçu, a aplicação de tirzepatida com segurança começa com prescrição e acompanhamento. A Dra. Isabel Aragão atende na vizinha São José, pela BR-101.',
+    category: 'Medicamentos',
+    readTime: '5 min',
+    date: 'Agosto 2026',
+    metaDesc: 'Aplicação de tirzepatida para quem é de Biguaçu: acompanhamento médico, prescrição e ajuste de dose com a Dra. Isabel Aragão (CRM-SC 26139), na vizinha São José.',
+    related: ['aplicacao-tirzepatida-sao-jose', 'medica-emagrecimento-biguacu', 'tirzepatida-florianopolis', 'efeitos-colaterais-mounjaro-tirzepatida'],
+    content: `
+<p>Para quem é de Biguaçu e quer fazer a aplicação de tirzepatida com segurança, o caminho é começar com prescrição e acompanhamento. A Dra. Isabel Aragão (CRM-SC 26139) atende na vizinha São José, poucos minutos ao sul pela BR-101, e conduz o tratamento de forma individualizada, com opção de acompanhamento online.</p>
+<h2>Aplicar com médico faz diferença</h2>
+<p>A tirzepatida é um injetável semanal que age no apetite e na saciedade. Por ser medicamento de prescrição, tem contraindicações e efeitos colaterais que exigem avaliação antes de começar. O acompanhamento garante a dose certa no tempo certo e a avaliação da resposta por bioimpedância, algo que a balança sozinha não mostra. Vale conhecer <a href="/blog/glp1-medicamentos-injetaveis-emagrecer">como os injetáveis para emagrecer funcionam</a>.</p>
+<h2>De Biguaçu para São José</h2>
+<p>Biguaçu fica na entrada norte da Grande Florianópolis, colada a São José pela BR-101. Para pacientes do centro e das localidades ao longo da rodovia, o acesso à clínica é rápido. Quem prefere pode combinar consultas presenciais com acompanhamento a distância.</p>
+<!--CTA-->
+<h2>Como funciona a aplicação</h2>
+<p>A dose começa baixa e sobe gradualmente, para o organismo se adaptar. A aplicação é subcutânea e pode ser feita na clínica ou orientada para autoaplicação. Ao longo do tratamento, o acompanhamento cuida dos <a href="/blog/efeitos-colaterais-mounjaro-tirzepatida">efeitos colaterais</a> e ajusta a dose conforme a resposta. Para acompanhamento geral, veja a <a href="/blog/medica-emagrecimento-biguacu">médica de emagrecimento para quem é de Biguaçu</a>.</p>
+<h2>Agende de Biguaçu</h2>
+<p>A aplicação de tirzepatida com acompanhamento acontece na vizinha São José. Fale pelo WhatsApp para conhecer o passo a passo, sem compromisso. Nada aqui é promessa de resultado: é tratamento médico sério.</p>`,
   },
 ]
 
