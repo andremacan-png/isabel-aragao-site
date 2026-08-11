@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { getPainelData, PERIODOS, type PeriodoKey } from '../painel/adsData'
 import { getMetaData } from '../painel/metaAdsData'
 import { getGscData } from '../painel/gscData'
-import { getPainel2Series, TAXA_CONTATO_CONSULTA, CONSULTAS_MES_REF, CONTATOS_MES_REF, MES_REF_LABEL, type SerieTot } from './painel2Data'
+import { getPainel2Series, getCustoConsultaCanais, type SerieTot } from './painel2Data'
 
 export const metadata: Metadata = {
   title: 'Painel de Tráfego 2.0 — Dra. Isabel',
@@ -160,11 +160,12 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 export default async function Painel2Page({ searchParams }: { searchParams: Promise<{ periodo?: string }> }) {
   const sp = await searchParams
   const periodo: PeriodoKey = sp.periodo && sp.periodo in PERIODOS ? (sp.periodo as PeriodoKey) : '30d'
-  const [data, meta, gsc, serie] = await Promise.all([
+  const [data, meta, gsc, serie, canais] = await Promise.all([
     getPainelData(periodo),
     getMetaData(periodo),
     getGscData(),
     getPainel2Series(periodo),
+    getCustoConsultaCanais(),
   ])
   const live = data.fonte === 'live'
 
@@ -189,8 +190,11 @@ export default async function Painel2Page({ searchParams }: { searchParams: Prom
   const sparkContatos = dias.map((d) => d.contatos)
   const sparkCpc = cpcSeries(dias)
 
-  // Fase 3b — custo por consulta fechada = custo/contato ÷ taxa de agendamento medida
-  const custoConsulta = totalCpc ? totalCpc / TAXA_CONTATO_CONSULTA : 0
+  // Custo por consulta fechada · por canal (agosto): qual canal traz paciente mais barato
+  const metaMaisBarato =
+    !!canais && canais.meta.consultas > 0 && canais.google.consultas > 0 && canais.meta.custo <= canais.google.custo
+  const googleMaisBarato =
+    !!canais && canais.meta.consultas > 0 && canais.google.consultas > 0 && canais.google.custo < canais.meta.custo
 
   // Card Google × Meta
   const temComparacao = !!meta && mContatos > 0 && gContatos > 0
@@ -289,19 +293,45 @@ export default async function Painel2Page({ searchParams }: { searchParams: Prom
           />
         </div>
 
-        {/* Do contato à consulta — taxa medida na agenda + custo por consulta fechada */}
-        <div className="mt-4 rounded-[18px] border border-[#e6dcc9] bg-[#FBF7F0] px-5 py-4 flex flex-wrap items-center justify-between gap-x-6 gap-y-3">
-          <div>
-            <p className="text-[11.5px] font-bold uppercase tracking-[0.05em] text-[#a99274]">Do contato à consulta fechada · medido em {MES_REF_LABEL}</p>
-            <p className="text-[13px] text-[#6b6076] mt-0.5">
-              <b className="text-[#8a6a2f]">{Math.round(TAXA_CONTATO_CONSULTA * 100)}%</b> dos contatos fecharam consulta — {CONSULTAS_MES_REF} consultas / {CONTATOS_MES_REF} contatos (Google + Meta)
+        {/* Custo por CONSULTA FECHADA · por canal (mês corrente) */}
+        {canais && (
+          <>
+            <SectionLabel>Custo por consulta fechada · por canal ({canais.label}, do dia 1 até hoje)</SectionLabel>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              {/* Meta */}
+              <div className={`rounded-[20px] border p-5 sm:p-6 ${metaMaisBarato ? 'bg-gradient-to-br from-white via-white to-[#FFF3E6] border-[#F0C98E]' : 'bg-white border-[#EBE3D6]'}`}>
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2 text-[#7a6ea0] text-[12px] font-bold uppercase tracking-[0.05em]">
+                    <span className="w-2.5 h-2.5 rounded-[3px] bg-[#E8823A]" /> Meta · Instagram
+                  </div>
+                  {metaMaisBarato && <span className="text-[10.5px] font-extrabold px-2 py-0.5 rounded-full bg-[#E7F5EC] text-[#1E7A3E] uppercase tracking-[0.04em]">mais barato</span>}
+                </div>
+                <div className="font-playfair text-[40px] font-extrabold text-[#12082a] mt-2 leading-none">{canais.meta.consultas ? brl(canais.meta.custo) : '—'}</div>
+                <p className="text-[12.5px] text-[#8a7f92] mt-2">{canais.meta.consultas} consultas · {brl0(canais.meta.invest)} investidos</p>
+              </div>
+              {/* Google */}
+              <div className={`rounded-[20px] border p-5 sm:p-6 ${googleMaisBarato ? 'bg-gradient-to-br from-white via-white to-[#F3EFFa] border-[#CDBEE9]' : 'bg-white border-[#EBE3D6]'}`}>
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2 text-[#7a6ea0] text-[12px] font-bold uppercase tracking-[0.05em]">
+                    <span className="w-2.5 h-2.5 rounded-[3px] bg-[#695192]" /> Google · Site
+                  </div>
+                  {googleMaisBarato && <span className="text-[10.5px] font-extrabold px-2 py-0.5 rounded-full bg-[#E7F5EC] text-[#1E7A3E] uppercase tracking-[0.04em]">mais barato</span>}
+                </div>
+                <div className="font-playfair text-[40px] font-extrabold text-[#12082a] mt-2 leading-none">{canais.google.consultas ? brl(canais.google.custo) : '—'}</div>
+                <p className="text-[12.5px] text-[#8a7f92] mt-2">{canais.google.consultas} consultas · {brl0(canais.google.invest)} investidos</p>
+              </div>
+              {/* Total */}
+              <div className="rounded-[20px] border border-[#EBE3D6] bg-[#faf7f2] p-5 sm:p-6">
+                <div className="flex items-center gap-2 text-[#7a6ea0] text-[12px] font-bold uppercase tracking-[0.05em]">Total (Google + Meta)</div>
+                <div className="font-playfair text-[40px] font-extrabold text-[#12082a] mt-2 leading-none">{canais.total.consultas ? brl(canais.total.custo) : '—'}</div>
+                <p className="text-[12.5px] text-[#8a7f92] mt-2">{canais.total.consultas} consultas · {brl0(canais.total.invest)} investidos</p>
+              </div>
+            </div>
+            <p className="text-[12px] text-[#9a8f86] mt-3">
+              Consultas fechadas contadas por origem (Instagram × site) de 1º de {canais.label} até hoje, sobre a verba de cada canal no mesmo período. É amostra pequena no começo do mês, então o valor por consulta ainda oscila bastante.
             </p>
-          </div>
-          <div className="text-right">
-            <p className="font-playfair text-[30px] font-extrabold text-[#8a6a2f] leading-none">{custoConsulta ? brl(custoConsulta) : '—'}</p>
-            <p className="text-[11px] text-[#a99274] font-semibold mt-1 uppercase tracking-[0.04em]">custo por consulta fechada</p>
-          </div>
-        </div>
+          </>
+        )}
 
         {/* Google × Meta */}
         {temComparacao && (

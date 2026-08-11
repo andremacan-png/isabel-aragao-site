@@ -153,6 +153,105 @@ async function metaDaily(n: number): Promise<ByDate | null> {
   return byDate
 }
 
+// ── Custo por consulta FECHADA · por canal (mês corrente) ──────────────────────
+// As consultas são contadas à mão por origem (Instagram × site, marcadas no WhatsApp).
+// Atualize `google`/`meta` conforme a agenda; o gasto de cada canal é buscado ao vivo
+// do 1º dia do mês até hoje. Fuso America/Sao_Paulo para casar com as contas de anúncio.
+export const CONSULTAS_MES = {
+  label: 'agosto',
+  inicio: '2026-08-01',
+  google: 2, // consultas fechadas que vieram do SITE (Google Ads)
+  meta: 4, // consultas fechadas que vieram do INSTAGRAM (Meta)
+}
+
+export type CanalCusto = { invest: number; consultas: number; custo: number }
+export type CustoConsultaCanais = {
+  label: string
+  desde: string
+  ate: string
+  google: CanalCusto
+  meta: CanalCusto
+  total: CanalCusto
+}
+
+function hojeSP(): string {
+  // 'en-CA' formata como YYYY-MM-DD
+  return new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Sao_Paulo' }).format(new Date())
+}
+
+async function googleSpendRange(inicio: string, fim: string): Promise<number | null> {
+  const { GOOGLE_ADS_DEVELOPER_TOKEN, GOOGLE_ADS_CUSTOMER_ID, GOOGLE_ADS_LOGIN_CUSTOMER_ID } = process.env
+  if (!GOOGLE_ADS_DEVELOPER_TOKEN || !GOOGLE_ADS_CUSTOMER_ID) return null
+  const token = await googleToken()
+  if (!token) return null
+
+  const cid = GOOGLE_ADS_CUSTOMER_ID.replace(/\D/g, '')
+  const query =
+    'SELECT metrics.cost_micros FROM campaign ' +
+    `WHERE segments.date BETWEEN '${inicio}' AND '${fim}' AND campaign.status != 'REMOVED'`
+  const headers: Record<string, string> = {
+    Authorization: `Bearer ${token}`,
+    'developer-token': GOOGLE_ADS_DEVELOPER_TOKEN,
+    'Content-Type': 'application/json',
+  }
+  if (GOOGLE_ADS_LOGIN_CUSTOMER_ID) headers['login-customer-id'] = GOOGLE_ADS_LOGIN_CUSTOMER_ID.replace(/\D/g, '')
+
+  const res = await fetch(`https://googleads.googleapis.com/${GOOGLE_API_VERSION}/customers/${cid}/googleAds:search`, {
+    method: 'POST',
+    headers,
+    body: JSON.stringify({ query }),
+    cache: 'no-store',
+  })
+  if (!res.ok) return null
+  const j = await res.json()
+  const rows: any[] = j.results ?? []
+  return rows.reduce((s, r) => s + Number(r.metrics?.costMicros ?? 0) / 1e6, 0)
+}
+
+async function metaSpendRange(inicio: string, fim: string): Promise<number | null> {
+  const token = process.env.META_ADS_ACCESS_TOKEN
+  const acct = process.env.META_AD_ACCOUNT_ID
+  if (!token || !acct) return null
+
+  const id = acct.replace(/\D/g, '')
+  const timeRange = encodeURIComponent(JSON.stringify({ since: inicio, until: fim }))
+  const url =
+    `https://graph.facebook.com/${META_API_VERSION}/act_${id}/insights` +
+    `?level=account&time_range=${timeRange}&fields=spend&access_token=${encodeURIComponent(token)}`
+  const res = await fetch(url, { cache: 'no-store' })
+  if (!res.ok) return null
+  const j = await res.json()
+  const rows: Array<Record<string, unknown>> = j.data ?? []
+  return rows.reduce((s, r) => s + Number(r.spend ?? 0), 0)
+}
+
+export async function getCustoConsultaCanais(): Promise<CustoConsultaCanais | null> {
+  try {
+    const fim = hojeSP()
+    const inicio = CONSULTAS_MES.inicio
+    const [g, m] = await Promise.all([googleSpendRange(inicio, fim), metaSpendRange(inicio, fim)])
+    if (g === null && m === null) return null
+
+    const gInvest = g ?? 0
+    const mInvest = m ?? 0
+    const canal = (invest: number, consultas: number): CanalCusto => ({
+      invest,
+      consultas,
+      custo: consultas ? invest / consultas : 0,
+    })
+    return {
+      label: CONSULTAS_MES.label,
+      desde: inicio,
+      ate: fim,
+      google: canal(gInvest, CONSULTAS_MES.google),
+      meta: canal(mInvest, CONSULTAS_MES.meta),
+      total: canal(gInvest + mInvest, CONSULTAS_MES.google + CONSULTAS_MES.meta),
+    }
+  } catch {
+    return null
+  }
+}
+
 export async function getPainel2Series(periodo: string): Promise<Painel2Series | null> {
   const n = DIAS[periodo]
   if (!n) return null
