@@ -57,23 +57,47 @@ function windows(n: number) {
 
 type ByDate = Map<string, { invest: number; contatos: number }>
 
-async function googleToken(): Promise<string | null> {
+// Token OAuth do Google compartilhado. Sem isto, as 3 funções (getPainelData, série
+// e custo/consulta) disparam refresh simultâneos e um falha de vez em quando (o token
+// endpoint estrangula concorrência) => o Google "sumia" de forma intermitente no painel.
+// Solução: dedupe da chamada em voo + cache de 50min (o token vale 60) + 1 retry.
+let googleTokenCache: { value: string; exp: number } | null = null
+let googleTokenInFlight: Promise<string | null> | null = null
+
+async function fetchGoogleToken(): Promise<string | null> {
   const { GOOGLE_ADS_CLIENT_ID, GOOGLE_ADS_CLIENT_SECRET, GOOGLE_ADS_REFRESH_TOKEN } = process.env
   if (!GOOGLE_ADS_CLIENT_ID || !GOOGLE_ADS_CLIENT_SECRET || !GOOGLE_ADS_REFRESH_TOKEN) return null
-  const res = await fetch('https://oauth2.googleapis.com/token', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: new URLSearchParams({
-      client_id: GOOGLE_ADS_CLIENT_ID,
-      client_secret: GOOGLE_ADS_CLIENT_SECRET,
-      refresh_token: GOOGLE_ADS_REFRESH_TOKEN,
-      grant_type: 'refresh_token',
-    }),
-    cache: 'no-store',
-  })
-  if (!res.ok) return null
-  const j = await res.json()
-  return j.access_token ?? null
+  for (let tentativa = 0; tentativa < 2; tentativa++) {
+    const res = await fetch('https://oauth2.googleapis.com/token', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams({
+        client_id: GOOGLE_ADS_CLIENT_ID,
+        client_secret: GOOGLE_ADS_CLIENT_SECRET,
+        refresh_token: GOOGLE_ADS_REFRESH_TOKEN,
+        grant_type: 'refresh_token',
+      }),
+      cache: 'no-store',
+    })
+    if (res.ok) {
+      const j = await res.json()
+      if (j.access_token) return j.access_token as string
+    }
+  }
+  return null
+}
+
+async function googleToken(): Promise<string | null> {
+  const now = Date.now()
+  if (googleTokenCache && googleTokenCache.exp > now) return googleTokenCache.value
+  if (googleTokenInFlight) return googleTokenInFlight
+  googleTokenInFlight = (async () => {
+    const v = await fetchGoogleToken()
+    if (v) googleTokenCache = { value: v, exp: Date.now() + 50 * 60 * 1000 }
+    googleTokenInFlight = null
+    return v
+  })()
+  return googleTokenInFlight
 }
 
 async function googleDaily(n: number): Promise<ByDate | null> {
