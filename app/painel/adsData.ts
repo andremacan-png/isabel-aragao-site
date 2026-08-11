@@ -70,7 +70,20 @@ async function getAccessToken(): Promise<string | null> {
   return j.access_token ?? null
 }
 
+// Cache curto (5min) do resultado LIVE: cada load do painel bate na API do Google;
+// sob rajada isso estrangura e cai no snapshot. Cachear evita repetir a chamada.
+const PANEL_CACHE = new Map<string, { exp: number; val: PainelData }>()
+
 export async function getPainelData(periodo: PeriodoKey): Promise<PainelData> {
+  const now = Date.now()
+  const hit = PANEL_CACHE.get(periodo)
+  if (hit && hit.exp > now) return hit.val
+  const val = await computePainelData(periodo)
+  if (val.fonte === 'live') PANEL_CACHE.set(periodo, { exp: now + 5 * 60 * 1000, val })
+  return val
+}
+
+async function computePainelData(periodo: PeriodoKey): Promise<PainelData> {
   const { GOOGLE_ADS_DEVELOPER_TOKEN, GOOGLE_ADS_CUSTOMER_ID, GOOGLE_ADS_LOGIN_CUSTOMER_ID } = process.env
   if (!GOOGLE_ADS_DEVELOPER_TOKEN || !GOOGLE_ADS_CUSTOMER_ID) return snapshotData()
 

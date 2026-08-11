@@ -11,6 +11,21 @@ const CONV_ACTION = 'onsite_conversion.messaging_conversation_started_7d'
 // 'hoje' e 'ontem' não têm série comparável e caem no null (sem deltas).
 const DIAS: Record<string, number> = { '7d': 7, '14d': 14, '30d': 30 }
 
+// Cache de resultados em memória (por instância). Cada load do painel dispara várias
+// buscas no Google Ads; sob rajada a API estrangula (rate-limit) e uma cai. Cachear o
+// RESULTADO por ~5min faz recarregar o painel reusar o dado em vez de bater na API.
+// Só cacheia resultados "bons" (aceitar()), pra uma falha não ficar grudada.
+type CacheEntry = { exp: number; val: unknown }
+const RESULT_CACHE = new Map<string, CacheEntry>()
+async function cachedResult<T>(key: string, ttlMs: number, fn: () => Promise<T>, aceitar: (v: T) => boolean): Promise<T> {
+  const now = Date.now()
+  const hit = RESULT_CACHE.get(key)
+  if (hit && hit.exp > now) return hit.val as T
+  const val = await fn()
+  if (aceitar(val)) RESULT_CACHE.set(key, { exp: now + ttlMs, val })
+  return val
+}
+
 // ── Fase 3b · do contato à consulta (taxa MEDIDA) ──────────────────────────────
 // Não há atribuição automática contato→consulta (a origem é marcada à mão no
 // WhatsApp), então a taxa vem da CONTAGEM real da agenda. Atualize estes dois
@@ -257,6 +272,15 @@ async function metaSpendRange(inicio: string, fim: string): Promise<number | nul
 }
 
 export async function getCustoConsultaCanais(): Promise<CustoConsultaCanais | null> {
+  return cachedResult(
+    `canais:${hojeSP()}`,
+    5 * 60 * 1000,
+    computeCustoConsultaCanais,
+    (v) => !!v && v.google.disponivel && v.meta.disponivel
+  )
+}
+
+async function computeCustoConsultaCanais(): Promise<CustoConsultaCanais | null> {
   try {
     const fim = hojeSP()
     const inicio = CONSULTAS_MES.inicio
@@ -287,6 +311,10 @@ export async function getCustoConsultaCanais(): Promise<CustoConsultaCanais | nu
 }
 
 export async function getPainel2Series(periodo: string): Promise<Painel2Series | null> {
+  return cachedResult(`serie:${periodo}:${hojeSP()}`, 5 * 60 * 1000, () => computePainel2Series(periodo), (v) => v !== null && v.google !== null)
+}
+
+async function computePainel2Series(periodo: string): Promise<Painel2Series | null> {
   const n = DIAS[periodo]
   if (!n) return null
 
