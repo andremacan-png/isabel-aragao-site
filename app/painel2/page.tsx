@@ -160,13 +160,16 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 export default async function Painel2Page({ searchParams }: { searchParams: Promise<{ periodo?: string }> }) {
   const sp = await searchParams
   const periodo: PeriodoKey = sp.periodo && sp.periodo in PERIODOS ? (sp.periodo as PeriodoKey) : '30d'
-  const [data, meta, gsc, serie, canais] = await Promise.all([
+  const [data, meta, gsc, serie] = await Promise.all([
     getPainelData(periodo),
     getMetaData(periodo),
     getGscData(),
     getPainel2Series(periodo),
-    getCustoConsultaCanais(),
   ])
+  // Roda DEPOIS do bloco acima (não junto): assim a query de gasto do Google não
+  // disputa o limite de concorrência do googleAds:search com getPainelData/série
+  // (o token já fica em cache) e o custo por consulta para de oscilar.
+  const canais = await getCustoConsultaCanais()
   const live = data.fonte === 'live'
 
   // Totais combinados (base — funções provadas, nunca quebram)
