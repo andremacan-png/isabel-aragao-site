@@ -11,6 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/saude`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${BASE}/emagrecimento`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${BASE}/blog`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
+    { url: `${BASE}/calculadora-imc`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/politica`, lastModified: now, changeFrequency: 'yearly', priority: 0.3 },
   ]
 
