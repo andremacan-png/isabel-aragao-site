@@ -347,7 +347,7 @@ export const POSTS: Post[] = [
     readTime: '5 min',
     date: 'Julho 2026',
     metaDesc: 'Quantos kg por mês dá para perder com saúde? O ritmo seguro é de 2 a 4 kg. Veja os riscos da pressa (perda de músculo, queda de cabelo, vesícula) e como saber se você perde gordura ou água.',
-    related: ['bioimpedancia-o-que-e', 'como-funciona-acompanhamento-medico-emagrecimento', 'medica-emagrecimento-sao-jose', 'clinica-emagrecimento-sao-jose-sc'],
+    related: ['bioimpedancia-o-que-e', 'quanto-emagrece-com-injetavel', 'como-funciona-acompanhamento-medico-emagrecimento', 'clinica-emagrecimento-sao-jose-sc'],
     content: `
 <p>Toda paciente quer emagrecer o mais rápido possível. É compreensível — carregar peso extra é desconfortável, e a motivação no início do tratamento costuma ser alta. Mas a velocidade importa: emagrecer muito rápido cobra um preço que muitas pessoas não sabem que estão pagando.</p>
 <h2>O ritmo saudável segundo as evidências</h2>
@@ -911,7 +911,7 @@ export const POSTS: Post[] = [
     readTime: '4 min',
     date: 'Julho 2026',
     metaDesc: 'Em quanto tempo o Mounjaro (tirzepatida) faz efeito? O que você sente já nas primeiras semanas, quando a balança começa a mudar e por que o resultado real se constrói ao longo de meses.',
-    related: ['tirzepatida-florianopolis', 'mounjaro-florianopolis', 'efeitos-colaterais-mounjaro-tirzepatida', 'perda-de-peso-saudavel-quantos-kg-por-mes'],
+    related: ['quanto-emagrece-com-injetavel', 'mounjaro-florianopolis', 'efeitos-colaterais-mounjaro-tirzepatida', 'perda-de-peso-saudavel-quantos-kg-por-mes'],
     content: `
 <p>Entre as dúvidas mais comuns de quem vai começar o Mounjaro (tirzepatida), essa é quase sempre a primeira: em quanto tempo ele começa a fazer efeito? A resposta ajuda a criar expectativas realistas, e isso importa mais do que parece. Muita gente desiste cedo demais por esperar um resultado que ainda não era para ter aparecido.</p>
 <p>Antes de tudo, um aviso: os prazos abaixo são referências gerais, baseadas no que costuma acontecer e no que os estudos observam em grupos de pacientes. A resposta é individual e varia de pessoa para pessoa. Nada aqui é promessa de resultado.</p>
@@ -926,7 +926,7 @@ export const POSTS: Post[] = [
 <p>Esse é o sinal de que o medicamento está agindo. Ele aparece antes de qualquer mudança grande na balança.</p>
 <h2>A mudança no corpo é gradual</h2>
 <p>O segundo efeito, a mudança de composição corporal, é mais lento e progressivo. Isso é proposital e é o jeito saudável de acontecer. O tratamento começa em dose baixa e sobe aos poucos, ao longo de semanas, justamente para o organismo se adaptar com menos efeitos colaterais. É por isso que o resultado se constrói ao longo de meses, não de dias.</p>
-<p>Nos estudos clínicos, os resultados mais expressivos de composição corporal se consolidam ao longo de vários meses de tratamento contínuo. Querer antecipar isso subindo a dose rápido demais só aumenta o desconforto, sem ganho real.</p>
+<p>Nos estudos clínicos, os resultados mais expressivos de composição corporal se consolidam ao longo de vários meses de tratamento contínuo. Querer antecipar isso subindo a dose rápido demais só aumenta o desconforto, sem ganho real. Se a sua dúvida também é <a href="/blog/quanto-emagrece-com-injetavel">quanto dá pra emagrecer</a>, a lógica é a mesma: o resultado é individual e se constrói com o tempo.</p>
 <!--CTA-->
 <h2>Por que a expectativa realista protege o resultado</h2>
 <p>Entender esses dois tempos, o rápido (apetite) e o gradual (corpo), evita duas armadilhas comuns. A primeira é desanimar na terceira semana porque a balança não mudou o suficiente, quando o corpo está exatamente onde deveria estar. A segunda é a pressa de acelerar, que cobra o preço em náusea e desconforto. O tratamento bem conduzido respeita o ritmo do organismo.</p>
@@ -1154,6 +1154,41 @@ export const POSTS: Post[] = [
 <p>A dose começa baixa e sobe gradualmente, para o organismo se adaptar. A aplicação é subcutânea e pode ser feita na clínica ou orientada para autoaplicação. Ao longo do tratamento, o acompanhamento cuida dos <a href="/blog/efeitos-colaterais-mounjaro-tirzepatida">efeitos colaterais</a> e ajusta a dose conforme a resposta. Para acompanhamento geral, veja a <a href="/blog/medica-emagrecimento-biguacu">médica de emagrecimento para quem é de Biguaçu</a>.</p>
 <h2>Agende de Biguaçu</h2>
 <p>A aplicação de tirzepatida com acompanhamento acontece na vizinha São José. Fale pelo WhatsApp para conhecer o passo a passo, sem compromisso. Nada aqui é promessa de resultado: é tratamento médico sério.</p>`,
+  },
+  {
+    slug: 'quanto-emagrece-com-injetavel',
+    num: 33,
+    title: 'Quanto Dá pra Emagrecer com Injetável (Mounjaro, Ozempic, Tirzepatida)?',
+    shortTitle: 'Quanto Emagrece com Injetável',
+    intro: 'É a pergunta número um de quem pensa em usar um injetável pra emagrecer. A resposta honesta: depende, é individual, e não é promessa. Mas dá pra explicar o que esperar de verdade.',
+    category: 'Medicamentos',
+    readTime: '6 min',
+    date: 'Agosto 2026',
+    metaDesc: 'Quanto dá pra emagrecer com Mounjaro, Ozempic ou tirzepatida? O que os estudos mostram, por que o resultado é individual (e nunca uma promessa) e por que só o acompanhamento médico dá o número real.',
+    related: ['quanto-tempo-mounjaro-faz-efeito', 'perda-de-peso-saudavel-quantos-kg-por-mes', 'efeitos-colaterais-mounjaro-tirzepatida', 'mounjaro-ou-ozempic-qual-escolher'],
+    content: `
+<p>"Mounjaro emagrece quantos quilos?" "Quanto dá pra perder com Ozempic?" É a pergunta que mais aparece de quem pensa em usar um injetável pra emagrecer. A resposta honesta tem três partes: <strong>depende, é individual, e não é promessa</strong>. Mas dá pra explicar o que esperar de verdade.</p>
+<h2>Por que não existe um número mágico</h2>
+<p>Os injetáveis da classe GLP-1 (como a semaglutida e a tirzepatida, os princípios ativos por trás de nomes como Ozempic, Wegovy e Mounjaro) agem reduzindo o apetite e aumentando a saciedade. Mas o quanto cada pessoa perde varia bastante, porque depende de fatores que são só seus:</p>
+<ul>
+  <li>O seu ponto de partida (peso, composição corporal, metabolismo)</li>
+  <li>A dose e a velocidade com que ela sobe, ajustadas pelo médico</li>
+  <li>O tempo de tratamento (o resultado se constrói em meses, não em semanas)</li>
+  <li>O que acontece em volta: alimentação, sono, atividade física, estresse</li>
+</ul>
+<p>Por isso, qualquer clínica ou vendedor que promete "tantos quilos garantidos" está enganando. Resultado não se promete: se acompanha.</p>
+<h2>O que os estudos observam (a média, não a sua)</h2>
+<p>Nos grandes estudos clínicos, os participantes que usaram essas medicações <strong>com acompanhamento e por tempo suficiente</strong> tiveram, em média, uma redução relevante do peso corporal ao longo de mais de um ano de tratamento contínuo, em geral bem maior do que a de quem tentou só com mudança de hábitos. A tirzepatida costuma mostrar resultados um pouco mais expressivos que a semaglutida nos estudos que compararam as duas.</p>
+<p>Mas atenção: isso é a <em>média de milhares de pessoas</em>. A sua perda pode ser maior ou menor. E, tão importante quanto o número na balança, é <a href="/blog/perda-de-peso-saudavel-quantos-kg-por-mes">o ritmo saudável de emagrecer</a> e a qualidade da perda (gordura, não músculo), que só a bioimpedância mostra.</p>
+<!--CTA-->
+<h2>O efeito não é imediato, e isso é bom</h2>
+<p>Muita gente desanima na terceira semana porque a balança não mudou o quanto esperava. Só que o tratamento começa em dose baixa e sobe aos poucos, de propósito. Você pode entender melhor <a href="/blog/quanto-tempo-mounjaro-faz-efeito">em quanto tempo o Mounjaro começa a fazer efeito</a>: o apetite responde cedo, a balança vem depois.</p>
+<h2>Perder rápido demais cobra caro</h2>
+<p>Um resultado grande e rápido parece ótimo, mas se vier às custas de músculo, cabelo e efeito sanfona, não compensou. É por isso que a dose sobe devagar e o acompanhamento existe: pra que a perda seja de gordura e se mantenha. Vale conhecer os <a href="/blog/efeitos-colaterais-mounjaro-tirzepatida">efeitos colaterais mais comuns</a> antes de começar.</p>
+<h2>Mounjaro, Ozempic, Wegovy: qual emagrece mais?</h2>
+<p>Não existe "o melhor" universal. Existe o mais adequado pra você, e isso é decisão médica: as substâncias, doses e indicações são diferentes. Se quiser entender a diferença, veja o texto sobre <a href="/blog/mounjaro-ou-ozempic-qual-escolher">Mounjaro ou Ozempic</a>.</p>
+<h2>O número que importa vem com acompanhamento</h2>
+<p>A pergunta "quanto vou emagrecer" só tem uma resposta de verdade: a que o seu corpo dá, ao longo do tratamento, medida de perto. A Dra. Isabel Aragão (CRM-SC 26139) atende em São José/SC e conduz o <a href="/blog/aplicacao-tirzepatida-sao-jose">tratamento com injetáveis</a> de forma individualizada, com prescrição, ajuste de dose e bioimpedância pra acompanhar o que a balança não mostra. Também atende quem é de <a href="/blog/mounjaro-florianopolis">Florianópolis</a> e região, presencialmente e online. Nada aqui é promessa de resultado: é cuidado médico sério.</p>`,
   },
 ]
 
