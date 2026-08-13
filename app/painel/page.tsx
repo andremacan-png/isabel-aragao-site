@@ -608,7 +608,8 @@ function CanalConsultaCard({
   )
 }
 
-// Gráfico de tendência do orgânico: impressões (área roxa) + cliques (linha âmbar), escalas próprias
+// Gráfico de tendência do orgânico: impressões (área roxa) + cliques (linha âmbar),
+// escalas próprias, com MÉDIA MÓVEL de 15 dias (linhas grossas) para ver a tendência.
 function GscChart({ dias }: { dias: { data: string; cliques: number; impressoes: number }[] }) {
   if (dias.length < 2) return null
   const W = 720
@@ -618,14 +619,23 @@ function GscChart({ dias }: { dias: { data: string; cliques: number; impressoes:
   const padT = 14
   const padB = 26
   const n = dias.length
-  const maxI = Math.max(1, ...dias.map((d) => d.impressoes))
-  const maxC = Math.max(1, ...dias.map((d) => d.cliques))
+  const impr = dias.map((d) => d.impressoes)
+  const clk = dias.map((d) => d.cliques)
+  // média móvel simples (trailing) de janela w
+  const mm = (vals: number[], w: number) =>
+    vals.map((_, i) => {
+      const s = vals.slice(Math.max(0, i - w + 1), i + 1)
+      return s.reduce((a, b) => a + b, 0) / s.length
+    })
+  const maI = mm(impr, 15)
+  const maC = mm(clk, 15)
+  const maxI = Math.max(1, ...impr)
+  const maxC = Math.max(1, ...clk)
   const x = (i: number) => padL + (i / (n - 1)) * (W - padL - padR)
   const yI = (v: number) => H - padB - (v / maxI) * (H - padT - padB)
   const yC = (v: number) => H - padB - (v / maxC) * (H - padT - padB)
-  const areaPts = dias.map((d, i) => `${x(i).toFixed(1)},${yI(d.impressoes).toFixed(1)}`).join(' ')
-  const areaPath = `M ${x(0).toFixed(1)},${(H - padB).toFixed(1)} L ${areaPts} L ${x(n - 1).toFixed(1)},${(H - padB).toFixed(1)} Z`
-  const clkPts = dias.map((d, i) => `${x(i).toFixed(1)},${yC(d.cliques).toFixed(1)}`).join(' ')
+  const pts = (arr: number[], y: (v: number) => number) => arr.map((v, i) => `${x(i).toFixed(1)},${y(v).toFixed(1)}`).join(' ')
+  const areaPath = `M ${x(0).toFixed(1)},${(H - padB).toFixed(1)} L ${pts(impr, yI)} L ${x(n - 1).toFixed(1)},${(H - padB).toFixed(1)} Z`
   const fmtD = (s: string) => {
     const [, m, dd] = s.split('-')
     return `${dd}/${m}`
@@ -640,17 +650,20 @@ function GscChart({ dias }: { dias: { data: string; cliques: number; impressoes:
           <span className="inline-flex items-center gap-1.5 text-[#E8823A]"><span className="w-3.5 h-[2px] bg-[#E8823A]" />Cliques</span>
         </div>
       </div>
-      <svg viewBox={`0 0 ${W} ${H}`} className="w-full h-auto" role="img" aria-label="Gráfico de impressões e cliques orgânicos por dia">
-        <path d={areaPath} fill="#695192" fillOpacity="0.13" />
-        <polyline points={areaPts} fill="none" stroke="#695192" strokeWidth="1.5" strokeOpacity="0.5" />
-        <polyline points={clkPts} fill="none" stroke="#E8823A" strokeWidth="2.4" strokeLinejoin="round" strokeLinecap="round" />
+      <svg viewBox={`0 0 ${W} ${H}`} className="w-full h-auto" role="img" aria-label="Impressões e cliques orgânicos por dia com média móvel de 15 dias">
+        {/* volume bruto do dia (contexto, com o zigue-zague) */}
+        <path d={areaPath} fill="#695192" fillOpacity="0.09" />
+        <polyline points={pts(clk, yC)} fill="none" stroke="#E8823A" strokeWidth="1.2" strokeOpacity="0.3" />
+        {/* média móvel de 15 dias = a tendência (linhas grossas) */}
+        <polyline points={pts(maI, yI)} fill="none" stroke="#695192" strokeWidth="2.6" strokeLinejoin="round" strokeLinecap="round" />
+        <polyline points={pts(maC, yC)} fill="none" stroke="#E8823A" strokeWidth="2.6" strokeLinejoin="round" strokeLinecap="round" />
         {marcos.map((i, k) => (
           <text key={k} x={x(i)} y={H - 8} textAnchor={k === 0 ? 'start' : k === marcos.length - 1 ? 'end' : 'middle'} fontSize="11" fill="#9a8f86">
             {fmtD(dias[i].data)}
           </text>
         ))}
       </svg>
-      <p className="text-[11px] text-[#9a8f86] mt-1">Últimos {n} dias · impressões (área roxa) e cliques (linha laranja) têm escalas próprias. Latência de ~2 dias do Google.</p>
+      <p className="text-[11px] text-[#9a8f86] mt-1">Últimos {n} dias · impressões (roxo) e cliques (laranja), cada uma na sua escala. <b className="text-[#7a6ea0]">Linhas grossas = média móvel de 15 dias (a tendência).</b> O fundo mais claro é o volume bruto do dia. Latência de ~2 dias do Google.</p>
     </div>
   )
 }

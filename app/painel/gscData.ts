@@ -112,7 +112,7 @@ export async function getGscData(): Promise<GscData | null> {
 // ── Série DIÁRIA (cliques + impressões por dia) para o gráfico de tendência ──────
 export type GscDia = { data: string; cliques: number; impressoes: number }
 
-export async function getGscSeries(dias = 90): Promise<GscDia[] | null> {
+export async function getGscSeries(dias = 60): Promise<GscDia[] | null> {
   const { GSC_SITE_URL } = process.env
   if (!GSC_SITE_URL) return null
 
