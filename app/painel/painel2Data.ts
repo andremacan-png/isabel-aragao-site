@@ -3,7 +3,7 @@
 // Reaproveita as MESMAS env vars do /painel. Qualquer falha => retorna null
 // (a página degrada sem os enfeites, mas os KPIs base — vindos das funções provadas — seguem).
 
-const GOOGLE_API_VERSION = 'v21'
+const GOOGLE_API_VERSION = 'v22'
 const META_API_VERSION = 'v21.0'
 const CONV_ACTION = 'onsite_conversion.messaging_conversation_started_7d'
 

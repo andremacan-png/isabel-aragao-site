@@ -246,8 +246,8 @@ export default async function Painel2Page({ searchParams }: { searchParams: Prom
       </div>
 
       <div className="max-w-[980px] mx-auto px-5 sm:px-10 pt-6 pb-12">
-        {/* Filtros de período */}
-        {live && (
+        {/* Filtros de período — sempre visíveis (mesmo em snapshot), pra nunca "sumirem" */}
+        {(
           <div className="flex flex-wrap items-center gap-2">
             {(Object.keys(PERIODOS) as PeriodoKey[]).map((k) => (
               <a

@@ -31,7 +31,7 @@ export type PeriodoKey = keyof typeof PERIODOS
 // Versão da API Google Ads. Se o Google atualizar e a consulta falhar,
 // basta subir este número (ex.: v22, v23) — a página continua no snapshot até lá.
 // Obs.: o Google aposenta versões ~anualmente; v18/v19/v20 já foram bloqueadas.
-const API_VERSION = 'v21'
+const API_VERSION = 'v22'
 
 // Snapshot de fallback (acumulado até 11/06/2026).
 const SNAPSHOT: Campanha[] = [
