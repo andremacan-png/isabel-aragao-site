@@ -614,8 +614,8 @@ function GscChart({ dias }: { dias: { data: string; cliques: number; impressoes:
   if (dias.length < 2) return null
   const W = 720
   const H = 190
-  const padL = 6
-  const padR = 6
+  const padL = 46 // espaço p/ os rótulos de impressões (eixo esquerdo)
+  const padR = 40 // espaço p/ os rótulos de cliques (eixo direito)
   const padT = 14
   const padB = 26
   const n = dias.length
@@ -634,23 +634,34 @@ function GscChart({ dias }: { dias: { data: string; cliques: number; impressoes:
   const x = (i: number) => padL + (i / (n - 1)) * (W - padL - padR)
   const yI = (v: number) => H - padB - (v / maxI) * (H - padT - padB)
   const yC = (v: number) => H - padB - (v / maxC) * (H - padT - padB)
+  const yLevel = (f: number) => H - padB - f * (H - padT - padB)
   const pts = (arr: number[], y: (v: number) => number) => arr.map((v, i) => `${x(i).toFixed(1)},${y(v).toFixed(1)}`).join(' ')
   const areaPath = `M ${x(0).toFixed(1)},${(H - padB).toFixed(1)} L ${pts(impr, yI)} L ${x(n - 1).toFixed(1)},${(H - padB).toFixed(1)} Z`
   const fmtD = (s: string) => {
     const [, m, dd] = s.split('-')
     return `${dd}/${m}`
   }
+  const nInt = (v: number) => Math.round(v).toLocaleString('pt-BR')
   const marcos = [0, Math.floor((n - 1) / 2), n - 1]
+  const niveis = [1, 0.5, 0] // topo (máx), meio, base (0)
   return (
     <div className="bg-white border border-[#EBE3D6] rounded-[22px] p-4 sm:p-5">
       <div className="flex items-center justify-between mb-1.5 flex-wrap gap-2">
         <p className="text-[12px] font-bold uppercase tracking-[0.05em] text-[#7a6ea0]">Impressões e cliques por dia</p>
         <div className="flex items-center gap-3 text-[11px] font-semibold">
-          <span className="inline-flex items-center gap-1.5 text-[#695192]"><span className="w-2.5 h-2.5 rounded-sm bg-[#695192]/20 border border-[#695192]" />Impressões</span>
-          <span className="inline-flex items-center gap-1.5 text-[#E8823A]"><span className="w-3.5 h-[2px] bg-[#E8823A]" />Cliques</span>
+          <span className="inline-flex items-center gap-1.5 text-[#695192]"><span className="w-2.5 h-2.5 rounded-sm bg-[#695192]/20 border border-[#695192]" />Impressões (esq.)</span>
+          <span className="inline-flex items-center gap-1.5 text-[#E8823A]"><span className="w-3.5 h-[2px] bg-[#E8823A]" />Cliques (dir.)</span>
         </div>
       </div>
-      <svg viewBox={`0 0 ${W} ${H}`} className="w-full h-auto" role="img" aria-label="Impressões e cliques orgânicos por dia com média móvel de 15 dias">
+      <svg viewBox={`0 0 ${W} ${H}`} className="w-full h-auto" role="img" aria-label="Impressões e cliques orgânicos por dia com média móvel de 15 dias e escalas nos eixos">
+        {/* grade + rótulos dos eixos: esquerda = impressões (roxo), direita = cliques (âmbar) */}
+        {niveis.map((f, k) => (
+          <g key={k}>
+            <line x1={padL} y1={yLevel(f)} x2={W - padR} y2={yLevel(f)} stroke="#EBE3D6" strokeWidth="1" strokeDasharray={f === 0 ? undefined : '3 3'} />
+            <text x={padL - 7} y={yLevel(f) + 3.5} textAnchor="end" fontSize="10.5" fontWeight="700" fill="#695192">{nInt(maxI * f)}</text>
+            <text x={W - padR + 7} y={yLevel(f) + 3.5} textAnchor="start" fontSize="10.5" fontWeight="700" fill="#E8823A">{nInt(maxC * f)}</text>
+          </g>
+        ))}
         {/* volume bruto do dia (contexto, com o zigue-zague) */}
         <path d={areaPath} fill="#695192" fillOpacity="0.09" />
         <polyline points={pts(clk, yC)} fill="none" stroke="#E8823A" strokeWidth="1.2" strokeOpacity="0.3" />
@@ -663,7 +674,7 @@ function GscChart({ dias }: { dias: { data: string; cliques: number; impressoes:
           </text>
         ))}
       </svg>
-      <p className="text-[11px] text-[#9a8f86] mt-1">Últimos {n} dias · impressões (roxo) e cliques (laranja), cada uma na sua escala. <b className="text-[#7a6ea0]">Linhas grossas = média móvel de 15 dias (a tendência).</b> O fundo mais claro é o volume bruto do dia. Latência de ~2 dias do Google.</p>
+      <p className="text-[11px] text-[#9a8f86] mt-1">Últimos {n} dias · <b className="text-[#695192]">eixo esquerdo = impressões</b>, <b className="text-[#E8823A]">eixo direito = cliques</b>. <b className="text-[#7a6ea0]">Linhas grossas = média móvel de 15 dias (a tendência)</b>; o fundo claro é o volume bruto do dia. Latência de ~2 dias do Google.</p>
     </div>
   )
 }
