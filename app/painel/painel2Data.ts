@@ -202,8 +202,8 @@ async function metaDaily(n: number): Promise<ByDate | null> {
 export const CONSULTAS_MES = {
   label: 'agosto',
   inicio: '2026-08-01',
-  google: 2, // consultas fechadas que vieram do SITE (Google Ads)
-  meta: 4, // consultas fechadas que vieram do INSTAGRAM (Meta)
+  google: 3, // consultas fechadas que vieram do SITE (Google/orgânico) — agosto: Regina, Silvia, Stephany
+  meta: 4, // consultas fechadas que vieram do INSTAGRAM (Meta) — agosto: Nilza, Daniela, Eliete, Karen
 }
 
 export type CanalCusto = { invest: number; consultas: number; custo: number; disponivel: boolean }

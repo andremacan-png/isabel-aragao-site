@@ -126,8 +126,9 @@ async function computePainelData(periodo: PeriodoKey): Promise<PainelData> {
         taxa: cliques ? (conversoes / cliques) * 100 : 0,
       }
     })
-    if (!campanhas.length) return snapshotData()
-
+    // A API respondeu (res.ok). 0 linhas = período genuinamente sem dados (ex.: "hoje" sem
+    // gasto ainda), e NÃO uma falha. Devolve LIVE zerado (mantém os filtros na tela e mostra
+    // o período certo) em vez de cair no snapshot antigo, que sumia com os filtros.
     return { campanhas, total: montaTotais(campanhas), fonte: 'live', periodoLabel: PERIODOS[periodo].label }
   } catch {
     return snapshotData()
