@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { getPainelData, PERIODOS, type PeriodoKey } from './adsData'
 import { getMetaData } from './metaAdsData'
-import { getGscData } from './gscData'
+import { getGscData, getGscSeries } from './gscData'
 import { getPainel2Series, getCustoConsultaCanais, type SerieTot } from './painel2Data'
 
 export const metadata: Metadata = {
@@ -160,11 +160,12 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 export default async function Painel2Page({ searchParams }: { searchParams: Promise<{ periodo?: string }> }) {
   const sp = await searchParams
   const periodo: PeriodoKey = sp.periodo && sp.periodo in PERIODOS ? (sp.periodo as PeriodoKey) : '30d'
-  const [data, meta, gsc, serie] = await Promise.all([
+  const [data, meta, gsc, serie, gscSerie] = await Promise.all([
     getPainelData(periodo),
     getMetaData(periodo),
     getGscData(),
     getPainel2Series(periodo),
+    getGscSeries(),
   ])
   // Roda DEPOIS do bloco acima (não junto): assim a query de gasto do Google não
   // disputa o limite de concorrência do googleAds:search com getPainelData/série
@@ -554,6 +555,11 @@ export default async function Painel2Page({ searchParams }: { searchParams: Prom
                     </tbody>
                   </table>
                 </div>
+                {gscSerie && gscSerie.length > 1 && (
+                  <div className="mt-3">
+                    <GscChart dias={gscSerie} />
+                  </div>
+                )}
                 <p className="text-xs text-[#9a8f86] mt-3">Período: {gsc.periodo} · páginas em laranja = posts do blog · posição = média ponderada por impressões.</p>
               </>
             )}
@@ -598,6 +604,53 @@ function CanalConsultaCard({
       <div className={`font-playfair font-extrabold mt-2 leading-none ${organico ? 'text-[26px] text-[#1E7A3E]' : 'text-[40px] text-[#12082a]'}`}>{big}</div>
       <p className="text-[12.5px] text-[#8a7f92] mt-2">{canal.consultas} consultas · {brl0(canal.invest)} em anúncios</p>
       {semAnuncio && <p className="text-[11.5px] text-[#1E7A3E] font-semibold mt-1">sem gasto em anúncio (vieram do orgânico)</p>}
+    </div>
+  )
+}
+
+// Gráfico de tendência do orgânico: impressões (área roxa) + cliques (linha âmbar), escalas próprias
+function GscChart({ dias }: { dias: { data: string; cliques: number; impressoes: number }[] }) {
+  if (dias.length < 2) return null
+  const W = 720
+  const H = 190
+  const padL = 6
+  const padR = 6
+  const padT = 14
+  const padB = 26
+  const n = dias.length
+  const maxI = Math.max(1, ...dias.map((d) => d.impressoes))
+  const maxC = Math.max(1, ...dias.map((d) => d.cliques))
+  const x = (i: number) => padL + (i / (n - 1)) * (W - padL - padR)
+  const yI = (v: number) => H - padB - (v / maxI) * (H - padT - padB)
+  const yC = (v: number) => H - padB - (v / maxC) * (H - padT - padB)
+  const areaPts = dias.map((d, i) => `${x(i).toFixed(1)},${yI(d.impressoes).toFixed(1)}`).join(' ')
+  const areaPath = `M ${x(0).toFixed(1)},${(H - padB).toFixed(1)} L ${areaPts} L ${x(n - 1).toFixed(1)},${(H - padB).toFixed(1)} Z`
+  const clkPts = dias.map((d, i) => `${x(i).toFixed(1)},${yC(d.cliques).toFixed(1)}`).join(' ')
+  const fmtD = (s: string) => {
+    const [, m, dd] = s.split('-')
+    return `${dd}/${m}`
+  }
+  const marcos = [0, Math.floor((n - 1) / 2), n - 1]
+  return (
+    <div className="bg-white border border-[#EBE3D6] rounded-[22px] p-4 sm:p-5">
+      <div className="flex items-center justify-between mb-1.5 flex-wrap gap-2">
+        <p className="text-[12px] font-bold uppercase tracking-[0.05em] text-[#7a6ea0]">Impressões e cliques por dia</p>
+        <div className="flex items-center gap-3 text-[11px] font-semibold">
+          <span className="inline-flex items-center gap-1.5 text-[#695192]"><span className="w-2.5 h-2.5 rounded-sm bg-[#695192]/20 border border-[#695192]" />Impressões</span>
+          <span className="inline-flex items-center gap-1.5 text-[#E8823A]"><span className="w-3.5 h-[2px] bg-[#E8823A]" />Cliques</span>
+        </div>
+      </div>
+      <svg viewBox={`0 0 ${W} ${H}`} className="w-full h-auto" role="img" aria-label="Gráfico de impressões e cliques orgânicos por dia">
+        <path d={areaPath} fill="#695192" fillOpacity="0.13" />
+        <polyline points={areaPts} fill="none" stroke="#695192" strokeWidth="1.5" strokeOpacity="0.5" />
+        <polyline points={clkPts} fill="none" stroke="#E8823A" strokeWidth="2.4" strokeLinejoin="round" strokeLinecap="round" />
+        {marcos.map((i, k) => (
+          <text key={k} x={x(i)} y={H - 8} textAnchor={k === 0 ? 'start' : k === marcos.length - 1 ? 'end' : 'middle'} fontSize="11" fill="#9a8f86">
+            {fmtD(dias[i].data)}
+          </text>
+        ))}
+      </svg>
+      <p className="text-[11px] text-[#9a8f86] mt-1">Últimos {n} dias · impressões (área roxa) e cliques (linha laranja) têm escalas próprias. Latência de ~2 dias do Google.</p>
     </div>
   )
 }

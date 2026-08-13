@@ -108,3 +108,54 @@ export async function getGscData(): Promise<GscData | null> {
     return null
   }
 }
+
+// ── Série DIÁRIA (cliques + impressões por dia) para o gráfico de tendência ──────
+export type GscDia = { data: string; cliques: number; impressoes: number }
+
+export async function getGscSeries(dias = 90): Promise<GscDia[] | null> {
+  const { GSC_SITE_URL } = process.env
+  if (!GSC_SITE_URL) return null
+
+  try {
+    const token = await getGscToken()
+    if (!token) return null
+
+    const end = new Date()
+    end.setDate(end.getDate() - 2) // latência de ~2 dias do GSC
+    const start = new Date(end)
+    start.setDate(start.getDate() - (dias - 1))
+
+    const siteEncoded = encodeURIComponent(GSC_SITE_URL)
+    const res = await fetch(
+      `https://searchconsole.googleapis.com/webmasters/v3/sites/${siteEncoded}/searchAnalytics/query`,
+      {
+        method: 'POST',
+        headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
+        body: JSON.stringify({ startDate: fmtDate(start), endDate: fmtDate(end), dimensions: ['date'], rowLimit: 400 }),
+        cache: 'no-store',
+      }
+    )
+    if (!res.ok) return null
+
+    const j = await res.json()
+    const rows: any[] = j.rows ?? []
+    const map = new Map<string, { c: number; i: number }>()
+    for (const r of rows) {
+      const d = r.keys?.[0] ?? ''
+      if (d) map.set(d, { c: Math.round(r.clicks ?? 0), i: Math.round(r.impressions ?? 0) })
+    }
+
+    // Preenche a série contínua (dias sem dado = 0) para a linha não ter buracos
+    const out: GscDia[] = []
+    const cur = new Date(start)
+    while (cur <= end) {
+      const d = fmtDate(cur)
+      const v = map.get(d)
+      out.push({ data: d, cliques: v?.c ?? 0, impressoes: v?.i ?? 0 })
+      cur.setDate(cur.getDate() + 1)
+    }
+    return out.length ? out : null
+  } catch {
+    return null
+  }
+}
