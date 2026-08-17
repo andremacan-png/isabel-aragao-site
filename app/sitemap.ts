@@ -12,7 +12,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/emagrecimento`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${BASE}/blog`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
     { url: `${BASE}/calculadora-imc`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE}/politica`, lastModified: now, changeFrequency: 'yearly', priority: 0.3 },
+    // /politica é noindex de propósito (política de privacidade) → NÃO entra no sitemap
+    // (sitemap deve listar só páginas indexáveis; senão o GSC alerta "Excluída pela tag noindex").
   ]
 
   const posts: MetadataRoute.Sitemap = POSTS.map((p) => ({
