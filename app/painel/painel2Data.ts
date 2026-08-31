@@ -202,9 +202,9 @@ async function metaDaily(n: number): Promise<ByDate | null> {
 export const CONSULTAS_MES = {
   label: 'agosto',
   inicio: '2026-08-01',
-  google: 6, // consultas do SITE (Google/orgânico) — agosto: Regina, Silvia Sabino, Stephany, Sueli, Suzana Amaral, Alex Antônio
-  meta: 6, // consultas do META (Instagram + Facebook = mesmo orçamento) — IG: Nilza, Daniela, Eliete, Karen, Graziele · FB: Silvia Carolina
-  // (Indicação = 8 em agosto: Diovani, Mara Regina, Marina, Isadora, Terezinha, Nilzete, Sara, Geri — orgânico, sem verba de anúncio → fora do custo/consulta por canal)
+  google: 9, // consultas do SITE (Google/orgânico) — agosto (fechamento): Regina, Silvia Sabino, Stephany, Sueli, Suzana Amaral, Alex Antônio, Thais Regina, Jakson Pedro, Gabriela Silva
+  meta: 9, // consultas do META (Instagram + Facebook = mesmo orçamento) — IG: Nilza, Daniela, Eliete, Karen, Graziele, Jessyka, Maria de Lourdes, Josideli · FB: Silvia Carolina
+  // (Indicação = 8 em agosto: Diovani, Mara Regina, Marina, Isadora, Terezinha, Nilzete, Sara, Geri — orgânico, sem verba de anúncio → fora do custo/consulta por canal · TOTAL 26 novos)
 }
 
 export type CanalCusto = { invest: number; consultas: number; custo: number; disponivel: boolean }
