@@ -709,6 +709,32 @@ export default function Home() {
               </div>
             </div>
           </div>
+          {/* Links internos p/ SEO: páginas locais + guias (sem nome de medicamento — a home é landing page do Ads) */}
+          <div className="border-t border-white/6 pt-5 mb-5 grid md:grid-cols-2 gap-6 text-sm">
+            <div>
+              <div className="text-white font-semibold mb-2 text-xs tracking-wider uppercase">Atendimento na região</div>
+              <div className="flex flex-wrap gap-x-4 gap-y-1">
+                <a href="/blog/medica-emagrecimento-sao-jose" className="hover:text-white transition-colors">Médica de emagrecimento em São José</a>
+                <a href="/blog/medica-emagrecimento-florianopolis" className="hover:text-white transition-colors">Florianópolis</a>
+                <a href="/blog/medica-emagrecimento-palhoca" className="hover:text-white transition-colors">Palhoça</a>
+                <a href="/blog/medica-emagrecimento-biguacu" className="hover:text-white transition-colors">Biguaçu</a>
+                <a href="/blog/clinica-emagrecimento-sao-jose-sc" className="hover:text-white transition-colors">Clínica de emagrecimento em São José</a>
+                <a href="/blog/aplicacao-injecao-emagrecer-sao-jose" className="hover:text-white transition-colors">Aplicação de injetável em São José</a>
+                <a href="/blog/bioimpedancia-sao-jose-sc" className="hover:text-white transition-colors">Bioimpedância em São José</a>
+              </div>
+            </div>
+            <div>
+              <div className="text-white font-semibold mb-2 text-xs tracking-wider uppercase">Guias e ferramentas</div>
+              <div className="flex flex-wrap gap-x-4 gap-y-1">
+                <a href="/calculadora-imc" className="hover:text-white transition-colors">Calculadora de IMC</a>
+                <a href="/blog/quanto-emagrece-com-injetavel" className="hover:text-white transition-colors">Quanto dá pra emagrecer com injetável</a>
+                <a href="/blog/perda-de-peso-saudavel-quantos-kg-por-mes" className="hover:text-white transition-colors">Quantos kg por mês é saudável</a>
+                <a href="/blog/efeito-sanfona-por-que-o-peso-volta" className="hover:text-white transition-colors">Por que o peso volta</a>
+                <a href="/blog/menopausa-ganho-de-peso" className="hover:text-white transition-colors">Menopausa e ganho de peso</a>
+                <a href="/blog" className="hover:text-white transition-colors">Todos os artigos</a>
+              </div>
+            </div>
+          </div>
           <div className="border-t border-white/6 pt-5 flex flex-col md:flex-row justify-between items-center gap-3 text-xs">
             <p>© {new Date().getFullYear()} Dra. Isabel Aragão. Todos os direitos reservados.</p>
             <a href="/politica" className="hover:text-white transition-colors">Política de Privacidade</a>

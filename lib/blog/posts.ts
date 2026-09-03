@@ -1,3 +1,5 @@
+import { POSTS_2 } from './posts-2'
+
 export type Post = {
   slug: string
   num: number
@@ -11,6 +13,7 @@ export type Post = {
   // HTML content — split on <!--CTA--> to inject mid-article CTA block
   content: string
   related: string[]
+  faq?: { q: string; a: string }[]
 }
 
 export const POSTS: Post[] = [
@@ -88,7 +91,7 @@ export const POSTS: Post[] = [
     readTime: '5 min',
     date: 'Julho 2026',
     metaDesc: 'Bioimpedância: o que é, como funciona, quais métricas importam (massa magra, gordura visceral, TMB) e como interpretar o laudo. Exame realizado na Clínica Dra. Isabel Aragão em São José/SC.',
-    related: ['bioimpedancia-sao-jose-sc', 'medica-emagrecimento-sao-jose', 'primeira-consulta-medica-emagrecimento', 'perda-de-peso-saudavel-quantos-kg-por-mes'],
+    related: ['bioimpedancia-sao-jose-sc', 'medica-emagrecimento-sao-jose', 'primeira-consulta-medica-emagrecimento', 'perda-de-peso-saudavel-quantos-kg-por-mes', 'como-ler-resultado-bioimpedancia'],
     content: `
 <p>A balança é um instrumento limitado. Ela mostra um número total, mas não revela o que compõe esse peso. Você pode estar perdendo músculo e ganhando gordura e a balança mostrar o mesmo valor — ou até menos. A bioimpedância resolve esse problema.</p>
 <p>É um exame simples, rápido e indolor que analisa a composição corporal com muito mais precisão do que qualquer balança convencional.</p>
@@ -154,7 +157,7 @@ export const POSTS: Post[] = [
     readTime: '5 min',
     date: 'Julho 2026',
     metaDesc: 'Por que a dieta sozinha quase sempre falha: adaptação metabólica, set point, hormônios da fome e o que a ciência diz sobre emagrecimento sustentável com acompanhamento médico.',
-    related: ['obesidade-e-uma-doenca', 'hormonios-ganho-de-peso', 'quando-procurar-medico-para-emagrecer', 'perda-de-peso-saudavel-quantos-kg-por-mes'],
+    related: ['obesidade-e-uma-doenca', 'hormonios-ganho-de-peso', 'quando-procurar-medico-para-emagrecer', 'perda-de-peso-saudavel-quantos-kg-por-mes', 'efeito-sanfona-por-que-o-peso-volta', 'compulsao-alimentar-noite'],
     content: `
 <p>Pesquisas indicam que entre 80% e 95% das pessoas que emagrecem com dieta recuperam o peso em cinco anos. Esse número assustador não é resultado de preguiça ou falta de disciplina. É resultado de como o corpo humano funciona — e de como a dieta restritiva interage com essa biologia.</p>
 <h2>O que acontece no corpo quando você faz dieta</h2>
@@ -271,7 +274,7 @@ export const POSTS: Post[] = [
     readTime: '5 min',
     date: 'Julho 2026',
     metaDesc: 'Por que emagrecer depois dos 40 fica mais difícil: mudanças hormonais, sarcopenia, metabolismo mais lento. O que fazer para perder gordura preservando músculo com acompanhamento médico.',
-    related: ['hormonios-ganho-de-peso', 'por-que-dieta-sozinha-falha', 'bioimpedancia-o-que-e', 'quando-procurar-medico-para-emagrecer'],
+    related: ['hormonios-ganho-de-peso', 'por-que-dieta-sozinha-falha', 'bioimpedancia-o-que-e', 'quando-procurar-medico-para-emagrecer', 'menopausa-ganho-de-peso'],
     content: `
 <p>É muito comum ouvir de pacientes acima dos 40: "Eu como a mesma coisa de antes e engordei. Faço a mesma academia e não emagreço mais." Não é impressão. É biologia.</p>
 <p>A partir dos 40 anos, uma série de mudanças acontece no organismo que torna o emagrecimento genuinamente mais difícil — e que exige uma abordagem diferente da que funcionava antes.</p>
@@ -308,7 +311,7 @@ export const POSTS: Post[] = [
     readTime: '6 min',
     date: 'Julho 2026',
     metaDesc: 'Como a insulina, leptina, cortisol, grelina e a tireoide influenciam o ganho de peso. O que é resistência à insulina e à leptina, e como o tratamento médico aborda esses fatores.',
-    related: ['obesidade-e-uma-doenca', 'por-que-dieta-sozinha-falha', 'emagrecimento-apos-40-anos', 'quando-procurar-medico-para-emagrecer'],
+    related: ['obesidade-e-uma-doenca', 'por-que-dieta-sozinha-falha', 'emagrecimento-apos-40-anos', 'quando-procurar-medico-para-emagrecer', 'metabolismo-lento-existe', 'menopausa-ganho-de-peso'],
     content: `
 <p>Quando falamos em emagrecimento, a equação "coma menos, gaste mais" captura apenas uma parte da realidade. O que poucos explicam é que hormônios regulam diretamente o quanto você come, onde o corpo armazena gordura e como o metabolismo funciona. Ignorar esse sistema é a principal razão pela qual tantos tratamentos falham.</p>
 <h2>Insulina: o hormônio do armazenamento</h2>
@@ -347,8 +350,16 @@ export const POSTS: Post[] = [
     readTime: '5 min',
     date: 'Julho 2026',
     metaDesc: 'Quantos kg por mês dá para perder com saúde? O ritmo seguro é de 2 a 4 kg. Veja os riscos da pressa (perda de músculo, queda de cabelo, vesícula) e como saber se você perde gordura ou água.',
-    related: ['bioimpedancia-o-que-e', 'quanto-emagrece-com-injetavel', 'como-funciona-acompanhamento-medico-emagrecimento', 'clinica-emagrecimento-sao-jose-sc'],
+    related: ['bioimpedancia-o-que-e', 'quanto-emagrece-com-injetavel', 'efeito-sanfona-por-que-o-peso-volta', 'como-ler-resultado-bioimpedancia', 'clinica-emagrecimento-sao-jose-sc'],
+    faq: [
+      { q: 'Quantos kg por semana é saudável perder?', a: 'De 0,5 a 1 kg por semana, o que dá 2 a 4 kg por mês. Nesse ritmo a maior parte do peso perdido é gordura, e o corpo tem tempo de se adaptar sem perder músculo em excesso.' },
+      { q: 'É possível perder 5 kg em um mês com saúde?', a: 'Nos primeiros meses, algumas pessoas perdem um pouco acima da faixa, em parte por água e volume. Como regra, perdas muito acima de 4 kg por mês aumentam o risco de perda de músculo, queda de cabelo e efeito sanfona, e só devem acontecer com supervisão médica.' },
+      { q: 'Perder peso rápido faz cair cabelo?', a: 'Pode. A queda (eflúvio telógeno) costuma aparecer 2 a 4 meses depois de uma restrição muito severa e tende a se resolver quando o corpo se reequilibra. É um dos sinais de que o ritmo foi rápido demais.' },
+      { q: 'Como saber se estou perdendo gordura ou músculo?', a: 'A balança não diferencia. A bioimpedância mostra o percentual de gordura e a massa muscular; se o peso cai e o músculo cai junto, o plano precisa de ajuste.' },
+      { q: 'Com Mounjaro ou tirzepatida, quantos kg por mês dá para perder?', a: 'Varia muito de pessoa para pessoa e nunca é promessa. O ritmo saudável continua sendo a referência: o medicamento ajuda a controlar a fome para que a perda aconteça de forma sustentável, com acompanhamento e bioimpedância.' },
+    ],
     content: `
+<div class="resposta"><strong>Resposta rápida:</strong> o ritmo saudável é de <strong>0,5 a 1 kg por semana, ou 2 a 4 kg por mês</strong>. Mais rápido que isso costuma custar músculo, cabelo e efeito sanfona. O certo é medir com bioimpedância se a perda é de gordura, e não só de peso. Quer um primeiro sinal? Use a <a href="/calculadora-imc">calculadora de IMC</a>.</div>
 <p>Toda paciente quer emagrecer o mais rápido possível. É compreensível — carregar peso extra é desconfortável, e a motivação no início do tratamento costuma ser alta. Mas a velocidade importa: emagrecer muito rápido cobra um preço que muitas pessoas não sabem que estão pagando.</p>
 <h2>O ritmo saudável segundo as evidências</h2>
 <p>As principais diretrizes de medicina da obesidade recomendam uma perda de peso de <strong>0,5 a 1 kg por semana</strong>, o que equivale a <strong>2 a 4 kg por mês</strong>. Esse ritmo:</p>
@@ -911,8 +922,16 @@ export const POSTS: Post[] = [
     readTime: '4 min',
     date: 'Julho 2026',
     metaDesc: 'Em quanto tempo o Mounjaro (tirzepatida) faz efeito? O que você sente já nas primeiras semanas, quando a balança começa a mudar e por que o resultado real se constrói ao longo de meses.',
-    related: ['quanto-emagrece-com-injetavel', 'mounjaro-florianopolis', 'efeitos-colaterais-mounjaro-tirzepatida', 'perda-de-peso-saudavel-quantos-kg-por-mes'],
+    related: ['quanto-emagrece-com-injetavel', 'precisa-de-receita-mounjaro-tirzepatida', 'mounjaro-florianopolis', 'efeitos-colaterais-mounjaro-tirzepatida', 'perda-de-peso-saudavel-quantos-kg-por-mes'],
+    faq: [
+      { q: 'Em quantos dias o Mounjaro começa a fazer efeito?', a: 'O efeito no apetite costuma ser percebido já nos primeiros dias a semanas: menos fome, saciedade mais rápida, menos vontade de beliscar. A mudança na balança vem depois e é gradual.' },
+      { q: 'Com quantas semanas o Mounjaro faz efeito na balança?', a: 'Varia de pessoa para pessoa. Como a dose começa baixa e sobe por etapas ao longo das semanas, a mudança de peso e de composição corporal se constrói ao longo de meses, não de dias. Nada aqui é promessa.' },
+      { q: 'O Mounjaro faz efeito já na primeira dose?', a: 'Algumas pessoas notam redução do apetite logo na primeira semana; outras, um pouco depois. A primeira dose é de adaptação, pensada para o corpo se acostumar com menos efeitos colaterais.' },
+      { q: 'Por que a dose começa baixa e sobe devagar?', a: 'Para reduzir náusea e desconforto e permitir que o organismo se adapte. Subir a dose rápido demais aumenta os efeitos colaterais sem ganho real no resultado.' },
+      { q: 'Quanto tempo dura o tratamento com Mounjaro?', a: 'É individual e definido pelo médico conforme a resposta, os objetivos e a fase de manutenção. O tratamento da obesidade é de longo prazo, e o acompanhamento é o que sustenta o resultado.' },
+    ],
     content: `
+<div class="resposta"><strong>Resposta rápida:</strong> o efeito no <strong>apetite aparece já nas primeiras semanas</strong> (menos fome, saciedade mais rápida). A mudança <strong>na balança e no corpo é gradual e se consolida ao longo de meses</strong>, porque a dose sobe devagar de propósito. A resposta é individual e não é promessa de resultado.</div>
 <p>Entre as dúvidas mais comuns de quem vai começar o Mounjaro (tirzepatida), essa é quase sempre a primeira: em quanto tempo ele começa a fazer efeito? A resposta ajuda a criar expectativas realistas, e isso importa mais do que parece. Muita gente desiste cedo demais por esperar um resultado que ainda não era para ter aparecido.</p>
 <p>Antes de tudo, um aviso: os prazos abaixo são referências gerais, baseadas no que costuma acontecer e no que os estudos observam em grupos de pacientes. A resposta é individual e varia de pessoa para pessoa. Nada aqui é promessa de resultado.</p>
 <h2>O efeito no apetite aparece cedo</h2>
@@ -1190,6 +1209,7 @@ export const POSTS: Post[] = [
 <h2>O número que importa vem com acompanhamento</h2>
 <p>A pergunta "quanto vou emagrecer" só tem uma resposta de verdade: a que o seu corpo dá, ao longo do tratamento, medida de perto. A Dra. Isabel Aragão (CRM-SC 26139) atende em São José/SC e conduz o <a href="/blog/aplicacao-tirzepatida-sao-jose">tratamento com injetáveis</a> de forma individualizada, com prescrição, ajuste de dose e bioimpedância pra acompanhar o que a balança não mostra. Também atende quem é de <a href="/blog/mounjaro-florianopolis">Florianópolis</a> e região, presencialmente e online. Nada aqui é promessa de resultado: é cuidado médico sério.</p>`,
   },
+  ...POSTS_2,
 ]
 
 export function getPost(slug: string): Post | undefined {

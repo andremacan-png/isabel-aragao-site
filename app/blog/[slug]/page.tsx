@@ -100,6 +100,27 @@ const STYLES = `
   /* RELATED */
   .bp-related{margin-top:40px;}
   .bp-related-title{font-size:13px;font-weight:800;color:var(--text);margin-bottom:14px;text-transform:uppercase;letter-spacing:.08em;}
+  /* Resposta rápida (disputa o snippet) */
+  .bp-content .resposta{background:var(--cream2);border-left:4px solid var(--ambar);border-radius:0 12px 12px 0;padding:14px 18px;margin:0 0 24px;font-size:15.5px;line-height:1.6;}
+  .bp-content .resposta strong{color:var(--text);}
+  /* FAQ */
+  .bp-faq{margin-top:40px;}
+  .bp-faq-title{font-size:13px;font-weight:800;color:var(--text);margin-bottom:14px;text-transform:uppercase;letter-spacing:.08em;}
+  .bp-faq details{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:0 18px;margin-bottom:10px;}
+  .bp-faq summary{cursor:pointer;font-weight:700;color:var(--text);padding:14px 0;list-style:none;display:flex;justify-content:space-between;gap:12px;font-size:15px;}
+  .bp-faq summary::-webkit-details-marker{display:none;}
+  .bp-faq summary::after{content:'+';color:var(--ambar);font-weight:800;flex-shrink:0;}
+  .bp-faq details[open] summary::after{content:'×';}
+  .bp-faq details p{padding:0 0 16px;color:var(--text-body);font-size:15px;}
+  /* Hub de links (sidebar) */
+  .bp-sb-hub{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px 18px;margin-top:14px;}
+  .bp-sb-hub-title{font-size:11.5px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;}
+  .bp-sb-hub a{display:block;color:var(--text);text-decoration:none;font-size:14px;font-weight:600;padding:8px 0;border-top:1px solid var(--border);}
+  .bp-sb-hub a:first-of-type{border-top:0;}
+  .bp-sb-hub a:hover{color:var(--ambar);}
+  .bp-sb-hub-cities{display:flex;flex-wrap:wrap;gap:6px 10px;padding-top:10px;border-top:1px solid var(--border);margin-top:4px;}
+  .bp-sb-hub-cities span{font-size:12px;color:var(--muted);width:100%;}
+  .bp-sb-hub-cities a{display:inline;border:0;padding:0;font-size:13px;font-weight:600;}
   .bp-rel-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;}
   @media(max-width:500px){.bp-rel-grid{grid-template-columns:1fr;}}
   .bp-rel-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:16px;text-decoration:none;display:block;}
@@ -138,6 +159,37 @@ export default async function BlogPost({ params }: Props) {
 
   // Split content at <!--CTA--> marker
   const [before, after] = post.content.split('<!--CTA-->')
+
+  // JSON-LD: Article + FAQPage (quando o post tem faq) — ajuda snippet/rich results
+  const url = `https://isabelaragao.com.br/blog/${post.slug}`
+  const jsonLd: object[] = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      headline: post.title,
+      description: post.metaDesc,
+      mainEntityOfPage: url,
+      inLanguage: 'pt-BR',
+      author: { '@type': 'Person', name: 'Dra. Isabel Aragão', jobTitle: 'Médica', url: 'https://isabelaragao.com.br' },
+      publisher: {
+        '@type': 'Organization',
+        name: 'Dra. Isabel Aragão',
+        url: 'https://isabelaragao.com.br',
+        logo: { '@type': 'ImageObject', url: 'https://isabelaragao.com.br/icon.png' },
+      },
+    },
+  ]
+  if (post.faq && post.faq.length > 0) {
+    jsonLd.push({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: post.faq.map((f) => ({
+        '@type': 'Question',
+        name: f.q,
+        acceptedAnswer: { '@type': 'Answer', text: f.a },
+      })),
+    })
+  }
 
   return (
     <>
@@ -235,6 +287,21 @@ export default async function BlogPost({ params }: Props) {
                   </div>
                 </div>
               )}
+
+              {/* FAQ (renderiza só quando o post tem faq) */}
+              {post.faq && post.faq.length > 0 && (
+                <div className="bp-faq">
+                  <div className="bp-faq-title">Perguntas frequentes</div>
+                  {post.faq.map((f) => (
+                    <details key={f.q}>
+                      <summary>{f.q}</summary>
+                      <p>{f.a}</p>
+                    </details>
+                  ))}
+                </div>
+              )}
+
+              <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
             </article>
           </main>
 
@@ -252,6 +319,22 @@ export default async function BlogPost({ params }: Props) {
                 <div className="bp-sb-bullet">Plano individualizado</div>
                 <div className="bp-sb-bullet">Acompanhamento de perto</div>
                 <div className="bp-sb-bullet">Sem compromisso inicial</div>
+              </div>
+            </div>
+
+            {/* Hub de links internos: distribui autoridade pras páginas-dinheiro e pras novas */}
+            <div className="bp-sb-hub">
+              <div className="bp-sb-hub-title">Ferramentas e guias</div>
+              <Link href="/calculadora-imc">Calculadora de IMC</Link>
+              <Link href="/blog/quanto-emagrece-com-injetavel">Quanto dá pra emagrecer com injetável</Link>
+              <Link href="/blog/como-ler-resultado-bioimpedancia">Como ler a bioimpedância</Link>
+              <Link href="/blog/clinica-emagrecimento-sao-jose-sc">Clínica de emagrecimento em São José</Link>
+              <div className="bp-sb-hub-cities">
+                <span>Aplicação de tirzepatida:</span>
+                <Link href="/blog/aplicacao-tirzepatida-sao-jose">São José</Link>
+                <Link href="/blog/aplicacao-tirzepatida-florianopolis">Florianópolis</Link>
+                <Link href="/blog/aplicacao-tirzepatida-palhoca">Palhoça</Link>
+                <Link href="/blog/aplicacao-tirzepatida-biguacu">Biguaçu</Link>
               </div>
             </div>
           </aside>
