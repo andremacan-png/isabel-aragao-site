@@ -108,8 +108,11 @@ export default function Home() {
       {/* ── NAVBAR (2 linhas: marca+CTA e menu de âncoras) ── */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-[#12082a] shadow-lg shadow-black/20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between py-3">
-          <span className="font-playfair text-lg font-bold text-white tracking-tight">
-            Dra. Isabel Aragão
+          <span className="flex items-center gap-2.5">
+            <img src="/marca/simbolo-branco.png" alt="" width={14} height={24} />
+            <span className="font-playfair text-lg font-bold text-white tracking-tight">
+              Dra. Isabel Aragão
+            </span>
           </span>
           <a href={WA} target="_blank" rel="noopener noreferrer"
             className="bg-white text-[#12082a] px-5 py-2 rounded-full text-sm font-bold hover:bg-gray-100 transition-colors">

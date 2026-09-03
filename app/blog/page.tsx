@@ -67,13 +67,13 @@ export default function BlogIndex() {
         .bl-cta-ey{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.12em;color:var(--ambar-l);margin-bottom:8px;}
         .bl-cta h2{color:#fff;font-size:20px;font-weight:800;margin-bottom:8px;}
         .bl-cta p{color:rgba(255,255,255,.7);font-size:14px;margin-bottom:20px;line-height:1.5;}
-        .bl-cta-btn{display:inline-flex;align-items:center;gap:10px;background:#25D366;color:#fff;font-weight:800;font-size:14px;padding:13px 26px;border-radius:10px;text-decoration:none;}
+        .bl-cta-btn{display:inline-flex;align-items:center;gap:10px;background:var(--ambar);color:#fff;font-weight:800;font-size:14px;padding:13px 26px;border-radius:10px;text-decoration:none;}
       `}</style>
 
       <div className="bl-body">
         <nav className="bl-nav">
           <Link href="/" className="bl-brand">
-            <div className="bl-logo">💜</div>
+            <div className="bl-logo"><img src="/marca/simbolo-branco.png" alt="" width={13} height={22} /></div>
             <span className="bl-name">Dra. Isabel Aragão</span>
           </Link>
           <div className="bl-nav-links">

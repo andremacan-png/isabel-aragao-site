@@ -88,7 +88,7 @@ const STYLES = `
   .bp-cta-final{background:var(--cream2);border:2px solid var(--border);border-radius:14px;padding:24px 28px;margin-top:40px;display:flex;gap:20px;align-items:center;flex-wrap:wrap;}
   .bp-cta-final h3{color:var(--text);font-size:17px;font-weight:800;margin-bottom:4px;}
   .bp-cta-final p{color:var(--muted);font-size:14px;margin:0;flex:1;min-width:180px;}
-  .bp-wa-btn{display:inline-flex;align-items:center;gap:10px;background:#25D366;color:#fff;font-weight:800;font-size:14px;padding:13px 22px;border-radius:10px;text-decoration:none;white-space:nowrap;}
+  .bp-wa-btn{display:inline-flex;align-items:center;gap:10px;background:var(--ambar);color:#fff;font-weight:800;font-size:14px;padding:13px 22px;border-radius:10px;text-decoration:none;white-space:nowrap;}
   /* AUTHOR */
   .bp-author{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;margin-top:32px;display:flex;gap:16px;}
   @media(max-width:500px){.bp-author{flex-direction:column;}}
@@ -113,18 +113,18 @@ const STYLES = `
   .bp-sb-ey{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.12em;color:#F5A623;margin-bottom:10px;}
   .bp-sb-title{color:#fff;font-size:18px;font-weight:800;line-height:1.25;margin-bottom:10px;}
   .bp-sb-sub{color:rgba(255,255,255,.65);font-size:13px;margin-bottom:20px;line-height:1.5;}
-  .bp-sb-btn{display:flex;align-items:center;justify-content:center;gap:10px;background:#25D366;color:#fff;font-weight:800;font-size:14px;padding:14px;border-radius:10px;text-decoration:none;margin-bottom:12px;}
+  .bp-sb-btn{display:flex;align-items:center;justify-content:center;gap:10px;background:var(--ambar);color:#fff;font-weight:800;font-size:14px;padding:14px;border-radius:10px;text-decoration:none;margin-bottom:12px;}
   .bp-sb-link{display:flex;align-items:center;justify-content:center;gap:6px;color:rgba(255,255,255,.55);font-size:12px;text-decoration:none;}
   .bp-sb-link:hover{color:#fff;}
   .bp-sb-hr{border:none;border-top:1px solid rgba(255,255,255,.12);margin:18px 0;}
   .bp-sb-bullet{display:flex;gap:8px;align-items:flex-start;font-size:12px;color:rgba(255,255,255,.70);padding:5px 0;text-align:left;}
-  .bp-sb-bullet::before{content:'✓';color:#25D366;font-weight:800;flex-shrink:0;}
+  .bp-sb-bullet::before{content:'✓';color:var(--ambar);font-weight:800;flex-shrink:0;}
   /* MOBILE STICKY */
   .bp-mob{display:none;position:fixed;bottom:0;left:0;right:0;background:var(--roxo);padding:12px 20px;z-index:200;gap:12px;align-items:center;}
   @media(max-width:760px){.bp-mob{display:flex;}}
   .bp-mob-txt{color:#fff;font-size:13px;font-weight:700;flex:1;line-height:1.3;}
   .bp-mob-txt small{color:rgba(255,255,255,.6);font-size:11px;display:block;font-weight:500;}
-  .bp-mob-btn{background:#25D366;color:#fff;font-weight:800;font-size:13px;padding:10px 18px;border-radius:8px;text-decoration:none;white-space:nowrap;}
+  .bp-mob-btn{background:var(--ambar);color:#fff;font-weight:800;font-size:13px;padding:10px 18px;border-radius:8px;text-decoration:none;white-space:nowrap;}
   @media(max-width:760px){.bp{padding-bottom:72px;}}
 `
 
@@ -146,7 +146,7 @@ export default async function BlogPost({ params }: Props) {
         {/* NAV */}
         <nav className="bp-nav">
           <Link href="/" className="bp-brand">
-            <div className="bp-logo">💜</div>
+            <div className="bp-logo"><img src="/marca/simbolo-branco.png" alt="" width={13} height={22} /></div>
             <span className="bp-name">Dra. Isabel Aragão</span>
           </Link>
           <div className="bp-nav-links">
