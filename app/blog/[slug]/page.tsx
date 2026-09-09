@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { POSTS, getPost, getRelatedPosts } from '@/lib/blog/posts'
+import { publicadoEm, atualizadoEm } from '@/lib/blog/lastmod'
 
 type Props = { params: Promise<{ slug: string }> }
 
@@ -170,6 +171,8 @@ export default async function BlogPost({ params }: Props) {
       description: post.metaDesc,
       mainEntityOfPage: url,
       inLanguage: 'pt-BR',
+      datePublished: publicadoEm(post),
+      dateModified: atualizadoEm(post),
       author: { '@type': 'Person', name: 'Dra. Isabel Aragão', jobTitle: 'Médica', url: 'https://isabelaragao.com.br' },
       publisher: {
         '@type': 'Organization',
