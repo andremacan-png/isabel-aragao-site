@@ -42,6 +42,24 @@ export async function GET(req: Request) {
   const tok = await token()
   if (!tok) return NextResponse.json({ error: 'no token' }, { status: 500 })
 
+  // modo inspeção: ?mode=inspect&urls=/a,/b  → URL Inspection API (indexada? quando rastreada?)
+  if (u.searchParams.get('mode') === 'inspect') {
+    const urls = (u.searchParams.get('urls') ?? '').split(',').filter(Boolean)
+    const out: unknown[] = []
+    for (const path of urls) {
+      const res = await fetch('https://searchconsole.googleapis.com/v1/urlInspection/index:inspect', {
+        method: 'POST', headers: { Authorization: `Bearer ${tok}`, 'Content-Type': 'application/json' },
+        body: JSON.stringify({ inspectionUrl: `https://isabelaragao.com.br${path}`, siteUrl: site }), cache: 'no-store',
+      })
+      const j: any = await res.json().catch(() => ({}))
+      const r = j?.inspectionResult?.indexStatusResult
+      out.push({ path, status: res.status, verdict: r?.verdict, coverage: r?.coverageState, lastCrawl: r?.lastCrawlTime,
+        robots: r?.robotsTxtState, indexing: r?.indexingState, canonicalGoogle: r?.googleCanonical, canonicalUser: r?.userCanonical,
+        err: j?.error?.message })
+    }
+    return NextResponse.json({ inspect: out })
+  }
+
   const end = new Date(); end.setDate(end.getDate() - 2)
   const d = (n: number) => { const x = new Date(end); x.setDate(x.getDate() - n); return fmt(x) }
   const pos = { startDate: d(4), endDate: fmt(end) }   // 5 dias DEPOIS das mudanças
