@@ -202,10 +202,11 @@ async function metaDaily(n: number): Promise<ByDate | null> {
 export const CONSULTAS_MES = {
   label: 'setembro',
   inicio: '2026-09-01',
-  google: 2, // consultas do SITE (Google/orgânico) — setembro, PARCIAL até 10/09: Kamille, Tauana (André atualiza no fechamento)
-  meta: 2, // consultas do META (Instagram + Facebook) — setembro, PARCIAL até 10/09: Ana Caroline, Elana
-  // (Indicação: Francisco, Juliana → orgânico, fora do custo por canal · agosto fechou 26: Site 9 · Meta 9 · Indicação 8)
+  google: 3, // consultas do SITE (Google/orgânico) — setembro, PARCIAL até 10/09 (lista do André): Kamille Vitória, Ana Caroline Costa, Elana Macedo
+  meta: 0, // consultas do META (Instagram + Facebook) — setembro, PARCIAL até 10/09: nenhuma (25 conversas em 1-9/09, 0 paciente)
+  // (Indicação: Francisco Duarte, Juliana dos Santos → orgânico, fora do custo por canal · agosto fechou 26: Site 9 · Meta 9 · Indicação 8)
 }
+
 
 
 export type CanalCusto = { invest: number; consultas: number; custo: number; disponivel: boolean }
