@@ -30,12 +30,13 @@ async function cachedResult<T>(key: string, ttlMs: number, fn: () => Promise<T>,
 // Não há atribuição automática contato→consulta (a origem é marcada à mão no
 // WhatsApp), então a taxa vem da CONTAGEM real da agenda. Atualize estes dois
 // números a cada mês fechado — a taxa e o custo/consulta se recalculam sozinhos.
-export const CONSULTAS_MES_REF = 26 // consultas fechadas em julho/2026 (Google + Meta)
-export const CONTATOS_MES_REF = 183 // contatos pagos no mesmo período (~30 dias: 56 Google + 127 Meta)
-export const MES_REF_LABEL = 'julho'
-export const TAXA_CONTATO_CONSULTA = CONSULTAS_MES_REF / CONTATOS_MES_REF // ≈ 14,2%
-
-export type SerieTot = { invest: number; contatos: number }
+export const CONSULTAS_MES = {
+  label: 'setembro',
+  inicio: '2026-09-01',
+  google: 2, // consultas do SITE (Google/orgânico) — setembro, PARCIAL até 10/09: Kamille, Tauana (André atualiza no fechamento)
+  meta: 2, // consultas do META (Instagram + Facebook) — setembro, PARCIAL até 10/09: Ana Caroline, Elana
+  // (Indicação: Francisco, Juliana → orgânico, fora do custo por canal · agosto fechou 26: Site 9 · Meta 9 · Indicação 8)
+}
 export type PontoDia = { data: string; invest: number; contatos: number }
 export type Painel2Series = {
   combinado: { dias: PontoDia[]; atual: SerieTot; anterior: SerieTot }
