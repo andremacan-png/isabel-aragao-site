@@ -23,7 +23,7 @@ async function gaql(tok: string, query: string) {
   const headers: Record<string, string> = { Authorization: `Bearer ${tok}`, 'developer-token': GOOGLE_ADS_DEVELOPER_TOKEN ?? '', 'Content-Type': 'application/json' }
   if (GOOGLE_ADS_LOGIN_CUSTOMER_ID) headers['login-customer-id'] = GOOGLE_ADS_LOGIN_CUSTOMER_ID.replace(/\D/g, '')
   const res = await fetch(`https://googleads.googleapis.com/${V}/customers/${cid}/googleAds:search`, {
-    method: 'POST', headers, body: JSON.stringify({ query, pageSize: 1000 }), cache: 'no-store',
+    method: 'POST', headers, body: JSON.stringify({ query }), cache: 'no-store',
   })
   const j = await res.json().catch(() => ({}))
   if (!res.ok) return { error: res.status, msg: JSON.stringify(j).slice(0, 600) }
