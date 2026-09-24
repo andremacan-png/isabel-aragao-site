@@ -35,6 +35,8 @@ export async function GET(req: Request) {
   if (u.searchParams.get('k') !== KEY) return NextResponse.json({ error: 'nope' }, { status: 401 })
   const tok = await token()
   if (!tok) return NextResponse.json({ error: 'no token' }, { status: 500 })
+  const livre = u.searchParams.get('q')
+  if (livre) return NextResponse.json({ q: livre, r: await gaql(tok, livre) })
   const M = 'metrics.impressions, metrics.clicks, metrics.cost_micros, metrics.conversions, metrics.ctr, metrics.average_cpc'
   const P = "campaign.name = 'Página Principal'"
   const q = {
