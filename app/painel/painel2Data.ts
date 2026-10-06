@@ -200,12 +200,14 @@ async function metaDaily(n: number): Promise<ByDate | null> {
 // Atualize `google`/`meta` conforme a agenda; o gasto de cada canal é buscado ao vivo
 // do 1º dia do mês até hoje. Fuso America/Sao_Paulo para casar com as contas de anúncio.
 export const CONSULTAS_MES = {
-  label: 'setembro',
-  inicio: '2026-09-01',
-  google: 3, // consultas do SITE (Google/orgânico) — setembro, PARCIAL até 10/09 (lista do André): Kamille Vitória, Ana Caroline Costa, Elana Macedo
-  meta: 0, // consultas do META (Instagram + Facebook) — setembro, PARCIAL até 10/09: nenhuma (25 conversas em 1-9/09, 0 paciente)
-  // (Indicação: Francisco Duarte, Juliana dos Santos → orgânico, fora do custo por canal · agosto fechou 26: Site 9 · Meta 9 · Indicação 8)
+  label: 'outubro',
+  inicio: '2026-10-01',
+  google: 0, // consultas do SITE (Google/orgânico) — outubro, parcial (André atualiza)
+  meta: 0, // consultas do META — outubro (Meta pausada desde 10/09)
+  // SETEMBRO FECHADO (lista do André): 14 novos = Site 6 (Kamille, Ana Caroline, Elana, Jéssica Raniel, Leonice Ramalho, Rosana Sardo) · Indicação 6 (Francisco, Juliana, Elisana, Carolina Probst, Filipe Simoni, Izabela Ramalho) · Instagram 2 (Luciana Castelleoni, Paola Platt) · Facebook 0
+  // Agosto: 26 (Site 9 · Meta 9 · Indicação 8)
 }
+
 
 
 
