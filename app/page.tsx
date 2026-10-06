@@ -1,8 +1,6 @@
-'use client'
-
-import { useState } from 'react'
 import Image from 'next/image'
 import AnchorBar from '../components/AnchorBar'
+import FaqAccordion from '../components/FaqAccordion'
 
 // Atribuição sutil de origem (só a clínica percebe): "site da Dra. Isabel" = home
 const WA = 'https://wa.me/5548991593468?text=Ol%C3%A1%2C%20vim%20do%20site%20da%20Dra.%20Isabel%20e%20gostaria%20de%20saber%20mais%20sobre%20agendamento%20de%20consulta'
@@ -100,8 +98,6 @@ function WAIcon({ className = 'w-5 h-5' }: { className?: string }) {
 }
 
 export default function Home() {
-  const [openFaq, setOpenFaq] = useState<number | null>(null)
-
   return (
     <div className="font-sans text-gray-800 overflow-x-hidden">
 
@@ -144,10 +140,10 @@ export default function Home() {
         <div className="relative z-10 mx-4 mb-6 rounded-2xl bg-[#160a34]/58 backdrop-blur-md border border-white/10 shadow-2xl shadow-black/40 px-5 py-5">
           <span className="inline-flex items-baseline gap-2 text-[#F5A623] text-[11px] font-extrabold mb-3 tracking-wider uppercase leading-tight">
             <span className="w-1.5 h-1.5 rounded-full bg-[#F5A623] flex-none translate-y-0.5" />
-            Médica de emagrecimento · São José/SC · Particular
+            Clínica de emagrecimento · Médica para emagrecer · São José e Grande Floripa
           </span>
           <h1 className="font-playfair text-[27px] font-black text-white leading-[1.1] tracking-tight">
-            Emagrecimento médico,{' '}
+            Tratamento médico para emagrecer,{' '}
             <span className="text-[#C9A6FF] relative inline-block">
               individualizado
               <span className="absolute -bottom-0.5 left-0 w-full h-0.5 bg-[#F5A623]/80 rounded-full" />
@@ -155,16 +151,16 @@ export default function Home() {
             e sustentável
           </h1>
           <p className="text-[15px] text-[#E4DAF0] leading-snug mt-3">
-            Acompanhamento de perto, feito para o seu corpo. Sem dieta genérica.
+            Consulta de 90 minutos com bioimpedância, plano feito para o seu corpo e acompanhamento de perto. Sem dieta genérica.
           </p>
           <div className="flex items-center gap-2 mt-4">
             <span className="text-[#F5A623] text-base leading-none tracking-tight">★★★★★</span>
-            <span className="text-[#F0E9FA] text-[12.5px] font-bold leading-tight">+500 pacientes<br />+50 avaliações 5★ no Google</span>
+            <span className="text-[#F0E9FA] text-[12.5px] font-bold leading-tight">+500 pacientes<br />+65 avaliações 5★ no Google</span>
           </div>
           <a href={WA} target="_blank" rel="noopener noreferrer"
             className="flex items-center justify-center gap-2.5 bg-[#E8823A] text-white px-6 py-4 rounded-2xl text-base font-bold shadow-lg shadow-black/30 mt-4">
             <WAIcon />
-            Falar no WhatsApp
+            Agendar pelo WhatsApp
           </a>
           <p className="text-center text-[12px] text-[#B7A9D4] font-medium mt-2.5">Resposta rápida · sem convênio</p>
         </div>
@@ -187,10 +183,10 @@ export default function Home() {
             {/* Eyebrow qualificador — só mobile (quem · onde · particular) */}
             <span className="md:hidden inline-flex items-center gap-2 text-[#C4621A] text-[11px] font-extrabold mb-3 tracking-wider uppercase leading-tight">
               <span className="w-1.5 h-1.5 rounded-full bg-[#E8823A] flex-none" />
-              Médica de emagrecimento · São José/SC · Particular
+              Clínica de emagrecimento · Médica para emagrecer · São José e Grande Floripa
             </span>
             <h1 className="font-playfair text-3xl sm:text-4xl lg:text-[3.5rem] font-black text-gray-900 leading-[1.1] tracking-tight mb-4">
-              Emagrecimento médico,{' '}
+              Tratamento médico para emagrecer,{' '}
               <span className="text-primary-600 relative inline-block">
                 individualizado
                 <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-[#E8823A]/60 rounded-full" />
@@ -198,18 +194,18 @@ export default function Home() {
               e sustentável
             </h1>
             <p className="text-lg text-gray-500 leading-relaxed">
-              Acompanhamento de perto, feito para o seu corpo. Sem dieta genérica.
+              Consulta de 90 minutos com bioimpedância, plano feito para o seu corpo e acompanhamento de perto. Sem dieta genérica.
             </p>
             {/* Prova social + CTA WhatsApp — só mobile, na dobra */}
             <div className="md:hidden mt-4">
               <div className="flex items-center gap-2 mb-4">
                 <span className="text-[#E8823A] text-base leading-none tracking-tight">★★★★★</span>
-                <span className="text-[#3A2C55] text-sm font-bold">+500 pacientes · +50 avaliações 5★ no Google</span>
+                <span className="text-[#3A2C55] text-sm font-bold">+500 pacientes · +65 avaliações 5★ no Google</span>
               </div>
               <a href={WA} target="_blank" rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2.5 bg-[#E8823A] text-white px-6 py-4 rounded-2xl text-base font-bold shadow-lg shadow-[#E8823A]/25 hover:bg-[#d4691e] transition-colors">
                 <WAIcon />
-                Falar no WhatsApp
+                Agendar pelo WhatsApp
               </a>
               <p className="text-center text-xs text-gray-400 font-medium mt-2.5">Resposta rápida · sem convênio</p>
             </div>
@@ -280,7 +276,7 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
             {[
               { value: '+500', label: 'pacientes com qualidade\nde vida transformada' },
-              { value: '+50', label: 'avaliações 5 estrelas\nno Google' },
+              { value: '+65', label: 'avaliações 5 estrelas\nno Google' },
               { value: 'Einstein', label: 'especialização em obesidade\ne emagrecimento concluída', serif: true },
             ].map((stat, i) => (
               <div key={i} className="bg-white/5 border border-white/10 rounded-2xl px-6 py-5 flex items-center justify-between gap-4">
@@ -505,7 +501,7 @@ export default function Home() {
             <h2 className="font-playfair text-2xl sm:text-3xl md:text-5xl font-black text-white tracking-tight mb-1">
               O que dizem os pacientes
             </h2>
-            <p className="text-white/35 text-sm">+50 avaliações 5 estrelas</p>
+            <p className="text-white/35 text-sm">+65 avaliações 5 estrelas</p>
           </div>
           <div className="grid md:grid-cols-3 gap-4 mb-4">
             {depoimentos.map((dep, i) => (
@@ -525,7 +521,7 @@ export default function Home() {
             <div className="flex items-center gap-3">
               <span className="text-2xl">⭐</span>
               <div>
-                <p className="text-white font-bold text-sm">+50 avaliações 5 estrelas</p>
+                <p className="text-white font-bold text-sm">+65 avaliações 5 estrelas</p>
                 <p className="text-white/40 text-xs">Veja o que outros pacientes dizem no Google</p>
               </div>
             </div>
@@ -632,23 +628,7 @@ export default function Home() {
             <span className="inline-block text-[#C4621A] text-xs font-bold tracking-widest uppercase mb-3">Dúvidas</span>
             <h2 className="font-playfair text-2xl sm:text-3xl md:text-5xl font-black text-gray-900 tracking-tight">Perguntas frequentes</h2>
           </div>
-          <div className="space-y-2">
-            {faqItems.map((item, index) => (
-              <div key={index} className="bg-white rounded-xl shadow-sm overflow-hidden">
-                <button
-                  className="w-full text-left px-7 py-5 flex justify-between items-center gap-6 hover:bg-gray-50/80 transition-colors"
-                  onClick={() => setOpenFaq(openFaq === index ? null : index)}>
-                  <span className="font-semibold text-gray-900 text-sm">{item.q}</span>
-                  <span className={`text-primary-600 text-2xl font-light flex-shrink-0 transition-transform duration-200 ${openFaq === index ? 'rotate-45' : ''}`}>+</span>
-                </button>
-                {openFaq === index && (
-                  <div className="px-7 pb-6 text-gray-500 text-sm leading-relaxed border-t border-gray-100">
-                    <div className="pt-4">{item.a}</div>
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
+          <FaqAccordion items={faqItems} />
         </div>
       </section>
 
