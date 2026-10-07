@@ -130,13 +130,16 @@ export function conectado(): boolean {
 let emVoo = 0
 const fila: Array<() => void> = []
 async function vaga<T>(fn: () => Promise<T>): Promise<T> {
+  // quem espera recebe a vaga direto de quem termina (sem decrementar/incrementar no meio,
+  // para um terceiro chamador não "furar" a fila entre os dois passos)
   if (emVoo >= 2) await new Promise<void>((r) => fila.push(r))
-  emVoo++
+  else emVoo++
   try {
     return await fn()
   } finally {
-    emVoo--
-    fila.shift()?.()
+    const proximo = fila.shift()
+    if (proximo) proximo()
+    else emVoo--
   }
 }
 
@@ -298,6 +301,27 @@ export function getTermos(inicio: string, fim: string, limite = 60): Promise<Ter
       gasto: reais(r.metrics?.costMicros),
       impressoes: n(r.metrics?.impressions),
     }))
+  })
+}
+
+export type Negativa = { texto: string; tipo: 'ampla' | 'frase' | 'exata' }
+/** Palavras-chave negativas das campanhas (para marcar termos já bloqueados). */
+export function getNegativas(): Promise<Negativa[] | null> {
+  return cached('negativas', async () => {
+    const rows = await gaqlRaw(
+      `SELECT campaign_criterion.keyword.text, campaign_criterion.keyword.match_type FROM campaign_criterion WHERE campaign_criterion.negative = TRUE AND campaign_criterion.type = 'KEYWORD' AND ${ATIVAS}`
+    )
+    return rows.map((r) => ({ texto: String(r.campaignCriterion?.keyword?.text ?? '').toLowerCase().trim(), tipo: TIPO[r.campaignCriterion?.keyword?.matchType] ?? 'ampla' })).filter((x) => x.texto)
+  })
+}
+/** Aproximação da regra do Google: exata = igual; frase = sequência inteira dentro do termo; ampla = todas as palavras presentes. */
+export function negativada(termo: string, negs: Negativa[]): boolean {
+  const t = termo.toLowerCase().trim()
+  const palavras = t.split(/\s+/)
+  return negs.some((n) => {
+    if (n.tipo === 'exata') return t === n.texto
+    if (n.tipo === 'frase') return (' ' + palavras.join(' ') + ' ').includes(' ' + n.texto + ' ')
+    return n.texto.split(/\s+/).every((p) => palavras.includes(p))
   })
 }
 

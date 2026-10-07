@@ -7,7 +7,7 @@ import { getGscData, getGscSeries } from './gscData'
 import { getCustoConsultaCanais, CONSULTAS_MES } from './painel2Data'
 import {
   janela, isPeriodo, conectado, hojeSP, addDays, fmtDia, diaSemana,
-  getSerie, getCampanhas, getCampanhasPeriodo, getKeywords, getTermos, getIdade, getGenero, getSegmentos, getAnuncios,
+  getSerie, getCampanhas, getCampanhasPeriodo, getKeywords, getTermos, getIdade, getGenero, getSegmentos, getAnuncios, getNegativas, negativada,
   type Janela, type PeriodoKey, type Fatia,
 } from './lib/googleAds'
 import { montarAlertas } from './lib/alertas'
@@ -45,7 +45,7 @@ async function Resumo({ j, periodo }: { j: Janela; periodo: PeriodoKey }) {
   const hoje = hojeSP()
   const ontem = addDays(hoje, -1)
   const j7 = janela('7d')
-  const [serie, campanhas, serie7, termos14, anuncios, campPeriodo, meta, canais] = await Promise.all([
+  const [serie, campanhas, serie7, termos14, anuncios, campPeriodo, meta, canais, negativas] = await Promise.all([
     getSerie(j),
     getCampanhas(),
     periodo === '7d' ? Promise.resolve(null) : getSerie(j7),
@@ -54,9 +54,10 @@ async function Resumo({ j, periodo }: { j: Janela; periodo: PeriodoKey }) {
     getCampanhasPeriodo(j),
     META_PERIODOS.includes(periodo) ? getMetaData(periodo) : Promise.resolve(null),
     getCustoConsultaCanais(),
+    getNegativas(),
   ])
   const s7 = periodo === '7d' ? serie : serie7
-  const alertas = montarAlertas({ campanhas, serie7: s7, termos14, anuncios, ontem })
+  const alertas = montarAlertas({ campanhas, serie7: s7, termos14, anuncios, negativas, ontem })
 
   const pacientesMes = CONSULTAS_MES.google + CONSULTAS_MES.meta
   const custoPaciente = canais?.google.consultas ? canais.google.custo : null
@@ -227,10 +228,11 @@ async function Palavras({ j }: { j: Janela }) {
 }
 
 async function Termos({ j }: { j: Janela }) {
-  const termos = await getTermos(j.inicio, j.fim)
+  const [termos, negativas] = await Promise.all([getTermos(j.inicio, j.fim), getNegativas()])
   if (!termos) return <Vazio texto="Sem resposta do Google Ads para termos de pesquisa." />
-  const leitura = (t: { contatos: number; gasto: number; cliques: number }) =>
-    t.contatos > 0 ? <Pill tom="good">converte</Pill> : t.gasto >= 15 ? <Pill tom="serious">gastou sem contato</Pill> : t.cliques >= 3 ? <Pill tom="warn">observar</Pill> : <Pill>pouco dado</Pill>
+  const negs = negativas ?? []
+  const leitura = (t: { termo: string; contatos: number; gasto: number; cliques: number }) =>
+    negativada(t.termo, negs) ? <Pill>já negativado</Pill> : t.contatos > 0 ? <Pill tom="good">converte</Pill> : t.gasto >= 15 ? <Pill tom="serious">gastou sem contato</Pill> : t.cliques >= 3 ? <Pill tom="warn">observar</Pill> : <Pill>pouco dado</Pill>
   return (
     <Card titulo={`Termos de pesquisa · ${j.label}`} sub="O que as pessoas digitaram de fato no Google antes de clicar. Ordenado por gasto. Os que gastaram R$ 15 ou mais sem contato são candidatos a negativa.">
       {termos.length === 0 ? (

@@ -1,7 +1,7 @@
 // Semáforo do Resumo: checagens que antes só eu fazia à mão a cada leitura.
 // Cada alerta é calculado a partir de dados já carregados (nenhuma consulta extra).
 
-import { diaSemana, type Anuncio, type Campanha, type Serie, type Termo } from './googleAds'
+import { diaSemana, negativada, type Anuncio, type Campanha, type Negativa, type Serie, type Termo } from './googleAds'
 
 export type Nivel = 'ok' | 'warn' | 'serious' | 'crit'
 export type Alerta = { nivel: Nivel; titulo: string; texto: string }
@@ -14,6 +14,7 @@ export function montarAlertas(d: {
   serie7: Serie | null // janela '7d' (fim = ontem)
   termos14: Termo[] | null // últimos 14 dias
   anuncios: Anuncio[] | null
+  negativas?: Negativa[] | null
   ontem: string
 }): Alerta[] {
   const out: Alerta[] = []
@@ -64,12 +65,15 @@ export function montarAlertas(d: {
 
   // 4. Termos de pesquisa gastando sem contato (14 dias)
   if (d.termos14) {
-    const ruins = d.termos14.filter((t) => t.gasto >= 15 && t.contatos === 0).sort((a, b) => b.gasto - a.gasto)
+    const negs = d.negativas ?? []
+    const ruins = d.termos14
+      .filter((t) => t.gasto >= 15 && t.contatos === 0 && !negativada(t.termo, negs))
+      .sort((a, b) => b.gasto - a.gasto)
     if (ruins.length) {
       const lista = ruins.slice(0, 2).map((t) => `"${t.termo}" ${brl(t.gasto)}`).join(' e ')
-      out.push({ nivel: 'serious', titulo: `${ruins.length} ${ruins.length === 1 ? 'termo gastando' : 'termos gastando'} sem contato`, texto: `Últimos 14 dias: ${lista}${ruins.length > 2 ? ' e outros' : ''}. Ver na aba Google Ads, Termos.` })
+      out.push({ nivel: 'serious', titulo: `${ruins.length} ${ruins.length === 1 ? 'termo gastando' : 'termos gastando'} sem contato`, texto: `Últimos 14 dias, ainda sem negativa: ${lista}${ruins.length > 2 ? ' e outros' : ''}. Ver na aba Google Ads, Termos.` })
     } else {
-      out.push({ nivel: 'ok', titulo: 'Nenhum termo gastando sem contato', texto: 'Últimos 14 dias, limite de R$ 15 por termo.' })
+      out.push({ nivel: 'ok', titulo: 'Nenhum termo novo gastando sem contato', texto: 'Últimos 14 dias, limite de R$ 15 por termo; os já negativados não contam.' })
     }
   }
 
