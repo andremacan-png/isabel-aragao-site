@@ -240,10 +240,10 @@ async function Termos({ j }: { j: Janela }) {
       ) : (
         <div className="pn-tbl">
           <table>
-            <thead><tr><th>Termo digitado</th><th className="num">Cliques</th><th className="num">Contatos</th><th className="num">Gasto</th><th>Leitura</th></tr></thead>
+            <thead><tr><th>Termo digitado</th><th className="num">Cliques</th><th className="num">Contatos</th><th className="num">Gasto</th><th className="num">Custo/contato</th><th>Leitura</th></tr></thead>
             <tbody>
               {termos.map((t, i) => (
-                <tr key={i}><td className="kw">{t.termo}</td><td className="num">{t.cliques}</td><td className="num">{num(t.contatos)}</td><td className="num">{brl(t.gasto)}</td><td>{leitura(t)}</td></tr>
+                <tr key={i}><td className="kw">{t.termo}</td><td className="num">{t.cliques}</td><td className="num">{num(t.contatos)}</td><td className="num">{brl(t.gasto)}</td><td className="num"><Heat v={t.contatos ? t.gasto / t.contatos : null} /></td><td>{leitura(t)}</td></tr>
               ))}
             </tbody>
           </table>
