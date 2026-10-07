@@ -356,7 +356,7 @@ async function Site() {
           <div className="pn-row kpis">
             <Kpi eyebrow="Cliques orgânicos · 28 dias" valor={num(gsc.totais.cliques)} nota={gsc.periodo} />
             <Kpi eyebrow="Impressões" valor={num(gsc.totais.impressoes)} />
-            <Kpi eyebrow="CTR médio" valor={pct(taxa(gsc.totais.cliques, gsc.totais.impressoes))} />
+            <Kpi eyebrow="CTR geral (cliques ÷ impressões)" valor={pct(taxa(gsc.totais.cliques, gsc.totais.impressoes))} nota="Baixo porque o artigo do Mounjaro aparece 40 mil vezes em posição 8 e quase ninguém clica. Posição média por página na tabela abaixo." />
           </div>
           {serie && serie.length > 1 && (
             <Card titulo="Cliques orgânicos por dia" sub="Últimos 60 dias, Search Console (atraso de uns 2 dias). Fins de semana em cinza.">
