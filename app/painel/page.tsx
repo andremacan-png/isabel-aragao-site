@@ -201,7 +201,7 @@ async function Palavras({ j }: { j: Janela }) {
   if (!kws) return <Vazio texto="Sem resposta do Google Ads para palavras-chave." />
   const tipoTom = (t: string) => (t === 'ampla' ? 'warn' : '') as '' | 'warn'
   return (
-    <Card titulo={`Palavras-chave · ${j.label}`} sub="Ordenado por gasto. Custo por contato: verde até R$ 35, amarelo até R$ 60, vermelho acima. IQ = índice de qualidade do Google (1 a 10).">
+    <Card titulo={`Palavras-chave · ${j.label}`} sub="Ordenado por gasto; clique no título de uma coluna para reordenar. Custo por contato: verde até R$ 35, amarelo até R$ 60, vermelho acima. IQ = índice de qualidade do Google (1 a 10).">
       {kws.length === 0 ? (
         <Vazio texto="Nenhuma palavra-chave com impressão no período." />
       ) : (
@@ -234,7 +234,7 @@ async function Termos({ j }: { j: Janela }) {
   const leitura = (t: { termo: string; contatos: number; gasto: number; cliques: number }) =>
     negativada(t.termo, negs) ? <Pill>já negativado</Pill> : t.contatos > 0 ? <Pill tom="good">converte</Pill> : t.gasto >= 15 ? <Pill tom="serious">gastou sem contato</Pill> : t.cliques >= 3 ? <Pill tom="warn">observar</Pill> : <Pill>pouco dado</Pill>
   return (
-    <Card titulo={`Termos de pesquisa · ${j.label}`} sub="O que as pessoas digitaram de fato no Google antes de clicar. Ordenado por gasto. Os que gastaram R$ 15 ou mais sem contato são candidatos a negativa.">
+    <Card titulo={`Termos de pesquisa · ${j.label}`} sub="O que as pessoas digitaram de fato no Google antes de clicar. Ordenado por gasto; clique no título de uma coluna para reordenar. Os que gastaram R$ 15 ou mais sem contato são candidatos a negativa.">
       {termos.length === 0 ? (
         <Vazio texto="Nenhum termo com clique no período." />
       ) : (

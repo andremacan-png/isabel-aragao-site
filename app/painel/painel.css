@@ -89,6 +89,12 @@
 .pn-tbl table { border-collapse: collapse; width: 100%; font-size: 13px; min-width: 560px; }
 .pn-tbl table.narrow { min-width: 0; }
 .pn-tbl th { font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+.pn-tbl th.sortable { cursor: pointer; user-select: none; }
+.pn-tbl th.sortable:hover { color: var(--ink); }
+.pn-tbl th.sortable::after { content: " ↕"; opacity: .35; }
+.pn-tbl th.sortable[data-dir="asc"]::after { content: " ▲"; opacity: 1; color: var(--accent); }
+.pn-tbl th.sortable[data-dir="desc"]::after { content: " ▼"; opacity: 1; color: var(--accent); }
+.pn-tbl th.sortable[data-dir] { color: var(--ink); }
 .pn-tbl td { padding: 9px 10px; border-bottom: 1px solid var(--line); vertical-align: middle; color: var(--ink); }
 .pn-tbl tr:last-child td { border-bottom: 0; }
 .pn-tbl td.num, .pn-tbl th.num { text-align: right; font-variant-numeric: tabular-nums; }
