@@ -1,693 +1,419 @@
-import type { Metadata } from 'next'
-import { getPainelData, PERIODOS, type PeriodoKey } from './adsData'
+// Painel de Tráfego 2.0 · fase 1: abas Resumo e Google Ads com dados ao vivo do Google Ads;
+// Site (Search Console) e Pacientes (custo por paciente do mês) reaproveitam o que já existia.
+// Tudo é componente de servidor: a navegação por abas, sub-abas e períodos é por link.
+
 import { getMetaData } from './metaAdsData'
 import { getGscData, getGscSeries } from './gscData'
-import { getPainel2Series, getCustoConsultaCanais, type SerieTot } from './painel2Data'
+import { getCustoConsultaCanais, CONSULTAS_MES } from './painel2Data'
+import {
+  janela, isPeriodo, conectado, hojeSP, addDays, fmtDia, diaSemana,
+  getSerie, getCampanhas, getCampanhasPeriodo, getKeywords, getTermos, getIdade, getGenero, getSegmentos, getAnuncios, getNegativas, negativada,
+  type Janela, type PeriodoKey, type Fatia,
+} from './lib/googleAds'
+import { montarAlertas } from './lib/alertas'
+import { Shell, Card, Vazio, Delta, Spark, Kpi, Alertas, Columns, HBars, Funnel, Hours, Heat, IQ, Pill, SubTabs, ABAS, SUBS, pick, brl, brl0, pct, num, taxa, type Aba, type Sub } from './ui'
 
-export const metadata: Metadata = {
-  title: 'Painel de Tráfego — Dra. Isabel',
-  robots: { index: false, follow: false },
-}
+type SP = { periodo?: string; aba?: string; sub?: string }
 
-const brl = (n: number) => 'R$ ' + n.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
-const brl0 = (n: number) => 'R$ ' + Math.round(n).toLocaleString('pt-BR')
-const pct = (n: number) => n.toLocaleString('pt-BR', { maximumFractionDigits: 1 }) + '%'
-const num = (n: number) => n.toLocaleString('pt-BR')
-
-// ── ícones de linha (on-brand, sem emoji) ─────────────────────────────────────
-function Icon({ path, className = 'w-[17px] h-[17px]' }: { path: React.ReactNode; className?: string }) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.9} strokeLinecap="round" strokeLinejoin="round" className={className}>
-      {path}
-    </svg>
-  )
-}
-const IcInvest = <path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
-const IcChat = <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-const IcTarget = (
-  <>
-    <circle cx="12" cy="12" r="9" />
-    <circle cx="12" cy="12" r="4" />
-  </>
-)
-const IcEye = (
-  <>
-    <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z" />
-    <circle cx="12" cy="12" r="2.6" />
-  </>
-)
-const IcClick = <path d="M9 3v6M6 6h6M14.5 13.5 21 21M12 10l9 3-4 2-2 4-3-9Z" />
-const IcSearch = (
-  <>
-    <circle cx="11" cy="11" r="7" />
-    <path d="m21 21-4.3-4.3" />
-  </>
-)
-
-// ── sparkline ────────────────────────────────────────────────────────────────
-function sparkPoints(vals: number[], w = 92, h = 30, pad = 4): string {
-  if (!vals.length) return ''
-  const min = Math.min(...vals)
-  const max = Math.max(...vals)
-  const range = max - min || 1
-  const n = vals.length
-  return vals
-    .map((v, i) => {
-      const x = n === 1 ? w / 2 : (i / (n - 1)) * w
-      const y = pad + (1 - (v - min) / range) * (h - 2 * pad)
-      return `${x.toFixed(1)},${y.toFixed(1)}`
-    })
-    .join(' ')
-}
-function Spark({ vals, color, w = 92 }: { vals: number[]; color: string; w?: number }) {
-  const pts = sparkPoints(vals, w)
-  if (!pts) return null
-  return (
-    <svg width={w} height={30} viewBox={`0 0 ${w} 30`} className="shrink-0">
-      <polyline fill="none" stroke={color} strokeWidth={2.4} strokeLinecap="round" strokeLinejoin="round" points={pts} />
-    </svg>
-  )
-}
-
-// custo/contato por dia, carregando o último valor conhecido nos dias sem contato (linha limpa)
-function cpcSeries(dias: { invest: number; contatos: number }[]): number[] {
-  const media = (() => {
-    const c = dias.reduce((s, d) => s + d.contatos, 0)
-    const i = dias.reduce((s, d) => s + d.invest, 0)
-    return c ? i / c : 0
-  })()
-  let last = media
-  return dias.map((d) => {
-    if (d.contatos > 0) last = d.invest / d.contatos
-    return last
-  })
-}
-
-// ── delta chip ▲/▼ ────────────────────────────────────────────────────────────
-function delta(atual: number, anterior: number): number | null {
-  if (!anterior) return null
-  return (atual - anterior) / anterior
-}
-function Delta({ pct: p, invert = false, neutral = false }: { pct: number | null; invert?: boolean; neutral?: boolean }) {
-  if (p === null) return null
-  const abs = Math.abs(p)
-  const label = `${Math.round(abs * 100)}%`
-  if (abs < 0.03) {
-    return (
-      <span className="inline-flex items-center gap-1 text-[12.5px] font-extrabold px-2.5 py-1 rounded-full bg-[#F0ECE4] text-[#8a7f6e]">
-        <span>▬</span> estável
-      </span>
-    )
-  }
-  const arrow = p > 0 ? '▲' : '▼'
-  if (neutral) {
-    return (
-      <span className="inline-flex items-center gap-1 text-[12.5px] font-extrabold px-2.5 py-1 rounded-full bg-[#F0ECE4] text-[#8a7f6e]">
-        <span>{arrow}</span> {label} vs anterior
-      </span>
-    )
-  }
-  const good = invert ? p < 0 : p > 0
-  const cls = good ? 'bg-[#E7F5EC] text-[#1E7A3E]' : 'bg-[#FBEAE4] text-[#c0533a]'
-  return (
-    <span className={`inline-flex items-center gap-1 text-[12.5px] font-extrabold px-2.5 py-1 rounded-full ${cls}`}>
-      <span>{arrow}</span> {label} vs anterior
-    </span>
-  )
-}
-
-// ── KPI-herói ─────────────────────────────────────────────────────────────────
-function HeroKpi({
-  icon,
-  label,
-  valor,
-  chip,
-  spark,
-  star = false,
-}: {
-  icon: React.ReactNode
-  label: string
-  valor: string
-  chip: React.ReactNode
-  spark: React.ReactNode
-  star?: boolean
-}) {
-  return (
-    <div
-      className={`rounded-[20px] border p-5 sm:p-6 ${
-        star ? 'bg-gradient-to-br from-white via-white to-[#FFF7EC] border-[#F0D9AE]' : 'bg-white border-[#EBE3D6]'
-      }`}
-    >
-      <div className="flex items-center gap-2 text-[#7a6ea0] text-[12px] font-bold uppercase tracking-[0.05em]">
-        <span className="text-[#9b8fbe]">{icon}</span>
-        {label}
-      </div>
-      <div className={`font-playfair font-extrabold text-[#12082a] mt-2 leading-none ${star ? 'text-[42px] sm:text-[46px]' : 'text-[38px] sm:text-[40px]'}`}>
-        {valor}
-      </div>
-      <div className="flex items-center justify-between mt-3 gap-2">
-        {chip}
-        {spark}
-      </div>
-    </div>
-  )
-}
-
-function SectionLabel({ children }: { children: React.ReactNode }) {
-  return <p className="text-[12px] font-extrabold tracking-[0.09em] uppercase text-[#8a7aa8] mt-9 mb-3 px-0.5">{children}</p>
-}
-
-export default async function Painel2Page({ searchParams }: { searchParams: Promise<{ periodo?: string }> }) {
+export default async function PainelPage({ searchParams }: { searchParams: Promise<SP> }) {
   const sp = await searchParams
-  const periodo: PeriodoKey = sp.periodo && sp.periodo in PERIODOS ? (sp.periodo as PeriodoKey) : '30d'
-  const [data, meta, gsc, serie, gscSerie] = await Promise.all([
-    getPainelData(periodo),
-    getMetaData(periodo),
-    getGscData(),
-    getPainel2Series(periodo),
-    getGscSeries(),
-  ])
-  // Roda DEPOIS do bloco acima (não junto): assim a query de gasto do Google não
-  // disputa o limite de concorrência do googleAds:search com getPainelData/série
-  // (o token já fica em cache) e o custo por consulta para de oscilar.
-  const canais = await getCustoConsultaCanais()
-  const live = data.fonte === 'live'
-
-  // Totais combinados (base — funções provadas, nunca quebram)
-  const gInvest = data.total.investimento
-  const gContatos = data.total.contatos
-  const mInvest = meta?.total.investimento ?? 0
-  const mContatos = meta?.total.conversas ?? 0
-  const totalInvest = gInvest + mInvest
-  const totalContatos = gContatos + mContatos
-  const totalCpc = totalContatos ? totalInvest / totalContatos : 0
-
-  // Deltas (fase 2) — vindos da série; se ausente, chips simplesmente não aparecem
-  const cpcOf = (t: SerieTot) => (t.contatos ? t.invest / t.contatos : 0)
-  const dInvest = serie ? delta(serie.combinado.atual.invest, serie.combinado.anterior.invest) : null
-  const dContatos = serie ? delta(serie.combinado.atual.contatos, serie.combinado.anterior.contatos) : null
-  const dCpc = serie ? delta(cpcOf(serie.combinado.atual), cpcOf(serie.combinado.anterior)) : null
-
-  // Sparklines (fase 3)
-  const dias = serie?.combinado.dias ?? []
-  const sparkInvest = dias.map((d) => d.invest)
-  const sparkContatos = dias.map((d) => d.contatos)
-  const sparkCpc = cpcSeries(dias)
-
-  // Custo por consulta fechada · por canal: só dá pra dizer "mais barato" quando AMBOS gastaram
-  const podeComparar = !!canais && canais.meta.invest > 0 && canais.google.invest > 0 && canais.meta.consultas > 0 && canais.google.consultas > 0
-  const metaMaisBarato = podeComparar && canais!.meta.custo <= canais!.google.custo
-  const googleMaisBarato = podeComparar && canais!.google.custo < canais!.meta.custo
-
-  // Card Google × Meta
-  const temComparacao = !!meta && mContatos > 0 && gContatos > 0
-  const gShareVerba = totalInvest ? gInvest / totalInvest : 0
-  const mShareVerba = totalInvest ? mInvest / totalInvest : 0
-  const mShareContatos = totalContatos ? mContatos / totalContatos : 0
-  const gShareContatos = totalContatos ? gContatos / totalContatos : 0
-  const gCpc = data.total.custoContato
-  const mCpc = meta?.total.custoConversa ?? 0
-  const ratio = mCpc ? gCpc / mCpc : 0
-  const dGoogleCpc = serie?.google ? delta(cpcOf(serie.google.atual), cpcOf(serie.google.anterior)) : null
-  const dMetaCpc = serie?.meta ? delta(cpcOf(serie.meta.atual), cpcOf(serie.meta.anterior)) : null
-
-  // Barras: custo por contato por campanha (Google + Meta juntas, menor→maior)
-  const barras = [
-    ...data.campanhas.filter((c) => c.conversoes > 0).map((c) => ({ nome: `Google · ${c.nome}`, custo: c.custoConv, canal: 'g' as const })),
-    ...(meta?.campanhas.filter((c) => c.conversas > 0).map((c) => ({ nome: `Meta · ${c.nome}`, custo: c.custoConversa, canal: 'm' as const })) ?? []),
-  ].sort((a, b) => a.custo - b.custo)
-  const maxBar = Math.max(1, ...barras.map((b) => b.custo))
+  const periodo: PeriodoKey = isPeriodo(sp.periodo) ? sp.periodo : '30d'
+  const aba: Aba = pick(sp.aba, ABAS, 'resumo')
+  const sub: Sub = pick(sp.sub, SUBS, 'palavras')
+  const j = janela(periodo)
+  const live = conectado()
 
   return (
-    <div className="min-h-screen bg-[#F4EFE8] font-sans text-[#12082a]">
-      {/* Faixa de topo */}
-      <div className="bg-gradient-to-r from-[#160c33] via-[#241653] to-[#2f2064] px-5 sm:px-10 py-6 flex items-center justify-between gap-4">
-        <div className="flex items-center gap-3.5">
-          <div className="w-11 h-11 rounded-[13px] bg-[#F5A623]/15 flex items-center justify-center shrink-0">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F5A623" strokeWidth={2.2} strokeLinecap="round" strokeLinejoin="round">
-              <path d="M3 3v18h18" />
-              <path d="M7 14l4-4 3 3 5-6" />
-            </svg>
-          </div>
-          <div>
-            <h1 className="font-playfair text-white text-lg sm:text-[23px] font-extrabold leading-tight">Painel de Tráfego — Dra. Isabel</h1>
-            <p className="text-[#C9BEDE] text-[13px] font-medium mt-0.5">
-              {live ? `Ao vivo · ${data.periodoLabel}` : `Dados ${data.periodoLabel}`}
-            </p>
-          </div>
+    <Shell periodo={periodo} aba={aba} sub={sub} label={j.label} comparacao={j.comparacao} live={live}>
+      {!live && aba !== 'site' && <Vazio texto="Sem conexão com o Google Ads neste ambiente: as variáveis GOOGLE_ADS_* não estão configuradas. Em produção (Vercel) elas existem e o painel fica ao vivo." />}
+      {aba === 'resumo' && <Resumo j={j} periodo={periodo} />}
+      {aba === 'google' && <Google j={j} periodo={periodo} sub={sub} />}
+      {aba === 'site' && <Site />}
+      {aba === 'pacientes' && <Pacientes />}
+      <p className="pn-foot">
+        Fontes: Google Ads API (todas as campanhas não removidas), Search Console e a lista mensal de pacientes. Contato = clique no WhatsApp a partir de um anúncio.
+        Paciente = consulta marcada, contada na lista do mês. Painel de uso interno, fora do índice do Google.
+      </p>
+    </Shell>
+  )
+}
+
+// ───────────────────────────── RESUMO ─────────────────────────────
+const META_PERIODOS = ['hoje', 'ontem', '7d', '14d', '30d']
+
+async function Resumo({ j, periodo }: { j: Janela; periodo: PeriodoKey }) {
+  const hoje = hojeSP()
+  const ontem = addDays(hoje, -1)
+  const j7 = janela('7d')
+  const [serie, campanhas, serie7, termos14, anuncios, campPeriodo, meta, canais, negativas] = await Promise.all([
+    getSerie(j),
+    getCampanhas(),
+    periodo === '7d' ? Promise.resolve(null) : getSerie(j7),
+    getTermos(addDays(ontem, -13), ontem, 80),
+    getAnuncios(j.dias >= 7 ? j : janela('30d')),
+    getCampanhasPeriodo(j),
+    META_PERIODOS.includes(periodo) ? getMetaData(periodo) : Promise.resolve(null),
+    getCustoConsultaCanais(),
+    getNegativas(),
+  ])
+  const s7 = periodo === '7d' ? serie : serie7
+  const alertas = montarAlertas({ campanhas, serie7: s7, termos14, anuncios, negativas, ontem })
+
+  const pacientesMes = CONSULTAS_MES.google + CONSULTAS_MES.meta
+  const custoPaciente = canais?.google.consultas ? canais.google.custo : null
+
+  return (
+    <>
+      <Alertas itens={alertas} />
+
+      {serie ? (
+        <div className="pn-row kpis">
+          <Kpi eyebrow="Investimento · Google" valor={brl0(serie.atual.gasto)}>
+            <Delta atual={serie.atual.gasto} anterior={serie.anterior.gasto} neutral texto={j.comparacao} />
+            <Spark vals={serie.dias.map((d) => d.gasto)} />
+          </Kpi>
+          <Kpi eyebrow="Contatos pelo WhatsApp" valor={num(serie.atual.contatos)}>
+            <Delta atual={serie.atual.contatos} anterior={serie.anterior.contatos} texto={j.comparacao} />
+            <Spark vals={serie.dias.map((d) => d.contatos)} />
+          </Kpi>
+          <Kpi eyebrow="Custo por contato" valor={serie.atual.contatos ? brl(serie.atual.gasto / serie.atual.contatos) : '—'} nota={`Conversão clique → contato: ${pct(taxa(serie.atual.contatos, serie.atual.cliques))} em ${num(serie.atual.cliques)} cliques.`}>
+            <Delta atual={serie.atual.contatos ? serie.atual.gasto / serie.atual.contatos : 0} anterior={serie.anterior.contatos ? serie.anterior.gasto / serie.anterior.contatos : 0} invert texto={j.comparacao} />
+          </Kpi>
+          <Kpi eyebrow={`Pacientes novos · ${CONSULTAS_MES.label}`} valor={pacientesMes ? String(pacientesMes) : '—'} nota={pacientesMes ? `Site/Google ${CONSULTAS_MES.google} · Meta ${CONSULTAS_MES.meta}. Vem da lista mensal; a aba Pacientes detalha.` : `Aguardando a lista de ${CONSULTAS_MES.label}. Setembro fechou com 14 (agosto, 26).`}>
+            {pacientesMes ? <Pill tom="brand">lista do mês</Pill> : <Pill>lista pendente</Pill>}
+          </Kpi>
+          <Kpi eyebrow={`Custo por paciente · Google · ${CONSULTAS_MES.label}`} valor={custoPaciente ? brl0(custoPaciente) : '—'} nota={canais ? `${brl0(canais.google.invest)} gastos no Google de 1º de ${canais.label} até hoje, ${canais.google.consultas} ${canais.google.consultas === 1 ? 'paciente' : 'pacientes'} do site.` : 'Gasto do mês indisponível.'}>
+            {custoPaciente ? <Heat v={custoPaciente} bom={200} ruim={300} /> : <Pill>sem paciente contado ainda</Pill>}
+          </Kpi>
         </div>
-        <span
-          className={`hidden sm:inline-flex items-center gap-2 text-[12.5px] font-bold rounded-full px-3 py-1.5 border ${
-            live ? 'text-[#9be6b0] border-[#9be6b0]/35' : 'text-[#C9BEDE] border-white/20'
-          }`}
-        >
-          {live && <span className="w-[7px] h-[7px] rounded-full bg-[#39d16f]" />}
-          {live ? 'AO VIVO' : 'uso interno'}
-        </span>
+      ) : (
+        <Vazio texto="O Google Ads não respondeu à consulta de totais. Recarregue em um minuto; se persistir, a versão da API pode ter sido aposentada." />
+      )}
+
+      <div className="pn-row two">
+        {serie && (
+          <Card titulo="Gasto por dia e contatos por dia" sub={`${j.label}. Dias sem barra = sem gasto (fim de semana a campanha fica desligada). Passe o mouse para ver o dia.`}>
+            <p className="pn-eyebrow">Gasto</p>
+            <Columns
+              vals={serie.dias.map((d) => d.gasto)}
+              labels={serie.dias.map((d) => fmtDia(d.data))}
+              tips={serie.dias.map((d) => `${fmtDia(d.data)} · ${brl(d.gasto)} · ${d.cliques} cliques · ${num(d.contatos)} contatos`)}
+              money
+              cls={(i) => (diaSemana(serie.dias[i].data) % 6 === 0 ? 'prev' : '')}
+            />
+            <p className="pn-eyebrow" style={{ marginTop: 10 }}>Contatos</p>
+            <Columns
+              vals={serie.dias.map((d) => d.contatos)}
+              labels={serie.dias.map((d) => fmtDia(d.data))}
+              tips={serie.dias.map((d) => `${fmtDia(d.data)} · ${num(d.contatos)} contatos · custo por contato ${d.contatos ? brl(d.gasto / d.contatos) : '—'}`)}
+              height={120}
+              cls={(i) => (diaSemana(serie.dias[i].data) % 6 === 0 ? 'prev' : '')}
+            />
+            <details style={{ marginTop: 10 }}>
+              <summary className="pn-note" style={{ cursor: 'pointer' }}>Ver como tabela</summary>
+              <div className="pn-tbl" style={{ marginTop: 8 }}>
+                <table className="narrow">
+                  <thead><tr><th>Dia</th><th className="num">Gasto</th><th className="num">Cliques</th><th className="num">Contatos</th></tr></thead>
+                  <tbody>
+                    {serie.dias.filter((d) => d.gasto || d.cliques).map((d) => (
+                      <tr key={d.data}><td>{fmtDia(d.data)}</td><td className="num">{brl(d.gasto)}</td><td className="num">{d.cliques}</td><td className="num">{num(d.contatos)}</td></tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </details>
+          </Card>
+        )}
+
+        <Card titulo="Funil do Google" sub={`${j.label}. Cada etapa em relação à anterior.`}>
+          {serie ? (
+            <Funnel
+              steps={[
+                { nome: 'Cliques no anúncio', sub: `${num(serie.atual.impressoes)} impressões · CTR ${pct(taxa(serie.atual.cliques, serie.atual.impressoes))}`, v: serie.atual.cliques },
+                { nome: 'Contatos no WhatsApp', sub: `${pct(taxa(serie.atual.contatos, serie.atual.cliques))} dos cliques`, v: serie.atual.contatos },
+                ...(periodo === 'mes' && pacientesMes
+                  ? [{ nome: 'Pacientes', sub: `${pct(taxa(CONSULTAS_MES.google, serie.atual.contatos))} dos contatos (lista do mês)`, v: CONSULTAS_MES.google, accent: true }]
+                  : []),
+              ]}
+            />
+          ) : (
+            <Vazio texto="Sem dados." />
+          )}
+          {periodo !== 'mes' && <p className="pn-note">A etapa "pacientes" aparece no período "Mês atual", que é como a lista é fechada.</p>}
+
+          {campPeriodo && campPeriodo.length > 0 && (
+            <>
+              <h2 style={{ marginTop: 22 }}>Por campanha</h2>
+              <div className="pn-tbl">
+                <table className="narrow">
+                  <thead><tr><th>Campanha</th><th className="num">Cliques</th><th className="num">Contatos</th><th className="num">Gasto</th><th className="num">Custo/contato</th></tr></thead>
+                  <tbody>
+                    {campPeriodo.filter((c) => c.gasto > 0 || c.cliques > 0).map((c) => (
+                      <tr key={c.nome}>
+                        <td className="kw">{c.nome} {c.status !== 'ENABLED' && <Pill>pausada</Pill>}</td>
+                        <td className="num">{c.cliques}</td><td className="num">{num(c.contatos)}</td><td className="num">{brl(c.gasto)}</td>
+                        <td className="num"><Heat v={c.contatos ? c.gasto / c.contatos : null} /></td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </>
+          )}
+        </Card>
       </div>
 
-      <div className="max-w-[980px] mx-auto px-5 sm:px-10 pt-6 pb-12">
-        {/* Filtros de período — sempre visíveis (mesmo em snapshot), pra nunca "sumirem" */}
-        {(
-          <div className="flex flex-wrap items-center gap-2">
-            {(Object.keys(PERIODOS) as PeriodoKey[]).map((k) => (
-              <a
-                key={k}
-                href={`/painel?periodo=${k}`}
-                className={`text-[13px] font-semibold px-3.5 py-2 rounded-full border transition-colors ${
-                  k === periodo ? 'bg-[#160c33] text-white border-[#160c33]' : 'bg-white text-[#3b2b5c] border-[#E3D9CB] hover:border-[#695192]'
-                }`}
-              >
-                {PERIODOS[k].label}
-              </a>
-            ))}
-            {serie && (
-              <span className="ml-auto inline-flex items-center gap-1.5 text-[12.5px] font-semibold text-[#695192] bg-[#F3ECF9] border border-[#dcccee] rounded-full px-3 py-1.5">
-                ▲▼ comparado ao período anterior
-              </span>
-            )}
+      {meta && meta.total.investimento > 0 && (
+        <Card titulo="Meta Ads · Instagram e Facebook" sub={`${meta.periodoLabel}. Aparece só quando há gasto no período. Conversa = pessoa que iniciou mensagem no WhatsApp a partir do anúncio.`}>
+          <div className="pn-tbl">
+            <table className="narrow">
+              <thead><tr><th>Campanha</th><th className="num">Gasto</th><th className="num">Conversas</th><th className="num">Custo/conversa</th><th className="num">Alcance</th></tr></thead>
+              <tbody>
+                {meta.campanhas.map((c) => (
+                  <tr key={c.nome}><td className="kw">{c.nome}</td><td className="num">{brl(c.gasto)}</td><td className="num">{c.conversas}</td><td className="num"><Heat v={c.conversas ? c.custoConversa : null} /></td><td className="num">{num(c.alcance)}</td></tr>
+                ))}
+                <tr><td><b>Total</b></td><td className="num"><b>{brl(meta.total.investimento)}</b></td><td className="num"><b>{meta.total.conversas}</b></td><td className="num"><b>{meta.total.conversas ? brl(meta.total.custoConversa) : '—'}</b></td><td className="num"><b>{num(meta.total.alcance)}</b></td></tr>
+              </tbody>
+            </table>
           </div>
-        )}
+          <p className="pn-note">Conversa no Meta não é o mesmo que contato no Google: em setembro, 25 conversas do Meta não viraram nenhum paciente.</p>
+        </Card>
+      )}
+    </>
+  )
+}
 
-        {/* KPIs-herói */}
-        <SectionLabel>Visão geral — tráfego pago{meta ? ' (Google + Meta)' : ''}</SectionLabel>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1fr_1fr_1.25fr] gap-4">
-          <HeroKpi
-            icon={<Icon path={IcInvest} />}
-            label="Investimento"
-            valor={brl0(totalInvest)}
-            chip={<Delta pct={dInvest} neutral />}
-            spark={<Spark vals={sparkInvest} color="#c9bfe0" />}
-          />
-          <HeroKpi
-            icon={<Icon path={IcChat} />}
-            label="Contatos"
-            valor={num(Math.round(totalContatos))}
-            chip={<Delta pct={dContatos} />}
-            spark={<Spark vals={sparkContatos} color="#8fd0a6" />}
-          />
-          <HeroKpi
-            star
-            icon={<Icon path={IcTarget} />}
-            label="Custo por contato"
-            valor={brl(totalCpc)}
-            chip={<Delta pct={dCpc} invert />}
-            spark={<Spark vals={sparkCpc} color={dCpc !== null && dCpc <= 0 ? '#8fd0a6' : '#d9a08f'} w={104} />}
-          />
-        </div>
+// ───────────────────────────── GOOGLE ADS ─────────────────────────────
+async function Google({ j, periodo, sub }: { j: Janela; periodo: PeriodoKey; sub: Sub }) {
+  return (
+    <>
+      <SubTabs periodo={periodo} sub={sub} />
+      {sub === 'palavras' && <Palavras j={j} />}
+      {sub === 'termos' && <Termos j={j} />}
+      {sub === 'publico' && <Publico j={j} />}
+      {sub === 'anuncios' && <Anuncios j={j} />}
+    </>
+  )
+}
 
-        {/* Custo por CONSULTA FECHADA · por canal (mês corrente) */}
-        {canais && (
-          <>
-            <SectionLabel>Custo por consulta fechada · por canal ({canais.label}, do dia 1 até hoje)</SectionLabel>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              <CanalConsultaCard nome="Meta · Instagram" dot="#E8823A" canal={canais.meta} badge={metaMaisBarato} />
-              <CanalConsultaCard nome="Google · Site" dot="#695192" canal={canais.google} badge={googleMaisBarato} />
-              <CanalConsultaCard nome="Total (Google + Meta)" dot="" canal={canais.total} />
-            </div>
-            <p className="text-[12px] text-[#9a8f86] mt-3">
-              Consultas fechadas contadas por origem (Instagram × site) de 1º de {canais.label} até hoje, sobre a verba de cada canal no mesmo período. Um canal com <b>R$ 0 em anúncios</b> teve consultas vindas do orgânico (SEO/direto), sem custo de mídia. É amostra pequena no começo do mês, então o valor por consulta ainda oscila bastante.
-            </p>
-          </>
-        )}
-
-        {/* Google × Meta */}
-        {temComparacao && (
-          <>
-            <SectionLabel>Google × Meta — quem traz mais barato</SectionLabel>
-            <div className="bg-white border border-[#EBE3D6] rounded-[22px] p-6 sm:p-7">
-              <p className="font-playfair text-[19px] sm:text-[22px] font-extrabold leading-snug">
-                O <b className="text-[#E8823A]">Meta</b> traz <b>{Math.round(mShareContatos * 100)}% dos contatos</b> com{' '}
-                <b>{Math.round(mShareVerba * 100)}% da verba</b>
-                {ratio >= 1.15 && (
-                  <>
-                    {' '}— <b>{ratio.toLocaleString('pt-BR', { maximumFractionDigits: 1 })}× mais barato</b> que o Google
-                  </>
-                )}
-                .
-              </p>
-              <p className="text-[#6b6076] text-[14px] mt-1.5 mb-5">
-                A verba está invertida em relação ao resultado: o Google consome o orçamento, o Meta entrega os contatos.
-              </p>
-
-              {/* barras de inversão */}
-              <div className="mb-4">
-                <div className="flex justify-between text-[12.5px] font-bold uppercase tracking-[0.04em] text-[#6b6076] mb-1.5">
-                  <span>Onde vai a verba</span>
-                  <span>{brl0(totalInvest)}</span>
-                </div>
-                <div className="h-[26px] rounded-lg overflow-hidden flex text-[12.5px] font-extrabold text-white">
-                  <div className="bg-[#695192] flex items-center pl-3" style={{ width: `${Math.max(6, gShareVerba * 100)}%` }}>
-                    Google · {Math.round(gShareVerba * 100)}%
-                  </div>
-                  <div className="bg-[#E8823A] flex items-center pl-3" style={{ width: `${Math.max(6, mShareVerba * 100)}%` }}>
-                    Meta · {Math.round(mShareVerba * 100)}%
-                  </div>
-                </div>
-              </div>
-              <div>
-                <div className="flex justify-between text-[12.5px] font-bold uppercase tracking-[0.04em] text-[#6b6076] mb-1.5">
-                  <span>De onde vêm os contatos</span>
-                  <span>{num(Math.round(totalContatos))}</span>
-                </div>
-                <div className="h-[26px] rounded-lg overflow-hidden flex text-[12.5px] font-extrabold text-white">
-                  <div className="bg-[#695192] flex items-center pl-3" style={{ width: `${Math.max(6, gShareContatos * 100)}%` }}>
-                    {Math.round(gShareContatos * 100)}%
-                  </div>
-                  <div className="bg-[#E8823A] flex items-center pl-3" style={{ width: `${Math.max(6, mShareContatos * 100)}%` }}>
-                    Meta · {Math.round(mShareContatos * 100)}%
-                  </div>
-                </div>
-              </div>
-
-              {/* sub-cards por canal */}
-              <div className="grid sm:grid-cols-2 gap-4 mt-6">
-                <div className="border border-[#EFE7DA] rounded-2xl p-4 sm:p-5">
-                  <div className="flex items-center gap-2 font-extrabold text-[15px] mb-3">
-                    <span className="w-2.5 h-2.5 rounded-[3px] bg-[#695192]" /> Google Ads
-                  </div>
-                  <div className="flex justify-between gap-2">
-                    <div>
-                      <p className="text-[11px] text-[#8a7f92] font-semibold uppercase tracking-[0.03em]">Investimento</p>
-                      <p className="font-playfair text-[21px] font-extrabold mt-0.5">{brl0(gInvest)}</p>
-                    </div>
-                    <div>
-                      <p className="text-[11px] text-[#8a7f92] font-semibold uppercase tracking-[0.03em]">Contatos</p>
-                      <p className="font-playfair text-[21px] font-extrabold mt-0.5">{Math.round(gContatos)}</p>
-                    </div>
-                    <div>
-                      <p className="text-[11px] text-[#8a7f92] font-semibold uppercase tracking-[0.03em]">Custo/contato</p>
-                      <p className="font-playfair text-[21px] font-extrabold mt-0.5 text-[#695192]">{gContatos ? brl(gCpc) : '—'}</p>
-                      {dGoogleCpc !== null && <div className="mt-1"><Delta pct={dGoogleCpc} invert /></div>}
-                    </div>
-                  </div>
-                </div>
-                <div className="border border-[#F1DDBB] bg-[#FFF8EF] rounded-2xl p-4 sm:p-5">
-                  <div className="flex items-center gap-2 font-extrabold text-[15px] mb-3">
-                    <span className="w-2.5 h-2.5 rounded-[3px] bg-[#E8823A]" /> Meta · Instagram
-                  </div>
-                  <div className="flex justify-between gap-2">
-                    <div>
-                      <p className="text-[11px] text-[#8a7f92] font-semibold uppercase tracking-[0.03em]">Investimento</p>
-                      <p className="font-playfair text-[21px] font-extrabold mt-0.5">{brl0(mInvest)}</p>
-                    </div>
-                    <div>
-                      <p className="text-[11px] text-[#8a7f92] font-semibold uppercase tracking-[0.03em]">Conversas</p>
-                      <p className="font-playfair text-[21px] font-extrabold mt-0.5">{Math.round(mContatos)}</p>
-                    </div>
-                    <div>
-                      <p className="text-[11px] text-[#8a7f92] font-semibold uppercase tracking-[0.03em]">Custo/conversa</p>
-                      <p className="font-playfair text-[21px] font-extrabold mt-0.5 text-[#E8823A]">{mContatos ? brl(mCpc) : '—'}</p>
-                      {dMetaCpc !== null && <div className="mt-1"><Delta pct={dMetaCpc} invert /></div>}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </>
-        )}
-
-        {/* Custo por contato por campanha */}
-        {barras.length > 0 && (
-          <>
-            <SectionLabel>Custo por contato por campanha — menor é melhor</SectionLabel>
-            <div className="bg-white border border-[#EBE3D6] rounded-[22px] p-6 sm:p-7 space-y-4">
-              {barras.map((b, i) => {
-                const isBest = i === 0
-                const isWorst = i === barras.length - 1 && barras.length > 2
-                const cor = isBest ? '#39a866' : isWorst ? '#c0533a' : b.canal === 'g' ? '#695192' : '#E8823A'
-                const dot = b.canal === 'g' ? '#695192' : '#E8823A'
-                return (
-                  <div key={b.nome}>
-                    <div className="flex justify-between text-[14px] mb-1.5">
-                      <span className="font-semibold flex items-center gap-2">
-                        <span className="w-2.5 h-2.5 rounded-[3px] inline-block" style={{ background: dot }} />
-                        {b.nome}
-                        {isBest && (
-                          <span className="text-[10.5px] font-extrabold px-2 py-0.5 rounded-full bg-[#E7F5EC] text-[#1E7A3E] uppercase tracking-[0.04em]">campeã</span>
-                        )}
-                      </span>
-                      <span className="font-extrabold" style={{ color: isBest ? '#1E7A3E' : isWorst ? '#c0533a' : undefined }}>{brl(b.custo)}</span>
-                    </div>
-                    <div className="h-[13px] bg-[#F1ECE3] rounded-full overflow-hidden">
-                      <div className="h-full rounded-full" style={{ width: `${(b.custo / maxBar) * 100}%`, background: cor }} />
-                    </div>
-                  </div>
-                )
-              })}
-            </div>
-          </>
-        )}
-
-        {/* Detalhe Google */}
-        <SectionLabel>Detalhe por campanha — Google Ads</SectionLabel>
-        <div className="bg-white border border-[#EBE3D6] rounded-[22px] overflow-x-auto">
-          <table className="w-full text-sm min-w-[560px]">
-            <thead>
-              <tr className="text-left text-[#8a7f92] border-b border-[#EBE3D6]">
-                <th className="py-3 px-4 font-semibold">Campanha</th>
-                <th className="py-3 px-4 font-semibold text-right">Cliques</th>
-                <th className="py-3 px-4 font-semibold text-right">Contatos</th>
-                <th className="py-3 px-4 font-semibold text-right">Custo</th>
-                <th className="py-3 px-4 font-semibold text-right">Custo/contato</th>
-                <th className="py-3 px-4 font-semibold text-right">Taxa conv.</th>
-              </tr>
-            </thead>
+async function Palavras({ j }: { j: Janela }) {
+  const kws = await getKeywords(j)
+  if (!kws) return <Vazio texto="Sem resposta do Google Ads para palavras-chave." />
+  const tipoTom = (t: string) => (t === 'ampla' ? 'warn' : '') as '' | 'warn'
+  return (
+    <Card titulo={`Palavras-chave · ${j.label}`} sub="Ordenado por gasto. Custo por contato: verde até R$ 35, amarelo até R$ 60, vermelho acima. IQ = índice de qualidade do Google (1 a 10).">
+      {kws.length === 0 ? (
+        <Vazio texto="Nenhuma palavra-chave com impressão no período." />
+      ) : (
+        <div className="pn-tbl">
+          <table>
+            <thead><tr><th>Palavra-chave</th><th>Tipo</th><th className="num">Cliques</th><th className="num">Contatos</th><th className="num">Gasto</th><th className="num">Custo/contato</th><th>IQ</th></tr></thead>
             <tbody>
-              {data.campanhas.map((c) => (
-                <tr key={c.nome} className="border-b border-[#F2EFE8] last:border-0">
-                  <td className="py-3 px-4 font-medium">{c.nome}</td>
-                  <td className="py-3 px-4 text-right text-[#5b5566]">{c.cliques.toLocaleString('pt-BR')}</td>
-                  <td className="py-3 px-4 text-right text-[#5b5566]">{Math.round(c.conversoes)}</td>
-                  <td className="py-3 px-4 text-right text-[#5b5566]">{brl(c.custo)}</td>
-                  <td className="py-3 px-4 text-right text-[#5b5566]">{c.conversoes ? brl(c.custoConv) : '—'}</td>
-                  <td className="py-3 px-4 text-right text-[#5b5566]">{pct(c.taxa)}</td>
+              {kws.map((k, i) => (
+                <tr key={i}>
+                  <td className="kw">{k.texto}</td>
+                  <td><Pill tom={tipoTom(k.tipo)}>{k.tipo}{k.status === 'REMOVED' ? ' · removida' : k.status === 'PAUSED' ? ' · pausada' : ''}</Pill></td>
+                  <td className="num">{k.cliques}</td><td className="num">{num(k.contatos)}</td><td className="num">{brl(k.gasto)}</td>
+                  <td className="num"><Heat v={k.contatos ? k.gasto / k.contatos : null} /></td>
+                  <td><IQ q={k.iq} /></td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
+      )}
+      <p className="pn-note">Palavras "removidas" ainda aparecem se gastaram no período: mostram o que custaram enquanto estavam ativas. Desde 06/10 não há mais palavra ampla ativa.</p>
+    </Card>
+  )
+}
 
-        {/* Meta */}
-        {meta && (
-          <>
-            <SectionLabel>Detalhe por campanha — Meta · Instagram</SectionLabel>
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-4">
-              <HeroKpiMini icon={<Icon path={IcInvest} />} label="Investimento" valor={brl0(meta.total.investimento)} />
-              <HeroKpiMini icon={<Icon path={IcChat} />} label="Conversas" valor={num(meta.total.conversas)} />
-              <HeroKpiMini icon={<Icon path={IcTarget} />} label="Custo / conversa" valor={meta.total.conversas ? brl(meta.total.custoConversa) : '—'} />
-              <HeroKpiMini icon={<Icon path={IcEye} />} label="Alcance" valor={num(meta.total.alcance)} />
-            </div>
-            <div className="bg-white border border-[#EBE3D6] rounded-[22px] overflow-x-auto">
-              <table className="w-full text-sm min-w-[560px]">
-                <thead>
-                  <tr className="text-left text-[#8a7f92] border-b border-[#EBE3D6]">
-                    <th className="py-3 px-4 font-semibold">Campanha</th>
-                    <th className="py-3 px-4 font-semibold text-right">Gasto</th>
-                    <th className="py-3 px-4 font-semibold text-right">Conversas</th>
-                    <th className="py-3 px-4 font-semibold text-right">Custo/conversa</th>
-                    <th className="py-3 px-4 font-semibold text-right">Alcance</th>
-                  </tr>
-                </thead>
+async function Termos({ j }: { j: Janela }) {
+  const [termos, negativas] = await Promise.all([getTermos(j.inicio, j.fim), getNegativas()])
+  if (!termos) return <Vazio texto="Sem resposta do Google Ads para termos de pesquisa." />
+  const negs = negativas ?? []
+  const leitura = (t: { termo: string; contatos: number; gasto: number; cliques: number }) =>
+    negativada(t.termo, negs) ? <Pill>já negativado</Pill> : t.contatos > 0 ? <Pill tom="good">converte</Pill> : t.gasto >= 15 ? <Pill tom="serious">gastou sem contato</Pill> : t.cliques >= 3 ? <Pill tom="warn">observar</Pill> : <Pill>pouco dado</Pill>
+  return (
+    <Card titulo={`Termos de pesquisa · ${j.label}`} sub="O que as pessoas digitaram de fato no Google antes de clicar. Ordenado por gasto. Os que gastaram R$ 15 ou mais sem contato são candidatos a negativa.">
+      {termos.length === 0 ? (
+        <Vazio texto="Nenhum termo com clique no período." />
+      ) : (
+        <div className="pn-tbl">
+          <table>
+            <thead><tr><th>Termo digitado</th><th className="num">Cliques</th><th className="num">Contatos</th><th className="num">Gasto</th><th>Leitura</th></tr></thead>
+            <tbody>
+              {termos.map((t, i) => (
+                <tr key={i}><td className="kw">{t.termo}</td><td className="num">{t.cliques}</td><td className="num">{num(t.contatos)}</td><td className="num">{brl(t.gasto)}</td><td>{leitura(t)}</td></tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
+      <p className="pn-note">Negativar direto por aqui entra na fase 2 (hoje eu faço pela API, com simulação antes). Termos já negativados deixam de aparecer nos dias seguintes.</p>
+    </Card>
+  )
+}
+
+function cpc(f: Fatia) {
+  return f.contatos ? f.gasto / f.contatos : null
+}
+
+async function Publico({ j }: { j: Janela }) {
+  const [idade, genero, seg] = await Promise.all([getIdade(j), getGenero(j), getSegmentos(j)])
+  const maxIdade = Math.max(1, ...(idade ?? []).map((f) => cpc(f) ?? 0))
+  const linhas = [...(genero ?? []), ...(seg?.dispositivo ?? [])]
+  return (
+    <>
+      <div className="pn-row two">
+        <Card titulo="Custo por contato por idade" sub={`${j.label}. Barra = custo por contato; ao lado, quantos contatos. Faixa sem contato aparece sem barra.`}>
+          {idade ? (
+            <HBars
+              rows={idade.map((f) => ({ nome: f.nome, v: cpc(f) ?? 0, s: `${num(f.contatos)} ${f.contatos === 1 ? 'contato' : 'contatos'} · ${brl0(f.gasto)}`, cls: (cpc(f) ?? 0) > 60 ? 'alt' : f.nome === 'Não informada' ? 'prev' : '' }))}
+              fmt={(v) => (v ? brl(v) : 'sem contato')}
+              max={maxIdade}
+            />
+          ) : (
+            <Vazio texto="Sem dados de idade." />
+          )}
+          <p className="pn-note">Você decidiu não restringir idade: o CPA-alvo faz o freio. Aqui dá para ver se ele está segurando as faixas caras.</p>
+        </Card>
+        <Card titulo="Gênero e dispositivo" sub={`${j.label}. Conversão = contatos por clique.`}>
+          {linhas.length ? (
+            <div className="pn-tbl">
+              <table className="narrow">
+                <thead><tr><th>Segmento</th><th className="num">Gasto</th><th className="num">Contatos</th><th className="num">Conversão</th><th className="num">Custo/contato</th></tr></thead>
                 <tbody>
-                  {meta.campanhas.map((c) => (
-                    <tr key={c.nome} className="border-b border-[#F2EFE8] last:border-0">
-                      <td className="py-3 px-4 font-medium">{c.nome}</td>
-                      <td className="py-3 px-4 text-right text-[#5b5566]">{brl(c.gasto)}</td>
-                      <td className="py-3 px-4 text-right text-[#5b5566]">{c.conversas}</td>
-                      <td className="py-3 px-4 text-right text-[#5b5566]">{c.conversas ? brl(c.custoConversa) : '—'}</td>
-                      <td className="py-3 px-4 text-right text-[#5b5566]">{num(c.alcance)}</td>
-                    </tr>
+                  {linhas.map((f) => (
+                    <tr key={f.nome}><td>{f.nome}</td><td className="num">{brl0(f.gasto)}</td><td className="num">{num(f.contatos)}</td><td className="num">{pct(taxa(f.contatos, f.cliques))}</td><td className="num"><Heat v={cpc(f)} /></td></tr>
                   ))}
                 </tbody>
               </table>
             </div>
-          </>
-        )}
-
-        {/* SEO orgânico */}
-        {gsc && (
-          <>
-            <SectionLabel>SEO orgânico — Search Console (últimos 28 dias)</SectionLabel>
-            {gsc.paginas.length === 0 ? (
-              <div className="bg-white border border-[#EBE3D6] rounded-[22px] p-8 text-center">
-                <p className="text-[#12082a] font-semibold mb-1">Search Console conectado</p>
-                <p className="text-sm text-[#8a7f92]">O Google ainda está processando os dados do site. Volte em 24–48h — as métricas orgânicas aparecerão aqui automaticamente.</p>
-              </div>
-            ) : (
-              <>
-                <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-4">
-                  <HeroKpiMini icon={<Icon path={IcClick} />} label="Cliques orgânicos" valor={gsc.totais.cliques.toLocaleString('pt-BR')} />
-                  <HeroKpiMini icon={<Icon path={IcEye} />} label="Impressões" valor={gsc.totais.impressoes.toLocaleString('pt-BR')} />
-                  <HeroKpiMini icon={<Icon path={IcTarget} />} label="CTR médio" valor={pct((gsc.paginas.reduce((s, p) => s + p.ctr, 0) / gsc.paginas.length) * 100)} />
-                  <HeroKpiMini
-                    icon={<Icon path={IcSearch} />}
-                    label="Posição média"
-                    valor={(gsc.paginas.reduce((s, p) => s + p.posicao * p.impressoes, 0) / Math.max(1, gsc.paginas.reduce((s, p) => s + p.impressoes, 0))).toLocaleString('pt-BR', { maximumFractionDigits: 1 })}
-                  />
-                </div>
-                <div className="bg-white border border-[#EBE3D6] rounded-[22px] overflow-x-auto">
-                  <table className="w-full text-sm min-w-[560px]">
-                    <thead>
-                      <tr className="text-left text-[#8a7f92] border-b border-[#EBE3D6]">
-                        <th className="py-3 px-4 font-semibold">Página</th>
-                        <th className="py-3 px-4 font-semibold text-right">Cliques</th>
-                        <th className="py-3 px-4 font-semibold text-right">Impressões</th>
-                        <th className="py-3 px-4 font-semibold text-right">CTR</th>
-                        <th className="py-3 px-4 font-semibold text-right">Posição</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {gsc.paginas.map((p) => {
-                        const isBlog = p.slug.startsWith('/blog/')
-                        return (
-                          <tr key={p.slug} className="border-b border-[#F2EFE8] last:border-0">
-                            <td className={`py-3 px-4 font-medium max-w-[260px] truncate ${isBlog ? 'text-[#b8651f]' : 'text-[#12082a]'}`} title={p.slug}>
-                              {p.slug}
-                            </td>
-                            <td className="py-3 px-4 text-right text-[#5b5566]">{p.cliques}</td>
-                            <td className="py-3 px-4 text-right text-[#5b5566]">{p.impressoes.toLocaleString('pt-BR')}</td>
-                            <td className="py-3 px-4 text-right text-[#5b5566]">{pct(p.ctr * 100)}</td>
-                            <td className="py-3 px-4 text-right text-[#5b5566]">{p.posicao.toLocaleString('pt-BR', { maximumFractionDigits: 1 })}</td>
-                          </tr>
-                        )
-                      })}
-                    </tbody>
-                  </table>
-                </div>
-                {gscSerie && gscSerie.length > 1 && (
-                  <div className="mt-3">
-                    <GscChart dias={gscSerie} />
-                  </div>
-                )}
-                <p className="text-xs text-[#9a8f86] mt-3">Período: {gsc.periodo} · páginas em laranja = posts do blog · posição = média ponderada por impressões.</p>
-              </>
-            )}
-          </>
-        )}
-
-        <p className="text-xs text-[#9a8f86] leading-relaxed mt-8">
-          Painel · uso interno · não indexado. No Google, &quot;contatos&quot; = conversões (clique no WhatsApp); no Meta, &quot;conversas&quot; = mensagens iniciadas.
-          {' '}▲▼ e sparklines comparam com o período imediatamente anterior de mesma duração.
-          {!serie && ' (Tendências indisponíveis para este período — escolha 7, 14 ou 30 dias.)'}
-          {!meta && ' Meta ainda não conectado.'}
-          {!live && ` Mostrando snapshot (${data.periodoLabel}).`}
-        </p>
+          ) : (
+            <Vazio texto="Sem dados de gênero e dispositivo." />
+          )}
+        </Card>
       </div>
-    </div>
+      <div className="pn-row two">
+        <Card titulo="Hora do dia" sub={`${j.label}. Cor = gasto na hora; número = contatos. Horário de Brasília.`}>
+          {seg ? <Hours horas={seg.hora} /> : <Vazio texto="Sem dados por hora." />}
+          <p className="pn-note">Madrugada com gasto e sem contato é candidata a sair da programação de anúncios.</p>
+        </Card>
+        <Card titulo="Dia da semana" sub={`${j.label}. Sábado e domingo ficam desligados de propósito.`}>
+          {seg && seg.diaSemana.length ? (
+            <HBars rows={seg.diaSemana.map((f) => ({ nome: f.nome, v: cpc(f) ?? 0, s: `${num(f.contatos)} contatos · ${brl0(f.gasto)}`, cls: (cpc(f) ?? 0) > 60 ? 'alt' : '' }))} fmt={(v) => (v ? brl(v) : 'sem contato')} />
+          ) : (
+            <Vazio texto="Sem dados por dia da semana." />
+          )}
+        </Card>
+      </div>
+    </>
   )
 }
 
-// Card de custo por consulta fechada por canal (trata o caso "sem anúncio/orgânico")
-function CanalConsultaCard({
-  nome,
-  dot,
-  canal,
-  badge = false,
-}: {
-  nome: string
-  dot: string
-  canal: { invest: number; consultas: number; custo: number; disponivel: boolean }
-  badge?: boolean
-}) {
-  const semAnuncio = canal.disponivel && canal.consultas > 0 && canal.invest < 0.5
-  const big = !canal.disponivel ? '—' : canal.consultas === 0 ? '—' : canal.invest >= 0.5 ? brl(canal.custo) : 'Orgânico'
-  const organico = big === 'Orgânico'
+async function Anuncios({ j }: { j: Janela }) {
+  const ads = await getAnuncios(j)
+  if (!ads) return <Vazio texto="Sem resposta do Google Ads para anúncios." />
+  const forcaTom = (f: string) => (f === 'Fraca' ? 'crit' : f === 'Excelente' || f === 'Boa' ? 'good' : f === 'Média' ? 'warn' : '') as '' | 'good' | 'warn' | 'crit'
   return (
-    <div className={`rounded-[20px] border p-5 sm:p-6 ${badge ? 'bg-gradient-to-br from-white via-white to-[#FFF3E6] border-[#F0C98E]' : 'bg-white border-[#EBE3D6]'}`}>
-      <div className="flex items-center justify-between gap-2">
-        <div className="flex items-center gap-2 text-[#7a6ea0] text-[12px] font-bold uppercase tracking-[0.05em]">
-          {dot && <span className="w-2.5 h-2.5 rounded-[3px]" style={{ background: dot }} />} {nome}
+    <Card titulo={`Anúncios · ${j.label}`} sub="Os anúncios da campanha lado a lado. O título 1 fixo é o que sempre aparece primeiro.">
+      {ads.length === 0 ? (
+        <Vazio texto="Nenhum anúncio com dados no período." />
+      ) : (
+        <div className="pn-tbl">
+          <table>
+            <thead><tr><th>Anúncio (título 1)</th><th>Status</th><th className="num">Cliques</th><th className="num">Contatos</th><th className="num">Conversão</th><th className="num">Custo/contato</th><th>Força</th></tr></thead>
+            <tbody>
+              {ads.map((a) => (
+                <tr key={a.id}>
+                  <td className="kw" title={a.titulos.join(' · ')}>{a.titulo1}</td>
+                  <td>{a.status === 'ENABLED' ? <Pill tom="good">ativo</Pill> : <Pill>{a.status === 'PAUSED' ? 'pausado' : a.status.toLowerCase()}</Pill>}</td>
+                  <td className="num">{a.cliques}</td><td className="num">{num(a.contatos)}</td><td className="num">{pct(taxa(a.contatos, a.cliques))}</td>
+                  <td className="num"><Heat v={a.contatos ? a.gasto / a.contatos : null} /></td>
+                  <td><Pill tom={forcaTom(a.forca)}>{a.forca}</Pill></td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
-        {badge && <span className="text-[10.5px] font-extrabold px-2 py-0.5 rounded-full bg-[#E7F5EC] text-[#1E7A3E] uppercase tracking-[0.04em] shrink-0">mais barato</span>}
-      </div>
-      <div className={`font-playfair font-extrabold mt-2 leading-none ${organico ? 'text-[26px] text-[#1E7A3E]' : 'text-[40px] text-[#12082a]'}`}>{big}</div>
-      <p className="text-[12.5px] text-[#8a7f92] mt-2">{canal.consultas} consultas · {brl0(canal.invest)} em anúncios</p>
-      {semAnuncio && <p className="text-[11.5px] text-[#1E7A3E] font-semibold mt-1">sem gasto em anúncio (vieram do orgânico)</p>}
-    </div>
+      )}
+      <p className="pn-note">Passe o mouse no nome para ver todos os títulos. Regra que aprendemos: título 1 com nome da médica e chamada para agendar converte quase o triplo de título genérico.</p>
+    </Card>
   )
 }
 
-// Gráfico de tendência do orgânico: impressões (área roxa) + cliques (linha âmbar),
-// escalas próprias, com MÉDIA MÓVEL de 15 dias (linhas grossas) para ver a tendência.
-function GscChart({ dias }: { dias: { data: string; cliques: number; impressoes: number }[] }) {
-  if (dias.length < 2) return null
-  const W = 720
-  const H = 190
-  const padL = 46 // espaço p/ os rótulos de impressões (eixo esquerdo)
-  const padR = 40 // espaço p/ os rótulos de cliques (eixo direito)
-  const padT = 14
-  const padB = 26
-  const n = dias.length
-  const impr = dias.map((d) => d.impressoes)
-  const clk = dias.map((d) => d.cliques)
-  // média móvel simples (trailing) de janela w
-  const mm = (vals: number[], w: number) =>
-    vals.map((_, i) => {
-      const s = vals.slice(Math.max(0, i - w + 1), i + 1)
-      return s.reduce((a, b) => a + b, 0) / s.length
-    })
-  const maI = mm(impr, 15)
-  const maC = mm(clk, 15)
-  const maxI = Math.max(1, ...impr)
-  const maxC = Math.max(1, ...clk)
-  const x = (i: number) => padL + (i / (n - 1)) * (W - padL - padR)
-  const yI = (v: number) => H - padB - (v / maxI) * (H - padT - padB)
-  const yC = (v: number) => H - padB - (v / maxC) * (H - padT - padB)
-  const yLevel = (f: number) => H - padB - f * (H - padT - padB)
-  const pts = (arr: number[], y: (v: number) => number) => arr.map((v, i) => `${x(i).toFixed(1)},${y(v).toFixed(1)}`).join(' ')
-  const areaPath = `M ${x(0).toFixed(1)},${(H - padB).toFixed(1)} L ${pts(impr, yI)} L ${x(n - 1).toFixed(1)},${(H - padB).toFixed(1)} Z`
-  const fmtD = (s: string) => {
-    const [, m, dd] = s.split('-')
-    return `${dd}/${m}`
-  }
-  const nInt = (v: number) => Math.round(v).toLocaleString('pt-BR')
-  const marcos = [0, Math.floor((n - 1) / 2), n - 1]
-  const niveis = [1, 0.5, 0] // topo (máx), meio, base (0)
+// ───────────────────────────── SITE ─────────────────────────────
+async function Site() {
+  const [gsc, serie] = await Promise.all([getGscData(), getGscSeries(60)])
   return (
-    <div className="bg-white border border-[#EBE3D6] rounded-[22px] p-4 sm:p-5">
-      <div className="flex items-center justify-between mb-1.5 flex-wrap gap-2">
-        <p className="text-[12px] font-bold uppercase tracking-[0.05em] text-[#7a6ea0]">Impressões e cliques por dia</p>
-        <div className="flex items-center gap-3 text-[11px] font-semibold">
-          <span className="inline-flex items-center gap-1.5 text-[#695192]"><span className="w-2.5 h-2.5 rounded-sm bg-[#695192]/20 border border-[#695192]" />Impressões (esq.)</span>
-          <span className="inline-flex items-center gap-1.5 text-[#E8823A]"><span className="w-3.5 h-[2px] bg-[#E8823A]" />Cliques (dir.)</span>
-        </div>
+    <>
+      <div className="pn-alerts">
+        <div className="pn-alert warn"><span className="pn-ico" aria-hidden="true">!</span><div><b>GA4 e Clarity entram na fase 2</b><span>Precisam de uma credencial do Analytics na Vercel e do token do Clarity. O clique no WhatsApp por página está sendo coletado desde 07/10.</span></div></div>
+        <div className="pn-alert"><span className="pn-ico" aria-hidden="true">✓</span><div><b>Velocidade no celular: nota 94</b><span>Medida em 06/10 após tirar o Pixel do carregamento inicial (antes, 61).</span></div></div>
       </div>
-      <svg viewBox={`0 0 ${W} ${H}`} className="w-full h-auto" role="img" aria-label="Impressões e cliques orgânicos por dia com média móvel de 15 dias e escalas nos eixos">
-        {/* grade + rótulos dos eixos: esquerda = impressões (roxo), direita = cliques (âmbar) */}
-        {niveis.map((f, k) => (
-          <g key={k}>
-            <line x1={padL} y1={yLevel(f)} x2={W - padR} y2={yLevel(f)} stroke="#EBE3D6" strokeWidth="1" strokeDasharray={f === 0 ? undefined : '3 3'} />
-            <text x={padL - 7} y={yLevel(f) + 3.5} textAnchor="end" fontSize="10.5" fontWeight="700" fill="#695192">{nInt(maxI * f)}</text>
-            <text x={W - padR + 7} y={yLevel(f) + 3.5} textAnchor="start" fontSize="10.5" fontWeight="700" fill="#E8823A">{nInt(maxC * f)}</text>
-          </g>
-        ))}
-        {/* volume bruto do dia (contexto, com o zigue-zague) */}
-        <path d={areaPath} fill="#695192" fillOpacity="0.09" />
-        <polyline points={pts(clk, yC)} fill="none" stroke="#E8823A" strokeWidth="1.2" strokeOpacity="0.3" />
-        {/* média móvel de 15 dias = a tendência (linhas grossas) */}
-        <polyline points={pts(maI, yI)} fill="none" stroke="#695192" strokeWidth="2.6" strokeLinejoin="round" strokeLinecap="round" />
-        <polyline points={pts(maC, yC)} fill="none" stroke="#E8823A" strokeWidth="2.6" strokeLinejoin="round" strokeLinecap="round" />
-        {marcos.map((i, k) => (
-          <text key={k} x={x(i)} y={H - 8} textAnchor={k === 0 ? 'start' : k === marcos.length - 1 ? 'end' : 'middle'} fontSize="11" fill="#9a8f86">
-            {fmtD(dias[i].data)}
-          </text>
-        ))}
-      </svg>
-      <p className="text-[11px] text-[#9a8f86] mt-1">Últimos {n} dias · <b className="text-[#695192]">eixo esquerdo = impressões</b>, <b className="text-[#E8823A]">eixo direito = cliques</b>. <b className="text-[#7a6ea0]">Linhas grossas = média móvel de 15 dias (a tendência)</b>; o fundo claro é o volume bruto do dia. Latência de ~2 dias do Google.</p>
-    </div>
+      {gsc ? (
+        <>
+          <div className="pn-row kpis">
+            <Kpi eyebrow="Cliques orgânicos · 28 dias" valor={num(gsc.totais.cliques)} nota={gsc.periodo} />
+            <Kpi eyebrow="Impressões" valor={num(gsc.totais.impressoes)} />
+            <Kpi eyebrow="CTR médio" valor={pct(taxa(gsc.totais.cliques, gsc.totais.impressoes))} />
+          </div>
+          {serie && serie.length > 1 && (
+            <Card titulo="Cliques orgânicos por dia" sub="Últimos 60 dias, Search Console (atraso de uns 2 dias). Fins de semana em cinza.">
+              <Columns vals={serie.map((d) => d.cliques)} labels={serie.map((d) => fmtDia(d.data))} tips={serie.map((d) => `${fmtDia(d.data)} · ${d.cliques} cliques · ${num(d.impressoes)} impressões`)} height={140} cls={(i) => (diaSemana(serie[i].data) % 6 === 0 ? 'prev' : '')} />
+            </Card>
+          )}
+          <Card titulo="Páginas que trazem gente do Google de graça" sub="Posição = média ponderada pelas impressões. Páginas do blog em negrito.">
+            <div className="pn-tbl">
+              <table>
+                <thead><tr><th>Página</th><th className="num">Cliques</th><th className="num">Impressões</th><th className="num">CTR</th><th className="num">Posição</th></tr></thead>
+                <tbody>
+                  {gsc.paginas.slice(0, 15).map((p) => (
+                    <tr key={p.page}><td className={p.slug.startsWith('/blog/') ? 'kw' : 'dim'}>{p.slug}</td><td className="num">{p.cliques}</td><td className="num">{num(p.impressoes)}</td><td className="num">{pct(p.ctr * 100)}</td><td className="num">{p.posicao.toLocaleString('pt-BR', { maximumFractionDigits: 1 })}</td></tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </Card>
+        </>
+      ) : (
+        <Vazio texto="Search Console sem resposta neste ambiente (precisa das variáveis GSC_*)." />
+      )}
+    </>
   )
 }
 
-// KPI compacto (blocos secundários: Meta e SEO)
-function HeroKpiMini({ icon, label, valor }: { icon: React.ReactNode; label: string; valor: string }) {
+// ───────────────────────────── PACIENTES ─────────────────────────────
+async function Pacientes() {
+  const canais = await getCustoConsultaCanais()
+  const total = CONSULTAS_MES.google + CONSULTAS_MES.meta
   return (
-    <div className="bg-white rounded-[18px] border border-[#EBE3D6] p-4 sm:p-5">
-      <div className="flex items-center gap-2 text-[#7a6ea0] text-[11.5px] font-bold uppercase tracking-[0.05em]">
-        <span className="text-[#9b8fbe]">{icon}</span>
-        {label}
+    <>
+      <div className="pn-alerts">
+        <div className="pn-alert warn"><span className="pn-ico" aria-hidden="true">!</span><div><b>Registro de contatos entra na fase 3</b><span>Hoje a contagem de pacientes vem da lista que você fecha no fim do mês. O formulário de registro de cada contato (origem, data, virou consulta ou não) substitui essa lista e passa a medir tempo de resposta.</span></div></div>
       </div>
-      <div className="font-playfair text-[26px] sm:text-[28px] font-extrabold text-[#12082a] mt-1.5 leading-none">{valor}</div>
-    </div>
+      <div className="pn-row kpis">
+        <Kpi eyebrow={`Pacientes novos · ${CONSULTAS_MES.label}`} valor={total ? String(total) : '—'} nota={total ? undefined : `Aguardando a lista de ${CONSULTAS_MES.label}.`} />
+        <Kpi eyebrow="Setembro fechado" valor="14" nota="Site 6 · Indicação 6 · Instagram 2 · Facebook 0. Agosto: 26 (Site 9 · Meta 9 · Indicação 8)." />
+        <Kpi eyebrow="Custo por paciente · setembro" valor="R$ 384" nota="R$ 2.305 no Google sobre 6 pacientes do site. Tudo incluído (Google + Meta sobre 14): R$ 205." />
+      </div>
+      {canais ? (
+        <Card titulo={`Por canal · ${canais.label}, de 1º até hoje`} sub="Gasto ao vivo de cada plataforma; pacientes da lista do mês. Custo só faz sentido quando houve gasto e paciente.">
+          <div className="pn-tbl">
+            <table className="narrow">
+              <thead><tr><th>Canal</th><th className="num">Gasto</th><th className="num">Pacientes</th><th className="num">Custo/paciente</th></tr></thead>
+              <tbody>
+                <tr><td><i className="pn-dot" style={{ background: 'var(--s-google)' }} />Google · site</td><td className="num">{brl0(canais.google.invest)}</td><td className="num">{canais.google.consultas}</td><td className="num">{canais.google.consultas && canais.google.invest ? <Heat v={canais.google.custo} bom={200} ruim={300} /> : <span className="pn-heat none">{canais.google.consultas ? 'sem gasto' : 'sem paciente'}</span>}</td></tr>
+                <tr><td><i className="pn-dot" style={{ background: 'var(--s-meta)' }} />Meta Ads</td><td className="num">{brl0(canais.meta.invest)}</td><td className="num">{canais.meta.consultas}</td><td className="num">{canais.meta.consultas && canais.meta.invest ? <Heat v={canais.meta.custo} bom={200} ruim={300} /> : <span className="pn-heat none">{canais.meta.invest ? 'sem paciente' : 'pausada'}</span>}</td></tr>
+                <tr><td><b>Total pago</b></td><td className="num"><b>{brl0(canais.total.invest)}</b></td><td className="num"><b>{canais.total.consultas}</b></td><td className="num"><b>{canais.total.consultas && canais.total.invest ? brl0(canais.total.custo) : '—'}</b></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p className="pn-note">Indicação e Instagram orgânico não têm custo de mídia e entram só na lista mensal.</p>
+        </Card>
+      ) : (
+        <Vazio texto="Gasto do mês indisponível neste ambiente." />
+      )}
+    </>
   )
 }
