@@ -13,22 +13,26 @@ export const ABAS = ['resumo', 'google', 'site', 'pacientes'] as const
 export type Aba = (typeof ABAS)[number]
 export const SUBS = ['palavras', 'termos', 'publico', 'anuncios'] as const
 export type Sub = (typeof SUBS)[number]
+export const SUBS_SITE = ['visitas', 'busca'] as const
+export type SubSite = (typeof SUBS_SITE)[number]
 export function pick<T extends string>(v: string | undefined, opts: readonly T[], def: T): T {
   return (opts as readonly string[]).includes(v ?? '') ? (v as T) : def
 }
-export function href(periodo: PeriodoKey, aba: Aba, sub?: Sub) {
+export function href(periodo: PeriodoKey, aba: Aba, sub?: string) {
   return `/painel?periodo=${periodo}&aba=${aba}${sub ? `&sub=${sub}` : ''}`
 }
+/** Abas que têm sub-abas (o período e a aba preservam a sub-aba só nelas). */
+const COM_SUB: readonly Aba[] = ['google', 'site']
 
 // ───────────────────────────── casca ─────────────────────────────
 const TABS: Array<{ aba: Aba; nome: string; sub: string }> = [
   { aba: 'resumo', nome: 'Resumo', sub: 'dez segundos' },
   { aba: 'google', nome: 'Google Ads', sub: 'palavras, termos, público' },
-  { aba: 'site', nome: 'Site', sub: 'SEO · GA4 e Clarity em breve' },
+  { aba: 'site', nome: 'Site', sub: 'visitas, origem, páginas · SEO' },
   { aba: 'pacientes', nome: 'Pacientes', sub: 'custo por paciente' },
 ]
 
-export function Shell({ periodo, aba, sub, label, comparacao, live, children }: { periodo: PeriodoKey; aba: Aba; sub: Sub; label: string; comparacao: string; live: boolean; children: ReactNode }) {
+export function Shell({ periodo, aba, sub, label, comparacao, live, children }: { periodo: PeriodoKey; aba: Aba; sub: string; label: string; comparacao: string; live: boolean; children: ReactNode }) {
   return (
     <>
       <header className="pn-top">
@@ -52,7 +56,7 @@ export function Shell({ periodo, aba, sub, label, comparacao, live, children }: 
           </div>
           <nav className="pn-periods" aria-label="Período">
             {(Object.keys(PERIODOS) as PeriodoKey[]).map((k) => (
-              <a key={k} className={`pn-chip${k === periodo ? ' on' : ''}`} href={href(k, aba, aba === 'google' ? sub : undefined)} aria-current={k === periodo ? 'page' : undefined}>
+              <a key={k} className={`pn-chip${k === periodo ? ' on' : ''}`} href={href(k, aba, COM_SUB.includes(aba) ? sub : undefined)} aria-current={k === periodo ? 'page' : undefined}>
                 {PERIODOS[k]}
               </a>
             ))}
@@ -60,7 +64,7 @@ export function Shell({ periodo, aba, sub, label, comparacao, live, children }: 
           </nav>
           <nav className="pn-tabs" aria-label="Seções do painel">
             {TABS.map((t) => (
-              <a key={t.aba} className={`pn-tab${t.aba === aba ? ' on' : ''}`} href={href(periodo, t.aba, t.aba === 'google' ? sub : undefined)} aria-current={t.aba === aba ? 'page' : undefined}>
+              <a key={t.aba} className={`pn-tab${t.aba === aba ? ' on' : ''}`} href={href(periodo, t.aba, t.aba === aba && COM_SUB.includes(aba) ? sub : undefined)} aria-current={t.aba === aba ? 'page' : undefined}>
                 {t.nome}
                 <small>{t.sub}</small>
               </a>
@@ -287,5 +291,25 @@ export function SubTabs({ periodo, sub }: { periodo: PeriodoKey; sub: Sub }) {
         <a key={s} className={`pn-subtab${s === sub ? ' on' : ''}`} href={href(periodo, 'google', s)} aria-current={s === sub ? 'page' : undefined}>{nomes[s]}</a>
       ))}
     </nav>
+  )
+}
+export function SubTabsSite({ periodo, sub }: { periodo: PeriodoKey; sub: SubSite }) {
+  const nomes: Record<SubSite, string> = { visitas: 'Visitas e contatos (GA4)', busca: 'Busca orgânica (Search Console)' }
+  return (
+    <nav className="pn-subtabs" aria-label="Visões do site">
+      {SUBS_SITE.map((s) => (
+        <a key={s} className={`pn-subtab${s === sub ? ' on' : ''}`} href={href(periodo, 'site', s)} aria-current={s === sub ? 'page' : undefined}>{nomes[s]}</a>
+      ))}
+    </nav>
+  )
+}
+/** Aviso de resultado de uma ação (?feito= / ?erro= na URL). */
+export function Aviso({ feito, erro }: { feito?: string; erro?: string }) {
+  if (!feito && !erro) return null
+  return (
+    <div className="pn-alerts">
+      {feito && <div className="pn-alert"><span className="pn-ico" aria-hidden="true">✓</span><div><b>Negativada em frase: “{feito}”</b><span>Entrou em todas as campanhas ativas. O termo some da lista nos próximos dias; a marca “já negativado” aparece agora.</span></div></div>}
+      {erro && <div className="pn-alert crit"><span className="pn-ico" aria-hidden="true">!</span><div><b>Não deu para negativar</b><span>{erro}</span></div></div>}
+    </div>
   )
 }

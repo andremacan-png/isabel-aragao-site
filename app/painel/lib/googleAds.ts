@@ -143,14 +143,20 @@ async function vaga<T>(fn: () => Promise<T>): Promise<T> {
   }
 }
 
-async function gaqlRaw(query: string): Promise<Row[]> {
+/** Credencial pronta para qualquer chamada à API (search ou mutate). Lança se faltar variável. */
+export async function adsAuth(): Promise<{ headers: Record<string, string>; cid: string; base: string }> {
   const token = await accessToken()
   const cid = (process.env.GOOGLE_ADS_CUSTOMER_ID ?? '').replace(/\D/g, '')
   if (!token || !cid) throw new Error('Google Ads sem credenciais')
   const headers: Record<string, string> = { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' }
   if (process.env.GOOGLE_ADS_DEVELOPER_TOKEN) headers['developer-token'] = process.env.GOOGLE_ADS_DEVELOPER_TOKEN
   if (process.env.GOOGLE_ADS_LOGIN_CUSTOMER_ID) headers['login-customer-id'] = process.env.GOOGLE_ADS_LOGIN_CUSTOMER_ID.replace(/\D/g, '')
-  const url = `https://googleads.googleapis.com/${API_VERSION}/customers/${cid}/googleAds:search`
+  return { headers, cid, base: `https://googleads.googleapis.com/${API_VERSION}/customers/${cid}` }
+}
+
+async function gaqlRaw(query: string): Promise<Row[]> {
+  const { headers, base } = await adsAuth()
+  const url = `${base}/googleAds:search`
   let ultimo = ''
   for (let tentativa = 0; tentativa < 3; tentativa++) {
     const res = await vaga(() => fetch(url, { method: 'POST', headers, body: JSON.stringify({ query }), cache: 'no-store' }))
@@ -166,6 +172,10 @@ async function gaqlRaw(query: string): Promise<Row[]> {
 }
 
 const CACHE = new Map<string, { exp: number; val: unknown }>()
+/** Esquece um resultado em cache (ex.: 'negativas' depois de adicionar uma). */
+export function invalidar(key: string) {
+  CACHE.delete(key)
+}
 async function cached<T>(key: string, fn: () => Promise<T>): Promise<T | null> {
   const hit = CACHE.get(key)
   if (hit && hit.exp > Date.now()) return hit.val as T

@@ -1,5 +1,6 @@
 // Painel de Tráfego 2.0 · fase 1: abas Resumo e Google Ads com dados ao vivo do Google Ads;
-// Site (Search Console) e Pacientes (custo por paciente do mês) reaproveitam o que já existia.
+// fase 2: aba Site com Google Analytics 4 (visitas, origem, páginas, só o domínio do site),
+// Clarity (qualidade da navegação) e negativar termo direto da tabela (atrás da chave do painel).
 // Tudo é componente de servidor: a navegação por abas, sub-abas e períodos é por link.
 
 import { getMetaData } from './metaAdsData'
@@ -10,29 +11,34 @@ import {
   getSerie, getCampanhas, getCampanhasPeriodo, getKeywords, getTermos, getIdade, getGenero, getSegmentos, getAnuncios, getNegativas, negativada,
   type Janela, type PeriodoKey, type Fatia,
 } from './lib/googleAds'
+import { conectadoGa4, getSiteResumo, getSiteSerie, getSiteCanais, getSiteOrigens, getSitePaginas, getSiteDispositivos, type FatiaSite } from './lib/ga4'
+import { conectadoClarity, getClarity, type Clarity } from './lib/clarity'
+import { autorizado, chaveConfigurada } from './lib/acesso'
+import { negativarTermo } from './actions'
 import { montarAlertas } from './lib/alertas'
-import { Shell, Card, Vazio, Delta, Spark, Kpi, Alertas, Columns, HBars, Funnel, Hours, Heat, IQ, Pill, SubTabs, ABAS, SUBS, pick, brl, brl0, pct, num, taxa, type Aba, type Sub } from './ui'
+import { Shell, Card, Vazio, Delta, Spark, Kpi, Alertas, Aviso, Columns, HBars, Funnel, Hours, Heat, IQ, Pill, SubTabs, SubTabsSite, ABAS, SUBS, SUBS_SITE, pick, href, brl, brl0, pct, num, taxa, type Aba, type Sub, type SubSite } from './ui'
 
-type SP = { periodo?: string; aba?: string; sub?: string }
+type SP = { periodo?: string; aba?: string; sub?: string; feito?: string; erro?: string }
 
 export default async function PainelPage({ searchParams }: { searchParams: Promise<SP> }) {
   const sp = await searchParams
   const periodo: PeriodoKey = isPeriodo(sp.periodo) ? sp.periodo : '30d'
   const aba: Aba = pick(sp.aba, ABAS, 'resumo')
   const sub: Sub = pick(sp.sub, SUBS, 'palavras')
+  const subSite: SubSite = pick(sp.sub, SUBS_SITE, 'visitas')
   const j = janela(periodo)
   const live = conectado()
 
   return (
-    <Shell periodo={periodo} aba={aba} sub={sub} label={j.label} comparacao={j.comparacao} live={live}>
+    <Shell periodo={periodo} aba={aba} sub={aba === 'site' ? subSite : sub} label={j.label} comparacao={j.comparacao} live={live}>
       {!live && aba !== 'site' && <Vazio texto="Sem conexão com o Google Ads neste ambiente: as variáveis GOOGLE_ADS_* não estão configuradas. Em produção (Vercel) elas existem e o painel fica ao vivo." />}
       {aba === 'resumo' && <Resumo j={j} periodo={periodo} />}
-      {aba === 'google' && <Google j={j} periodo={periodo} sub={sub} />}
-      {aba === 'site' && <Site />}
+      {aba === 'google' && <Google j={j} periodo={periodo} sub={sub} feito={sp.feito} erro={sp.erro} />}
+      {aba === 'site' && <Site j={j} periodo={periodo} sub={subSite} />}
       {aba === 'pacientes' && <Pacientes />}
       <p className="pn-foot">
-        Fontes: Google Ads API (todas as campanhas não removidas), Search Console e a lista mensal de pacientes. Contato = clique no WhatsApp a partir de um anúncio.
-        Paciente = consulta marcada, contada na lista do mês. Painel de uso interno, fora do índice do Google.
+        Fontes: Google Ads API (todas as campanhas não removidas), Google Analytics 4 (só o domínio isabelaragao.com.br), Search Console, Clarity e a lista mensal de pacientes.
+        Contato = clique no WhatsApp: no Google Ads, a partir de um anúncio; no site, de qualquer origem. Paciente = consulta marcada, contada na lista do mês. Painel de uso interno, fora do índice do Google.
       </p>
     </Shell>
   )
@@ -45,7 +51,8 @@ async function Resumo({ j, periodo }: { j: Janela; periodo: PeriodoKey }) {
   const hoje = hojeSP()
   const ontem = addDays(hoje, -1)
   const j7 = janela('7d')
-  const [serie, campanhas, serie7, termos14, anuncios, campPeriodo, meta, canais, negativas] = await Promise.all([
+  const ga4 = conectadoGa4()
+  const [serie, campanhas, serie7, termos14, anuncios, campPeriodo, meta, canais, negativas, siteResumo, siteCanais] = await Promise.all([
     getSerie(j),
     getCampanhas(),
     periodo === '7d' ? Promise.resolve(null) : getSerie(j7),
@@ -55,6 +62,8 @@ async function Resumo({ j, periodo }: { j: Janela; periodo: PeriodoKey }) {
     META_PERIODOS.includes(periodo) ? getMetaData(periodo) : Promise.resolve(null),
     getCustoConsultaCanais(),
     getNegativas(),
+    ga4 ? getSiteResumo(j) : Promise.resolve(null),
+    ga4 ? getSiteCanais(j) : Promise.resolve(null),
   ])
   const s7 = periodo === '7d' ? serie : serie7
   const alertas = montarAlertas({ campanhas, serie7: s7, termos14, anuncios, negativas, ontem })
@@ -163,6 +172,41 @@ async function Resumo({ j, periodo }: { j: Janela; periodo: PeriodoKey }) {
         </Card>
       </div>
 
+      {siteResumo && siteCanais && (
+        <div className="pn-row two">
+          <Card titulo="De onde vêm os contatos do site" sub={`${j.label}, Google Analytics, só isabelaragao.com.br. Barra = cliques no WhatsApp por canal; inclui quem chega de graça.`}>
+            <div className="pn-legend">
+              <span><i style={{ background: 'var(--s-google)' }} />Google Ads</span>
+              <span><i style={{ background: 'var(--s-org)' }} />Busca orgânica</span>
+              <span><i style={{ background: 'var(--s-meta)' }} />Instagram e Facebook</span>
+              <span><i style={{ background: 'var(--s-indic)' }} />Direto</span>
+              <span><i style={{ background: 'var(--prev)' }} />Outros</span>
+            </div>
+            {siteCanais.some((c) => c.cliques > 0) ? (
+              <HBars
+                rows={[...siteCanais].sort((a, b) => b.cliques - a.cliques || b.sessoes - a.sessoes).slice(0, 6).map((c) => ({ nome: c.nome, v: c.cliques, s: `${num(c.sessoes)} visitas · ${pct(taxa(c.cliques, c.sessoes))}`, cls: corCanal(c.nome) }))}
+                fmt={(v) => `${num(v)} ${v === 1 ? 'clique' : 'cliques'}`}
+              />
+            ) : (
+              <Vazio texto="Nenhum clique no WhatsApp registrado pelo site no período (a medição começou em 07/10/2026)." />
+            )}
+            <p className="pn-note">A aba Site abre por origem, página de entrada e dispositivo.</p>
+          </Card>
+          <Card titulo="Funil do site inteiro" sub={`${j.label}. Todas as origens juntas, pelo Google Analytics. O funil do Google (acima) é só o anúncio.`}>
+            <Funnel
+              steps={[
+                { nome: 'Visitas', sub: `${num(siteResumo.atual.usuarios)} pessoas diferentes`, v: siteResumo.atual.sessoes },
+                { nome: 'Cliques no WhatsApp', sub: `${pct(taxa(siteResumo.atual.cliques, siteResumo.atual.sessoes))} das visitas`, v: siteResumo.atual.cliques },
+              ]}
+            />
+            <div className="pn-foot" style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginTop: 14 }}>
+              <span className="pn-note" style={{ margin: 0 }}>Visitas</span><Delta atual={siteResumo.atual.sessoes} anterior={siteResumo.anterior.sessoes} texto={j.comparacao} />
+              <span className="pn-note" style={{ margin: 0 }}>Cliques</span><Delta atual={siteResumo.atual.cliques} anterior={siteResumo.anterior.cliques} texto={j.comparacao} />
+            </div>
+          </Card>
+        </div>
+      )}
+
       {meta && meta.total.investimento > 0 && (
         <Card titulo="Meta Ads · Instagram e Facebook" sub={`${meta.periodoLabel}. Aparece só quando há gasto no período. Conversa = pessoa que iniciou mensagem no WhatsApp a partir do anúncio.`}>
           <div className="pn-tbl">
@@ -183,13 +227,22 @@ async function Resumo({ j, periodo }: { j: Janela; periodo: PeriodoKey }) {
   )
 }
 
+/** Cor da barra por canal do GA4 (mesma família de cores do resto do painel). */
+function corCanal(nome: string): string {
+  if (nome.startsWith('Google Ads')) return ''
+  if (nome.startsWith('Busca orgânica')) return 'org'
+  if (nome.startsWith('Instagram') || nome === 'Meta Ads') return 'meta'
+  if (nome.startsWith('Direto')) return 'indic'
+  return 'prev'
+}
+
 // ───────────────────────────── GOOGLE ADS ─────────────────────────────
-async function Google({ j, periodo, sub }: { j: Janela; periodo: PeriodoKey; sub: Sub }) {
+async function Google({ j, periodo, sub, feito, erro }: { j: Janela; periodo: PeriodoKey; sub: Sub; feito?: string; erro?: string }) {
   return (
     <>
       <SubTabs periodo={periodo} sub={sub} />
       {sub === 'palavras' && <Palavras j={j} />}
-      {sub === 'termos' && <Termos j={j} />}
+      {sub === 'termos' && <Termos j={j} periodo={periodo} feito={feito} erro={erro} />}
       {sub === 'publico' && <Publico j={j} />}
       {sub === 'anuncios' && <Anuncios j={j} />}
     </>
@@ -227,30 +280,55 @@ async function Palavras({ j }: { j: Janela }) {
   )
 }
 
-async function Termos({ j }: { j: Janela }) {
-  const [termos, negativas] = await Promise.all([getTermos(j.inicio, j.fim), getNegativas()])
+async function Termos({ j, periodo, feito, erro }: { j: Janela; periodo: PeriodoKey; feito?: string; erro?: string }) {
+  const [termos, negativas, podeAgir] = await Promise.all([getTermos(j.inicio, j.fim), getNegativas(), autorizado()])
   if (!termos) return <Vazio texto="Sem resposta do Google Ads para termos de pesquisa." />
   const negs = negativas ?? []
-  const leitura = (t: { termo: string; contatos: number; gasto: number; cliques: number }) =>
+  const volta = href(periodo, 'google', 'termos')
+  type T = { termo: string; contatos: number; gasto: number; cliques: number }
+  const candidato = (t: T) => !negativada(t.termo, negs) && t.contatos === 0 && t.gasto >= 15
+  const leitura = (t: T) =>
     negativada(t.termo, negs) ? <Pill>já negativado</Pill> : t.contatos > 0 ? <Pill tom="good">converte</Pill> : t.gasto >= 15 ? <Pill tom="serious">gastou sem contato</Pill> : t.cliques >= 3 ? <Pill tom="warn">observar</Pill> : <Pill>pouco dado</Pill>
   return (
-    <Card titulo={`Termos de pesquisa · ${j.label}`} sub="O que as pessoas digitaram de fato no Google antes de clicar. Ordenado por gasto; clique no título de uma coluna para reordenar. Os que gastaram R$ 15 ou mais sem contato são candidatos a negativa.">
-      {termos.length === 0 ? (
-        <Vazio texto="Nenhum termo com clique no período." />
-      ) : (
-        <div className="pn-tbl">
-          <table>
-            <thead><tr><th>Termo digitado</th><th className="num">Cliques</th><th className="num">Contatos</th><th className="num">Gasto</th><th className="num">Custo/contato</th><th>Leitura</th></tr></thead>
-            <tbody>
-              {termos.map((t, i) => (
-                <tr key={i}><td className="kw">{t.termo}</td><td className="num">{t.cliques}</td><td className="num">{num(t.contatos)}</td><td className="num">{brl(t.gasto)}</td><td className="num"><Heat v={t.contatos ? t.gasto / t.contatos : null} /></td><td>{leitura(t)}</td></tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      )}
-      <p className="pn-note">Negativar direto por aqui entra na fase 2 (hoje eu faço pela API, com simulação antes). Termos já negativados deixam de aparecer nos dias seguintes.</p>
-    </Card>
+    <>
+      <Aviso feito={feito} erro={erro} />
+      <Card titulo={`Termos de pesquisa · ${j.label}`} sub="O que as pessoas digitaram de fato no Google antes de clicar. Ordenado por gasto; clique no título de uma coluna para reordenar. Os que gastaram R$ 15 ou mais sem contato são candidatos a negativa.">
+        {termos.length === 0 ? (
+          <Vazio texto="Nenhum termo com clique no período." />
+        ) : (
+          <div className="pn-tbl">
+            <table>
+              <thead><tr><th>Termo digitado</th><th className="num">Cliques</th><th className="num">Contatos</th><th className="num">Gasto</th><th className="num">Custo/contato</th><th>Leitura</th>{podeAgir && <th>Ação</th>}</tr></thead>
+              <tbody>
+                {termos.map((t, i) => (
+                  <tr key={i}>
+                    <td className="kw">{t.termo}</td><td className="num">{t.cliques}</td><td className="num">{num(t.contatos)}</td><td className="num">{brl(t.gasto)}</td><td className="num"><Heat v={t.contatos ? t.gasto / t.contatos : null} /></td><td>{leitura(t)}</td>
+                    {podeAgir && (
+                      <td>
+                        {candidato(t) && (
+                          <form action={negativarTermo} className="pn-inline">
+                            <input type="hidden" name="termo" value={t.termo} />
+                            <input type="hidden" name="volta" value={volta} />
+                            <button type="submit" className="pn-btn small">Negativar</button>
+                          </form>
+                        )}
+                      </td>
+                    )}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
+        <p className="pn-note">
+          {podeAgir
+            ? 'Negativar adiciona o termo em correspondência de frase em todas as campanhas ativas, na hora e sem simulação. O botão só aparece nos termos "gastou sem contato". Termos já negativados deixam de aparecer nos dias seguintes.'
+            : chaveConfigurada()
+              ? <>Para negativar direto por aqui, <a href="/painel/entrar" style={{ textDecoration: 'underline' }}>entre com a chave do painel</a> uma vez neste aparelho. Termos já negativados deixam de aparecer nos dias seguintes.</>
+              : 'Negativar direto por aqui precisa da variável PAINEL_KEY na Vercel. Enquanto isso, eu faço pela API, com simulação antes.'}
+        </p>
+      </Card>
+    </>
   )
 }
 
@@ -343,14 +421,122 @@ async function Anuncios({ j }: { j: Janela }) {
 }
 
 // ───────────────────────────── SITE ─────────────────────────────
-async function Site() {
+async function Site({ j, periodo, sub }: { j: Janela; periodo: PeriodoKey; sub: SubSite }) {
+  return (
+    <>
+      <SubTabsSite periodo={periodo} sub={sub} />
+      {sub === 'visitas' ? <Visitas j={j} /> : <Busca />}
+    </>
+  )
+}
+
+/** Tabela padrão das quebras do GA4: visitas, cliques no WhatsApp e conversão. */
+function TabelaFatias({ rows, rotulo, blog = false }: { rows: FatiaSite[] | null; rotulo: string; blog?: boolean }) {
+  if (!rows) return <Vazio texto="Sem resposta do Google Analytics para esta quebra." />
+  if (!rows.length) return <Vazio texto="Sem visitas no período." />
+  return (
+    <div className="pn-tbl">
+      <table className="narrow">
+        <thead><tr><th>{rotulo}</th><th className="num">Visitas</th><th className="num">Cliques</th><th className="num">Conversão</th></tr></thead>
+        <tbody>
+          {rows.map((r) => (
+            <tr key={r.nome}>
+              <td className={blog && r.nome.startsWith('/blog/') ? 'kw' : blog ? 'dim' : ''} title={r.nome}>{r.nome}</td>
+              <td className="num">{num(r.sessoes)}</td>
+              <td className="num">{r.cliques ? <b>{num(r.cliques)}</b> : <span className="dim">0</span>}</td>
+              <td className="num">{r.sessoes ? pct(taxa(r.cliques, r.sessoes)) : '—'}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  )
+}
+
+function ClarityBloco({ c }: { c: Clarity }) {
+  const tom = (p: number, warn: number, serious: number): 'good' | 'warn' | 'serious' => (p >= serious ? 'serious' : p >= warn ? 'warn' : 'good')
+  const seg = (s: number) => (s >= 60 ? `${Math.floor(s / 60)} min ${Math.round(s % 60)} s` : `${Math.round(s)} s`)
+  return (
+    <Card titulo={`Qualidade da navegação · últimos ${c.dias} dias`} sub="Microsoft Clarity, todo o site. Atualiza a cada 6 horas (a API permite 10 consultas por dia). Passe o mouse nos nomes para ver o que cada um mede.">
+      <div className="pn-stats">
+        <div><span className="pn-eyebrow">Sessões</span><b>{num(c.sessoes)}</b><small>{num(c.usuarios)} pessoas · {num(c.bots)} de robôs</small></div>
+        <div title="Até onde a pessoa rola a página, em média"><span className="pn-eyebrow">Rolagem média</span><b>{pct(c.scroll, 0)}</b><small>{c.paginasPorSessao.toLocaleString('pt-BR', { maximumFractionDigits: 1 })} páginas por sessão</small></div>
+        <div title="Tempo com a aba aberta e, dele, o tempo mexendo de fato"><span className="pn-eyebrow">Tempo por sessão</span><b>{seg(c.tempoAtivo)}</b><small>ativo, de {seg(c.tempoTotal)} no total</small></div>
+        <div title="Clicou em algo e nada aconteceu (texto que parece botão, imagem que parece link)"><span className="pn-eyebrow">Cliques mortos</span><b><Pill tom={tom(c.cliquesMortos.pct, 15, 30)}>{pct(c.cliquesMortos.pct, 0)} das sessões</Pill></b><small>{num(c.cliquesMortos.sessoes)} cliques</small></div>
+        <div title="Vários cliques seguidos no mesmo lugar: frustração"><span className="pn-eyebrow">Cliques de raiva</span><b><Pill tom={tom(c.cliquesRaiva.pct, 2, 5)}>{pct(c.cliquesRaiva.pct, 0)} das sessões</Pill></b><small>{num(c.cliquesRaiva.sessoes)} cliques</small></div>
+        <div title="Entrou numa página e voltou em poucos segundos"><span className="pn-eyebrow">Volta rápida</span><b><Pill tom={tom(c.voltaRapida.pct, 5, 10)}>{pct(c.voltaRapida.pct, 0)} das sessões</Pill></b><small>{num(c.voltaRapida.sessoes)} vezes</small></div>
+        <div title="Erro de programação na página, visto pelo navegador"><span className="pn-eyebrow">Erros de script</span><b><Pill tom={tom(c.errosScript.pct, 1, 5)}>{pct(c.errosScript.pct, 0)} das sessões</Pill></b><small>{num(c.errosScript.sessoes)} erros</small></div>
+      </div>
+      <p className="pn-note">Cliques mortos acima de 15% das sessões merecem olhar as gravações no Clarity: em geral é um elemento que parece clicável e não é.</p>
+    </Card>
+  )
+}
+
+async function Visitas({ j }: { j: Janela }) {
+  if (!conectadoGa4()) return <Vazio texto="Google Analytics sem credencial neste ambiente (variáveis GA4_*). Em produção, na Vercel, elas existem e esta aba fica ao vivo." />
+  const [resumo, serie, canais, origens, paginas, dispositivos, clarity] = await Promise.all([
+    getSiteResumo(j), getSiteSerie(j), getSiteCanais(j), getSiteOrigens(j), getSitePaginas(j), getSiteDispositivos(j),
+    conectadoClarity() ? getClarity(3) : Promise.resolve(null),
+  ])
+  if (!resumo) return <Vazio texto="O Google Analytics não respondeu. Recarregue em um minuto; se persistir, a credencial pode ter sido revogada (rodar o script 1 de novo e trocar as variáveis GA4_* na Vercel)." />
+  const a = resumo.atual, b = resumo.anterior
+  const fds = (dias: { data: string }[]) => (i: number) => (diaSemana(dias[i].data) % 6 === 0 ? 'prev' : '')
+  return (
+    <>
+      <div className="pn-row kpis">
+        <Kpi eyebrow="Visitas ao site" valor={num(a.sessoes)} nota={`${num(a.usuarios)} pessoas diferentes. Só isabelaragao.com.br; o sistema da clínica fica de fora.`}>
+          <Delta atual={a.sessoes} anterior={b.sessoes} texto={j.comparacao} />
+          {serie && <Spark vals={serie.map((d) => d.sessoes)} />}
+        </Kpi>
+        <Kpi eyebrow="Cliques no WhatsApp" valor={num(a.cliques)} nota="Todas as origens, inclusive quem chega de graça. Medido desde 07/10/2026; antes disso o período mostra zero.">
+          <Delta atual={a.cliques} anterior={b.cliques} texto={j.comparacao} />
+          {serie && <Spark vals={serie.map((d) => d.cliques)} />}
+        </Kpi>
+        <Kpi eyebrow="Visitas que clicam" valor={pct(taxa(a.cliques, a.sessoes))} nota="O anúncio do Google converte 12 a 15% dos cliques; o site inteiro fica abaixo porque inclui blog e curiosos.">
+          <Delta atual={taxa(a.cliques, a.sessoes)} anterior={taxa(b.cliques, b.sessoes)} texto={j.comparacao} />
+        </Kpi>
+      </div>
+
+      {serie && serie.length > 1 && (
+        <Card titulo="Visitas e cliques por dia" sub={`${j.label}. Fins de semana em cinza. Passe o mouse para ver o dia.`}>
+          <p className="pn-eyebrow">Visitas</p>
+          <Columns vals={serie.map((d) => d.sessoes)} labels={serie.map((d) => fmtDia(d.data))} tips={serie.map((d) => `${fmtDia(d.data)} · ${num(d.sessoes)} visitas · ${num(d.cliques)} cliques`)} cls={fds(serie)} />
+          <p className="pn-eyebrow" style={{ marginTop: 10 }}>Cliques no WhatsApp</p>
+          <Columns vals={serie.map((d) => d.cliques)} labels={serie.map((d) => fmtDia(d.data))} tips={serie.map((d) => `${fmtDia(d.data)} · ${num(d.cliques)} cliques`)} height={110} cls={fds(serie)} />
+        </Card>
+      )}
+
+      <div className="pn-row two">
+        <Card titulo="Por canal" sub="De onde a visita veio, na classificação do Google. Conversão = cliques por visita.">
+          <TabelaFatias rows={canais} rotulo="Canal" />
+        </Card>
+        <Card titulo="Por origem" sub="Mais fino que o canal: o site de onde veio e o tipo de link.">
+          <TabelaFatias rows={origens} rotulo="Origem" />
+        </Card>
+      </div>
+      <div className="pn-row two">
+        <Card titulo="Página de entrada" sub="Primeira página da visita. Cliques = visitas que entraram por ela e clicaram no WhatsApp em qualquer página depois. Blog em negrito.">
+          <TabelaFatias rows={paginas} rotulo="Página" blog />
+        </Card>
+        <Card titulo="Dispositivo" sub="Barra = visitas; ao lado, cliques e conversão.">
+          {dispositivos && dispositivos.length ? (
+            <HBars rows={dispositivos.map((d) => ({ nome: d.nome, v: d.sessoes, s: `${num(d.cliques)} cliques · ${pct(taxa(d.cliques, d.sessoes))}` }))} fmt={(v) => num(v)} />
+          ) : (
+            <Vazio texto="Sem dados por dispositivo." />
+          )}
+          <p className="pn-note">Velocidade no celular: nota 94 no Lighthouse em 06/10, depois de tirar o Pixel do carregamento inicial (antes, 61).</p>
+        </Card>
+      </div>
+
+      {clarity ? <ClarityBloco c={clarity} /> : conectadoClarity() ? <Vazio texto="O Clarity não respondeu (limite de 10 consultas por dia ou token inválido). Tenta de novo em até 6 horas." /> : <p className="pn-note">Clarity: para ver rolagem, cliques mortos e voltas rápidas aqui, adicione a variável CLARITY_API_TOKEN na Vercel (o mesmo token do conector local).</p>}
+    </>
+  )
+}
+
+async function Busca() {
   const [gsc, serie] = await Promise.all([getGscData(), getGscSeries(60)])
   return (
     <>
-      <div className="pn-alerts">
-        <div className="pn-alert warn"><span className="pn-ico" aria-hidden="true">!</span><div><b>GA4 e Clarity entram na fase 2</b><span>Precisam de uma credencial do Analytics na Vercel e do token do Clarity. O clique no WhatsApp por página está sendo coletado desde 07/10.</span></div></div>
-        <div className="pn-alert"><span className="pn-ico" aria-hidden="true">✓</span><div><b>Velocidade no celular: nota 94</b><span>Medida em 06/10 após tirar o Pixel do carregamento inicial (antes, 61).</span></div></div>
-      </div>
       {gsc ? (
         <>
           <div className="pn-row kpis">
