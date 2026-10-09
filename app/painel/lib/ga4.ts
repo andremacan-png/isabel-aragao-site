@@ -151,7 +151,7 @@ const CANAL: Record<string, string> = {
   'Organic Video': 'YouTube (orgânico)',
   Display: 'Display',
   'Paid Other': 'Outro pago',
-  AI: 'Assistentes de IA',
+  'AI Assistant': 'Assistentes de IA (ChatGPT etc.)',
 }
 /** Canal padrão do GA4 (busca orgânica, Google Ads, direto, social…). */
 export function getSiteCanais(j: Janela): Promise<FatiaSite[] | null> {
@@ -161,6 +161,7 @@ export function getSiteCanais(j: Janela): Promise<FatiaSite[] | null> {
 function nomeOrigem(v: string): string {
   const [fonte, meio] = v.split(' / ').map((s) => s.trim())
   if (fonte === '(direct)') return 'direto'
+  if (fonte === '(data not available)' || fonte === '(not set)') return 'sem dado de origem'
   const f = fonte.replace(/^l\.instagram\.com$/, 'instagram').replace(/^(www\.|m\.|lm\.)/, '')
   const m: Record<string, string> = { cpc: 'anúncio', organic: 'busca orgânica', referral: 'link', social: 'social', '(not set)': '' }
   const mm = meio in m ? m[meio] : meio
@@ -171,9 +172,12 @@ export function getSiteOrigens(j: Janela): Promise<FatiaSite[] | null> {
   return cached(`origens:${j.inicio}:${j.fim}`, () => quebra(j, 'sessionSourceMedium', 10, nomeOrigem))
 }
 
+// Caminhos que não são do site: sessões da equipe que começam no SISTEMA da clínica e passam
+// pelo site (o filtro de hostName é por evento, a página de entrada é por sessão), e o próprio painel.
+const NAO_E_SITE = /^\/(painel|login|agenda|dashboard|central-contatos|financeiro|tarefas|prontuario|pacientes|servicos|aplicacoes|pacotes|ajuda|cadastro|indicadores|usuarios)(\/|$)/
 /** Página de entrada da sessão; cliques = sessões que entraram por ela e clicaram no WhatsApp. */
 export function getSitePaginas(j: Janela): Promise<FatiaSite[] | null> {
-  return cached(`paginas:${j.inicio}:${j.fim}`, () => quebra(j, 'landingPage', 12, (v) => (v === '(not set)' ? 'sem página registrada' : v)))
+  return cached(`paginas:${j.inicio}:${j.fim}`, async () => (await quebra(j, 'landingPage', 14, (v) => (v === '(not set)' ? 'sem página registrada' : v))).filter((p) => !NAO_E_SITE.test(p.nome)))
 }
 
 const DISPOSITIVO: Record<string, string> = { desktop: 'Computador', mobile: 'Celular', tablet: 'Tablet' }
