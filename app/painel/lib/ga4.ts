@@ -132,9 +132,18 @@ async function quebra(j: Janela, dimensao: string, limite: number, nomear: (v: s
   ])
   const cliques = new Map<string, number>()
   for (const r of ev) cliques.set(dim(r), met(r))
+  // agrupa pelo NOME já traduzido (dois valores do GA4 podem virar o mesmo rótulo, ex. "sem dado de origem")
   const linhas = new Map<string, FatiaSite>()
-  for (const r of sess) linhas.set(dim(r), { nome: nomear(dim(r)), sessoes: met(r), cliques: cliques.get(dim(r)) ?? 0 })
-  for (const [k, c] of cliques) if (c > 0 && !linhas.has(k)) linhas.set(k, { nome: nomear(k), sessoes: 0, cliques: c })
+  const soma = (k: string, sessoes: number, cl: number) => {
+    const nome = nomear(k)
+    const l = linhas.get(nome)
+    if (l) {
+      l.sessoes += sessoes
+      l.cliques += cl
+    } else linhas.set(nome, { nome, sessoes, cliques: cl })
+  }
+  for (const r of sess) soma(dim(r), met(r), cliques.get(dim(r)) ?? 0)
+  for (const [k, c] of cliques) if (c > 0 && !sess.some((r) => dim(r) === k)) soma(k, 0, c)
   return [...linhas.values()].sort((a, b) => b.sessoes - a.sessoes).filter((l, i) => i < limite || l.cliques > 0)
 }
 
@@ -174,7 +183,7 @@ export function getSiteOrigens(j: Janela): Promise<FatiaSite[] | null> {
 
 // Caminhos que não são do site: sessões da equipe que começam no SISTEMA da clínica e passam
 // pelo site (o filtro de hostName é por evento, a página de entrada é por sessão), e o próprio painel.
-const NAO_E_SITE = /^\/(painel|login|agenda|dashboard|central-contatos|financeiro|tarefas|prontuario|pacientes|servicos|aplicacoes|pacotes|ajuda|cadastro|indicadores|usuarios)(\/|$)/
+const NAO_E_SITE = /^\/(painel|login|agenda|dashboard|central-contatos|financeiro|tarefas|prontuario|pacientes|servicos|aplicacoes|pacotes|pacotes-sessoes|gestao-pacotes|ajuda|cadastro|cadastro-print|indicadores|usuarios|orcamentos|configuracoes|relatorios|estoque|metricas|v2)(\/|$)/
 /** Página de entrada da sessão; cliques = sessões que entraram por ela e clicaram no WhatsApp. */
 export function getSitePaginas(j: Janela): Promise<FatiaSite[] | null> {
   return cached(`paginas:${j.inicio}:${j.fim}`, async () => (await quebra(j, 'landingPage', 14, (v) => (v === '(not set)' ? 'sem página registrada' : v))).filter((p) => !NAO_E_SITE.test(p.nome)))
