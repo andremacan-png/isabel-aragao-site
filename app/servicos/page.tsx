@@ -8,7 +8,7 @@ import { CLINICA, MEDICA, ENFERMEIRA, SITE } from '@/lib/entidade'
 export const metadata: Metadata = {
   title: 'Serviços da clínica em São José/SC | Dra. Isabel Aragão',
   description:
-    'Consulta médica de emagrecimento (90 min), bioimpedância, acompanhamento, tratamento com injetáveis sob prescrição, aplicação com enfermeira e atendimento online. Kennedy Towers, Campinas, São José/SC.',
+    'Consulta de emagrecimento (90 min), bioimpedância, injetáveis sob prescrição, aplicação com enfermeira e atendimento online. Kennedy Towers, São José/SC.',
   alternates: { canonical: `${SITE}/servicos` },
   openGraph: {
     title: 'Serviços da clínica · Dra. Isabel Aragão · São José/SC',
