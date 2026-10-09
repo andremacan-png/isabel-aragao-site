@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { POSTS, getPost, getRelatedPosts } from '@/lib/blog/posts'
 import { publicadoEm, atualizadoEm } from '@/lib/blog/lastmod'
+import { CLINICA, MEDICA, SITE } from '@/lib/entidade'
 
 type Props = { params: Promise<{ slug: string }> }
 
@@ -173,13 +174,9 @@ export default async function BlogPost({ params }: Props) {
       inLanguage: 'pt-BR',
       datePublished: publicadoEm(post),
       dateModified: atualizadoEm(post),
-      author: { '@type': 'Person', name: 'Dra. Isabel Aragão', jobTitle: 'Médica', url: 'https://isabelaragao.com.br' },
-      publisher: {
-        '@type': 'Organization',
-        name: 'Dra. Isabel Aragão',
-        url: 'https://isabelaragao.com.br',
-        logo: { '@type': 'ImageObject', url: 'https://isabelaragao.com.br/icon.png' },
-      },
+      // autora e editora apontam para as entidades do layout (mesmo @id), com CRM: a IA liga o texto à pessoa certa
+      author: { '@type': 'Person', '@id': MEDICA.id, name: MEDICA.nome, jobTitle: MEDICA.cargo, identifier: MEDICA.crm, url: SITE },
+      publisher: { '@type': 'Organization', '@id': CLINICA.id, name: CLINICA.nome, url: SITE, logo: { '@type': 'ImageObject', url: `${SITE}/icon.png` } },
     },
   ]
   if (post.faq && post.faq.length > 0) {

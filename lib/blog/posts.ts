@@ -27,8 +27,17 @@ export const POSTS: Post[] = [
     readTime: '5 min',
     date: 'Julho 2026',
     metaDesc: 'Entenda como funciona o tratamento com médica de emagrecimento em São José/SC: avaliação, bioimpedância, plano individualizado e acompanhamento com a Dra. Isabel Aragão (CRM-SC 26139).',
-    related: ['quando-procurar-medico-para-emagrecer', 'primeira-consulta-medica-emagrecimento', 'como-funciona-acompanhamento-medico-emagrecimento', 'bioimpedancia-o-que-e'],
+    related: ['aplicacao-tirzepatida-sao-jose', 'bioimpedancia-sao-jose-sc', 'clinica-emagrecimento-sao-jose-sc', 'primeira-consulta-medica-emagrecimento'],
+    faq: [
+      { q: 'Qual médica atende emagrecimento em São José/SC?', a: 'A Dra. Isabel Aragão, CRM-SC 26139, médica dedicada ao tratamento do excesso de peso e da obesidade, atende no Kennedy Towers, bairro Campinas, em São José. A equipe inclui a Enf. Maria Fernanda Loccioni, responsável pelas aplicações de injetáveis.' },
+      { q: 'Como é a primeira consulta?', a: 'Dura cerca de 90 minutos: histórico de saúde e de tentativas anteriores, bioimpedância na hora, exames quando necessário e um plano individual. A paciente sai sabendo o caminho, não com um protocolo pronto.' },
+      { q: 'Preciso de encaminhamento para marcar?', a: 'Não. O atendimento é particular e a consulta é marcada direto pelo WhatsApp (48) 99159-3468.' },
+      { q: 'A clínica atende online?', a: 'Sim, para quem não pode ir presencialmente ou mora longe. A bioimpedância, por exigir o aparelho, é feita só na clínica em São José.' },
+      { q: 'A clínica fica perto de que bairros?', a: 'Fica no bairro Campinas, vizinho ao Kobrasol, com acesso fácil a partir de Barreiros, Forquilhinhas, Fazenda Santo Antônio, Praia Comprida e do centro de Florianópolis.' },
+      { q: 'A clínica vende os medicamentos para emagrecer?', a: 'Não. Quando há indicação, a médica prescreve e a paciente compra na farmácia com a receita. A clínica cuida da avaliação, da prescrição, da aplicação (se a paciente preferir fazer na clínica) e do acompanhamento.' },
+    ],
     content: `
+<div class="resposta"><strong>Resposta rápida:</strong> em São José/SC, a <strong>Dra. Isabel Aragão (CRM-SC 26139)</strong> atende emagrecimento no Kennedy Towers, bairro Campinas, de segunda a sexta. A primeira consulta dura 90 minutos e inclui bioimpedância e um plano individual; quando indicado, o tratamento usa <a href="/blog/aplicacao-tirzepatida-sao-jose">medicamentos injetáveis com acompanhamento</a>. Agende pelo WhatsApp <a href="https://wa.me/5548991593468">(48) 99159-3468</a>.</div>
 <p>Se você mora em São José ou na Grande Florianópolis e está buscando tratamento médico para emagrecer, entender como funciona esse tipo de cuidado é o primeiro passo para fazer uma escolha segura e eficiente.</p>
 <p>A medicina do emagrecimento é uma área que se consolidou nas últimas décadas à medida que ficou claro que a obesidade é uma doença crônica com causas complexas — e que exige uma abordagem médica, não apenas de força de vontade ou dieta.</p>
 <h2>O que faz uma médica de emagrecimento</h2>
@@ -48,7 +57,11 @@ export const POSTS: Post[] = [
 <p>O atendimento presencial permite uma avaliação muito mais completa. A bioimpedância, por exemplo, exige presença física e equipamento calibrado. Além disso, a relação médico-paciente se aprofunda quando há contato direto — fundamental em um tratamento que envolve aspectos emocionais e comportamentais.</p>
 <p>Para quem está em São José ou na Grande Florianópolis, a Clínica da Dra. Isabel Aragão (CRM-SC 26139) oferece atendimento presencial com equipe completa, incluindo a Enf. Maria Fernanda Loccioni.</p>
 <h2>O que esperar nos primeiros meses</h2>
-<p>O objetivo não é só a balança. É melhorar a composição corporal — perder gordura enquanto preserva músculo —, regularizar os indicadores metabólicos e criar uma base que sustente o resultado a longo prazo. Com acompanhamento médico adequado, o resultado que vem é o resultado que fica.</p>`,
+<p>O objetivo não é só a balança. É melhorar a composição corporal — perder gordura enquanto preserva músculo —, regularizar os indicadores metabólicos e criar uma base que sustente o resultado a longo prazo. Com acompanhamento médico adequado, o resultado que vem é o resultado que fica.</p>
+<h2>Onde fica a clínica em São José</h2>
+<p>A clínica da Dra. Isabel Aragão fica no <strong>Kennedy Towers, Av. Mal. Castelo Branco, 65, Sala 1102 B, bairro Campinas, São José/SC</strong> (CEP 88101-020), vizinho ao Kobrasol. Atendimento de <strong>segunda a sexta, das 8h às 18h</strong>, com hora marcada. Agendamento pelo WhatsApp <a href="https://wa.me/5548991593468">(48) 99159-3468</a>. Veja a localização no <a href="https://maps.google.com/?cid=12061819971878830027" rel="noopener">Google Maps</a>.</p>
+<p>Recebemos pacientes de todos os bairros de São José (Campinas, Kobrasol, Barreiros, Forquilhinhas, Fazenda Santo Antônio, Praia Comprida, Bela Vista, Roçado, Areias, Serraria) e das cidades vizinhas: <a href="/blog/medica-emagrecimento-florianopolis">Florianópolis</a>, <a href="/blog/medica-emagrecimento-palhoca">Palhoça</a> e <a href="/blog/medica-emagrecimento-biguacu">Biguaçu</a>. Quem não pode vir presencialmente pode fazer o acompanhamento online; a bioimpedância, por exigir o aparelho, é sempre presencial.</p>
+`,
   },
   {
     slug: 'obesidade-e-uma-doenca',
@@ -477,7 +490,15 @@ export const POSTS: Post[] = [
     date: 'Julho 2026',
     metaDesc: 'Onde fazer bioimpedância em São José/SC, como se preparar para o exame e como interpretar os resultados. Disponível na Clínica Dra. Isabel Aragão (CRM-SC 26139).',
     related: ['bioimpedancia-o-que-e', 'medica-emagrecimento-sao-jose', 'primeira-consulta-medica-emagrecimento', 'perda-de-peso-saudavel-quantos-kg-por-mes'],
+    faq: [
+      { q: 'Onde fazer bioimpedância em São José/SC?', a: 'Na clínica da Dra. Isabel Aragão (CRM-SC 26139), Kennedy Towers, Av. Mal. Castelo Branco, 65, Sala 1102 B, bairro Campinas. O exame faz parte da consulta de emagrecimento e o laudo é interpretado pela médica na mesma hora.' },
+      { q: 'Posso fazer só a bioimpedância, sem consulta?', a: 'O exame é realizado dentro da consulta, porque o valor dele está na interpretação junto com o histórico e os objetivos de cada paciente. Entre em contato pelo WhatsApp para entender o formato.' },
+      { q: 'Como me preparar para a bioimpedância?', a: 'Hidratação normal nos dias anteriores, sem álcool no dia anterior, sem exercício intenso nas 12 horas antes, roupa leve e, se possível, sempre no mesmo horário do dia. Mulheres: evitar o período menstrual.' },
+      { q: 'O que a bioimpedância mostra?', a: 'Percentual de gordura, massa muscular, gordura visceral, hidratação e taxa metabólica basal. É muito mais útil para guiar o tratamento do que o peso na balança.' },
+      { q: 'De quanto em quanto tempo repetir?', a: 'Durante o tratamento, a cada 30 a 60 dias. Semanalmente não vale a pena: a variação de hidratação cria falsa impressão de progresso ou de regressão.' },
+    ],
     content: `
+<div class="resposta"><strong>Resposta rápida:</strong> em São José/SC, a bioimpedância é feita na clínica da <strong>Dra. Isabel Aragão (CRM-SC 26139)</strong>, Kennedy Towers, bairro Campinas, como parte da consulta de emagrecimento: o exame é realizado e interpretado na mesma hora, pela médica. Prepare-se com hidratação normal, sem álcool no dia anterior e sem exercício intenso nas 12 horas antes. Agende pelo WhatsApp <a href="https://wa.me/5548991593468">(48) 99159-3468</a>.</div>
 <p>Se você mora em São José ou na Grande Florianópolis e quer fazer uma avaliação de composição corporal por bioimpedância, este artigo explica tudo o que você precisa saber — onde realizar, como se preparar e como interpretar o que o laudo diz.</p>
 <h2>O que é e para que serve</h2>
 <p>A bioimpedância é um exame que analisa a composição do seu corpo através da passagem de uma corrente elétrica de baixíssima intensidade (imperceptível). Ela mede separadamente:</p>
@@ -505,7 +526,11 @@ export const POSTS: Post[] = [
 <h2>Com que frequência repetir</h2>
 <p>Durante o tratamento, a bioimpedância é repetida a cada 30 a 60 dias. Esse intervalo é o suficiente para que mudanças reais sejam detectadas e o plano seja ajustado com base nos dados atuais. Fazer semanalmente não é recomendado — variações naturais de hidratação podem criar falsa impressão de progresso ou regressão.</p>
 <h2>Como ler o laudo</h2>
-<p>O número mais importante não é o peso total — é a relação entre massa de gordura e massa magra. O objetivo do tratamento é reduzir a gordura enquanto preserva (ou aumenta) o músculo. Se o peso caiu 2 kg mas a massa muscular também caiu, o resultado não é bom. Se o peso caiu 2 kg e a massa muscular se manteve ou subiu, o resultado é excelente — mesmo que pareça pouco na balança.</p>`,
+<p>O número mais importante não é o peso total — é a relação entre massa de gordura e massa magra. O objetivo do tratamento é reduzir a gordura enquanto preserva (ou aumenta) o músculo. Se o peso caiu 2 kg mas a massa muscular também caiu, o resultado não é bom. Se o peso caiu 2 kg e a massa muscular se manteve ou subiu, o resultado é excelente — mesmo que pareça pouco na balança.</p>
+<h2>Onde fica a clínica em São José</h2>
+<p>A clínica da Dra. Isabel Aragão fica no <strong>Kennedy Towers, Av. Mal. Castelo Branco, 65, Sala 1102 B, bairro Campinas, São José/SC</strong> (CEP 88101-020), vizinho ao Kobrasol. Atendimento de <strong>segunda a sexta, das 8h às 18h</strong>, com hora marcada. Agendamento pelo WhatsApp <a href="https://wa.me/5548991593468">(48) 99159-3468</a>. Veja a localização no <a href="https://maps.google.com/?cid=12061819971878830027" rel="noopener">Google Maps</a>.</p>
+<p>Recebemos pacientes de todos os bairros de São José (Campinas, Kobrasol, Barreiros, Forquilhinhas, Fazenda Santo Antônio, Praia Comprida, Bela Vista, Roçado, Areias, Serraria) e das cidades vizinhas: <a href="/blog/medica-emagrecimento-florianopolis">Florianópolis</a>, <a href="/blog/medica-emagrecimento-palhoca">Palhoça</a> e <a href="/blog/medica-emagrecimento-biguacu">Biguaçu</a>. Quem não pode vir presencialmente pode fazer o acompanhamento online; a bioimpedância, por exigir o aparelho, é sempre presencial.</p>
+`,
   },
   {
     slug: 'como-escolher-medico-emagrecimento',
@@ -671,7 +696,15 @@ export const POSTS: Post[] = [
     date: 'Julho 2026',
     metaDesc: 'Procura clínica de emagrecimento em São José/SC? Veja como funciona o tratamento (avaliação, bioimpedância, plano individual), o que avaliar antes de escolher e como agendar.',
     related: ['medica-emagrecimento-sao-jose', 'primeira-consulta-medica-emagrecimento', 'como-escolher-medico-emagrecimento', 'bioimpedancia-sao-jose-sc'],
+    faq: [
+      { q: 'Qual é a melhor clínica de emagrecimento em São José/SC?', a: 'A melhor é a que avalia antes de prescrever: médica com CRM visível, bioimpedância, exames quando necessários, plano individual e acompanhamento regular. A clínica da Dra. Isabel Aragão (CRM-SC 26139), no bairro Campinas, trabalha exatamente assim.' },
+      { q: 'A clínica de emagrecimento da Dra. Isabel fica onde?', a: 'No Kennedy Towers, Av. Mal. Castelo Branco, 65, Sala 1102 B, bairro Campinas, São José/SC, vizinho ao Kobrasol. Atendimento de segunda a sexta, das 8h às 18h, com hora marcada.' },
+      { q: 'O que está incluído na consulta?', a: 'Consulta de 90 minutos com a médica, bioimpedância na hora, análise do histórico e um plano individual. Quando há indicação de medicamento injetável, a prescrição e o acompanhamento fazem parte do tratamento.' },
+      { q: 'A clínica aplica injetáveis para emagrecer?', a: 'Sim. As aplicações são feitas pela Enf. Maria Fernanda Loccioni (COREN/SC 441029), com prescrição da Dra. Isabel. A clínica não vende o medicamento.' },
+      { q: 'Atende quem mora em Palhoça, Biguaçu ou Florianópolis?', a: 'Sim. A clínica fica em São José, a poucos minutos dessas cidades, e também atende online para quem prefere.' },
+    ],
     content: `
+<div class="resposta"><strong>Resposta rápida:</strong> a clínica de emagrecimento da <strong>Dra. Isabel Aragão (CRM-SC 26139)</strong> fica no Kennedy Towers, bairro Campinas, em São José/SC, e atende de segunda a sexta. O tratamento começa com consulta de 90 minutos e bioimpedância, antes de qualquer prescrição; a equipe tem enfermeira para as aplicações de injetáveis. Agende pelo WhatsApp <a href="https://wa.me/5548991593468">(48) 99159-3468</a>.</div>
 <p>Se você está pesquisando clínica de emagrecimento em São José/SC ou na Grande Florianópolis, provavelmente já percebeu que a oferta é variada — e que as diferenças entre uma clínica e outra vão muito além do preço. Saber o que avaliar pode poupar meses de tratamento inadequado.</p>
 <h2>O que é uma clínica de emagrecimento</h2>
 <p>Uma clínica de emagrecimento é um espaço de saúde que oferece tratamento médico para perda de peso. Isso pode envolver avaliação clínica, exames, prescrição de medicamentos quando indicada e acompanhamento de composição corporal. O que diferencia uma clínica de qualidade não é o espaço físico nem a lista de serviços — é a abordagem. Tratamento sério de emagrecimento começa com avaliação, não com prescrição.</p>
@@ -705,7 +738,11 @@ export const POSTS: Post[] = [
 </ul>
 <p>Respostas vagas ou evasivas a essas perguntas já dizem muito sobre o que esperar do tratamento.</p>
 <h2>Clínica de emagrecimento em São José/SC — o que a Dra. Isabel Aragão oferece</h2>
-<p>A Dra. Isabel Aragão (CRM-SC 26139) atende em São José/SC com foco exclusivo em emagrecimento e obesidade. O tratamento começa com avaliação completa — bioimpedância e histórico detalhado de saúde — antes de qualquer decisão de plano. O acompanhamento é feito com revisitas regulares e ajuste contínuo conforme a evolução de cada paciente. A equipe inclui a Enf. Maria Fernanda Loccioni (COREN/SC 441029), responsável pelas aplicações de medicamentos injetáveis. O atendimento também está disponível online.</p>`,
+<p>A Dra. Isabel Aragão (CRM-SC 26139) atende em São José/SC com foco exclusivo em emagrecimento e obesidade. O tratamento começa com avaliação completa — bioimpedância e histórico detalhado de saúde — antes de qualquer decisão de plano. O acompanhamento é feito com revisitas regulares e ajuste contínuo conforme a evolução de cada paciente. A equipe inclui a Enf. Maria Fernanda Loccioni (COREN/SC 441029), responsável pelas aplicações de medicamentos injetáveis. O atendimento também está disponível online.</p>
+<h2>Onde fica a clínica em São José</h2>
+<p>A clínica da Dra. Isabel Aragão fica no <strong>Kennedy Towers, Av. Mal. Castelo Branco, 65, Sala 1102 B, bairro Campinas, São José/SC</strong> (CEP 88101-020), vizinho ao Kobrasol. Atendimento de <strong>segunda a sexta, das 8h às 18h</strong>, com hora marcada. Agendamento pelo WhatsApp <a href="https://wa.me/5548991593468">(48) 99159-3468</a>. Veja a localização no <a href="https://maps.google.com/?cid=12061819971878830027" rel="noopener">Google Maps</a>.</p>
+<p>Recebemos pacientes de todos os bairros de São José (Campinas, Kobrasol, Barreiros, Forquilhinhas, Fazenda Santo Antônio, Praia Comprida, Bela Vista, Roçado, Areias, Serraria) e das cidades vizinhas: <a href="/blog/medica-emagrecimento-florianopolis">Florianópolis</a>, <a href="/blog/medica-emagrecimento-palhoca">Palhoça</a> e <a href="/blog/medica-emagrecimento-biguacu">Biguaçu</a>. Quem não pode vir presencialmente pode fazer o acompanhamento online; a bioimpedância, por exigir o aparelho, é sempre presencial.</p>
+`,
   },
   {
     slug: 'lipedema-florianopolis-tratamento',
@@ -761,7 +798,15 @@ export const POSTS: Post[] = [
     date: 'Julho 2026',
     metaDesc: 'Aplicação de injeção para emagrecer em São José/SC: quais medicamentos são injetáveis, como é feita a aplicação, diferença entre autoaplicação e clínica, e como funciona na Clínica Dra. Isabel Aragão.',
     related: ['tirzepatida-florianopolis', 'mounjaro-florianopolis', 'ozempic-florianopolis-prescricao', 'glp1-medicamentos-injetaveis-emagrecer'],
+    faq: [
+      { q: 'Onde aplicar injeção para emagrecer em São José/SC?', a: 'Na clínica da Dra. Isabel Aragão (CRM-SC 26139), Kennedy Towers, Av. Mal. Castelo Branco, 65, Sala 1102 B, bairro Campinas, com a Enf. Maria Fernanda Loccioni (COREN/SC 441029). Segunda a sexta, com hora marcada.' },
+      { q: 'Quais injeções para emagrecer existem?', a: 'As mais usadas são a tirzepatida (Mounjaro) e a semaglutida (Ozempic e Wegovy), todas de aplicação semanal e de prescrição médica.' },
+      { q: 'Dói aplicar?', a: 'A agulha é fina e a aplicação é subcutânea, rápida. Pode haver leve desconforto local nas primeiras doses, que passa.' },
+      { q: 'Posso aprender a aplicar em casa?', a: 'Sim. A maioria das pacientes aprende a autoaplicação com orientação da enfermeira. A aplicação na clínica é uma opção para quem prefere suporte, principalmente no início.' },
+      { q: 'A clínica vende a injeção?', a: 'Não. A paciente compra na farmácia com a receita da médica. A clínica faz a avaliação, a prescrição, a aplicação e o acompanhamento.' },
+    ],
     content: `
+<div class="resposta"><strong>Resposta rápida:</strong> em São José/SC, a aplicação de injeção para emagrecer (tirzepatida ou semaglutida) é feita na clínica da <strong>Dra. Isabel Aragão (CRM-SC 26139)</strong>, no Kennedy Towers, bairro Campinas, pela <strong>Enf. Maria Fernanda Loccioni</strong>. A aplicação é semanal, subcutânea, e sempre acompanha prescrição e acompanhamento médico. Agende pelo WhatsApp <a href="https://wa.me/5548991593468">(48) 99159-3468</a>.</div>
 <p>Os medicamentos injetáveis para emagrecimento — os análogos de GLP-1 e GIP como tirzepatida e semaglutida — são aplicados uma vez por semana. Muitos pacientes preferem ou precisam fazer a aplicação na clínica. Este artigo explica como funciona esse processo em São José/SC e o que esperar de cada visita.</p>
 <h2>Quais medicamentos são aplicados por injeção</h2>
 <p>A classe de medicamentos mais utilizada atualmente para emagrecimento por via injetável inclui:</p>
@@ -793,7 +838,11 @@ export const POSTS: Post[] = [
 <p>Na maior parte dos casos, a aplicação é bem tolerada. Um leve desconforto local e passageiro pode ocorrer nas primeiras doses. Os efeitos do medicamento — redução do apetite, saciedade mais rápida — costumam se manifestar nas horas ou dias seguintes. Sintomas gastrointestinais (náusea, desconforto) são mais comuns nas primeiras semanas e tendem a diminuir com o tempo e o ajuste progressivo de dose.</p>
 <h2>Aplicação e acompanhamento: por que os dois andam juntos</h2>
 <p>A aplicação do medicamento é um componente do tratamento — não o tratamento completo. O acompanhamento médico regular com a Dra. Isabel permite ajustar a dose conforme a resposta, monitorar a composição corporal por bioimpedância e avaliar a evolução dos indicadores de saúde. A aplicação isolada, sem esse suporte, tende a gerar resultados menores e sem sustentabilidade ao longo do tempo.</p>
-<p>Para pacientes que já têm prescrição de outro médico e buscam o serviço de aplicação: entre em contato com a clínica para verificar disponibilidade e protocolos.</p>`,
+<p>Para pacientes que já têm prescrição de outro médico e buscam o serviço de aplicação: entre em contato com a clínica para verificar disponibilidade e protocolos.</p>
+<h2>Onde fica a clínica em São José</h2>
+<p>A clínica da Dra. Isabel Aragão fica no <strong>Kennedy Towers, Av. Mal. Castelo Branco, 65, Sala 1102 B, bairro Campinas, São José/SC</strong> (CEP 88101-020), vizinho ao Kobrasol. Atendimento de <strong>segunda a sexta, das 8h às 18h</strong>, com hora marcada. Agendamento pelo WhatsApp <a href="https://wa.me/5548991593468">(48) 99159-3468</a>. Veja a localização no <a href="https://maps.google.com/?cid=12061819971878830027" rel="noopener">Google Maps</a>.</p>
+<p>Recebemos pacientes de todos os bairros de São José (Campinas, Kobrasol, Barreiros, Forquilhinhas, Fazenda Santo Antônio, Praia Comprida, Bela Vista, Roçado, Areias, Serraria) e das cidades vizinhas: <a href="/blog/medica-emagrecimento-florianopolis">Florianópolis</a>, <a href="/blog/medica-emagrecimento-palhoca">Palhoça</a> e <a href="/blog/medica-emagrecimento-biguacu">Biguaçu</a>. Quem não pode vir presencialmente pode fazer o acompanhamento online; a bioimpedância, por exigir o aparelho, é sempre presencial.</p>
+`,
   },
   {
     slug: 'mounjaro-ou-ozempic-qual-escolher',
@@ -1092,8 +1141,17 @@ export const POSTS: Post[] = [
     readTime: '5 min',
     date: 'Agosto 2026',
     metaDesc: 'Aplicação de tirzepatida em São José/SC com acompanhamento médico: o que é, por que exige prescrição, como funciona a aplicação acompanhada e o ajuste de dose com a Dra. Isabel Aragão.',
-    related: ['tirzepatida-florianopolis', 'aplicacao-injecao-emagrecer-sao-jose', 'efeitos-colaterais-mounjaro-tirzepatida', 'quanto-tempo-mounjaro-faz-efeito'],
+    related: ['medica-emagrecimento-sao-jose', 'aplicacao-injecao-emagrecer-sao-jose', 'efeitos-colaterais-mounjaro-tirzepatida', 'quanto-tempo-mounjaro-faz-efeito'],
+    faq: [
+      { q: 'Onde fazer aplicação de tirzepatida em São José/SC?', a: 'Na clínica da Dra. Isabel Aragão (CRM-SC 26139), Kennedy Towers, Av. Mal. Castelo Branco, 65, Sala 1102 B, bairro Campinas. A aplicação é feita pela Enf. Maria Fernanda Loccioni (COREN/SC 441029), de segunda a sexta, com hora marcada.' },
+      { q: 'Preciso de receita para usar tirzepatida?', a: 'Sim. A tirzepatida (Mounjaro) é um medicamento de prescrição. A consulta avalia se há indicação, as contraindicações e a dose de início.' },
+      { q: 'A clínica vende a tirzepatida?', a: 'Não. A paciente compra na farmácia com a receita. A clínica cuida da avaliação, da prescrição, da orientação de uso, da aplicação (para quem prefere fazer na clínica) e do acompanhamento com bioimpedância.' },
+      { q: 'Já tenho receita de outro médico. Posso só aplicar na clínica?', a: 'Entre em contato pelo WhatsApp. A clínica avalia caso a caso, porque a aplicação acompanhada inclui conferir a dose, o armazenamento e a resposta ao tratamento.' },
+      { q: 'Com que frequência é a aplicação?', a: 'Uma vez por semana, por via subcutânea. O tratamento começa em dose baixa e sobe por etapas, ao longo de semanas, para o organismo se adaptar com menos efeitos colaterais.' },
+      { q: 'Em quanto tempo a tirzepatida faz efeito?', a: 'O efeito no apetite costuma aparecer nas primeiras semanas; a mudança na balança e na composição corporal é gradual e se consolida ao longo de meses. A resposta é individual e não é promessa de resultado.' },
+    ],
     content: `
+<div class="resposta"><strong>Resposta rápida:</strong> em São José/SC, a aplicação de tirzepatida é feita na clínica da <strong>Dra. Isabel Aragão (CRM-SC 26139)</strong>, no Kennedy Towers, bairro Campinas, pela <strong>Enf. Maria Fernanda Loccioni</strong>, sempre com prescrição e acompanhamento médico. A tirzepatida é um medicamento de receita, aplicado uma vez por semana, com dose que sobe por etapas. A clínica não vende o medicamento. Agende a avaliação pelo WhatsApp <a href="https://wa.me/5548991593468">(48) 99159-3468</a>.</div>
 <p>A tirzepatida se tornou um dos tratamentos injetáveis mais procurados para emagrecer. Em São José/SC, a aplicação pode ser feita com acompanhamento médico, o que faz diferença: prescrição correta, ajuste de dose e monitoramento dos resultados. A Dra. Isabel Aragão (CRM-SC 26139) conduz esse tratamento de forma individualizada.</p>
 <h2>O que é a tirzepatida</h2>
 <p>A tirzepatida é uma medicação injetável de aplicação semanal que age em receptores ligados ao apetite e ao controle da glicose. Na prática, a maioria das pessoas sente menos fome, mais saciedade e uma relação mais tranquila com a comida. Ela é uma ferramenta do tratamento, e não um substituto do acompanhamento e das mudanças de hábito. Para entender melhor a categoria, veja o texto sobre <a href="/blog/glp1-medicamentos-injetaveis-emagrecer">os injetáveis para emagrecer</a>.</p>
@@ -1103,7 +1161,11 @@ export const POSTS: Post[] = [
 <h2>Por que exige prescrição e acompanhamento</h2>
 <p>A tirzepatida é um medicamento de prescrição. Ela não serve para todo mundo e tem contraindicações que precisam ser avaliadas por um médico antes de começar. O acompanhamento também cuida dos <a href="/blog/efeitos-colaterais-mounjaro-tirzepatida">efeitos colaterais mais comuns</a> e do ajuste de dose, o que torna o tratamento mais seguro e confortável. E ajuda a manter <a href="/blog/quanto-tempo-mounjaro-faz-efeito">expectativas realistas sobre o tempo de resposta</a>.</p>
 <h2>Aplicação de tirzepatida em São José/SC</h2>
-<p>Na clínica da Dra. Isabel, em São José, a tirzepatida é conduzida do início ao fim: avaliação, prescrição, orientação de aplicação e acompanhamento com bioimpedância. Nada aqui é promessa de resultado: é tratamento médico sério e individualizado. Fale pelo WhatsApp para entender o passo a passo.</p>`,
+<p>Na clínica da Dra. Isabel, em São José, a tirzepatida é conduzida do início ao fim: avaliação, prescrição, orientação de aplicação e acompanhamento com bioimpedância. Nada aqui é promessa de resultado: é tratamento médico sério e individualizado. Fale pelo WhatsApp para entender o passo a passo.</p>
+<h2>Onde fica a clínica em São José</h2>
+<p>A clínica da Dra. Isabel Aragão fica no <strong>Kennedy Towers, Av. Mal. Castelo Branco, 65, Sala 1102 B, bairro Campinas, São José/SC</strong> (CEP 88101-020), vizinho ao Kobrasol. Atendimento de <strong>segunda a sexta, das 8h às 18h</strong>, com hora marcada. Agendamento pelo WhatsApp <a href="https://wa.me/5548991593468">(48) 99159-3468</a>. Veja a localização no <a href="https://maps.google.com/?cid=12061819971878830027" rel="noopener">Google Maps</a>.</p>
+<p>Recebemos pacientes de todos os bairros de São José (Campinas, Kobrasol, Barreiros, Forquilhinhas, Fazenda Santo Antônio, Praia Comprida, Bela Vista, Roçado, Areias, Serraria) e das cidades vizinhas: <a href="/blog/medica-emagrecimento-florianopolis">Florianópolis</a>, <a href="/blog/medica-emagrecimento-palhoca">Palhoça</a> e <a href="/blog/medica-emagrecimento-biguacu">Biguaçu</a>. Quem não pode vir presencialmente pode fazer o acompanhamento online; a bioimpedância, por exigir o aparelho, é sempre presencial.</p>
+`,
   },
   {
     slug: 'aplicacao-tirzepatida-florianopolis',

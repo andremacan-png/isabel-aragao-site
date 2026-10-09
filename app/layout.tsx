@@ -1,3 +1,4 @@
+import { jsonLdClinica } from '@/lib/entidade'
 import type { Metadata } from 'next'
 import { Playfair_Display, Inter } from 'next/font/google'
 import './globals.css'
@@ -49,43 +50,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta name="facebook-domain-verification" content="608btqq6keuar29nrfsdt67wecuim1" />
         {/* Verificação de propriedade — Google Search Console */}
         <meta name="google-site-verification" content="Ym99QkOwRJa6E_pbYn3_NXgD21RISGYy8uUv9V5j-fo" />
-        {/* Schema Markup — LocalBusiness + Physician */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@type': ['LocalBusiness', 'Physician'],
-              name: 'Dra. Isabel Aragão — Médica Especialista em Emagrecimento',
-              url: 'https://isabelaragao.com.br',
-              telephone: '+554899159-3468',
-              image: 'https://isabelaragao.com.br/images/hero.jpg',
-              priceRange: '$$',
-              medicalSpecialty: 'Obesity medicine',
-              description:
-                'Tratamento médico individualizado para emagrecimento sustentável. Atende presencialmente em São José/SC e online para todo o Brasil. Especialização Hospital Albert Einstein.',
-              address: {
-                '@type': 'PostalAddress',
-                streetAddress: 'Av. Mal. Castelo Branco, 65, Sala 1102 B — Kennedy Towers',
-                addressLocality: 'São José',
-                addressRegion: 'SC',
-                postalCode: '88101-000',
-                addressCountry: 'BR',
-              },
-              geo: {
-                '@type': 'GeoCoordinates',
-                latitude: -27.5831,
-                longitude: -48.6217,
-              },
-              areaServed: [
-                { '@type': 'City', name: 'São José' },
-                { '@type': 'City', name: 'Florianópolis' },
-                { '@type': 'Country', name: 'Brazil' },
-              ],
-              sameAs: ['https://www.instagram.com/dra.isabelaragao/'],
-            }),
-          }}
-        />
+        {/* Dados estruturados: clínica + médica + enfermeira (fonte única em lib/entidade.ts, igual ao Maps) */}
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdClinica()) }} />
         {/* Google Tag Manager */}
         <Script id="gtm" strategy="afterInteractive">{`
           (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

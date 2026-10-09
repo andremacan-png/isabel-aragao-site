@@ -48,6 +48,11 @@ const PUBLICADO: Record<string, string> = {
 }
 
 const ATUALIZADO: Record<string, string> = {
+  'medica-emagrecimento-sao-jose': '2026-10-09', // resposta rápida + onde fica + FAQ (São José)
+  'aplicacao-tirzepatida-sao-jose': '2026-10-09', // resposta rápida + onde fica + FAQ (São José)
+  'clinica-emagrecimento-sao-jose-sc': '2026-10-09', // resposta rápida + onde fica + FAQ (São José)
+  'bioimpedancia-sao-jose-sc': '2026-10-09', // resposta rápida + onde fica + FAQ (São José)
+  'aplicacao-injecao-emagrecer-sao-jose': '2026-10-09', // resposta rápida + onde fica + FAQ (São José)
   'perda-de-peso-saudavel-quantos-kg-por-mes': '2026-09-03',
   'quanto-tempo-mounjaro-faz-efeito': '2026-09-03',
   'bioimpedancia-o-que-e': '2026-09-03',
