@@ -23,6 +23,7 @@ export const CLINICA = {
   horarioTexto: 'segunda a sexta, das 8h às 18h',
   cidadesAtendidas: ['São José', 'Florianópolis', 'Palhoça', 'Biguaçu'],
   instagram: 'https://www.instagram.com/dra.isabelaragao/',
+  doctoralia: 'https://www.doctoralia.com.br/isabel-aragao/medico-clinico-geral/florianopolis',
 }
 
 export const MEDICA = {
@@ -79,7 +80,7 @@ export function jsonLdClinica() {
         ],
         founder: { '@id': MEDICA.id },
         employee: [{ '@id': MEDICA.id }, { '@type': 'Person', name: ENFERMEIRA.nome, jobTitle: ENFERMEIRA.cargo, identifier: ENFERMEIRA.coren }],
-        sameAs: [CLINICA.instagram, CLINICA.mapsUrl],
+        sameAs: [CLINICA.instagram, CLINICA.mapsUrl, CLINICA.doctoralia],
         contactPoint: { '@type': 'ContactPoint', telephone: CLINICA.telefoneE164, contactType: 'agendamento', url: CLINICA.whatsapp, availableLanguage: 'pt-BR' },
       },
       {
@@ -98,7 +99,7 @@ export function jsonLdClinica() {
         workLocation: { '@id': CLINICA.id },
         url: SITE,
         image: `${SITE}/images/hero.jpg`,
-        sameAs: [CLINICA.instagram],
+        sameAs: [CLINICA.instagram, CLINICA.doctoralia],
       },
     ],
   }

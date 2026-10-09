@@ -694,6 +694,7 @@ export default function Home() {
             <div>
               <div className="text-white font-semibold mb-2 text-xs tracking-wider uppercase">Atendimento na região</div>
               <div className="flex flex-wrap gap-x-4 gap-y-1">
+                <a href="/servicos" className="hover:text-white transition-colors">Serviços da clínica</a>
                 <a href="/blog/medica-emagrecimento-sao-jose" className="hover:text-white transition-colors">Médica de emagrecimento em São José</a>
                 <a href="/blog/medica-emagrecimento-florianopolis" className="hover:text-white transition-colors">Florianópolis</a>
                 <a href="/blog/medica-emagrecimento-palhoca" className="hover:text-white transition-colors">Palhoça</a>

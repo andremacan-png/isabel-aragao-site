@@ -25,6 +25,7 @@ export function GET() {
 - WhatsApp e telefone: ${CLINICA.telefoneBonito} (${CLINICA.whatsapp}).
 - Mapa: ${CLINICA.mapsUrl}
 - Instagram: ${CLINICA.instagram}
+- Doctoralia: ${CLINICA.doctoralia}
 - Atende pacientes de ${CLINICA.cidadesAtendidas.join(', ')} e online para todo o Brasil.
 
 ## O que a clínica faz e não faz
@@ -34,6 +35,7 @@ export function GET() {
 
 ## Páginas principais
 - [Início](${SITE})
+- [Serviços da clínica, endereço e horário](${SITE}/servicos)
 - [Tratamento para emagrecer](${SITE}/emagrecimento)
 - [Saúde e emagrecimento](${SITE}/saude)
 - [Calculadora de IMC](${SITE}/calculadora-imc)
