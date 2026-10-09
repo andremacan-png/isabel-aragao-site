@@ -20,7 +20,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: 'Dra. Isabel Aragão | Médica Especialista em Emagrecimento — São José/SC',
   description:
-    'Tratamento médico individualizado para emagrecimento sustentável. Atende em São José (Grande Florianópolis) e online para todo o Brasil. Especialização Hospital Albert Einstein.',
+    'Médica de emagrecimento em São José/SC: consulta de 90 min, bioimpedância e plano individual. Presencial na Grande Florianópolis e online. CRM-SC 26139.',
   keywords: [
     'médica emagrecimento florianópolis',
     'médica emagrecimento são josé sc',

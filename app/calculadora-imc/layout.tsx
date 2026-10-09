@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Calculadora de IMC: Calcule e Entenda o Seu Resultado | Dra. Isabel Aragão',
   description:
-    'Calculadora de IMC gratuita: descubra seu Índice de Massa Corporal, entenda o que a faixa significa e quando o peso pede acompanhamento médico. Por Dra. Isabel Aragão (CRM-SC 26139), médica de emagrecimento em São José/SC.',
+    'Calculadora de IMC gratuita: veja sua faixa, o que ela significa e quando o peso pede acompanhamento médico. Dra. Isabel Aragão, São José/SC.',
   alternates: { canonical: 'https://isabelaragao.com.br/calculadora-imc' },
   openGraph: {
     title: 'Calculadora de IMC: Calcule e Entenda o Seu Resultado',

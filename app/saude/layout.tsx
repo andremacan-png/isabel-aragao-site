@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Tratamento injetável para emagrecer · São José/SC | Dra. Isabel',
   description:
-    'Emagrecimento com tratamento médico supervisionado, bioimpedância e acompanhamento — entenda a biologia da fome e da saciedade. São José (Grande Florianópolis) e online. CRM-SC 26.139.',
+    'Tratamento médico para emagrecer com bioimpedância e acompanhamento: entenda a biologia da fome e da saciedade. São José/SC e online. CRM-SC 26139.',
   alternates: {
     canonical: 'https://isabelaragao.com.br/saude',
   },

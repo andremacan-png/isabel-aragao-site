@@ -26,7 +26,7 @@ export const POSTS: Post[] = [
     category: 'Tratamento',
     readTime: '5 min',
     date: 'Julho 2026',
-    metaDesc: 'Entenda como funciona o tratamento com médica de emagrecimento em São José/SC: avaliação, bioimpedância, plano individualizado e acompanhamento com a Dra. Isabel Aragão (CRM-SC 26139).',
+    metaDesc: 'Médica de emagrecimento em São José/SC: consulta de 90 min, bioimpedância, plano individual e acompanhamento com a Dra. Isabel Aragão (CRM-SC 26139).',
     related: ['aplicacao-tirzepatida-sao-jose', 'bioimpedancia-sao-jose-sc', 'clinica-emagrecimento-sao-jose-sc', 'primeira-consulta-medica-emagrecimento'],
     faq: [
       { q: 'Qual médica atende emagrecimento em São José/SC?', a: 'A Dra. Isabel Aragão, CRM-SC 26139, médica dedicada ao tratamento do excesso de peso e da obesidade, atende no Kennedy Towers, bairro Campinas, em São José. A equipe inclui a Enf. Maria Fernanda Loccioni, responsável pelas aplicações de injetáveis.' },
@@ -72,7 +72,7 @@ export const POSTS: Post[] = [
     category: 'Ciência',
     readTime: '5 min',
     date: 'Julho 2026',
-    metaDesc: 'Entenda por que a obesidade é classificada como doença crônica pela OMS e como isso muda o tratamento: da culpa para a ciência, do esforço solitário para o acompanhamento médico.',
+    metaDesc: 'Obesidade é doença crônica, não falta de força de vontade: o que a ciência diz, por que o corpo resiste e como o tratamento médico ajuda. Dra. Isabel Aragão.',
     related: ['por-que-dieta-sozinha-falha', 'hormonios-ganho-de-peso', 'quando-procurar-medico-para-emagrecer', 'como-funciona-acompanhamento-medico-emagrecimento'],
     content: `
 <p>A Organização Mundial da Saúde classifica a obesidade como doença crônica desde 1997. Mas essa definição ainda não chegou ao entendimento popular — e isso tem consequências sérias na forma como as pessoas buscam (ou não buscam) tratamento.</p>
@@ -103,7 +103,7 @@ export const POSTS: Post[] = [
     category: 'Exames',
     readTime: '5 min',
     date: 'Julho 2026',
-    metaDesc: 'Bioimpedância: o que é, como funciona, quais métricas importam (massa magra, gordura visceral, TMB) e como interpretar o laudo. Exame realizado na Clínica Dra. Isabel Aragão em São José/SC.',
+    metaDesc: 'Bioimpedância: o que o exame mede (gordura, músculo, água, metabolismo), como se preparar e por que importa mais que a balança. Dra. Isabel Aragão, São José/SC.',
     related: ['bioimpedancia-sao-jose-sc', 'medica-emagrecimento-sao-jose', 'primeira-consulta-medica-emagrecimento', 'perda-de-peso-saudavel-quantos-kg-por-mes', 'como-ler-resultado-bioimpedancia'],
     content: `
 <p>A balança é um instrumento limitado. Ela mostra um número total, mas não revela o que compõe esse peso. Você pode estar perdendo músculo e ganhando gordura e a balança mostrar o mesmo valor — ou até menos. A bioimpedância resolve esse problema.</p>
@@ -137,7 +137,7 @@ export const POSTS: Post[] = [
     category: 'Especialidades',
     readTime: '5 min',
     date: 'Julho 2026',
-    metaDesc: 'Diferença entre endocrinologista, nutrólogo e médico de emagrecimento: o que cada um trata, quando procurar cada especialidade e qual é o mais indicado para tratamento de obesidade.',
+    metaDesc: 'Endocrinologista, nutrólogo ou médico de emagrecimento: o que cada um faz e quem procurar para tratar o peso com segurança. Dra. Isabel Aragão, São José/SC.',
     related: ['medica-emagrecimento-sao-jose', 'quando-procurar-medico-para-emagrecer', 'como-funciona-acompanhamento-medico-emagrecimento', 'primeira-consulta-medica-emagrecimento'],
     content: `
 <p>Quando a decisão de buscar acompanhamento médico para emagrecer finalmente é tomada, a próxima dúvida quase sempre é: qual médico procurar? Endocrinologista? Nutrólogo? Clínico com foco em obesidade? A diferença importa — e entendê-la evita frustração.</p>
@@ -169,7 +169,7 @@ export const POSTS: Post[] = [
     category: 'Ciência',
     readTime: '5 min',
     date: 'Julho 2026',
-    metaDesc: 'Por que a dieta sozinha quase sempre falha: adaptação metabólica, set point, hormônios da fome e o que a ciência diz sobre emagrecimento sustentável com acompanhamento médico.',
+    metaDesc: 'Por que a dieta sozinha falha: adaptação do metabolismo, fome de rebote e efeito sanfona. O que o acompanhamento médico muda. Dra. Isabel Aragão, São José/SC.',
     related: ['obesidade-e-uma-doenca', 'hormonios-ganho-de-peso', 'quando-procurar-medico-para-emagrecer', 'perda-de-peso-saudavel-quantos-kg-por-mes', 'efeito-sanfona-por-que-o-peso-volta', 'compulsao-alimentar-noite'],
     content: `
 <p>Pesquisas indicam que entre 80% e 95% das pessoas que emagrecem com dieta recuperam o peso em cinco anos. Esse número assustador não é resultado de preguiça ou falta de disciplina. É resultado de como o corpo humano funciona — e de como a dieta restritiva interage com essa biologia.</p>
@@ -207,7 +207,7 @@ export const POSTS: Post[] = [
     category: 'Tratamento',
     readTime: '5 min',
     date: 'Julho 2026',
-    metaDesc: 'Como funciona o acompanhamento médico para emagrecer: da primeira consulta às revisitas, bioimpedância, ajustes de plano e o que esperar em 3, 6 e 12 meses de tratamento.',
+    metaDesc: 'Como funciona o acompanhamento médico para emagrecer: consultas, bioimpedância, ajuste do plano e, quando indicado, medicação. Dra. Isabel Aragão, São José/SC.',
     related: ['primeira-consulta-medica-emagrecimento', 'medica-emagrecimento-sao-jose', 'bioimpedancia-o-que-e', 'quando-procurar-medico-para-emagrecer'],
     content: `
 <p>Quando as pessoas pensam em acompanhamento médico para emagrecer, muitas imaginam uma consulta onde o médico passa uma dieta e um remédio — e pronto. Na prática, um tratamento bem feito é muito mais do que isso.</p>
@@ -247,7 +247,7 @@ export const POSTS: Post[] = [
     category: 'Medicamentos',
     readTime: '6 min',
     date: 'Julho 2026',
-    metaDesc: 'O que são os análogos de GLP-1, como funcionam (saciedade, insulina, esvaziamento gástrico), quem pode usar, efeitos colaterais e por que só funcionam com acompanhamento médico.',
+    metaDesc: 'Medicamentos injetáveis para emagrecer (GLP-1 e GIP): como agem, para quem são indicados, efeitos colaterais e por que exigem acompanhamento médico.',
     related: ['quando-procurar-medico-para-emagrecer', 'por-que-dieta-sozinha-falha', 'como-funciona-acompanhamento-medico-emagrecimento', 'emagrecimento-apos-40-anos'],
     content: `
 <p>Nos últimos anos, uma classe de medicamentos injetáveis para emagrecimento ganhou grande visibilidade — e gerou tanto entusiasmo quanto confusão. São os análogos de GLP-1, e entender como funcionam é essencial para ter expectativas realistas sobre eles.</p>
@@ -286,7 +286,7 @@ export const POSTS: Post[] = [
     category: 'Saúde',
     readTime: '5 min',
     date: 'Julho 2026',
-    metaDesc: 'Por que emagrecer depois dos 40 fica mais difícil: mudanças hormonais, sarcopenia, metabolismo mais lento. O que fazer para perder gordura preservando músculo com acompanhamento médico.',
+    metaDesc: 'Emagrecer depois dos 40: o que muda no metabolismo, nos hormônios e na massa muscular, e como ajustar o tratamento. Dra. Isabel Aragão, São José/SC.',
     related: ['hormonios-ganho-de-peso', 'por-que-dieta-sozinha-falha', 'bioimpedancia-o-que-e', 'quando-procurar-medico-para-emagrecer', 'menopausa-ganho-de-peso'],
     content: `
 <p>É muito comum ouvir de pacientes acima dos 40: "Eu como a mesma coisa de antes e engordei. Faço a mesma academia e não emagreço mais." Não é impressão. É biologia.</p>
@@ -323,7 +323,7 @@ export const POSTS: Post[] = [
     category: 'Ciência',
     readTime: '6 min',
     date: 'Julho 2026',
-    metaDesc: 'Como a insulina, leptina, cortisol, grelina e a tireoide influenciam o ganho de peso. O que é resistência à insulina e à leptina, e como o tratamento médico aborda esses fatores.',
+    metaDesc: 'Hormônios e ganho de peso: o que realmente influencia, quando vale investigar e como o tratamento médico atua. Dra. Isabel Aragão, São José/SC.',
     related: ['obesidade-e-uma-doenca', 'por-que-dieta-sozinha-falha', 'emagrecimento-apos-40-anos', 'quando-procurar-medico-para-emagrecer', 'metabolismo-lento-existe', 'menopausa-ganho-de-peso'],
     content: `
 <p>Quando falamos em emagrecimento, a equação "coma menos, gaste mais" captura apenas uma parte da realidade. O que poucos explicam é que hormônios regulam diretamente o quanto você come, onde o corpo armazena gordura e como o metabolismo funciona. Ignorar esse sistema é a principal razão pela qual tantos tratamentos falham.</p>
@@ -362,7 +362,7 @@ export const POSTS: Post[] = [
     category: 'Saúde',
     readTime: '5 min',
     date: 'Julho 2026',
-    metaDesc: 'Quantos kg por mês dá para perder com saúde? O ritmo seguro é de 2 a 4 kg. Veja os riscos da pressa (perda de músculo, queda de cabelo, vesícula) e como saber se você perde gordura ou água.',
+    metaDesc: 'Quantos kg por mês é saudável perder: o ritmo seguro (0,5 a 1 kg por semana), por que mais rápido custa músculo e como medir com bioimpedância.',
     related: ['bioimpedancia-o-que-e', 'quanto-emagrece-com-injetavel', 'efeito-sanfona-por-que-o-peso-volta', 'como-ler-resultado-bioimpedancia', 'clinica-emagrecimento-sao-jose-sc'],
     faq: [
       { q: 'Quantos kg por semana é saudável perder?', a: 'De 0,5 a 1 kg por semana, o que dá 2 a 4 kg por mês. Nesse ritmo a maior parte do peso perdido é gordura, e o corpo tem tempo de se adaptar sem perder músculo em excesso.' },
@@ -408,7 +408,7 @@ export const POSTS: Post[] = [
     category: 'Tratamento',
     readTime: '4 min',
     date: 'Julho 2026',
-    metaDesc: 'O que acontece na primeira consulta com médica de emagrecimento: bioimpedância, anamnese, avaliação completa, o que levar e o que esperar ao sair. Clínica Dra. Isabel Aragão — São José/SC.',
+    metaDesc: 'Como é a primeira consulta com médica de emagrecimento: duração, histórico, bioimpedância, exames e o plano individual. Dra. Isabel Aragão, São José/SC.',
     related: ['medica-emagrecimento-sao-jose', 'como-funciona-acompanhamento-medico-emagrecimento', 'bioimpedancia-o-que-e', 'quando-procurar-medico-para-emagrecer'],
     content: `
 <p>Muitas pessoas adiam a consulta porque não sabem o que vai acontecer — e o desconhecido gera ansiedade. Este artigo detalha exatamente o que você vai encontrar, para que você chegue preparada e aproveite ao máximo o tempo com a médica.</p>
@@ -447,7 +447,7 @@ export const POSTS: Post[] = [
     category: 'Emagrecimento',
     readTime: '5 min',
     date: 'Julho 2026',
-    metaDesc: 'Sinais de que chegou a hora de buscar acompanhamento médico para emagrecer: tentativas sem resultado, sensação de fome constante, IMC acima de 30, condições associadas. Dra. Isabel Aragão — São José/SC.',
+    metaDesc: 'Quando procurar um médico para emagrecer: sinais de que a dieta não basta, IMC, saúde metabólica e o que esperar da consulta. Dra. Isabel Aragão, São José/SC.',
     related: ['primeira-consulta-medica-emagrecimento', 'por-que-dieta-sozinha-falha', 'como-funciona-acompanhamento-medico-emagrecimento', 'hormonios-ganho-de-peso'],
     content: `
 <p>Todo mundo sabe o que fazer para emagrecer, certo? Comer menos, se mexer mais. Parece simples. Então por que tanta gente tenta — com disciplina, com esforço real — e não consegue resultados duradouros?</p>
@@ -488,7 +488,7 @@ export const POSTS: Post[] = [
     category: 'Exames',
     readTime: '4 min',
     date: 'Julho 2026',
-    metaDesc: 'Onde fazer bioimpedância em São José/SC, como se preparar para o exame e como interpretar os resultados. Disponível na Clínica Dra. Isabel Aragão (CRM-SC 26139).',
+    metaDesc: 'Onde fazer bioimpedância em São José/SC, como se preparar e como ler o resultado. Na consulta com a Dra. Isabel Aragão (CRM-SC 26139), bairro Campinas.',
     related: ['bioimpedancia-o-que-e', 'medica-emagrecimento-sao-jose', 'primeira-consulta-medica-emagrecimento', 'perda-de-peso-saudavel-quantos-kg-por-mes'],
     faq: [
       { q: 'Onde fazer bioimpedância em São José/SC?', a: 'Na clínica da Dra. Isabel Aragão (CRM-SC 26139), Kennedy Towers, Av. Mal. Castelo Branco, 65, Sala 1102 B, bairro Campinas. O exame faz parte da consulta de emagrecimento e o laudo é interpretado pela médica na mesma hora.' },
@@ -541,7 +541,7 @@ export const POSTS: Post[] = [
     category: 'Tratamento',
     readTime: '5 min',
     date: 'Julho 2026',
-    metaDesc: 'Como escolher o médico certo para tratamento de emagrecimento: o que verificar (CRM, abordagem, avaliação completa), red flags a evitar e perguntas para fazer na primeira consulta.',
+    metaDesc: 'Como escolher um médico para emagrecer: CRM, avaliação antes da prescrição, bioimpedância, acompanhamento e sinais de alerta. Dra. Isabel Aragão, São José/SC.',
     related: ['medica-emagrecimento-sao-jose', 'quando-procurar-medico-para-emagrecer', 'primeira-consulta-medica-emagrecimento', 'como-funciona-acompanhamento-medico-emagrecimento'],
     content: `
 <p>O mercado de emagrecimento é enorme — e, infelizmente, cheio de profissionais que oferecem resultados rápidos sem a estrutura necessária para entregá-los com segurança. Saber o que avaliar antes de iniciar um tratamento pode poupar meses de frustração.</p>
@@ -590,7 +590,7 @@ export const POSTS: Post[] = [
     category: 'Medicamentos',
     readTime: '5 min',
     date: 'Julho 2026',
-    metaDesc: 'Tirzepatida em Florianópolis e São José/SC: como funciona, quem pode usar, por que exige prescrição e acompanhamento médico, e onde encontrar médica especializada na Grande Florianópolis.',
+    metaDesc: 'Tirzepatida em Florianópolis: como funciona, para quem é indicada, por que exige prescrição e como é o acompanhamento médico. Dra. Isabel Aragão.',
     related: ['mounjaro-florianopolis', 'ozempic-florianopolis-prescricao', 'aplicacao-injecao-emagrecer-sao-jose', 'medica-emagrecimento-sao-jose'],
     content: `
 <p>Se você chegou até aqui buscando tirzepatida em Florianópolis ou na região de São José/SC, provavelmente já conhece o medicamento e está procurando onde iniciar ou continuar o tratamento com acompanhamento adequado. Este artigo explica o que você precisa saber.</p>
@@ -627,7 +627,7 @@ export const POSTS: Post[] = [
     category: 'Medicamentos',
     readTime: '5 min',
     date: 'Julho 2026',
-    metaDesc: 'Mounjaro em Florianópolis: o que é (tirzepatida), como funciona o tratamento, por que exige prescrição médica e onde encontrar médica especializada em São José/SC e na Grande Florianópolis.',
+    metaDesc: 'Mounjaro em Florianópolis: o que é, como age, quem pode usar e como funciona o tratamento com prescrição e acompanhamento médico. Dra. Isabel Aragão.',
     related: ['tirzepatida-florianopolis', 'ozempic-florianopolis-prescricao', 'aplicacao-injecao-emagrecer-sao-jose', 'medica-emagrecimento-sao-jose'],
     content: `
 <p>O Mounjaro é o nome de marca da tirzepatida — medicamento injetável desenvolvido pelo laboratório Eli Lilly para o tratamento de obesidade e diabetes tipo 2. Se você está buscando Mounjaro em Florianópolis ou na Grande Florianópolis, este artigo explica o que está disponível e o que envolve iniciar o tratamento.</p>
@@ -662,7 +662,7 @@ export const POSTS: Post[] = [
     category: 'Medicamentos',
     readTime: '5 min',
     date: 'Julho 2026',
-    metaDesc: 'Ozempic em Florianópolis: o que é (semaglutida), como funciona, por que exige prescrição médica, onde encontrar médica em São José/SC e quais alternativas existem para tratamento de obesidade.',
+    metaDesc: 'Ozempic em Florianópolis: quando é indicado para emagrecer, por que exige receita e como é o acompanhamento médico. Dra. Isabel Aragão, Grande Florianópolis.',
     related: ['tirzepatida-florianopolis', 'mounjaro-florianopolis', 'medica-emagrecimento-sao-jose', 'glp1-medicamentos-injetaveis-emagrecer'],
     content: `
 <p>O Ozempic é um dos medicamentos injetáveis mais buscados para emagrecimento no Brasil. Se você está procurando Ozempic em Florianópolis — para iniciar o tratamento, continuar com acompanhamento médico adequado ou entender as opções disponíveis —, este artigo traz o que você precisa saber.</p>
@@ -694,7 +694,7 @@ export const POSTS: Post[] = [
     category: 'Tratamento',
     readTime: '5 min',
     date: 'Julho 2026',
-    metaDesc: 'Procura clínica de emagrecimento em São José/SC? Veja como funciona o tratamento (avaliação, bioimpedância, plano individual), o que avaliar antes de escolher e como agendar.',
+    metaDesc: 'Clínica de emagrecimento em São José/SC: como funciona o tratamento, o que avaliar antes de escolher e como agendar. Dra. Isabel Aragão, bairro Campinas.',
     related: ['medica-emagrecimento-sao-jose', 'primeira-consulta-medica-emagrecimento', 'como-escolher-medico-emagrecimento', 'bioimpedancia-sao-jose-sc'],
     faq: [
       { q: 'Qual é a melhor clínica de emagrecimento em São José/SC?', a: 'A melhor é a que avalia antes de prescrever: médica com CRM visível, bioimpedância, exames quando necessários, plano individual e acompanhamento regular. A clínica da Dra. Isabel Aragão (CRM-SC 26139), no bairro Campinas, trabalha exatamente assim.' },
@@ -753,7 +753,7 @@ export const POSTS: Post[] = [
     category: 'Saúde',
     readTime: '5 min',
     date: 'Julho 2026',
-    metaDesc: 'Lipedema em Florianópolis: o que é, por que é diferente da obesidade comum, como é diagnosticado e o que o acompanhamento médico oferece para pacientes na Grande Florianópolis e São José/SC.',
+    metaDesc: 'Lipedema em Florianópolis: como é o diagnóstico, o que o tratamento médico pode fazer e a diferença para gordura localizada. Dra. Isabel Aragão, Grande Floripa.',
     related: ['medica-emagrecimento-sao-jose', 'quando-procurar-medico-para-emagrecer', 'emagrecimento-apos-40-anos', 'clinica-emagrecimento-sao-jose-sc'],
     content: `
 <p>O lipedema é uma condição crônica caracterizada pelo acúmulo anormal e desproporcional de gordura — geralmente nos membros inferiores — que acomete principalmente mulheres. Apesar de relativamente comum, é frequentemente confundido com obesidade ou com "inchaço" e permanece sem diagnóstico por anos. Se você mora em Florianópolis ou na Grande Florianópolis e suspeita de lipedema, este artigo explica o que é a condição e o que o tratamento médico oferece.</p>
@@ -796,7 +796,7 @@ export const POSTS: Post[] = [
     category: 'Tratamento',
     readTime: '5 min',
     date: 'Julho 2026',
-    metaDesc: 'Aplicação de injeção para emagrecer em São José/SC: quais medicamentos são injetáveis, como é feita a aplicação, diferença entre autoaplicação e clínica, e como funciona na Clínica Dra. Isabel Aragão.',
+    metaDesc: 'Aplicação de injeção para emagrecer em São José/SC: quais medicamentos, autoaplicação ou clínica, e como funciona com a enfermeira na clínica da Dra. Isabel.',
     related: ['tirzepatida-florianopolis', 'mounjaro-florianopolis', 'ozempic-florianopolis-prescricao', 'glp1-medicamentos-injetaveis-emagrecer'],
     faq: [
       { q: 'Onde aplicar injeção para emagrecer em São José/SC?', a: 'Na clínica da Dra. Isabel Aragão (CRM-SC 26139), Kennedy Towers, Av. Mal. Castelo Branco, 65, Sala 1102 B, bairro Campinas, com a Enf. Maria Fernanda Loccioni (COREN/SC 441029). Segunda a sexta, com hora marcada.' },
@@ -853,7 +853,7 @@ export const POSTS: Post[] = [
     category: 'Medicamentos',
     readTime: '5 min',
     date: 'Julho 2026',
-    metaDesc: 'Mounjaro (tirzepatida) ou Ozempic (semaglutida): entenda a diferença entre os dois injetáveis para emagrecer, o que os estudos mostram sobre cada um e por que a escolha é uma decisão médica.',
+    metaDesc: 'Mounjaro ou Ozempic: diferenças de ação, resultados esperados, efeitos colaterais e como o médico decide qual indicar. Dra. Isabel Aragão, São José/SC.',
     related: ['tirzepatida-florianopolis', 'ozempic-florianopolis-prescricao', 'mounjaro-florianopolis', 'glp1-medicamentos-injetaveis-emagrecer'],
     content: `
 <p>Se você está pesquisando tratamento injetável para emagrecer, provavelmente já se deparou com os dois nomes mais buscados: Mounjaro e Ozempic. Eles funcionam de formas parecidas, mas não são o mesmo medicamento, e a diferença entre eles importa na hora de decidir. Este artigo explica cada um em linguagem clara.</p>
@@ -891,7 +891,7 @@ export const POSTS: Post[] = [
     category: 'Medicamentos',
     readTime: '5 min',
     date: 'Julho 2026',
-    metaDesc: 'Efeitos colaterais do Mounjaro (tirzepatida): quais são os mais comuns, por que acontecem, quanto tempo duram e quais sinais merecem atenção médica. Guia claro para quem vai começar ou já usa.',
+    metaDesc: 'Efeitos colaterais do Mounjaro (tirzepatida): náusea, enjoo e outros sintomas, por que a dose sobe devagar e quando avisar o médico. Dra. Isabel Aragão.',
     related: ['tirzepatida-florianopolis', 'mounjaro-florianopolis', 'mounjaro-ou-ozempic-qual-escolher', 'glp1-medicamentos-injetaveis-emagrecer'],
     content: `
 <p>Quem pensa em começar o tratamento com Mounjaro (tirzepatida) quase sempre tem a mesma dúvida: quais são os efeitos colaterais e o quanto eles atrapalham a vida. É uma preocupação legítima. A boa notícia é que a maioria dos efeitos é previsível, ligada ao início do tratamento, e tende a diminuir com o tempo. Este artigo explica o que costuma acontecer e o que merece atenção.</p>
@@ -937,7 +937,7 @@ export const POSTS: Post[] = [
     category: 'Medicamentos',
     readTime: '5 min',
     date: 'Julho 2026',
-    metaDesc: 'Wegovy em Florianópolis: o que é (semaglutida para obesidade), como funciona, a diferença para o Ozempic, por que exige prescrição e onde encontrar médica em São José/SC.',
+    metaDesc: 'Wegovy em Florianópolis: o que é, para quem é indicado, diferença para o Ozempic e como é o tratamento com acompanhamento médico. Dra. Isabel Aragão.',
     related: ['ozempic-florianopolis-prescricao', 'mounjaro-ou-ozempic-qual-escolher', 'glp1-medicamentos-injetaveis-emagrecer', 'tirzepatida-florianopolis'],
     content: `
 <p>O Wegovy é um dos medicamentos injetáveis mais associados ao tratamento da obesidade. Se você está buscando Wegovy em Florianópolis ou na Grande Florianópolis, este artigo explica o que ele é, como funciona e o que envolve iniciar o tratamento com acompanhamento adequado.</p>
@@ -970,7 +970,7 @@ export const POSTS: Post[] = [
     category: 'Medicamentos',
     readTime: '4 min',
     date: 'Julho 2026',
-    metaDesc: 'Em quanto tempo o Mounjaro (tirzepatida) faz efeito? O que você sente já nas primeiras semanas, quando a balança começa a mudar e por que o resultado real se constrói ao longo de meses.',
+    metaDesc: 'Em quanto tempo o Mounjaro faz efeito: o que muda nas primeiras semanas, quando a balança responde e por que a dose sobe por etapas. Dra. Isabel Aragão.',
     related: ['quanto-emagrece-com-injetavel', 'precisa-de-receita-mounjaro-tirzepatida', 'mounjaro-florianopolis', 'efeitos-colaterais-mounjaro-tirzepatida', 'perda-de-peso-saudavel-quantos-kg-por-mes'],
     faq: [
       { q: 'Em quantos dias o Mounjaro começa a fazer efeito?', a: 'O efeito no apetite costuma ser percebido já nos primeiros dias a semanas: menos fome, saciedade mais rápida, menos vontade de beliscar. A mudança na balança vem depois e é gradual.' },
@@ -1010,7 +1010,7 @@ export const POSTS: Post[] = [
     category: 'Saúde',
     readTime: '5 min',
     date: 'Julho 2026',
-    metaDesc: 'Lipedema ou gordura localizada: como diferenciar as duas, quais sinais apontam para lipedema (dor, simetria, resistência a dieta) e por que o diagnóstico correto muda o tratamento. Avaliação em São José/SC.',
+    metaDesc: 'Lipedema ou gordura localizada: como diferenciar, sinais típicos (dor, simetria, pernas) e o que muda no tratamento. Dra. Isabel Aragão, São José/SC.',
     related: ['lipedema-florianopolis-tratamento', 'bioimpedancia-o-que-e', 'medica-emagrecimento-sao-jose', 'quando-procurar-medico-para-emagrecer'],
     content: `
 <p>Muita gente convive por anos com um acúmulo de gordura nas pernas que não responde a dieta nem a exercício, e ouve sempre a mesma explicação: é só se esforçar mais. Em parte dos casos, o problema não é falta de esforço. É lipedema, uma condição diferente da gordura localizada comum, que exige um olhar médico específico. Saber diferenciar as duas é o primeiro passo.</p>
@@ -1046,7 +1046,7 @@ export const POSTS: Post[] = [
     category: 'Tratamento',
     readTime: '5 min',
     date: 'Agosto 2026',
-    metaDesc: 'Médica de emagrecimento para quem é de Florianópolis: avaliação com bioimpedância, plano individualizado e acompanhamento com a Dra. Isabel Aragão (CRM-SC 26139), em São José, ao lado da Ilha.',
+    metaDesc: 'Médica de emagrecimento em Florianópolis: consulta de 90 min, bioimpedância e plano individual, a minutos do centro, em São José. Dra. Isabel Aragão.',
     related: ['medica-emagrecimento-sao-jose', 'aplicacao-tirzepatida-florianopolis', 'como-funciona-acompanhamento-medico-emagrecimento', 'clinica-emagrecimento-sao-jose-sc'],
     content: `
 <p>Quem mora em Florianópolis e busca tratamento médico para emagrecer tem uma boa notícia: não é preciso encarar trânsito longo para ter acompanhamento de qualidade. A Dra. Isabel Aragão (CRM-SC 26139) atende em São José, na Grande Florianópolis, a poucos minutos da Ilha pela BR-282, e também oferece acompanhamento online.</p>
@@ -1079,7 +1079,7 @@ export const POSTS: Post[] = [
     category: 'Tratamento',
     readTime: '5 min',
     date: 'Agosto 2026',
-    metaDesc: 'Médica de emagrecimento para quem é de Palhoça: avaliação com bioimpedância, plano individualizado e acompanhamento com a Dra. Isabel Aragão (CRM-SC 26139), na vizinha São José.',
+    metaDesc: 'Médica de emagrecimento para quem mora em Palhoça: consulta de 90 min, bioimpedância e acompanhamento na clínica em São José. Dra. Isabel Aragão.',
     related: ['medica-emagrecimento-sao-jose', 'aplicacao-tirzepatida-palhoca', 'clinica-emagrecimento-sao-jose-sc', 'por-que-dieta-sozinha-falha'],
     content: `
 <p>Se você é de Palhoça e quer tratar o emagrecimento com acompanhamento médico, a boa notícia é que a clínica da Dra. Isabel Aragão (CRM-SC 26139) fica logo ao lado, em São José, com acesso rápido pela BR-101. E parte do acompanhamento pode ser feita online, para quem prefere.</p>
@@ -1110,7 +1110,7 @@ export const POSTS: Post[] = [
     category: 'Tratamento',
     readTime: '5 min',
     date: 'Agosto 2026',
-    metaDesc: 'Médica de emagrecimento para quem é de Biguaçu: avaliação com bioimpedância, plano individualizado e acompanhamento com a Dra. Isabel Aragão (CRM-SC 26139), na vizinha São José.',
+    metaDesc: 'Médica de emagrecimento para quem mora em Biguaçu: consulta de 90 min, bioimpedância e acompanhamento na clínica em São José. Dra. Isabel Aragão.',
     related: ['medica-emagrecimento-sao-jose', 'aplicacao-tirzepatida-biguacu', 'clinica-emagrecimento-sao-jose-sc', 'quando-procurar-medico-para-emagrecer'],
     content: `
 <p>Para quem mora em Biguaçu e busca tratamento médico para emagrecer, não é preciso ir longe: a Dra. Isabel Aragão (CRM-SC 26139) atende na vizinha São José, poucos minutos ao sul pela BR-101, com opção de acompanhamento online.</p>
@@ -1140,7 +1140,7 @@ export const POSTS: Post[] = [
     category: 'Medicamentos',
     readTime: '5 min',
     date: 'Agosto 2026',
-    metaDesc: 'Aplicação de tirzepatida em São José/SC com acompanhamento médico: o que é, por que exige prescrição, como funciona a aplicação acompanhada e o ajuste de dose com a Dra. Isabel Aragão.',
+    metaDesc: 'Aplicação de tirzepatida em São José/SC com prescrição e acompanhamento médico: como funciona, ajuste de dose e aplicação com enfermeira. Dra. Isabel Aragão.',
     related: ['medica-emagrecimento-sao-jose', 'aplicacao-injecao-emagrecer-sao-jose', 'efeitos-colaterais-mounjaro-tirzepatida', 'quanto-tempo-mounjaro-faz-efeito'],
     faq: [
       { q: 'Onde fazer aplicação de tirzepatida em São José/SC?', a: 'Na clínica da Dra. Isabel Aragão (CRM-SC 26139), Kennedy Towers, Av. Mal. Castelo Branco, 65, Sala 1102 B, bairro Campinas. A aplicação é feita pela Enf. Maria Fernanda Loccioni (COREN/SC 441029), de segunda a sexta, com hora marcada.' },
@@ -1176,7 +1176,7 @@ export const POSTS: Post[] = [
     category: 'Medicamentos',
     readTime: '5 min',
     date: 'Agosto 2026',
-    metaDesc: 'Aplicação de tirzepatida para quem é de Florianópolis: acompanhamento médico, prescrição e ajuste de dose com a Dra. Isabel Aragão (CRM-SC 26139), em São José, ao lado da Ilha.',
+    metaDesc: 'Aplicação de tirzepatida em Florianópolis com acompanhamento médico: avaliação, prescrição, ajuste de dose e aplicação com enfermeira. Dra. Isabel Aragão.',
     related: ['aplicacao-tirzepatida-sao-jose', 'tirzepatida-florianopolis', 'mounjaro-florianopolis', 'efeitos-colaterais-mounjaro-tirzepatida'],
     content: `
 <p>Quem é de Florianópolis e quer fazer a aplicação de tirzepatida com acompanhamento médico tem uma opção próxima: a Dra. Isabel Aragão (CRM-SC 26139) atende em São José, ao lado da Ilha, com prescrição, ajuste de dose e monitoramento. Parte do acompanhamento também pode ser feita online.</p>
@@ -1199,7 +1199,7 @@ export const POSTS: Post[] = [
     category: 'Medicamentos',
     readTime: '5 min',
     date: 'Agosto 2026',
-    metaDesc: 'Aplicação de tirzepatida para quem é de Palhoça: acompanhamento médico, prescrição e ajuste de dose com a Dra. Isabel Aragão (CRM-SC 26139), na vizinha São José.',
+    metaDesc: 'Aplicação de tirzepatida para quem mora em Palhoça: prescrição, ajuste de dose e aplicação com enfermeira na clínica em São José. Dra. Isabel Aragão.',
     related: ['aplicacao-tirzepatida-sao-jose', 'medica-emagrecimento-palhoca', 'tirzepatida-florianopolis', 'efeitos-colaterais-mounjaro-tirzepatida'],
     content: `
 <p>Se você é de Palhoça e pensa em fazer a aplicação de tirzepatida, o ideal é começar do jeito certo: com prescrição e acompanhamento médico. A Dra. Isabel Aragão (CRM-SC 26139) atende na vizinha São José, com acesso rápido pela BR-101, e conduz o tratamento de forma individualizada.</p>
@@ -1222,7 +1222,7 @@ export const POSTS: Post[] = [
     category: 'Medicamentos',
     readTime: '5 min',
     date: 'Agosto 2026',
-    metaDesc: 'Aplicação de tirzepatida para quem é de Biguaçu: acompanhamento médico, prescrição e ajuste de dose com a Dra. Isabel Aragão (CRM-SC 26139), na vizinha São José.',
+    metaDesc: 'Aplicação de tirzepatida para quem mora em Biguaçu: prescrição, ajuste de dose e aplicação com enfermeira na clínica em São José. Dra. Isabel Aragão.',
     related: ['aplicacao-tirzepatida-sao-jose', 'medica-emagrecimento-biguacu', 'tirzepatida-florianopolis', 'efeitos-colaterais-mounjaro-tirzepatida'],
     content: `
 <p>Para quem é de Biguaçu e quer fazer a aplicação de tirzepatida com segurança, o caminho é começar com prescrição e acompanhamento. A Dra. Isabel Aragão (CRM-SC 26139) atende na vizinha São José, poucos minutos ao sul pela BR-101, e conduz o tratamento de forma individualizada, com opção de acompanhamento online.</p>
@@ -1245,7 +1245,7 @@ export const POSTS: Post[] = [
     category: 'Medicamentos',
     readTime: '6 min',
     date: 'Agosto 2026',
-    metaDesc: 'Quanto dá pra emagrecer com Mounjaro, Ozempic ou tirzepatida? O que os estudos mostram, por que o resultado é individual (e nunca uma promessa) e por que só o acompanhamento médico dá o número real.',
+    metaDesc: 'Quanto dá para emagrecer com injetável: o que os estudos mostram, por que a resposta é individual e o que muda com acompanhamento médico. Dra. Isabel Aragão.',
     related: ['quanto-tempo-mounjaro-faz-efeito', 'perda-de-peso-saudavel-quantos-kg-por-mes', 'efeitos-colaterais-mounjaro-tirzepatida', 'mounjaro-ou-ozempic-qual-escolher'],
     content: `
 <p>"Mounjaro emagrece quantos quilos?" "Quanto dá pra perder com Ozempic?" É a pergunta que mais aparece de quem pensa em usar um injetável pra emagrecer. A resposta honesta tem três partes: <strong>depende, é individual, e não é promessa</strong>. Mas dá pra explicar o que esperar de verdade.</p>

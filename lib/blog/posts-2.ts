@@ -14,7 +14,7 @@ export const POSTS_2: Post[] = [
     category: 'Saúde',
     readTime: '6 min',
     date: 'Setembro 2026',
-    metaDesc: 'Por que a menopausa engorda, principalmente na barriga? A queda do estrogênio muda onde o corpo guarda gordura, reduz músculo e piora o sono. Veja o que muda e o que fazer com acompanhamento médico.',
+    metaDesc: 'Menopausa e ganho de peso: por que a gordura muda de lugar, o que acontece com músculo e sono, e como é o tratamento médico. Dra. Isabel Aragão, São José/SC.',
     related: ['emagrecimento-apos-40-anos', 'hormonios-ganho-de-peso', 'metabolismo-lento-existe', 'como-funciona-acompanhamento-medico-emagrecimento'],
     faq: [
       { q: 'Por que engordo na menopausa mesmo comendo a mesma coisa?', a: 'Porque o gasto de energia do corpo cai: há perda de massa muscular, o sono piora e a queda do estrogênio muda a forma como a gordura é armazenada. Comer a mesma quantidade de antes passa a ser mais do que o corpo gasta.' },
@@ -60,7 +60,7 @@ export const POSTS_2: Post[] = [
     category: 'Ciência',
     readTime: '6 min',
     date: 'Setembro 2026',
-    metaDesc: 'Metabolismo lento existe? Ser "lento de nascença" é raro. O comum é a adaptação metabólica: depois de dietas repetidas o corpo gasta menos e sente mais fome. Como saber se é o seu caso e o que fazer.',
+    metaDesc: 'Metabolismo lento existe? O que é adaptação metabólica, por que dietas repetidas pioram o quadro e como tratar. Dra. Isabel Aragão, São José/SC.',
     related: ['por-que-dieta-sozinha-falha', 'efeito-sanfona-por-que-o-peso-volta', 'hormonios-ganho-de-peso', 'bioimpedancia-o-que-e'],
     faq: [
       { q: 'Como saber se tenho metabolismo lento?', a: 'Não existe um exame único que "diga" isso. O caminho é uma avaliação médica com bioimpedância (para ver massa muscular e gordura), exames de sangue para descartar causas tratáveis e o seu histórico de dietas, que costuma explicar a maior parte.' },
@@ -105,7 +105,7 @@ export const POSTS_2: Post[] = [
     category: 'Medicamentos',
     readTime: '5 min',
     date: 'Setembro 2026',
-    metaDesc: 'Mounjaro (tirzepatida) precisa de receita? Sim: é medicamento de prescrição, com dose que sobe por etapas e contraindicações. Quem pode prescrever, os riscos de comprar sem receita e como funciona o acompanhamento.',
+    metaDesc: 'Precisa de receita para Mounjaro, Ozempic e Wegovy? Sim: são medicamentos de prescrição. Por que a receita é só o começo do tratamento. Dra. Isabel Aragão.',
     related: ['endocrinologista-nutrologo-medico-emagrecimento', 'mounjaro-ou-ozempic-qual-escolher', 'efeitos-colaterais-mounjaro-tirzepatida', 'quanto-tempo-mounjaro-faz-efeito'],
     faq: [
       { q: 'Mounjaro precisa de receita?', a: 'Sim. Mounjaro (tirzepatida) é um medicamento de prescrição médica no Brasil. A farmácia só pode dispensar com receita, e o uso deve ser acompanhado por médico.' },
@@ -147,7 +147,7 @@ export const POSTS_2: Post[] = [
     category: 'Saúde',
     readTime: '6 min',
     date: 'Setembro 2026',
-    metaDesc: 'Por que a compulsão alimentar acontece à noite? Comer pouco de dia, dormir mal, estresse e sinais de fome que chegam mais fortes ao anoitecer. Entenda o ciclo, o que ajuda e quando procurar tratamento.',
+    metaDesc: 'Compulsão alimentar à noite: por que acontece (pouca comida de dia, sono, estresse), o que não é falta de controle e como tratar. Dra. Isabel Aragão.',
     related: ['por-que-dieta-sozinha-falha', 'hormonios-ganho-de-peso', 'efeito-sanfona-por-que-o-peso-volta', 'como-funciona-acompanhamento-medico-emagrecimento'],
     faq: [
       { q: 'Por que tenho compulsão alimentar à noite?', a: 'Os motivos mais comuns são restrição durante o dia (que gera rebote), cansaço e estresse acumulados (que reduzem o freio), sono ruim e o ambiente noturno de sofá, tela e comida à mão. Raramente é uma questão de caráter.' },
@@ -193,7 +193,7 @@ export const POSTS_2: Post[] = [
     category: 'Saúde',
     readTime: '7 min',
     date: 'Setembro 2026',
-    metaDesc: 'Como interpretar o resultado da bioimpedância: percentual de gordura, massa muscular, gordura visceral, água corporal e taxa metabólica. Quais números importam de verdade e como acompanhar a evolução.',
+    metaDesc: 'Como ler o resultado da bioimpedância: percentual de gordura, massa muscular, gordura visceral e o que cada número significa. Dra. Isabel Aragão, São José/SC.',
     related: ['bioimpedancia-o-que-e', 'bioimpedancia-sao-jose-sc', 'perda-de-peso-saudavel-quantos-kg-por-mes', 'metabolismo-lento-existe'],
     faq: [
       { q: 'Qual percentual de gordura é considerado saudável?', a: 'Varia com sexo e idade, e as faixas de referência mudam entre equipamentos. Por isso o número deve ser interpretado pelo médico, junto com os outros dados do laudo, e não comparado com tabelas soltas da internet.' },
@@ -247,7 +247,7 @@ export const POSTS_2: Post[] = [
     category: 'Ciência',
     readTime: '6 min',
     date: 'Setembro 2026',
-    metaDesc: 'Por que o peso volta depois da dieta? Depois de emagrecer, o corpo gasta menos energia e sente mais fome, e essa defesa pode durar anos. O que é o efeito sanfona, por que cada ciclo piora e como quebrá-lo.',
+    metaDesc: 'Efeito sanfona: por que o peso volta depois da dieta, o papel da adaptação metabólica e da fome, e como quebrar o ciclo. Dra. Isabel Aragão, São José/SC.',
     related: ['por-que-dieta-sozinha-falha', 'metabolismo-lento-existe', 'perda-de-peso-saudavel-quantos-kg-por-mes', 'compulsao-alimentar-noite'],
     faq: [
       { q: 'O que é efeito sanfona?', a: 'É o ciclo de perder peso e recuperá-lo, muitas vezes com ganho adicional, repetido ao longo dos anos. O nome vem do movimento de abrir e fechar da sanfona.' },

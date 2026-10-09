@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Emagrecimento médico individualizado · São José/SC | Dra. Isabel',
   description:
-    'Descubra por que seu corpo resiste à perda de peso e como destravar com segurança — acompanhamento médico real, baseado em ciência. São José (Grande Florianópolis) e online. CRM-SC 26.139.',
+    'Por que o corpo resiste a emagrecer e como destravar com segurança: acompanhamento médico baseado em ciência. São José/SC e online. CRM-SC 26139.',
   alternates: {
     canonical: 'https://isabelaragao.com.br/emagrecimento',
   },
