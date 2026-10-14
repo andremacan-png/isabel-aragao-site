@@ -716,6 +716,10 @@ export default function Home() {
               </div>
             </div>
           </div>
+          <p className="text-xs text-white/35 mb-4">
+            Enfermagem e terapias na mesma clínica:{' '}
+            <a href="https://enfmariafernanda.com.br" target="_blank" rel="noopener" className="underline hover:text-white transition-colors">Enf. Maria Fernanda Loccioni</a>
+          </p>
           <div className="border-t border-white/6 pt-5 flex flex-col md:flex-row justify-between items-center gap-3 text-xs">
             <p>© {new Date().getFullYear()} Dra. Isabel Aragão. Todos os direitos reservados.</p>
             <a href="/politica" className="hover:text-white transition-colors">Política de Privacidade</a>
