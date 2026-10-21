@@ -15,8 +15,8 @@ export const metadata: Metadata = {
   },
 }
 
-// Última revisão do texto — atualizar quando o conteúdo mudar
-const ULTIMA_ATUALIZACAO = 'junho de 2026'
+// Última revisão do texto: atualizar quando o conteúdo mudar
+const ULTIMA_ATUALIZACAO = 'outubro de 2026'
 
 export default function PoliticaPage() {
   return (
@@ -58,7 +58,7 @@ export default function PoliticaPage() {
             Esta Política de Privacidade descreve como os dados pessoais de
             visitantes e pacientes são coletados, utilizados e protegidos no
             site <strong>isabelaragao.com.br</strong>, em conformidade com a Lei
-            nº 13.709/2018 — <strong>Lei Geral de Proteção de Dados (LGPD)</strong>.
+            nº 13.709/2018, a <strong>Lei Geral de Proteção de Dados (LGPD)</strong>.
             Ao utilizar este site e entrar em contato pelos nossos canais, você
             declara estar ciente das práticas descritas abaixo.
           </p>
@@ -85,10 +85,17 @@ export default function PoliticaPage() {
                 número de telefone e o conteúdo das mensagens que decidir enviar.
               </li>
               <li>
+                <strong>Conversas pelo WhatsApp:</strong> as mensagens trocadas
+                com o WhatsApp do consultório, junto com o nome do perfil, o
+                número de telefone e a origem do contato (por exemplo, se você
+                chegou por um anúncio), ficam registradas no nosso sistema de
+                gestão para organizar o atendimento (veja a seção 4).
+              </li>
+              <li>
                 <strong>Dados de navegação:</strong> de forma automática, podemos
                 coletar informações técnicas como endereço IP, tipo de
                 dispositivo, navegador, páginas visitadas e origem do acesso, por
-                meio de cookies e ferramentas de análise (veja a seção 4).
+                meio de cookies e ferramentas de análise (veja a seção 5).
               </li>
             </ul>
             <p className="mt-3">
@@ -118,7 +125,40 @@ export default function PoliticaPage() {
             </ul>
           </Section>
 
-          <Section title="4. Cookies, Google Tag Manager e Google Ads">
+          <Section title="4. Atendimento pelo WhatsApp e assistente virtual">
+            <p>
+              O WhatsApp do consultório é operado pela plataforma oficial da
+              Meta (WhatsApp Business) e integrado ao nosso sistema de gestão.
+              Parte do atendimento pode ser feita ou preparada por um{' '}
+              <strong>assistente virtual com inteligência artificial</strong>,
+              sempre sob supervisão da nossa equipe:
+            </p>
+            <ul className="list-disc pl-5 space-y-1.5 mt-3">
+              <li>
+                o assistente ajuda com dúvidas gerais (horários, valores,
+                endereço, como funciona o atendimento) e com o agendamento;
+              </li>
+              <li>
+                ele <strong>não faz diagnóstico, não prescreve e não dá
+                orientação clínica</strong>; perguntas desse tipo são
+                encaminhadas à médica;
+              </li>
+              <li>
+                para gerar as respostas, o texto da conversa é processado por um
+                provedor de inteligência artificial contratado (Anthropic), que
+                não utiliza esses dados para treinar seus modelos;
+              </li>
+              <li>
+                o assistente não tem acesso ao seu prontuário médico;
+              </li>
+              <li>
+                a qualquer momento você pode pedir para falar com uma pessoa da
+                equipe, e a conversa segue com atendimento humano.
+              </li>
+            </ul>
+          </Section>
+
+          <Section title="5. Cookies e ferramentas de medição">
             <p>
               Este site utiliza <strong>cookies</strong> e tecnologias
               semelhantes para funcionar corretamente, analisar o tráfego e
@@ -126,32 +166,45 @@ export default function PoliticaPage() {
             </p>
             <ul className="list-disc pl-5 space-y-1.5 mt-3">
               <li>
-                <strong>Google Tag Manager</strong> — gerenciador que organiza as
+                <strong>Google Tag Manager</strong>: gerenciador que organiza as
                 etiquetas (tags) de medição utilizadas no site;
               </li>
               <li>
-                <strong>Google Ads</strong> e ferramentas de análise do Google —
+                <strong>Google Ads</strong> e ferramentas de análise do Google,
                 usados para medir resultados de anúncios e entender de onde vêm
-                as visitas, podendo registrar cookies no seu navegador.
+                as visitas, podendo registrar cookies no seu navegador;
+              </li>
+              <li>
+                <strong>Microsoft Clarity</strong>: mostra de forma agregada
+                como as páginas são usadas (cliques e rolagem), para melhorarmos
+                o site;
+              </li>
+              <li>
+                <strong>Meta (Facebook e Instagram)</strong>: mede o resultado
+                de anúncios que levam ao site ou ao WhatsApp.
               </li>
             </ul>
             <p className="mt-3">
               Esses serviços podem coletar dados de navegação de forma
               pseudonimizada. Você pode, a qualquer momento, gerenciar ou
-              bloquear cookies nas configurações do seu navegador — ainda que
+              bloquear cookies nas configurações do seu navegador, ainda que
               isso possa afetar algumas funcionalidades do site.
             </p>
           </Section>
 
-          <Section title="5. Compartilhamento de dados">
+          <Section title="6. Compartilhamento de dados">
             <p>
               Não vendemos seus dados pessoais. O compartilhamento ocorre apenas
               quando necessário e limitado às finalidades acima, podendo envolver:
             </p>
             <ul className="list-disc pl-5 space-y-1.5 mt-3">
               <li>
-                provedores de tecnologia que viabilizam o funcionamento do site e
-                a comunicação (por exemplo, WhatsApp/Meta e Google);
+                provedores de tecnologia que viabilizam o funcionamento do site,
+                do sistema de gestão e da comunicação (por exemplo, Meta/WhatsApp,
+                Google, Microsoft, Anthropic e os serviços de hospedagem e banco
+                de dados), contratados para essas finalidades. Alguns deles
+                processam dados fora do Brasil, com as garantias previstas na
+                LGPD;
               </li>
               <li>
                 autoridades públicas, quando houver obrigação legal ou
@@ -160,18 +213,18 @@ export default function PoliticaPage() {
             </ul>
           </Section>
 
-          <Section title="6. Armazenamento e segurança">
+          <Section title="7. Armazenamento e segurança">
             <p>
               Adotamos medidas técnicas e organizacionais razoáveis para proteger
               seus dados contra acessos não autorizados, perda ou uso indevido. Os
               dados são mantidos pelo tempo necessário para cumprir as finalidades
-              desta política e as obrigações legais aplicáveis — inclusive as
+              desta política e as obrigações legais aplicáveis, inclusive as
               relativas à guarda de prontuários médicos, conforme as normas do
               Conselho Federal de Medicina.
             </p>
           </Section>
 
-          <Section title="7. Seus direitos como titular (LGPD)">
+          <Section title="8. Seus direitos como titular (LGPD)">
             <p>
               A LGPD garante a você, como titular dos dados, o direito de
               solicitar a qualquer momento:
@@ -194,7 +247,7 @@ export default function PoliticaPage() {
             </ul>
           </Section>
 
-          <Section title="8. Alterações desta política">
+          <Section title="9. Alterações desta política">
             <p>
               Esta política pode ser atualizada periodicamente para refletir
               mudanças em nossas práticas ou na legislação. A versão vigente estará
@@ -208,9 +261,9 @@ export default function PoliticaPage() {
               Contato do responsável
             </h2>
             <div className="space-y-1.5 text-[15px] text-[#12082a]/80">
-              <p><strong>Dra. Isabel Aragão</strong> — CRM-SC 26.139</p>
+              <p><strong>Dra. Isabel Aragão</strong> · CRM-SC 26.139</p>
               <p>Kennedy Towers · Av. Mal. Castelo Branco, 65, Sala 1102 B</p>
-              <p>Campinas, São José — SC</p>
+              <p>Campinas, São José, SC</p>
               <p className="pt-1">
                 WhatsApp:{' '}
                 <a
