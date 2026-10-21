@@ -4,6 +4,7 @@ import { Playfair_Display, Inter } from 'next/font/google'
 import './globals.css'
 import Script from 'next/script'
 import ClarityInit from '@/components/ClarityInit'
+import AdsAttribution from '@/components/AdsAttribution'
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
@@ -73,6 +74,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           />
         </noscript>
         <ClarityInit />
+        <AdsAttribution />
         {children}
       </body>
     </html>
