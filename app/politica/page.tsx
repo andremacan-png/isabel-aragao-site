@@ -65,8 +65,10 @@ export default function PoliticaPage() {
 
           <Section title="1. Quem é o responsável pelos seus dados">
             <p>
-              O tratamento dos dados é realizado por <strong>Dra. Isabel Aragão</strong>
-              {' '}(CRM-SC 26.139), médica responsável pelo atendimento. Para
+              O tratamento dos dados é realizado pela{' '}
+              <strong>IAM Serviços de Saúde Ltda.</strong> (CNPJ 59.662.740/0001-36),
+              clínica da <strong>Dra. Isabel Aragão</strong> (CRM-SC 26.139),
+              médica responsável pelo atendimento. Para
               qualquer questão relacionada a esta política ou aos seus dados
               pessoais, utilize os contatos indicados ao final.
             </p>
@@ -262,6 +264,7 @@ export default function PoliticaPage() {
             </h2>
             <div className="space-y-1.5 text-[15px] text-[#12082a]/80">
               <p><strong>Dra. Isabel Aragão</strong> · CRM-SC 26.139</p>
+              <p>IAM Serviços de Saúde Ltda. · CNPJ 59.662.740/0001-36</p>
               <p>Kennedy Towers · Av. Mal. Castelo Branco, 65, Sala 1102 B</p>
               <p>Campinas, São José, SC</p>
               <p className="pt-1">
@@ -290,7 +293,10 @@ export default function PoliticaPage() {
       {/* ── FOOTER ── */}
       <footer className="bg-[#0a0515] text-white/35 py-7">
         <div className="max-w-3xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-3 text-xs">
-          <p>© {new Date().getFullYear()} Dra. Isabel Aragão. Todos os direitos reservados.</p>
+          <div className="text-center md:text-left space-y-1">
+              <p>© {new Date().getFullYear()} Dra. Isabel Aragão. Todos os direitos reservados.</p>
+              <p>IAM Serviços de Saúde Ltda. · CNPJ 59.662.740/0001-36</p>
+          </div>
           <Link href="/" className="hover:text-white transition-colors">
             Voltar ao início
           </Link>

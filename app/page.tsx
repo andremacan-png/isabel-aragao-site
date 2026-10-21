@@ -721,7 +721,10 @@ export default function Home() {
             <a href="https://enfmariafernanda.com.br" target="_blank" rel="noopener" className="underline hover:text-white transition-colors">Enf. Maria Fernanda Loccioni</a>
           </p>
           <div className="border-t border-white/6 pt-5 flex flex-col md:flex-row justify-between items-center gap-3 text-xs">
-            <p>© {new Date().getFullYear()} Dra. Isabel Aragão. Todos os direitos reservados.</p>
+            <div className="text-center md:text-left space-y-1">
+                <p>© {new Date().getFullYear()} Dra. Isabel Aragão. Todos os direitos reservados.</p>
+                <p>IAM Serviços de Saúde Ltda. · CNPJ 59.662.740/0001-36</p>
+            </div>
             <a href="/politica" className="hover:text-white transition-colors">Política de Privacidade</a>
           </div>
         </div>
