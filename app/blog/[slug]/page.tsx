@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { POSTS, getPost, getRelatedPosts } from '@/lib/blog/posts'
 import { publicadoEm, atualizadoEm } from '@/lib/blog/lastmod'
+import { TEMAS, temaDoPost, postsDoTema } from '@/lib/blog/temas'
 import { CLINICA, MEDICA, SITE } from '@/lib/entidade'
 
 type Props = { params: Promise<{ slug: string }> }
@@ -38,6 +39,9 @@ function waForPost(title: string) {
 }
 
 const STYLES = `
+.bp-tema-link{margin-top:14px;font-size:13px;font-weight:800;}
+.bp-tema-link a{color:var(--ambar,#E8823A);text-decoration:none;}
+
   :root{--roxo:#1E1145;--roxo-mid:#3B2574;--ambar:#E8823A;--ambar-l:#F5A623;
     --cream:#F7F3EF;--cream2:#EDE6DC;--text:#2C1A5C;--text-body:#3D3450;
     --muted:#7C6DA8;--surface:#FFFFFF;--border:rgba(30,17,69,.10);}
@@ -157,6 +161,8 @@ export default async function BlogPost({ params }: Props) {
   if (!post) notFound()
 
   const related = getRelatedPosts(post)
+  const tema = temaDoPost(post.slug)
+  const irmaos = tema ? postsDoTema(tema).filter((p) => p.slug !== post.slug).slice(0, 6) : []
   const waMid = waForPost(post.title)
 
   // Split content at <!--CTA--> marker
@@ -179,6 +185,16 @@ export default async function BlogPost({ params }: Props) {
       publisher: { '@type': 'Organization', '@id': CLINICA.id, name: CLINICA.nome, url: SITE, logo: { '@type': 'ImageObject', url: `${SITE}/icon.png` } },
     },
   ]
+  jsonLd.push({
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Início', item: SITE },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: `${SITE}/blog` },
+      ...(tema ? [{ '@type': 'ListItem', position: 3, name: tema.nome, item: `${SITE}/blog/tema/${tema.slug}` }] : []),
+      { '@type': 'ListItem', position: tema ? 4 : 3, name: post.shortTitle, item: url },
+    ],
+  })
   if (post.faq && post.faq.length > 0) {
     jsonLd.push({
       '@context': 'https://schema.org',
@@ -210,7 +226,7 @@ export default async function BlogPost({ params }: Props) {
 
         {/* BREADCRUMB */}
         <div className="bp-crumb">
-          <Link href="/">Início</Link> › <Link href="/blog">Blog</Link> › {post.shortTitle}
+          <Link href="/">Início</Link> › <Link href="/blog">Blog</Link>{tema && <> › <Link href={`/blog/tema/${tema.slug}`}>{tema.nome}</Link></>} › {post.shortTitle}
         </div>
 
         <div className="bp-page">
@@ -273,6 +289,22 @@ export default async function BlogPost({ params }: Props) {
                 </div>
               </div>
 
+              {/* TEMA: hub + irmãos em ordem de leitura */}
+              {tema && (
+                <div className="bp-related">
+                  <div className="bp-related-title">Mais sobre o tema: {tema.nome}</div>
+                  <div className="bp-rel-grid">
+                    {irmaos.map((r) => (
+                      <Link key={r.slug} href={`/blog/${r.slug}`} className="bp-rel-card">
+                        <div className="bp-rel-cat">{r.category}</div>
+                        <div className="bp-rel-name">{r.shortTitle}</div>
+                      </Link>
+                    ))}
+                  </div>
+                  <p className="bp-tema-link"><Link href={`/blog/tema/${tema.slug}`}>Ver o guia completo: {tema.nome} →</Link></p>
+                </div>
+              )}
+
               {/* RELATED */}
               {related.length > 0 && (
                 <div className="bp-related">
@@ -312,7 +344,7 @@ export default async function BlogPost({ params }: Props) {
               <div className="bp-sb-title">Avaliação completa de emagrecimento</div>
               <div className="bp-sb-sub">Bioimpedância + exames + plano individualizado. Presencial em São José/SC.</div>
               <a href={WA_SIDEBAR} className="bp-sb-btn">💬 Agendar pelo WhatsApp</a>
-              <a href="/" className="bp-sb-link">→ Ver a página da clínica</a>
+              <Link href="/" className="bp-sb-link">→ Ver a página da clínica</Link>
               <hr className="bp-sb-hr" />
               <div>
                 <div className="bp-sb-bullet">Avaliação por bioimpedância</div>
@@ -323,6 +355,13 @@ export default async function BlogPost({ params }: Props) {
             </div>
 
             {/* Hub de links internos: distribui autoridade pras páginas-dinheiro e pras novas */}
+            <div className="bp-sb-hub">
+              <div className="bp-sb-hub-title">Temas do blog</div>
+              {TEMAS.map((t) => (
+                <Link key={t.slug} href={`/blog/tema/${t.slug}`}>{t.nome}</Link>
+              ))}
+            </div>
+
             <div className="bp-sb-hub">
               <div className="bp-sb-hub-title">Ferramentas e guias</div>
               <Link href="/calculadora-imc">Calculadora de IMC</Link>

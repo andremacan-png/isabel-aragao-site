@@ -2,6 +2,7 @@
 // Gerado a partir da mesma fonte dos dados estruturados (lib/entidade.ts) e da lista de artigos.
 import { POSTS } from '@/lib/blog/posts'
 import { CLINICA, MEDICA, ENFERMEIRA, SITE } from '@/lib/entidade'
+import { TEMAS } from '@/lib/blog/temas'
 
 const SAO_JOSE = ['medica-emagrecimento-sao-jose', 'aplicacao-tirzepatida-sao-jose', 'clinica-emagrecimento-sao-jose-sc', 'bioimpedancia-sao-jose-sc', 'aplicacao-injecao-emagrecer-sao-jose']
 
@@ -40,6 +41,9 @@ export function GET() {
 - [Saúde e emagrecimento](${SITE}/saude)
 - [Calculadora de IMC](${SITE}/calculadora-imc)
 - [Blog](${SITE}/blog)
+
+## Temas do blog (guias por assunto, com os artigos em ordem de leitura)
+${TEMAS.map((t) => `- [${t.titulo}](${SITE}/blog/tema/${t.slug}): ${t.metaDesc}`).join('\n')}
 
 ## São José/SC
 ${SAO_JOSE.map((s) => POSTS.find((p) => p.slug === s)).filter(Boolean).map((p) => linha(p!)).join('\n')}

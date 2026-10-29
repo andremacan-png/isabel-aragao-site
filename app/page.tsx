@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { TEMAS } from '@/lib/blog/temas'
 import AnchorBar from '../components/AnchorBar'
 import FaqAccordion from '../components/FaqAccordion'
 
@@ -708,6 +709,12 @@ export default function Home() {
               </div>
             </div>
             <div>
+              <div className="text-white font-semibold mb-2 text-xs tracking-wider uppercase">Temas do blog</div>
+              <div className="flex flex-wrap gap-x-4 gap-y-1 mb-5">
+                {TEMAS.map((t) => (
+                  <Link key={t.slug} prefetch={false} href={`/blog/tema/${t.slug}`} className="hover:text-white transition-colors">{t.nome}</Link>
+                ))}
+              </div>
               <div className="text-white font-semibold mb-2 text-xs tracking-wider uppercase">Guias e ferramentas</div>
               <div className="flex flex-wrap gap-x-4 gap-y-1">
                 <a href="/calculadora-imc" className="hover:text-white transition-colors">Calculadora de IMC</a>
