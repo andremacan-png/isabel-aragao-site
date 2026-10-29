@@ -363,4 +363,226 @@ export const POSTS_2: Post[] = [
 <p>Comparar o preço do medicamento com o preço de não tratar faz parte da conversa: a obesidade cobra em consultas, exames, remédios para pressão, glicose e colesterol, e em qualidade de vida. Não existe resposta única sobre valer a pena; existe a sua conta, feita com a médica, a partir do seu quadro. A Dra. Isabel Aragão (CRM-SC 26139) atende em São José/SC e online, faz a avaliação completa com bioimpedância antes de qualquer prescrição e acompanha o tratamento ajustando a dose, inclusive pensando no custo. A clínica não vende o medicamento: a paciente compra na farmácia com a receita.</p>
 `,
   },
+  {
+    slug: 'semaglutida-generica-o-que-muda',
+    num: 41,
+    title: 'Semaglutida Genérica no Brasil: O Que Muda Para Quem Trata Obesidade',
+    shortTitle: 'Semaglutida Genérica: O Que Muda',
+    intro: 'A Anvisa registrou os primeiros genéricos da semaglutida em 2026. O que é um genérico de caneta, quanto deve custar, quando chega e o que não muda: receita, dose e acompanhamento.',
+    category: 'Medicamentos',
+    readTime: '7 min',
+    date: 'Outubro 2026',
+    metaDesc: 'Semaglutida genérica: registros da Anvisa em agosto de 2026 (EMS e Germed), regra dos 35% de desconto, quando chega à farmácia e o que não muda no tratamento.',
+    related: ['ozempic-florianopolis-prescricao', 'wegovy-florianopolis', 'mounjaro-ou-ozempic-qual-escolher', 'quanto-custa-tratamento-mounjaro-tirzepatida'],
+    faq: [
+      { q: 'Já existe Ozempic genérico?', a: 'Existe genérico da semaglutida, que é o princípio ativo do Ozempic e do Wegovy. A Anvisa registrou o primeiro em agosto de 2026, da EMS, e o segundo dias depois, da Germed. A chegada às farmácias e o preço de cada um dependem dos laboratórios e da CMED.' },
+      { q: 'Quanto vai custar a semaglutida genérica?', a: 'Pela lei brasileira, o genérico precisa custar pelo menos 35% menos que o medicamento de referência. A versão sintética da EMS já era anunciada por R$ 333 no programa de fidelidade do laboratório. Confira o preço na farmácia no dia, porque muda.' },
+      { q: 'Genérico funciona igual ao Ozempic?', a: 'Para ser registrado como genérico, o produto precisa comprovar à Anvisa a mesma substância, dose e equivalência ao de referência. A resposta clínica esperada é a mesma. Cada caso é um caso: a escolha entre marcas e moléculas é feita em consulta.' },
+      { q: 'Posso trocar o Mounjaro pelo genérico da semaglutida para economizar?', a: 'Depende do seu caso. Tirzepatida e semaglutida são moléculas diferentes, com resposta média diferente nos estudos. A troca pode fazer sentido para parte das pacientes e é decidida em consulta, considerando histórico, resposta e efeitos colaterais, não só o preço.' },
+      { q: 'Preciso de receita para o genérico?', a: 'Sim. A semaglutida é medicamento de uso controlado em qualquer marca. A prescrição e o acompanhamento continuam obrigatórios.' },
+    ],
+    content: `
+<div class="resposta"><strong>Resposta rápida:</strong> em agosto de 2026 a Anvisa registrou os <strong>primeiros genéricos da semaglutida no Brasil</strong>, o princípio ativo do Ozempic e do Wegovy: primeiro o da EMS, depois o da Germed. Pela lei, o genérico precisa custar pelo menos 35% menos que o de referência, e a versão da EMS foi anunciada por cerca de R$ 333 no programa do laboratório. O que não muda: continua sendo medicamento de receita, com dose crescente e acompanhamento médico, e a escolha entre semaglutida e tirzepatida segue sendo individual. <a href="/blog/tema/semaglutida">Veja o guia sobre semaglutida</a>.</div>
+<p>Poucas notícias mexeram tanto com quem trata obesidade quanto a chegada dos genéricos da semaglutida. A promessa é de um tratamento bem mais barato. Este artigo explica, sem exagero e sem venda, o que de fato mudou, o que ainda depende de definição e o que continua exatamente igual.</p>
+
+<h2>O que aconteceu</h2>
+<p>Em 17 de agosto de 2026 a Anvisa autorizou o primeiro genérico de semaglutida em caneta no Brasil, da farmacêutica EMS, conforme noticiou a <a href="https://forbes.com.br/forbes-saude/2026/08/anvisa-autoriza-primeiro-generico-de-semaglutida-em-caneta-no-brasil/" rel="nofollow">Forbes</a>. Dez dias depois, em 27 de agosto, a Germed recebeu o segundo registro, segundo o <a href="https://site.cff.org.br/noticia/Noticias-gerais/27/08/2026/anvisa-aprova-segundo-generico-de-semaglutida-e-canetas-devem-ficar-mais-baratas" rel="nofollow">Conselho Federal de Farmácia</a>. Os registros vieram depois do fim da proteção de patente da molécula no país.</p>
+<p>Um detalhe técnico que explica parte da história: a semaglutida original, da Novo Nordisk, é produzida por biotecnologia. A EMS desenvolveu uma versão por síntese química, o que permitiu o registro na categoria de genérico, com as exigências de equivalência que a Anvisa aplica a essa categoria.</p>
+
+<h2>O que é um genérico de caneta</h2>
+<p>Genérico é o medicamento com o mesmo princípio ativo, na mesma dose e na mesma via de administração que o de referência, que comprovou à Anvisa ser equivalente a ele. No caso da semaglutida, isso inclui a caneta aplicadora, que precisa entregar a dose certa com a mesma segurança. É diferente de "similar" (que tem nome comercial próprio) e muito diferente de produto manipulado ou importado sem registro, que não passou por nenhuma dessas provas.</p>
+
+<h2>Quanto deve custar</h2>
+<p>A regra brasileira exige que o genérico custe pelo menos 35% menos que o medicamento de referência. O preço final de cada apresentação ainda passa pela CMED, a câmara que regula preços de medicamentos. A referência pública até aqui é a caneta sintética da EMS, anunciada por cerca de R$ 333 no programa de fidelidade do laboratório, valor que pode mudar com a chegada efetiva do genérico às prateleiras. Para comparar: a caixa mensal de Mounjaro no programa do laboratório vai de cerca de R$ 1.400 a R$ 3.500 conforme a dose. <a href="/blog/quanto-custa-tratamento-mounjaro-tirzepatida">Veja a comparação de custos</a>.</p>
+<!--CTA-->
+
+<h2>Quando chega à farmácia</h2>
+<p>Registro não é a mesma coisa que disponibilidade. Até a data deste artigo, os laboratórios não haviam divulgado data de chegada nem preço definitivo. O caminho usual é: registro na Anvisa, definição de preço pela CMED, produção e distribuição. Vale perguntar na farmácia e, principalmente, não comprar de sites que já anunciam "genérico" antes do produto existir nas redes.</p>
+
+<h2>O que não muda</h2>
+<ul>
+  <li><strong>Receita e acompanhamento.</strong> A semaglutida continua sendo medicamento de uso controlado. Genérico mais barato não é genérico de balcão.</li>
+  <li><strong>Dose crescente.</strong> O esquema de aumento gradual, conforme a bula, é o mesmo. Começar em dose alta por ser mais barato aumenta a náusea e não acelera o resultado.</li>
+  <li><strong>Efeitos colaterais.</strong> Os mesmos da molécula: náusea, estômago cheio, alteração intestinal, principalmente no início.</li>
+  <li><strong>Indicação.</strong> IMC a partir de 30, ou a partir de 27 com doença associada, avaliados em consulta. Preço não cria indicação.</li>
+  <li><strong>O que é melhor para você.</strong> Semaglutida e tirzepatida têm respostas médias diferentes nos estudos. Para parte das pacientes, a semaglutida genérica será a melhor escolha; para outras, não. Cada caso é um caso, e a decisão considera histórico, doenças associadas, resposta anterior e, só então, o custo. <a href="/blog/mounjaro-ou-ozempic-qual-escolher">Entenda a diferença entre as duas</a>.</li>
+</ul>
+
+<h2>Ozempic, Wegovy e genérico: qual é qual</h2>
+<p>Ozempic é a semaglutida registrada para diabetes tipo 2, com dose de até 2 mg. Wegovy é a mesma substância registrada para obesidade, com dose de até 2,4 mg. Os genéricos registrados em 2026 seguem a apresentação do produto de referência correspondente; na prática, a médica define a dose pelo seu caso, independentemente do nome na caixa.</p>
+
+<h2>Cuidado com o "genérico" que não é</h2>
+<p>A chegada dos genéricos abriu espaço para golpes. Sites e perfis vendem "semaglutida" e "tirzepatida" sem registro, muitas vezes importadas ou manipuladas sem controle. A Anvisa determinou a apreensão de vários desses produtos em outubro de 2026. Produto legal tem registro, vem lacrado, com bula, e é vendido em farmácia com receita. <a href="/blog/canetas-emagrecedoras-registro-anvisa">Veja como reconhecer uma caneta irregular</a>.</p>
+
+<h2>O que fazer agora</h2>
+<p>Se você já usa semaglutida, não troque de marca por conta própria: converse na próxima consulta. Se está começando, a avaliação define qual molécula e qual dose fazem sentido, e o custo entra nessa conversa com transparência. A Dra. Isabel Aragão (CRM-SC 26139) atende em São José/SC e online, com bioimpedância na consulta e acompanhamento de perto. A clínica não vende medicamento: a paciente compra na farmácia com a receita.</p>
+`,
+  },
+  {
+    slug: 'canetas-emagrecedoras-registro-anvisa',
+    num: 42,
+    title: 'Canetas Emagrecedoras: Quais Têm Registro na Anvisa e Como Reconhecer Produto Irregular',
+    shortTitle: 'Canetas Emagrecedoras com Registro na Anvisa',
+    intro: 'Mounjaro, Ozempic, Wegovy, Saxenda e os genéricos da semaglutida têm registro. Tirzepatida e retatrutida de site não têm. Como diferenciar, o que a Anvisa apreendeu e como comprar com segurança.',
+    category: 'Medicamentos',
+    readTime: '7 min',
+    date: 'Outubro 2026',
+    metaDesc: 'Canetas emagrecedoras com registro na Anvisa (Mounjaro, Ozempic, Wegovy, Saxenda, genéricos) e como reconhecer o produto irregular apreendido em 2026.',
+    related: ['semaglutida-generica-o-que-muda', 'precisa-de-receita-mounjaro-tirzepatida', 'retatrutida-o-que-e-quando-chega', 'glp1-medicamentos-injetaveis-emagrecer'],
+    faq: [
+      { q: 'Quais canetas emagrecedoras são aprovadas pela Anvisa?', a: 'Para obesidade: Wegovy (semaglutida 2,4 mg), Mounjaro (tirzepatida) e Saxenda (liraglutida). O Ozempic (semaglutida até 2 mg) é registrado para diabetes tipo 2 e usado para obesidade com avaliação médica. Em 2026 entraram os genéricos da semaglutida. Qualquer uso é com receita.' },
+      { q: 'Caneta de tirzepatida vendida na internet é legal?', a: 'Não, quando vem sem registro na Anvisa, que é o caso da maioria dos anúncios. A única tirzepatida registrada no Brasil é o Mounjaro, vendido em farmácia com receita. A Anvisa determinou a apreensão de produtos irregulares em outubro de 2026.' },
+      { q: 'Caneta manipulada é permitida?', a: 'A manipulação de semaglutida e tirzepatida em farmácias de manipulação está em discussão regulatória e, na prática, os produtos encontrados à venda sem controle têm sido alvo de apreensão. O caminho seguro continua sendo o medicamento registrado, com receita.' },
+      { q: 'Como sei se a caneta que comprei é verdadeira?', a: 'Verifique o registro no site da Anvisa (consulta de medicamentos), o lacre e a bula em português, o número de lote e a nota fiscal da farmácia. Produto sem caixa, sem bula ou vendido por rede social é sinal de alerta. Em dúvida, leve à consulta antes de usar.' },
+      { q: 'Usei uma caneta sem registro. O que faço?', a: 'Pare e procure a médica. Leve a caneta e a embalagem. Como não há como saber a substância nem a dose, a avaliação precisa considerar sintomas e exames antes de qualquer decisão sobre continuar o tratamento com produto registrado.' },
+    ],
+    content: `
+<div class="resposta"><strong>Resposta rápida:</strong> as canetas com registro na Anvisa para obesidade são <strong>Wegovy (semaglutida 2,4 mg), Mounjaro (tirzepatida) e Saxenda (liraglutida)</strong>; o Ozempic é registrado para diabetes tipo 2 e usado para obesidade com avaliação médica; em 2026 chegaram os genéricos da semaglutida. "Tirzepatida", "retatrutida" e canetas vendidas por site ou rede social sem caixa, bula e lacre <strong>não têm registro</strong>, e a Anvisa determinou a apreensão delas em 14 de outubro de 2026. Produto legal é comprado em farmácia, com receita.</div>
+<p>A expressão "caneta emagrecedora" virou nome popular de uma família de medicamentos, e também de um mercado paralelo que cresceu junto. Este artigo separa uma coisa da outra: quais canetas existem de verdade no Brasil, como reconhecer um produto irregular e o que fazer para tratar com segurança.</p>
+
+<h2>Quais canetas têm registro no Brasil</h2>
+<table>
+  <thead><tr><th>Nome comercial</th><th>Princípio ativo</th><th>Registro na Anvisa para</th><th>Uso</th></tr></thead>
+  <tbody>
+    <tr><td>Mounjaro</td><td>tirzepatida</td><td>diabetes tipo 2, obesidade e apneia do sono com obesidade</td><td>1 vez por semana, dose de 2,5 a 15 mg</td></tr>
+    <tr><td>Wegovy</td><td>semaglutida</td><td>obesidade e sobrepeso com doença associada</td><td>1 vez por semana, até 2,4 mg</td></tr>
+    <tr><td>Ozempic</td><td>semaglutida</td><td>diabetes tipo 2</td><td>1 vez por semana, até 2 mg; uso em obesidade com avaliação médica</td></tr>
+    <tr><td>Saxenda</td><td>liraglutida</td><td>obesidade</td><td>1 vez por dia</td></tr>
+    <tr><td>Genéricos de semaglutida (EMS, Germed)</td><td>semaglutida</td><td>registrados em agosto de 2026</td><td>chegada às farmácias e preço ainda em definição</td></tr>
+  </tbody>
+</table>
+<p>Todos são medicamentos de receita. Nenhum é vendido legalmente sem prescrição, por site, por perfil de rede social ou "com entrega discreta". <a href="/blog/glp1-medicamentos-injetaveis-emagrecer">Entenda como esses medicamentos agem</a>.</p>
+
+<h2>O que a Anvisa apreendeu em outubro de 2026</h2>
+<p>Em 14 de outubro de 2026 a Anvisa determinou a apreensão de produtos vendidos por sites e plataformas online como tirzepatida e retatrutida, sem registro, proibindo fabricação, importação, distribuição, divulgação e uso. A lista, publicada pela <a href="https://forbes.com.br/forbes-saude/2026/10/anvisa-proibe-canetas-emagrecedoras-sem-registro-vendidas-na-internet/" rel="nofollow">Forbes</a>, inclui lojas virtuais que anunciavam "Tirzepatide 150 mg", "Retatrutide 60 mg" e kits ditos emagrecedores. Dois pontos chamam atenção: a retatrutida não está aprovada em nenhum país do mundo, e as dosagens anunciadas não correspondem a nenhuma apresentação registrada.</p>
+<!--CTA-->
+
+<h2>Como reconhecer um produto irregular</h2>
+<ul>
+  <li><strong>Vendido por site, Instagram, WhatsApp ou marketplace</strong>, e não por farmácia.</li>
+  <li><strong>Sem exigir receita</strong>, ou "a receita a gente dá".</li>
+  <li><strong>Nome genérico no rótulo</strong> ("tirzepatida", "semaglutida") sem marca registrada, ou marca que não aparece na consulta da Anvisa.</li>
+  <li><strong>Dosagem estranha</strong>, como frascos de 60 mg ou 150 mg para reconstituir. As canetas registradas vêm prontas, com dose fixa por aplicação.</li>
+  <li><strong>Sem caixa, sem bula em português, sem lacre, sem lote</strong>, ou com embalagem só em inglês ou chinês.</li>
+  <li><strong>Preço muito abaixo</strong> do de farmácia.</li>
+  <li><strong>Promessa de resultado</strong> em quilos ou semanas. Medicamento registrado não é vendido com promessa.</li>
+</ul>
+
+<h2>Por que o risco é real</h2>
+<p>Sem registro, ninguém verificou o que há dentro da caneta: pode ser a substância na dose certa, na dose errada, outra substância ou nada. Também não há controle de esterilidade, conservação e transporte, o que importa para um produto injetável que precisa de refrigeração. O resultado prático no consultório costuma ser um destes: efeito colateral forte por dose errada, nenhum efeito por produto sem princípio ativo, ou infecção no local da aplicação. E, pela lei, comprar e usar medicamento sem registro é irregular também para quem compra.</p>
+
+<h2>Manipulado é diferente?</h2>
+<p>Farmácias de manipulação são estabelecimentos regulares, mas a manipulação de semaglutida e tirzepatida para emagrecimento está em discussão regulatória e os produtos encontrados à venda sem controle têm sido alvo de apreensão. Até haver regra clara e fiscalizada, o caminho seguro é o medicamento registrado, lacrado, com bula, comprado em farmácia com a receita.</p>
+
+<h2>Como comprar com segurança</h2>
+<ol>
+  <li>Consulta médica, com avaliação de indicação e contraindicações.</li>
+  <li>Receita com nome do medicamento e dose.</li>
+  <li>Farmácia, de preferência com o programa de desconto do laboratório. <a href="/blog/quanto-custa-tratamento-mounjaro-tirzepatida">Veja os custos por dose</a>.</li>
+  <li>Conferir caixa, lacre, lote, bula em português e nota fiscal.</li>
+  <li>Guardar na geladeira conforme a bula e aplicar como orientado.</li>
+</ol>
+
+<h2>Onde isso é feito com acompanhamento</h2>
+<p>A Dra. Isabel Aragão (CRM-SC 26139) atende em São José/SC e online. Na consulta, avalia se há indicação, prescreve o medicamento registrado adequado ao caso e acompanha com bioimpedância. A clínica não vende medicamento e não indica fornecedor fora da farmácia. Se você comprou um produto e tem dúvida se é legítimo, leve à consulta antes de usar.</p>
+`,
+  },
+  {
+    slug: 'retatrutida-o-que-e-quando-chega',
+    num: 43,
+    title: 'Retatrutida: O Que É, Por Que Ainda Não Existe no Brasil e O Que Fazer Enquanto Espera',
+    shortTitle: 'Retatrutida: O Que É e Quando Chega',
+    intro: 'A retatrutida é a próxima molécula da Eli Lilly, ainda em fase 3 de estudos, sem aprovação em nenhum país. O que os estudos mostram, o alerta da Anvisa e por que comprar pela internet é risco.',
+    category: 'Medicamentos',
+    readTime: '6 min',
+    date: 'Outubro 2026',
+    metaDesc: 'Retatrutida: molécula tripla da Eli Lilly em fase 3, sem aprovação em nenhum país (alerta da Anvisa em 2026). O que os estudos mostram e por que não comprar.',
+    related: ['canetas-emagrecedoras-registro-anvisa', 'glp1-medicamentos-injetaveis-emagrecer', 'mounjaro-ou-ozempic-qual-escolher', 'tirzepatida-florianopolis'],
+    faq: [
+      { q: 'A retatrutida já foi aprovada?', a: 'Não. Até outubro de 2026 a retatrutida não tinha registro em nenhum país. Está em estudos de fase 3 e a Eli Lilly não havia pedido registro à Anvisa nem a outras agências, segundo o alerta da própria Anvisa.' },
+      { q: 'Quando a retatrutida chega ao Brasil?', a: 'Não há data. O caminho é concluir a fase 3, pedir registro nas agências (FDA, EMA, Anvisa) e passar pela avaliação de cada uma, o que costuma levar meses a anos. Qualquer prazo anunciado hoje é especulação.' },
+      { q: 'A retatrutida emagrece mais que o Mounjaro?', a: 'Nos estudos de fase 2, a perda média com as doses maiores foi superior à observada com tirzepatida em estudos separados, mas comparações entre estudos diferentes têm limitações. Os resultados definitivos vêm da fase 3 ainda em andamento.' },
+      { q: 'Posso comprar retatrutida pela internet?', a: 'Não. Tudo o que é vendido como retatrutida no Brasil é produto sem registro, sem controle de substância, dose e esterilidade. A Anvisa determinou a apreensão desses produtos em outubro de 2026.' },
+      { q: 'O que usar enquanto a retatrutida não chega?', a: 'O que já existe com evidência e registro: tirzepatida (Mounjaro) e semaglutida (Wegovy, Ozempic e genéricos). Qual delas, e em que dose, é decisão individual, feita em consulta.' },
+    ],
+    content: `
+<div class="resposta"><strong>Resposta rápida:</strong> a retatrutida é uma molécula experimental da Eli Lilly que age em três hormônios (GLP-1, GIP e glucagon). Nos estudos de fase 2 mostrou perda média de peso maior que a dos medicamentos atuais, mas <strong>não está aprovada em nenhum país</strong>: segue em fase 3 e a Anvisa alertou em julho de 2026 que tudo o que é vendido como retatrutida no Brasil é irregular. Enquanto ela não chega, o tratamento com evidência e registro é tirzepatida ou semaglutida, decididos caso a caso. <a href="/blog/tema/tirzepatida-mounjaro">Veja o guia sobre tirzepatida</a>.</div>
+<p>Se você pesquisou "retatrutida", provavelmente viu dois tipos de conteúdo: notícias sobre a "próxima caneta mais potente" e anúncios vendendo o produto agora. Este artigo explica o que a ciência já sabe, o que ainda falta e por que o segundo tipo de conteúdo é um problema sério.</p>
+
+<h2>O que é a retatrutida</h2>
+<p>A retatrutida é um medicamento injetável semanal em desenvolvimento pela Eli Lilly, o mesmo laboratório do Mounjaro. A diferença está no mecanismo: enquanto a semaglutida age em um receptor (GLP-1) e a tirzepatida em dois (GLP-1 e GIP), a retatrutida age em três, somando o receptor do glucagon, que tem efeito sobre o gasto de energia e a gordura do fígado. Por isso ela é chamada de agonista triplo.</p>
+
+<h2>O que os estudos mostraram até agora</h2>
+<p>No estudo de fase 2 em adultos com obesidade, publicado em 2023, as doses mais altas levaram a uma perda média de peso ao redor de 24% em 48 semanas, sem sinal de platô no período. É um resultado acima do observado com os medicamentos aprovados em estudos separados, com a ressalva de que comparar estudos diferentes tem limitações. Os efeitos colaterais foram os já conhecidos da classe, principalmente gastrointestinais, mais frequentes nas doses altas.</p>
+<p>A fase 3, com milhares de participantes e duração maior, é a que define eficácia e segurança para aprovação. Esses estudos estão em andamento. Até sua conclusão e análise pelas agências, nenhum número é definitivo.</p>
+<!--CTA-->
+
+<h2>Por que ainda não existe no Brasil (nem em lugar nenhum)</h2>
+<p>Em julho de 2026 a Anvisa publicou um alerta: a retatrutida não tem registro aprovado no Brasil, está em fase de testes e, por isso, não está disponível para venda em nenhum país do mundo. A fabricante não havia solicitado registro a nenhuma agência, segundo a <a href="https://www.cnnbrasil.com.br/saude/retatrutida-nao-esta-aprovada-para-uso-em-nenhum-pais-alerta-anvisa/" rel="nofollow">CNN Brasil</a>. A preocupação da agência é a venda irregular por sites e o contrabando, com apreensões frequentes nas fronteiras.</p>
+<p>Em 14 de outubro de 2026 a Anvisa foi além e determinou a apreensão de produtos vendidos como retatrutida e tirzepatida sem registro, proibindo fabricação, importação, divulgação e uso. <a href="/blog/canetas-emagrecedoras-registro-anvisa">Veja quais canetas têm registro e como reconhecer produto irregular</a>.</p>
+
+<h2>O risco de comprar "retatrutida" agora</h2>
+<ul>
+  <li><strong>Não há como saber o que está no frasco.</strong> Pode ser outra substância, dose errada ou nada.</li>
+  <li><strong>Não há dose segura definida.</strong> A dose de uso ainda está sendo estudada. Quem vende hoje inventa a posologia.</li>
+  <li><strong>Sem controle de esterilidade e conservação</strong> para um produto injetável.</li>
+  <li><strong>Sem rastreabilidade.</strong> Se der problema, não há lote, fabricante nem responsável.</li>
+  <li><strong>É irregular</strong> para quem vende e para quem usa.</li>
+</ul>
+
+<h2>Quando pode chegar</h2>
+<p>O caminho usual de um medicamento novo é: concluir a fase 3, pedir registro ao FDA e à EMA, depois à Anvisa, e aguardar a análise de cada agência, que leva de meses a mais de um ano. Depois disso vêm a definição de preço pela CMED e a distribuição. Não existe data oficial, e qualquer prazo que circule hoje é especulação.</p>
+
+<h2>O que fazer enquanto espera</h2>
+<p>Tratar com o que já tem evidência e registro. A tirzepatida (Mounjaro) e a semaglutida (Wegovy, Ozempic e genéricos) têm estudos longos, bula, controle de qualidade e preço regulado. Para a maioria das pacientes, a diferença entre começar hoje com um medicamento aprovado e esperar anos por um experimental é justamente o resultado que se deixa de ter. Cada caso é um caso: qual molécula, em que dose e por quanto tempo é decisão da consulta. <a href="/blog/mounjaro-ou-ozempic-qual-escolher">Entenda a diferença entre tirzepatida e semaglutida</a>.</p>
+<p>A Dra. Isabel Aragão (CRM-SC 26139) atende em São José/SC e online, com avaliação por bioimpedância e acompanhamento de perto. A clínica não vende medicamento e não trabalha com produto sem registro.</p>
+`,
+  },
+  {
+    slug: 'mounjaro-sao-jose-sc',
+    num: 44,
+    title: 'Mounjaro em São José/SC: Onde Fazer o Acompanhamento e a Aplicação',
+    shortTitle: 'Mounjaro em São José/SC',
+    intro: 'Quem busca Mounjaro em São José encontra prescrição, acompanhamento e aplicação na clínica da Dra. Isabel Aragão, no Kennedy Towers, bairro Campinas. Como funciona, o que a clínica faz e não faz.',
+    category: 'Medicamentos',
+    readTime: '5 min',
+    date: 'Outubro 2026',
+    metaDesc: 'Mounjaro em São José/SC: avaliação, prescrição, ajuste de dose e aplicação na clínica da Dra. Isabel Aragão (CRM-SC 26139), no Kennedy Towers, Campinas.',
+    related: ['aplicacao-tirzepatida-sao-jose', 'quanto-tempo-mounjaro-faz-efeito', 'quanto-custa-tratamento-mounjaro-tirzepatida', 'medica-emagrecimento-sao-jose'],
+    faq: [
+      { q: 'A clínica vende Mounjaro em São José?', a: 'Não. A médica avalia, prescreve quando há indicação e acompanha o tratamento. A paciente compra o medicamento na farmácia com a receita, com o desconto do programa do laboratório, e pode trazer à clínica para aplicar com a enfermeira.' },
+      { q: 'Preciso ir à clínica toda semana para aplicar?', a: 'Não. A maioria aprende a aplicar em casa na primeira consulta. Quem prefere agenda a aplicação na clínica com a enfermeira, com horário marcado.' },
+      { q: 'Qual é a primeira dose do Mounjaro?', a: 'Cada caso é um caso: depende do histórico, de uso anterior e de reações, avaliados em consulta. Usualmente, conforme a bula e os estudos, inicia-se com 2,5 mg por semana durante 4 semanas, com aumentos graduais depois.' },
+      { q: 'Onde fica a clínica e como marcar?', a: 'Av. Mal. Castelo Branco, 65, Sala 1102 B, Kennedy Towers, bairro Campinas, São José/SC. Atendimento de segunda a sexta, das 8h às 18h. Agendamento direto pelo WhatsApp (48) 99159-3468, sem encaminhamento.' },
+    ],
+    content: `
+<div class="resposta"><strong>Resposta rápida:</strong> em São José/SC, o tratamento com Mounjaro (tirzepatida) é conduzido pela <strong>Dra. Isabel Aragão (CRM-SC 26139)</strong> na clínica do Kennedy Towers, bairro Campinas: avaliação com bioimpedância, prescrição quando há indicação, ajuste de dose e aplicação na clínica pela <strong>Enf. Maria Fernanda Loccioni</strong> ou orientada para casa. A clínica não vende o medicamento: a paciente compra na farmácia com a receita. Agende pelo WhatsApp <a href="https://wa.me/5548991593468">(48) 99159-3468</a>.</div>
+<p>O Mounjaro é o nome comercial da tirzepatida, injetável semanal aprovado pela Anvisa para diabetes tipo 2 e obesidade. Quem mora em São José e quer começar ou continuar o tratamento com acompanhamento encontra tudo no mesmo lugar: consulta, exames, aplicação e revisões. Este artigo explica como funciona na prática.</p>
+
+<h2>Como funciona o tratamento na clínica</h2>
+<ul>
+  <li><strong>Primeira consulta</strong> de cerca de 90 minutos: histórico, bioimpedância na hora, revisão de exames e avaliação de indicação e contraindicações.</li>
+  <li><strong>Prescrição</strong> quando há indicação, com orientação de compra na farmácia e cadastro no programa de desconto do laboratório.</li>
+  <li><strong>Primeira aplicação</strong> na clínica, com a enfermeira, para aprender a técnica. Depois, em casa ou na clínica, como preferir.</li>
+  <li><strong>Revisões</strong> mensais ou bimestrais com nova bioimpedância, ajuste de dose e manejo dos efeitos colaterais.</li>
+</ul>
+<p>Cada caso é um caso: a dose inicial e o ritmo de aumento seguem a bula e os estudos, mas são ajustados ao seu histórico e à sua resposta. <a href="/blog/quanto-tempo-mounjaro-faz-efeito">Veja em quanto tempo o Mounjaro costuma fazer efeito</a>.</p>
+<!--CTA-->
+
+<h2>Onde fica a clínica em São José</h2>
+<p>Av. Mal. Castelo Branco, 65, Sala 1102 B, Kennedy Towers, bairro Campinas, CEP 88101-020, vizinho ao Kobrasol e com acesso fácil pela BR-101 e pela Via Expressa. Atendimento de segunda a sexta, das 8h às 18h. Pacientes de Florianópolis, Palhoça e Biguaçu também são atendidos, e parte do acompanhamento pode ser online.</p>
+
+<h2>O que a clínica faz e não faz</h2>
+<ul>
+  <li><strong>Faz:</strong> avaliação médica, prescrição, bioimpedância, aplicação com enfermeira, acompanhamento e ajuste de dose.</li>
+  <li><strong>Não faz:</strong> não vende o medicamento, não indica fornecedor fora da farmácia, não trabalha com produto sem registro na Anvisa e não promete resultado.</li>
+</ul>
+
+<h2>Quanto custa</h2>
+<p>O medicamento é comprado na farmácia e varia por dose: no programa do laboratório, a caixa mensal vai de cerca de R$ 1.400 (2,5 mg) a R$ 3.500 (15 mg). A consulta é particular e a bioimpedância está incluída. <a href="/blog/quanto-custa-tratamento-mounjaro-tirzepatida">Veja o detalhamento dos custos</a>.</p>
+
+<h2>Antes de começar</h2>
+<p>O Mounjaro tem contraindicações (gestação, histórico pessoal ou familiar de carcinoma medular de tireoide, entre outras) e efeitos colaterais que precisam de acompanhamento. Por isso o tratamento começa na consulta, não na farmácia. Se você já usa e quer continuar com acompanhamento em São José, traga a caneta atual, a receita anterior e os exames recentes.</p>
+`,
+  },
 ]
