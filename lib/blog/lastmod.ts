@@ -6,6 +6,8 @@
 // Ao editar o conteúdo de um post, atualize ATUALIZADO[slug]. Post novo: entra sozinho pelo fallback.
 
 const PUBLICADO: Record<string, string> = {
+  'gordura-visceral-o-que-e-como-reduzir': '2026-10-29',
+  'mounjaro-parou-de-funcionar': '2026-10-29',
   'mounjaro-sao-jose-sc': '2026-10-29',
   'retatrutida-o-que-e-quando-chega': '2026-10-29',
   'canetas-emagrecedoras-registro-anvisa': '2026-10-29',
@@ -27,7 +29,7 @@ const PUBLICADO: Record<string, string> = {
   'quando-procurar-medico-para-emagrecer': '2026-07-15',
   'aplicacao-injecao-emagrecer-sao-jose': '2026-07-16',
   'clinica-emagrecimento-sao-jose-sc': '2026-07-16',
-  'lipedema-florianopolis-tratamento': '2026-07-16',
+  'lipedema-florianopolis-tratamento': '2026-10-29', // expansão 2.0
   'mounjaro-florianopolis': '2026-07-16',
   'ozempic-florianopolis-prescricao': '2026-07-16',
   'tirzepatida-florianopolis': '2026-07-16',
@@ -64,7 +66,7 @@ const ATUALIZADO: Record<string, string> = {
   'wegovy-florianopolis': '2026-10-29', // resposta rápida + FAQ (padrão 2.0)
   'efeitos-colaterais-mounjaro-tirzepatida': '2026-10-29', // resposta rápida + FAQ (padrão 2.0)
   'mounjaro-ou-ozempic-qual-escolher': '2026-10-29', // resposta rápida + FAQ (padrão 2.0)
-  'lipedema-florianopolis-tratamento': '2026-10-29', // resposta rápida + FAQ (padrão 2.0)
+  'lipedema-florianopolis-tratamento': '2026-10-29', // expansão 2.0
   'ozempic-florianopolis-prescricao': '2026-10-29', // resposta rápida + FAQ (padrão 2.0)
   'mounjaro-florianopolis': '2026-10-29', // resposta rápida + FAQ (padrão 2.0)
   'tirzepatida-florianopolis': '2026-10-29', // resposta rápida + FAQ (padrão 2.0)

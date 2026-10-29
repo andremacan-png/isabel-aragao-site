@@ -30,7 +30,7 @@ export const TEMAS: Tema[] = [
       'quanto-emagrece-com-injetavel',
       'mounjaro-ou-ozempic-qual-escolher',
       'efeitos-colaterais-mounjaro-tirzepatida',
-      'precisa-de-receita-mounjaro-tirzepatida',
+      'precisa-de-receita-mounjaro-tirzepatida', 'mounjaro-parou-de-funcionar',
       'quanto-custa-tratamento-mounjaro-tirzepatida', 'canetas-emagrecedoras-registro-anvisa', 'retatrutida-o-que-e-quando-chega',
       'tirzepatida-florianopolis',
       'mounjaro-florianopolis',
@@ -87,7 +87,7 @@ export const TEMAS: Tema[] = [
     resumo: 'O que o exame mede, como ler gordura, músculo e água, e onde fazer.',
     resposta: 'A bioimpedância é um exame rápido e indolor que estima a composição do corpo: gordura, massa muscular, água e taxa metabólica basal. Ela mostra o que a balança esconde, por exemplo se o peso perdido foi gordura ou músculo. Na clínica o exame é feito na própria consulta e repetido ao longo do tratamento para ajustar o plano.',
     intro: 'Os artigos abaixo explicam o exame, ensinam a ler o laudo e mostram como ele é usado no acompanhamento com a Dra. Isabel Aragão (CRM-SC 26139). Artigos sobre gordura visceral e preparo para o exame estão no calendário.',
-    posts: ['bioimpedancia-o-que-e', 'como-ler-resultado-bioimpedancia', 'bioimpedancia-sao-jose-sc'],
+    posts: ['bioimpedancia-o-que-e', 'como-ler-resultado-bioimpedancia', 'gordura-visceral-o-que-e-como-reduzir', 'bioimpedancia-sao-jose-sc'],
     faq: [
       { q: 'Como me preparar para a bioimpedância?', a: 'Jejum de 2 a 4 horas, sem álcool nas 24 horas anteriores, sem exercício intenso no dia, bexiga vazia e sem creme no corpo. Quem usa marca-passo não deve fazer o exame.' },
       { q: 'A bioimpedância substitui a balança?', a: 'Não substitui, complementa. A balança mostra o peso total; a bioimpedância mostra do que ele é feito. As duas juntas orientam o tratamento.' },

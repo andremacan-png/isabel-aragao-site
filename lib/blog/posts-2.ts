@@ -585,4 +585,152 @@ export const POSTS_2: Post[] = [
 <p>O Mounjaro tem contraindicações (gestação, histórico pessoal ou familiar de carcinoma medular de tireoide, entre outras) e efeitos colaterais que precisam de acompanhamento. Por isso o tratamento começa na consulta, não na farmácia. Se você já usa e quer continuar com acompanhamento em São José, traga a caneta atual, a receita anterior e os exames recentes.</p>
 `,
   },
+  {
+    slug: 'mounjaro-parou-de-funcionar',
+    num: 45,
+    title: 'Mounjaro Parou de Funcionar? Platô, Dose e O Que a Consulta Avalia',
+    shortTitle: 'Mounjaro Parou de Funcionar',
+    intro: 'A balança travou depois de meses de Mounjaro. O que é platô, quando é dose baixa, o que a alimentação e o sono têm a ver e como a consulta decide entre manter, ajustar ou trocar.',
+    category: 'Medicamentos',
+    readTime: '7 min',
+    date: 'Outubro 2026',
+    metaDesc: 'Mounjaro parou de funcionar? Platô esperado, dose baixa, erros que mascaram o efeito e como a consulta decide entre manter, ajustar ou trocar.',
+    related: ['quanto-tempo-mounjaro-faz-efeito', 'efeitos-colaterais-mounjaro-tirzepatida', 'efeito-sanfona-por-que-o-peso-volta', 'quanto-emagrece-com-injetavel'],
+    faq: [
+      { q: 'É normal o Mounjaro parar de fazer efeito?', a: 'É normal o ritmo de perda diminuir depois de alguns meses: o corpo mais leve gasta menos e se adapta. Nos estudos, a maioria chega a um platô entre 6 e 9 meses na dose de manutenção. Isso não significa que o medicamento parou de agir.' },
+      { q: 'Devo aumentar a dose se estagnei?', a: 'Cada caso é um caso. Conforme a bula, a dose pode subir em 2,5 mg a cada 4 semanas até 15 mg, mas a decisão depende da resposta, da tolerância e do histórico, avaliados em consulta. Aumentar por conta própria aumenta os efeitos colaterais sem garantia de resultado.' },
+      { q: 'Quanto tempo esperar antes de considerar que não está funcionando?', a: 'Antes de 8 a 12 semanas na dose de manutenção, avaliar é cedo. A resposta inicial, medida com calma e com bioimpedância, orienta a conduta. Nos estudos, quem perdeu menos de 5% nas primeiras 12 semanas tendeu a responder menos no longo prazo, o que a médica usa para decidir.' },
+      { q: 'Posso trocar o Mounjaro por outro medicamento?', a: 'Pode, com orientação médica, quando a resposta é insuficiente mesmo com dose adequada ou quando os efeitos colaterais não melhoram. A troca é feita em consulta, com ajuste de dose.' },
+      { q: 'Parar e recomeçar faz o Mounjaro voltar a funcionar?', a: 'Não é uma estratégia recomendada. Parar sem plano costuma trazer reganho, e recomeçar exige voltar à dose inicial para evitar efeitos colaterais. Qualquer pausa é decidida em consulta.' },
+    ],
+    content: `
+<div class="resposta"><strong>Resposta rápida:</strong> quando o Mounjaro (tirzepatida) "para de funcionar", quase sempre é uma destas situações: <strong>platô normal</strong> depois de meses de perda, <strong>dose ainda baixa</strong> para o seu caso, balança escondendo perda de gordura, alimentação ou sono anulando parte do efeito, ou produto comprado sem registro. Nos estudos, o ritmo desacelera e estabiliza entre 6 e 9 meses na dose de manutenção; isso é esperado. A conduta (manter, ajustar a dose, rever o plano ou trocar) é decidida em consulta, caso a caso. <a href="/blog/tema/tirzepatida-mounjaro">Veja o guia sobre tirzepatida</a>.</div>
+<p>Poucas coisas frustram mais do que ver a balança travar depois de meses de resultado. A primeira reação costuma ser "o remédio parou de funcionar" ou "meu corpo se acostumou". Na maioria das vezes não é nenhuma das duas. Este artigo explica o que de fato acontece e o que a consulta avalia antes de qualquer mudança.</p>
+
+<h2>Primeiro, o que é esperado</h2>
+<p>A curva de perda de peso com tirzepatida não é uma linha reta. Nos estudos de 72 semanas, a queda é mais acentuada nos primeiros 6 meses, desacelera depois e estabiliza perto do fim: a maioria dos participantes atingiu um platô entre o sexto e o nono mês na dose de manutenção, e quase todos até a semana 72. Platô, nesse contexto, não é falha: é o novo ponto de equilíbrio do corpo naquela dose, com aquele estilo de vida. <a href="/blog/quanto-tempo-mounjaro-faz-efeito">Veja a evolução esperada semana a semana</a>.</p>
+
+<h2>Por que o emagrecimento desacelera</h2>
+<ul>
+  <li><strong>O corpo mais leve gasta menos.</strong> Cada quilo perdido reduz o gasto de energia para existir e se mover.</li>
+  <li><strong>Adaptação metabólica.</strong> O organismo reduz o gasto em repouso além do esperado pelo novo peso, como defesa. <a href="/blog/metabolismo-lento-existe">Entenda a adaptação metabólica</a>.</li>
+  <li><strong>A fome volta um pouco.</strong> Mesmo com o medicamento, os hormônios do apetite reagem à perda de peso, e o efeito sobre a saciedade pode parecer menor do que no início.</li>
+  <li><strong>Menos margem.</strong> Quanto menos gordura sobra para perder, mais devagar ela sai. Alguém que perdeu 15% do peso não perde os próximos 5% no mesmo ritmo dos primeiros.</li>
+</ul>
+
+<h2>As causas que a consulta investiga</h2>
+<h3>1. Ainda é cedo</h3>
+<p>Com menos de 8 semanas, ou logo após uma mudança de dose, avaliar resultado de balança é injusto. O corpo está na fase de adaptação.</p>
+<h3>2. A dose está baixa para o seu caso</h3>
+<p>Parte das pessoas responde bem a 5 mg; outras precisam de 10 ou 15 mg. Conforme a bula, a dose sobe em 2,5 mg a cada 4 semanas no mínimo, até 15 mg. Se você está há meses em 5 mg e o apetite voltou, pode ser hora de reavaliar. Cada caso é um caso: a decisão considera tolerância, efeitos colaterais e histórico, e é feita em consulta, não por conta própria.</p>
+<h3>3. A balança está mentindo</h3>
+<p>Retenção de líquido, fase do ciclo menstrual, intestino preso e ganho de músculo (principalmente em quem começou a treinar) mascaram a perda de gordura. A bioimpedância mostra o que mudou de verdade: se a gordura caiu e o músculo ficou estável, o tratamento está funcionando, mesmo com a balança parada. <a href="/blog/como-ler-resultado-bioimpedancia">Aprenda a ler o resultado</a>.</p>
+<h3>4. O apetite caiu, mas a comida mudou pouco</h3>
+<p>O medicamento reduz a fome; o que se come quando se come ainda conta. Os vilões mais comuns no consultório: álcool, líquidos calóricos (suco, café com leite e açúcar, refrigerante), beliscos "porque não sinto fome mesmo" e refeições pequenas demais, sem proteína, que levam à perda de músculo e à queda do metabolismo.</p>
+<h3>5. Sono e estresse</h3>
+<p>Dormir pouco aumenta a grelina e o cortisol e reduz a leptina. Semanas de sono ruim podem anular parte do efeito do medicamento sobre o apetite. <a href="/blog/hormonios-ganho-de-peso">Veja como os hormônios agem no peso</a>.</p>
+<h3>6. Pulos e atrasos na aplicação</h3>
+<p>O efeito depende da constância semanal. Aplicações atrasadas ou puladas reduzem a concentração do medicamento e o controle do apetite.</p>
+<h3>7. Produto sem registro</h3>
+<p>Quem comprou "tirzepatida" de site ou perfil sem registro na Anvisa pode estar usando produto sem substância ou com dose errada. A Anvisa apreendeu esses produtos em outubro de 2026. <a href="/blog/canetas-emagrecedoras-registro-anvisa">Veja como reconhecer</a>.</p>
+<!--CTA-->
+
+<h2>O que a consulta faz com isso</h2>
+<p>A avaliação cruza três coisas: o tempo na dose atual, a bioimpedância (gordura, músculo, água) e a rotina (alimentação, sono, atividade, aplicações). A partir daí, as condutas possíveis são:</p>
+<ul>
+  <li><strong>Manter</strong> e dar tempo, quando a composição corporal está melhorando ou o platô é recente.</li>
+  <li><strong>Ajustar a dose</strong>, quando há margem na bula, a tolerância permite e o apetite voltou.</li>
+  <li><strong>Rever o plano</strong> de alimentação, proteína, treino de força e sono, que muitas vezes é onde está o freio.</li>
+  <li><strong>Trocar o medicamento</strong>, quando a resposta é insuficiente mesmo com dose adequada ou os efeitos colaterais não melhoram. <a href="/blog/mounjaro-ou-ozempic-qual-escolher">Entenda as opções</a>.</li>
+  <li><strong>Aceitar o platô como manutenção</strong>, quando o peso atual já trouxe os ganhos de saúde esperados. Manter é resultado, não fracasso.</li>
+</ul>
+
+<h2>O que não fazer</h2>
+<ul>
+  <li>Subir a dose por conta própria ou "dobrar" uma aplicação.</li>
+  <li>Parar de repente para "resetar": costuma trazer reganho e obriga a recomeçar da dose inicial.</li>
+  <li>Cortar a comida drasticamente: perde músculo e piora o metabolismo.</li>
+  <li>Comparar sua curva com a de outra pessoa.</li>
+</ul>
+
+<h2>Onde avaliar</h2>
+<p>A Dra. Isabel Aragão (CRM-SC 26139) atende em São José/SC e online, com bioimpedância a cada revisão e ajuste do tratamento conforme a resposta. Se a sua balança travou, a consulta é o lugar para descobrir o motivo, e não o site de busca. A clínica não vende o medicamento.</p>
+`,
+  },
+  {
+    slug: 'gordura-visceral-o-que-e-como-reduzir',
+    num: 46,
+    title: 'Gordura Visceral: O Que É, Como a Bioimpedância Mede e Como Reduzir',
+    shortTitle: 'Gordura Visceral: O Que É e Como Reduzir',
+    intro: 'A gordura visceral envolve os órgãos e pesa mais na saúde do que o número na balança. O que é, por que é perigosa, como a bioimpedância e a cintura medem, faixas de referência e o que reduz de verdade.',
+    category: 'Saúde',
+    readTime: '7 min',
+    date: 'Outubro 2026',
+    metaDesc: 'Gordura visceral: o que é, por que eleva o risco de diabetes e infarto, como medir (bioimpedância e cintura), faixas de referência e o que reduz.',
+    related: ['bioimpedancia-o-que-e', 'como-ler-resultado-bioimpedancia', 'hormonios-ganho-de-peso', 'emagrecimento-apos-40-anos'],
+    faq: [
+      { q: 'O que é gordura visceral?', a: 'É a gordura armazenada dentro do abdome, ao redor do fígado, do intestino e de outros órgãos. É diferente da gordura subcutânea, que fica sob a pele e se belisca. A visceral é metabolicamente ativa e está ligada a inflamação, resistência à insulina e doença cardiovascular.' },
+      { q: 'Qual é o valor normal de gordura visceral na bioimpedância?', a: 'Nos aparelhos mais usados, o nível de gordura visceral é dado em uma escala em que até 9 é considerado normal, 10 a 14 alto e 15 ou mais muito alto. A escala varia por fabricante, e a leitura é feita no contexto dos outros dados e da cintura.' },
+      { q: 'Pessoa magra pode ter gordura visceral alta?', a: 'Sim. É o chamado magro com gordura por dentro: peso e IMC normais, mas cintura e gordura visceral elevadas, com risco metabólico real. Por isso a bioimpedância e a medida da cintura importam mais do que a balança.' },
+      { q: 'Qual medida de cintura é considerada de risco?', a: 'Pelas referências usadas no Brasil, o risco aumenta a partir de 80 cm nas mulheres e 94 cm nos homens, e é alto a partir de 88 cm e 102 cm. Mede-se na altura do umbigo, ao final da expiração, sem apertar a fita.' },
+      { q: 'Exercício abdominal reduz a gordura visceral?', a: 'Não de forma localizada. O que reduz é o déficit de energia (alimentação), o exercício como um todo, principalmente aeróbico e de força, o sono e, quando há obesidade, o tratamento médico, inclusive medicamentoso, que diminui a gordura visceral junto com a total.' },
+    ],
+    content: `
+<div class="resposta"><strong>Resposta rápida:</strong> gordura visceral é a gordura que fica <strong>dentro do abdome, ao redor dos órgãos</strong>, diferente da gordura sob a pele. Ela é a que mais pesa na saúde: está ligada a resistência à insulina, diabetes tipo 2, pressão alta, gordura no fígado e infarto, mesmo em quem tem peso normal. A bioimpedância estima o nível (até 9 é normal na escala mais usada) e a cintura confirma (risco a partir de 80 cm em mulheres e 94 cm em homens). Reduz com déficit moderado, exercício, sono e, quando há obesidade, tratamento médico. <a href="/blog/tema/bioimpedancia">Veja o guia sobre bioimpedância</a>.</div>
+<p>Duas pessoas com o mesmo peso e o mesmo IMC podem ter riscos de saúde completamente diferentes. A diferença, muitas vezes, está em onde a gordura está guardada. Este artigo explica por que a gordura visceral é a que mais importa, como ela é medida na consulta e o que realmente a reduz.</p>
+
+<h2>Visceral e subcutânea: a diferença que importa</h2>
+<p>A gordura subcutânea fica logo abaixo da pele: é a que se belisca na barriga, nas coxas, nos braços. A gordura visceral fica mais fundo, dentro da cavidade abdominal, envolvendo fígado, intestino, pâncreas e rins. Ela não se belisca; empurra a barriga para fora e deixa o abdome firme e arredondado. E se comporta como um órgão: produz substâncias inflamatórias e ácidos graxos que caem direto na circulação do fígado.</p>
+
+<h2>Por que ela é perigosa</h2>
+<ul>
+  <li><strong>Resistência à insulina:</strong> a gordura visceral atrapalha a ação da insulina e é um dos principais caminhos para o pré-diabetes e o diabetes tipo 2. <a href="/blog/hormonios-ganho-de-peso">Entenda o papel da insulina</a>.</li>
+  <li><strong>Gordura no fígado (esteatose):</strong> o excesso de ácidos graxos sobrecarrega o fígado.</li>
+  <li><strong>Inflamação crônica de baixo grau</strong>, ligada a doenças cardiovasculares.</li>
+  <li><strong>Pressão alta e colesterol alterado</strong>, com mais triglicerídeos e menos HDL.</li>
+  <li><strong>Apneia do sono</strong>, pelo acúmulo no abdome e no pescoço.</li>
+</ul>
+<p>É por isso que a gordura visceral prevê risco melhor do que o IMC. Uma pessoa "magra por fora e gorda por dentro" pode ter mais risco do que alguém com sobrepeso e gordura distribuída sob a pele.</p>
+
+<h2>Como medir</h2>
+<h3>Bioimpedância</h3>
+<p>A bioimpedância estima o nível de gordura visceral a partir da forma como o corpo conduz uma corrente elétrica fraca. Nos aparelhos mais usados nas clínicas, o resultado aparece como um nível em escala: <strong>até 9, normal; 10 a 14, alto; 15 ou mais, muito alto</strong>. A escala varia por fabricante, e o valor é lido junto com a gordura total, a massa muscular e a cintura. Na clínica, o exame é feito na consulta e repetido a cada 30 a 60 dias para acompanhar a evolução. <a href="/blog/como-ler-resultado-bioimpedancia">Aprenda a ler o laudo</a>.</p>
+<h3>Circunferência da cintura</h3>
+<p>A fita métrica é simples e confiável. Mede-se na altura do umbigo, em pé, ao final de uma expiração normal, sem apertar. Referências usadas no Brasil:</p>
+<table>
+  <thead><tr><th></th><th>Risco aumentado</th><th>Risco alto</th></tr></thead>
+  <tbody>
+    <tr><td>Mulheres</td><td>a partir de 80 cm</td><td>a partir de 88 cm</td></tr>
+    <tr><td>Homens</td><td>a partir de 94 cm</td><td>a partir de 102 cm</td></tr>
+  </tbody>
+</table>
+<h3>Exames de imagem</h3>
+<p>Tomografia e ressonância medem a gordura visceral com precisão, mas são usadas em pesquisa ou em casos específicos, não na rotina.</p>
+<!--CTA-->
+
+<h2>Por que ela acumula</h2>
+<ul>
+  <li><strong>Genética e sexo:</strong> homens e mulheres após a menopausa acumulam mais no abdome.</li>
+  <li><strong>Idade:</strong> a partir dos 40, a gordura migra para a região central. <a href="/blog/emagrecimento-apos-40-anos">Veja o que muda depois dos 40</a>.</li>
+  <li><strong>Estresse e cortisol:</strong> o cortisol cronicamente alto direciona gordura para o abdome.</li>
+  <li><strong>Sono curto:</strong> menos de 6 horas por noite está associado a mais gordura visceral.</li>
+  <li><strong>Álcool, açúcar e ultraprocessados</strong>, pelo excesso de energia e pelo efeito sobre o fígado.</li>
+  <li><strong>Sedentarismo</strong>, principalmente muitas horas sentado.</li>
+</ul>
+
+<h2>O que reduz de verdade</h2>
+<p>A boa notícia: a gordura visceral é a primeira a responder quando o tratamento está certo, antes mesmo da gordura subcutânea. O que funciona:</p>
+<ul>
+  <li><strong>Déficit de energia moderado</strong>, com proteína suficiente para proteger o músculo. Dieta radical perde músculo e devolve a gordura visceral depois.</li>
+  <li><strong>Exercício aeróbico regular</strong> (caminhada rápida, bicicleta, natação) e <strong>treino de força</strong>: a combinação reduz gordura visceral mais do que qualquer um dos dois sozinhos.</li>
+  <li><strong>Sono de 7 a 8 horas</strong> e manejo do estresse.</li>
+  <li><strong>Menos álcool e menos açúcar líquido.</strong></li>
+  <li><strong>Tratamento médico da obesidade</strong>, quando há indicação: os medicamentos injetáveis reduzem a gordura visceral junto com a gordura total, e os estudos mostram melhora de glicemia, triglicerídeos e gordura no fígado. Cada caso é um caso, decidido em consulta.</li>
+</ul>
+<p>Exercício abdominal não "queima" a gordura da barriga de forma localizada. Fortalece o músculo, o que é bom, mas a gordura visceral responde ao conjunto, não ao local.</p>
+
+<h2>Como acompanhar na consulta</h2>
+<p>Na clínica da Dra. Isabel Aragão (CRM-SC 26139), em São José/SC, a gordura visceral é medida na bioimpedância da primeira consulta e nas revisões, junto com a cintura e os exames de sangue. É um dos números que mais orientam o plano, porque mostra o risco real, que a balança esconde. Atendimento presencial e online. <a href="/blog/bioimpedancia-sao-jose-sc">Veja onde fazer a bioimpedância em São José</a>.</p>
+`,
+  },
 ]

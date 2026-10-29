@@ -896,52 +896,99 @@ export const POSTS: Post[] = [
   {
     slug: 'lipedema-florianopolis-tratamento',
     num: 19,
-    title: 'Lipedema em Florianópolis — Como é Feito o Diagnóstico e O Que o Tratamento Médico Oferece',
+    title: 'Lipedema: Estágios, Sintomas e Tratamento (Diagnóstico em Florianópolis e São José)',
     shortTitle: 'Lipedema em Florianópolis',
     intro: 'O lipedema é frequentemente confundido com obesidade — e permanece sem diagnóstico por anos. Se você mora em Florianópolis e suspeita da condição, este artigo explica o que é e o que o tratamento oferece.',
     category: 'Saúde',
-    readTime: '5 min',
+    readTime: '9 min',
     date: 'Julho 2026',
-    metaDesc: 'Lipedema em Florianópolis: como é o diagnóstico, o que o tratamento médico pode fazer e a diferença para gordura localizada. Dra. Isabel Aragão, Grande Floripa.',
+    metaDesc: 'Lipedema: o que é, os 4 estágios, tipos por região, sintomas, diferença para obesidade e linfedema, tratamento conservador e cirurgia. Avaliação em São José/SC.',
     related: ['medica-emagrecimento-sao-jose', 'quando-procurar-medico-para-emagrecer', 'emagrecimento-apos-40-anos', 'clinica-emagrecimento-sao-jose-sc'],
     faq: [
-      { q: 'Lipedema tem cura?', a: 'Não, mas tem tratamento que controla a dor, reduz a progressão e melhora a qualidade de vida. Quanto mais cedo o diagnóstico, melhor.' },
-      { q: 'Qual exame detecta lipedema?', a: 'Nenhum exame de sangue ou de imagem confirma sozinho. O diagnóstico é clínico, pela história, pelo exame físico e pelo descarte de outras condições, como linfedema.' },
-      { q: 'Emagrecer resolve?', a: 'Ajuda quando há obesidade associada, mas a gordura do lipedema responde menos à dieta. Por isso o tratamento é combinado e o acompanhamento mede a composição corporal, não só o peso.' },
-      { q: 'Quem trata lipedema em Florianópolis?', a: 'A Dra. Isabel Aragão (CRM-SC 26139) faz a avaliação clínica e de composição corporal em São José e acompanha o tratamento. Quando há indicação cirúrgica, encaminha ao cirurgião.' },
+      { q: 'Lipedema tem cura?', a: 'Não, mas tem tratamento que controla a dor, reduz a progressão e melhora a qualidade de vida. Quanto mais cedo o diagnóstico, melhor a resposta.' },
+      { q: 'Qual exame detecta lipedema?', a: 'Nenhum exame de sangue ou de imagem confirma sozinho. O diagnóstico é clínico, pela história, pelo exame físico, pelas medidas e pelo descarte de outras condições, como o linfedema. Ultrassom e bioimpedância ajudam a acompanhar.' },
+      { q: 'Emagrecer resolve o lipedema?', a: 'Ajuda quando há obesidade associada, porque reduz a sobrecarga e a inflamação, mas a gordura do lipedema responde menos à dieta. Por isso o tratamento é combinado, e o acompanhamento mede composição corporal, não só peso.' },
+      { q: 'Os injetáveis para emagrecer funcionam no lipedema?', a: 'Cada caso é um caso. Quando há obesidade junto, medicamentos como semaglutida e tirzepatida podem ser indicados para tratar a obesidade, o que costuma melhorar os sintomas. Não são tratamento do lipedema em si, e a decisão é feita em consulta.' },
+      { q: 'Quando a cirurgia é indicada?', a: 'Quando o tratamento conservador bem feito não controla os sintomas, em geral nos estágios mais avançados. A lipoaspiração específica para lipedema é feita por cirurgião com experiência na doença, e a paciente é encaminhada pela médica que acompanha.' },
+      { q: 'Quem trata lipedema em Florianópolis e São José?', a: 'A Dra. Isabel Aragão (CRM-SC 26139) faz a avaliação clínica e de composição corporal em São José/SC e acompanha o tratamento conservador e o controle do peso. Quando há indicação cirúrgica, encaminha ao cirurgião.' },
     ],
     content: `
-<div class="resposta"><strong>Resposta rápida:</strong> lipedema é uma doença do tecido gorduroso, quase só em mulheres, com acúmulo simétrico e doloroso nas pernas (às vezes nos braços), hematomas fáceis e pouca resposta à dieta. O diagnóstico é clínico, sem exame específico, e o tratamento combina compressão, drenagem, atividade física adaptada, controle do peso quando há obesidade junto e, em casos selecionados, medicamentos. <a href="/blog/tema/lipedema">Guia sobre lipedema</a>.</div>
-<p>O lipedema é uma condição crônica caracterizada pelo acúmulo anormal e desproporcional de gordura — geralmente nos membros inferiores — que acomete principalmente mulheres. Apesar de relativamente comum, é frequentemente confundido com obesidade ou com "inchaço" e permanece sem diagnóstico por anos. Se você mora em Florianópolis ou na Grande Florianópolis e suspeita de lipedema, este artigo explica o que é a condição e o que o tratamento médico oferece.</p>
+<div class="resposta"><strong>Resposta rápida:</strong> lipedema é uma doença crônica do tecido gorduroso que atinge quase só mulheres, com acúmulo <strong>simétrico e doloroso nas pernas</strong> (às vezes nos braços), hematomas fáceis e pouca resposta à dieta. Tem 4 estágios e 5 tipos por região. O diagnóstico é clínico, sem exame específico, e o tratamento combina compressão, drenagem, atividade física adaptada, controle do peso quando há obesidade junto e, em casos selecionados, cirurgia. A Dra. Isabel Aragão (CRM-SC 26139) avalia e acompanha em São José/SC. <a href="/blog/tema/lipedema">Veja o guia sobre lipedema</a>.</div>
+<p>O lipedema é relativamente comum, estimado em cerca de 1 em cada 10 mulheres por alguns levantamentos, e ainda assim passa anos sem diagnóstico. A maioria das pacientes ouve que "é só emagrecer" até descobrir que o problema tem nome, estágio e tratamento próprio. Este artigo organiza o que se sabe: o que é, como reconhecer, como se classifica e o que o cuidado médico oferece.</p>
+
 <h2>O que é o lipedema</h2>
-<p>O lipedema é uma doença do tecido adiposo em que o acúmulo acontece em padrões específicos — principalmente quadris, coxas e pernas —, é simétrico nos dois lados do corpo e não responde da forma esperada à dieta ou ao exercício. A gordura do lipedema tem características distintas da gordura convencional: é dolorosa ao toque, causa formação fácil de hematomas e não diminui proporcionalmente com a perda de peso.</p>
-<p>É importante distinguir: lipedema não é obesidade. Uma mulher com lipedema pode ter peso e IMC normais no tronco e nos braços, com acúmulo desproporcional apenas nos membros inferiores. Esse padrão é uma pista diagnóstica importante.</p>
-<h2>Por que é frequentemente confundido e mal diagnosticado</h2>
-<p>O lipedema ainda é pouco reconhecido por profissionais de saúde em geral. Muitas pacientes passam anos ouvindo que "é só questão de dieta" ou "precisa se exercitar mais" — sem resultado, porque a condição tem causa diferente. Algumas recebem diagnóstico de obesidade ou linfedema (condição relacionada mas distinta) e seguem com tratamento inadequado para o seu caso.</p>
-<p>O diagnóstico correto muda completamente a abordagem — porque o que funciona para lipedema é diferente do que funciona para obesidade convencional.</p>
-<h2>Sintomas comuns</h2>
+<p>É uma doença do tecido adiposo em que a gordura se acumula de forma anormal e desproporcional, quase sempre nos quadris, coxas e pernas, e em parte dos casos nos braços. É simétrica nos dois lados, dolorosa ao toque e não responde da forma esperada à dieta e ao exercício. Os pés e as mãos costumam ficar poupados, o que cria um "degrau" no tornozelo e no punho. A causa envolve predisposição genética e influência hormonal: a doença costuma começar ou piorar na puberdade, na gestação e na menopausa.</p>
+<p>Lipedema não é obesidade: uma mulher com IMC normal pode ter lipedema, e uma com obesidade pode ter as duas coisas ao mesmo tempo. Também não é linfedema, embora, sem tratamento, possa evoluir para um quadro misto chamado lipolinfedema.</p>
+
+<h2>Sintomas que apontam para lipedema</h2>
 <ul>
-  <li>Acúmulo de gordura desproporcional em membros inferiores (quadril, coxas, pernas), simétrico nos dois lados</li>
-  <li>Dor, sensibilidade ou desconforto ao toque nas áreas afetadas</li>
-  <li>Formação fácil de hematomas sem causa aparente</li>
-  <li>Sensação de peso e cansaço nas pernas ao longo do dia</li>
-  <li>Resultado insatisfatório de dietas e exercícios nas regiões afetadas</li>
-  <li>Desproporção visível entre os membros inferiores e o restante do corpo</li>
+  <li>Acúmulo de gordura desproporcional nas pernas ou braços, simétrico, com tronco mais fino</li>
+  <li>Dor ou sensibilidade ao toque e à pressão nas áreas afetadas</li>
+  <li>Hematomas que aparecem sem lembrar de ter batido</li>
+  <li>Sensação de peso e cansaço nas pernas, pior no fim do dia e no calor</li>
+  <li>Pés e mãos poupados, com "degrau" no tornozelo</li>
+  <li>Pouca mudança nas pernas mesmo quando o resto do corpo emagrece</li>
+  <li>Histórico de mãe, irmã ou avó com pernas parecidas</li>
 </ul>
+<p>Se vários desses sinais soam familiares, vale uma avaliação com profissional que reconheça a condição. <a href="/blog/lipedema-ou-gordura-localizada">Veja como diferenciar de gordura localizada</a>.</p>
+
+<h2>Os 4 estágios do lipedema</h2>
+<table>
+  <thead><tr><th>Estágio</th><th>Como a pele e o tecido se apresentam</th><th>O que costuma incomodar</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td>Pele lisa; tecido abaixo dela mais macio e espesso, com pequenos nódulos ao toque</td><td>Dor leve, hematomas fáceis, sensação de peso</td></tr>
+    <tr><td>2</td><td>Pele irregular, com depressões; nódulos maiores que se sentem ao toque</td><td>Dor mais frequente, cansaço nas pernas, desproporção visível</td></tr>
+    <tr><td>3</td><td>Grandes acúmulos que formam dobras, principalmente na parte interna das coxas e dos joelhos</td><td>Dor constante, dificuldade para caminhar, atrito entre as coxas</td></tr>
+    <tr><td>4</td><td>Lipolinfedema: o sistema linfático também falha e aparece inchaço que marca ao pressionar</td><td>Inchaço persistente, infecções de pele, limitação importante</td></tr>
+  </tbody>
+</table>
+<p>O estágio descreve o tecido, não o tamanho da perna: há estágio 2 em pessoas magras e estágio 1 em pessoas com obesidade. Quanto mais cedo o tratamento começa, mais lenta tende a ser a progressão.</p>
+
+<h2>Os tipos por região</h2>
+<ul>
+  <li><strong>Tipo I:</strong> quadril e nádegas (formato "calça de montaria")</li>
+  <li><strong>Tipo II:</strong> do quadril até os joelhos</li>
+  <li><strong>Tipo III:</strong> do quadril até os tornozelos, o mais comum</li>
+  <li><strong>Tipo IV:</strong> braços, dos ombros aos punhos</li>
+  <li><strong>Tipo V:</strong> só a parte inferior das pernas, dos joelhos aos tornozelos</li>
+</ul>
+<p>Os tipos podem se combinar, por exemplo pernas e braços na mesma paciente.</p>
 <!--CTA-->
+
+<h2>Lipedema, obesidade e linfedema: como diferenciar</h2>
+<table>
+  <thead><tr><th></th><th>Lipedema</th><th>Obesidade</th><th>Linfedema</th></tr></thead>
+  <tbody>
+    <tr><td>Distribuição</td><td>Simétrica, pernas e às vezes braços; tronco poupado</td><td>Corpo todo, inclusive tronco</td><td>Geralmente um lado só</td></tr>
+    <tr><td>Pés e mãos</td><td>Poupados</td><td>Podem ter gordura</td><td>Inchados</td></tr>
+    <tr><td>Dor ao toque</td><td>Sim</td><td>Não</td><td>Não costuma doer</td></tr>
+    <tr><td>Hematomas fáceis</td><td>Sim</td><td>Não</td><td>Não</td></tr>
+    <tr><td>Marca ao pressionar (cacifo)</td><td>Não, nos estágios 1 a 3</td><td>Não</td><td>Sim</td></tr>
+    <tr><td>Resposta à dieta</td><td>Pouca nas pernas</td><td>Boa, proporcional</td><td>Nenhuma</td></tr>
+  </tbody>
+</table>
+
 <h2>Como é feito o diagnóstico</h2>
-<p>Não existe exame de sangue ou de imagem específico para diagnosticar lipedema. O diagnóstico é clínico — feito com base na apresentação dos sintomas, no exame físico e no descarte de outras condições. Por isso é fundamental buscar um profissional com experiência no reconhecimento da condição.</p>
-<h2>O que o tratamento médico oferece</h2>
-<p>O lipedema não tem cura, mas tem tratamento — e o cuidado adequado melhora significativamente a qualidade de vida. As abordagens incluem:</p>
+<p>Não existe exame de sangue ou de imagem que confirme o lipedema sozinho. O diagnóstico é clínico: história (início na puberdade ou gestação, familiares com o mesmo padrão), exame físico (distribuição, dor, nódulos, pés poupados), medidas e descarte de outras causas, principalmente linfedema e doenças venosas. Ultrassom pode ajudar a avaliar o tecido, e a bioimpedância serve para acompanhar a composição corporal ao longo do tratamento. Por isso é fundamental buscar profissional com experiência em reconhecer a condição.</p>
+
+<h2>O que o tratamento oferece</h2>
+<p>O lipedema não tem cura, mas tem tratamento, e o cuidado bem conduzido melhora muito a dor, a mobilidade e a qualidade de vida. As abordagens se somam:</p>
 <ul>
-  <li><strong>Terapia de compressão:</strong> uso de meias compressivas para controlar o inchaço e o desconforto</li>
-  <li><strong>Drenagem linfática manual:</strong> realizada por profissional habilitado para reduzir a retenção de líquido</li>
-  <li><strong>Atividade física adaptada:</strong> exercícios de baixo impacto, aquáticos e de força — que ajudam sem agravar a condição</li>
-  <li><strong>Controle de peso associado:</strong> quando há obesidade coexistente, o controle do peso reduz a sobrecarga nos tecidos afetados, sem eliminar o lipedema em si</li>
-  <li><strong>Medicamentos:</strong> em casos selecionados, recursos que atuam na inflamação ou no controle de peso coexistente</li>
+  <li><strong>Compressão:</strong> meias ou calças compressivas de grau adequado reduzem dor, inchaço e sensação de peso. É a base do tratamento em qualquer estágio.</li>
+  <li><strong>Drenagem linfática manual:</strong> feita por profissional habilitado, alivia o desconforto e o acúmulo de líquido, principalmente nos estágios mais avançados.</li>
+  <li><strong>Atividade física adaptada:</strong> exercícios na água, caminhada, bicicleta e treino de força de baixo impacto. Mexer-se diminui a dor; o sedentarismo piora.</li>
+  <li><strong>Alimentação anti-inflamatória</strong> e controle do peso quando há obesidade junto: reduz a sobrecarga nos tecidos e a inflamação, sem eliminar o lipedema em si.</li>
+  <li><strong>Medicamentos:</strong> em casos selecionados, recursos para dor e, quando há obesidade associada, tratamento medicamentoso da obesidade, inclusive injetáveis, decidido caso a caso. <a href="/blog/glp1-medicamentos-injetaveis-emagrecer">Entenda como agem</a>.</li>
+  <li><strong>Cirurgia:</strong> lipoaspiração específica para lipedema, que preserva os vasos linfáticos, indicada quando o tratamento conservador bem feito não controla os sintomas. É feita por cirurgião com experiência na doença, com encaminhamento da médica que acompanha.</li>
+  <li><strong>Apoio psicológico:</strong> anos de diagnóstico errado e de culpa deixam marcas; cuidar disso faz parte do tratamento.</li>
 </ul>
-<h2>Avaliação e acompanhamento em Florianópolis</h2>
-<p>A Dra. Isabel Aragão (CRM-SC 26139) atende em São José/SC e realiza avaliação de composição corporal e análise clínica para pacientes que suspeitam de lipedema ou que já têm diagnóstico e buscam acompanhamento médico estruturado. O objetivo é identificar corretamente a condição e montar um plano adequado para cada caso — não um protocolo genérico de emagrecimento.</p>`,
+
+<h2>Lipedema e os medicamentos para emagrecer</h2>
+<p>Uma dúvida frequente: a tirzepatida ou a semaglutida "tratam" o lipedema? Não diretamente. O que elas tratam é a obesidade, e quando as duas doenças coexistem, reduzir a gordura geral costuma diminuir a dor e a inflamação das pernas. A gordura do lipedema em si responde menos. Cada caso é um caso: a indicação do medicamento segue os critérios da obesidade (IMC, doenças associadas, histórico) e é avaliada em consulta, nunca como "remédio para lipedema".</p>
+
+<h2>Avaliação e acompanhamento em Florianópolis e São José</h2>
+<p>A Dra. Isabel Aragão (CRM-SC 26139) atende em São José/SC, na Grande Florianópolis, e realiza avaliação clínica e de composição corporal para pacientes que suspeitam de lipedema ou que já têm diagnóstico e buscam acompanhamento estruturado. O objetivo é identificar corretamente a condição, definir o estágio, montar um plano para o caso e, quando houver indicação, encaminhar para cirurgia. Também atende online para quem mora longe.</p>
+`,
   },
   {
     slug: 'aplicacao-injecao-emagrecer-sao-jose',
