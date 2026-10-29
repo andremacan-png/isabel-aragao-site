@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import Image from 'next/image'
 import { capaDoPost, AVATAR } from '@/lib/blog/imagens'
+import Simulador from '@/components/Simulador'
 import { POSTS, getPost, getRelatedPosts } from '@/lib/blog/posts'
 import { publicadoEm, atualizadoEm } from '@/lib/blog/lastmod'
 import { TEMAS, temaDoPost, postsDoTema } from '@/lib/blog/temas'
@@ -174,8 +175,11 @@ export default async function BlogPost({ params }: Props) {
   const irmaos = tema ? postsDoTema(tema).filter((p) => p.slug !== post.slug).slice(0, 6) : []
   const waMid = waForPost(post.title)
 
-  // Split content at <!--CTA--> marker
+  // Split content at <!--CTA--> marker; <!--SIMULADOR--> (opcional) coloca o simulador compacto no ponto do texto
   const [before, after] = post.content.split('<!--CTA-->')
+  const temSimulador = post.content.includes('<!--SIMULADOR-->')
+  const [beforeA, beforeB] = (before ?? '').split('<!--SIMULADOR-->')
+  const [afterA, afterB] = (after ?? '').split('<!--SIMULADOR-->')
 
   // JSON-LD: Article + FAQPage (quando o post tem faq) — ajuda snippet/rich results
   const url = `https://isabelaragao.com.br/blog/${post.slug}`
@@ -265,8 +269,14 @@ export default async function BlogPost({ params }: Props) {
               {/* CONTENT BEFORE CTA */}
               <div
                 className="bp-content"
-                dangerouslySetInnerHTML={{ __html: before ?? '' }}
+                dangerouslySetInnerHTML={{ __html: beforeA ?? '' }}
               />
+              {temSimulador && beforeB !== undefined && (
+                <>
+                  <Simulador compacto />
+                  <div className="bp-content" dangerouslySetInnerHTML={{ __html: beforeB }} />
+                </>
+              )}
 
               {/* MID-ARTICLE CTA */}
               <div className="bp-cta-box">
@@ -278,10 +288,18 @@ export default async function BlogPost({ params }: Props) {
 
               {/* CONTENT AFTER CTA */}
               {after && (
-                <div
-                  className="bp-content"
-                  dangerouslySetInnerHTML={{ __html: after }}
-                />
+                <>
+                  <div
+                    className="bp-content"
+                    dangerouslySetInnerHTML={{ __html: afterA }}
+                  />
+                  {temSimulador && afterB !== undefined && (
+                    <>
+                      <Simulador compacto />
+                      <div className="bp-content" dangerouslySetInnerHTML={{ __html: afterB }} />
+                    </>
+                  )}
+                </>
               )}
 
               {/* CTA FINAL */}
@@ -379,6 +397,7 @@ export default async function BlogPost({ params }: Props) {
 
             <div className="bp-sb-hub">
               <div className="bp-sb-hub-title">Ferramentas e guias</div>
+              <Link href="/simulador-perda-de-peso">Simulador de perda de peso</Link>
               <Link href="/calculadora-imc">Calculadora de IMC</Link>
               <Link href="/blog/quanto-emagrece-com-injetavel">Quanto dá pra emagrecer com injetável</Link>
               <Link href="/blog/como-ler-resultado-bioimpedancia">Como ler a bioimpedância</Link>

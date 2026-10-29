@@ -23,7 +23,7 @@ export const TEMAS: Tema[] = [
     metaDesc: 'Tudo sobre tirzepatida e Mounjaro: como age, em quanto tempo faz efeito, efeitos colaterais, receita, comparação com Ozempic e onde aplicar na Grande Florianópolis.',
     resumo: 'Como age, em quanto tempo faz efeito, efeitos colaterais, receita e aplicação.',
     resposta: 'A tirzepatida, vendida como Mounjaro, é um medicamento injetável semanal aprovado pela Anvisa para diabetes tipo 2 e para obesidade. Ela age em dois hormônios do apetite (GLP-1 e GIP), reduz a fome e a velocidade com que o estômago esvazia. Exige receita, acompanhamento médico e, na obesidade, faz parte de um tratamento que inclui alimentação, atividade física e revisão de outras causas de ganho de peso.',
-    intro: 'Os artigos abaixo foram escritos pela Dra. Isabel Aragão (CRM-SC 26139) e estão em ordem de leitura: primeiro o que o medicamento é e o que esperar, depois efeitos colaterais e dúvidas práticas, por fim onde fazer o acompanhamento e a aplicação na Grande Florianópolis. A clínica não vende o medicamento: a paciente compra na farmácia com a receita.',
+    intro: 'Os artigos abaixo foram escritos pela Dra. Isabel Aragão (CRM-SC 26139) e estão em ordem de leitura: primeiro o que o medicamento é e o que esperar, depois efeitos colaterais e dúvidas práticas, por fim onde fazer o acompanhamento e a aplicação na Grande Florianópolis. A clínica não vende o medicamento: a paciente compra na farmácia com a receita. Para ver a perda esperada com os seus números, use o simulador de perda de peso em /simulador-perda-de-peso.',
     posts: [
       'glp1-medicamentos-injetaveis-emagrecer',
       'quanto-tempo-mounjaro-faz-efeito',

@@ -353,6 +353,8 @@ export const POSTS_2: Post[] = [
 
 <h2>O custo ao longo dos meses</h2>
 <p>Como a dose sobe aos poucos, o custo também sobe. Um cenário comum, seguindo o esquema da bula e com os preços do programa:</p>
+<p><strong>Quer ver com os seus números?</strong> Use o <a href="/simulador-perda-de-peso">simulador de perda de peso</a> ou simule aqui mesmo:</p>
+<!--SIMULADOR-->
 <ul>
   <li><strong>Mês 1 (2,5 mg):</strong> cerca de R$ 1.400 de medicamento, mais a primeira consulta e os exames.</li>
   <li><strong>Mês 2 (5 mg):</strong> cerca de R$ 1.760.</li>
@@ -632,6 +634,8 @@ export const POSTS_2: Post[] = [
 
 <h2>Primeiro, o que é esperado</h2>
 <p>A curva de perda de peso com tirzepatida não é uma linha reta. Nos estudos de 72 semanas, a queda é mais acentuada nos primeiros 6 meses, desacelera depois e estabiliza perto do fim: a maioria dos participantes atingiu um platô entre o sexto e o nono mês na dose de manutenção, e quase todos até a semana 72. Platô, nesse contexto, não é falha: é o novo ponto de equilíbrio do corpo naquela dose, com aquele estilo de vida. <a href="/blog/quanto-tempo-mounjaro-faz-efeito">Veja a evolução esperada semana a semana</a>.</p>
+<p><strong>Quer ver com os seus números?</strong> Use o <a href="/simulador-perda-de-peso">simulador de perda de peso</a> ou simule aqui mesmo:</p>
+<!--SIMULADOR-->
 
 <h2>Por que o emagrecimento desacelera</h2>
 <ul>

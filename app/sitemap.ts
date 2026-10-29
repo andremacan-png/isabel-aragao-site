@@ -14,6 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/saude`, lastModified: '2026-06-15', changeFrequency: 'monthly', priority: 0.9 },
     { url: `${BASE}/emagrecimento`, lastModified: '2026-06-15', changeFrequency: 'monthly', priority: 0.9 },
     { url: `${BASE}/blog`, lastModified: '2026-10-29', changeFrequency: 'weekly', priority: 0.7 }, // índice por temas
+    { url: `${BASE}/simulador-perda-de-peso`, lastModified: '2026-10-29', changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/calculadora-imc`, lastModified: '2026-09-03', changeFrequency: 'monthly', priority: 0.8 },
     // /politica é noindex de propósito (política de privacidade) → NÃO entra no sitemap
     // (sitemap deve listar só páginas indexáveis; senão o GSC alerta "Excluída pela tag noindex").

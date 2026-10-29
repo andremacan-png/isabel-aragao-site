@@ -459,6 +459,8 @@ export const POSTS: Post[] = [
 
 <h2>Com e sem medicação: o que muda no ritmo</h2>
 <p>Sem medicação, com alimentação ajustada, atividade física e acompanhamento, a referência é a da tabela: 2 a 4 kg por mês para a maioria, com o ritmo caindo ao longo dos meses.</p>
+<p><strong>Quer ver com os seus números?</strong> Use o <a href="/simulador-perda-de-peso">simulador de perda de peso</a> ou simule aqui mesmo:</p>
+<!--SIMULADOR-->
 <p>Com medicamentos injetáveis como a semaglutida e a tirzepatida, sob prescrição e acompanhamento, o ritmo costuma ficar dentro da mesma faixa saudável, mas se mantém por mais tempo. Nos estudos, a perda média fica ao redor de 5% do peso nos primeiros 3 meses, chega a 10% a 12% por volta dos 6 meses nas doses de manutenção e continua até 12 a 18 meses, quando tende a estabilizar. Para 90 kg, 5% em 3 meses são cerca de 4,5 kg, ou 1,5 kg por mês: um ritmo tranquilo, não uma corrida. Se quiser entender como a dose influencia o tempo de resposta, veja <a href="/blog/quanto-tempo-mounjaro-faz-efeito">em quanto tempo o Mounjaro faz efeito</a> e <a href="/blog/quanto-emagrece-com-injetavel">quanto dá para emagrecer com injetável</a>.</p>
 
 <h2>O primeiro mês engana</h2>
@@ -1242,6 +1244,8 @@ export const POSTS: Post[] = [
 
 <h3>De 6 meses a 1 ano e meio</h3>
 <p>O ritmo de perda desacelera naturalmente, e isso não é falha do medicamento: quanto menos peso sobra para perder, mais devagar ele sai. No estudo SURMOUNT-1, com 72 semanas de tratamento, a perda média foi de 15% com 5 mg, 19,5% com 10 mg e 20,9% com 15 mg, contra 3,1% no grupo que recebeu placebo e fez só mudança de hábitos. O resultado tende a se estabilizar entre 12 e 18 meses.</p>
+<p><strong>Quer ver com os seus números?</strong> Use o <a href="/simulador-perda-de-peso">simulador de perda de peso</a> ou simule aqui mesmo:</p>
+<!--SIMULADOR-->
 
 <h2>O efeito por dose</h2>
 <table>
@@ -1608,6 +1612,8 @@ export const POSTS: Post[] = [
 <p>Por isso, qualquer clínica ou vendedor que promete "tantos quilos garantidos" está enganando. Resultado não se promete: se acompanha.</p>
 <h2>O que os estudos observam (a média, não a sua)</h2>
 <p>Nos grandes estudos clínicos, os participantes que usaram essas medicações <strong>com acompanhamento e por tempo suficiente</strong> tiveram, em média, uma redução relevante do peso corporal ao longo de mais de um ano de tratamento contínuo, em geral bem maior do que a de quem tentou só com mudança de hábitos. A tirzepatida costuma mostrar resultados um pouco mais expressivos que a semaglutida nos estudos que compararam as duas.</p>
+<p><strong>Quer ver com os seus números?</strong> Use o <a href="/simulador-perda-de-peso">simulador de perda de peso</a> ou simule aqui mesmo:</p>
+<!--SIMULADOR-->
 <p>Mas atenção: isso é a <em>média de milhares de pessoas</em>. A sua perda pode ser maior ou menor. E, tão importante quanto o número na balança, é <a href="/blog/perda-de-peso-saudavel-quantos-kg-por-mes">o ritmo saudável de emagrecer</a> e a qualidade da perda (gordura, não músculo), que só a bioimpedância mostra.</p>
 <!--CTA-->
 <h2>O efeito não é imediato, e isso é bom</h2>

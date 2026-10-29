@@ -717,6 +717,7 @@ export default function Home() {
               </div>
               <div className="text-white font-semibold mb-2 text-xs tracking-wider uppercase">Guias e ferramentas</div>
               <div className="flex flex-wrap gap-x-4 gap-y-1">
+                <a href="/simulador-perda-de-peso" className="hover:text-white transition-colors">Simulador de perda de peso</a>
                 <a href="/calculadora-imc" className="hover:text-white transition-colors">Calculadora de IMC</a>
                 <Link prefetch={false} href="/blog/quanto-emagrece-com-injetavel" className="hover:text-white transition-colors">Quanto dá pra emagrecer com injetável</Link>
                 <Link prefetch={false} href="/blog/perda-de-peso-saudavel-quantos-kg-por-mes" className="hover:text-white transition-colors">Quantos kg por mês é saudável</Link>

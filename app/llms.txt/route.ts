@@ -39,6 +39,7 @@ export function GET() {
 - [Serviços da clínica, endereço e horário](${SITE}/servicos)
 - [Tratamento para emagrecer](${SITE}/emagrecimento)
 - [Saúde e emagrecimento](${SITE}/saude)
+- [Simulador de perda de peso com tirzepatida e semaglutida (médias dos estudos por dose)](${SITE}/simulador-perda-de-peso)
 - [Calculadora de IMC](${SITE}/calculadora-imc)
 - [Blog](${SITE}/blog)
 
