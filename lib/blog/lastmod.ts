@@ -6,6 +6,7 @@
 // Ao editar o conteúdo de um post, atualize ATUALIZADO[slug]. Post novo: entra sozinho pelo fallback.
 
 const PUBLICADO: Record<string, string> = {
+  'quanto-custa-tratamento-mounjaro-tirzepatida': '2026-10-29',
   'bioimpedancia-o-que-e': '2026-10-29', // resposta rápida + FAQ (padrão 2.0)
   'bioimpedancia-sao-jose-sc': '2026-07-15',
   'como-escolher-medico-emagrecimento': '2026-07-15',

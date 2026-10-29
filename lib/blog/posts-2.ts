@@ -283,4 +283,84 @@ export const POSTS_2: Post[] = [
 <p>Já emagreceu e recuperou mais de uma vez; cada tentativa parece mais difícil que a anterior; perde peso rápido e recupera mais rápido ainda; a fome depois da dieta é maior do que antes dela. Se reconheceu dois ou mais, o problema não é você. É o método.</p>
 <p>A Dra. Isabel Aragão (CRM-SC 26139) atende em São José/SC e <a href="/blog/medica-emagrecimento-florianopolis">Florianópolis</a> e região, presencialmente e online, com avaliação completa, bioimpedância e <a href="/blog/como-funciona-acompanhamento-medico-emagrecimento">acompanhamento de perto</a>, inclusive na fase de manutenção. Se quiser saber <a href="/blog/quando-procurar-medico-para-emagrecer">quando procurar um médico para emagrecer</a>, o momento costuma ser exatamente este: quando a repetição já mostrou que a dieta sozinha não resolve.</p>`,
   },
+  {
+    slug: 'quanto-custa-tratamento-mounjaro-tirzepatida',
+    num: 40,
+    title: 'Quanto Custa o Tratamento com Mounjaro (Tirzepatida) por Mês?',
+    shortTitle: 'Quanto Custa o Mounjaro por Mês',
+    intro: 'De onde vem o custo do tratamento com tirzepatida: preço por dose no programa do laboratório, como ele muda ao longo dos meses, caneta multidose, genérico e como gastar menos com segurança.',
+    category: 'Medicamentos',
+    readTime: '7 min',
+    date: 'Outubro 2026',
+    metaDesc: 'Quanto custa o Mounjaro por mês: de R$ 1.400 (2,5 mg) a R$ 3.500 (15 mg) no programa do laboratório, o que entra além do remédio, multidose, genérico e como gastar menos com segurança.',
+    related: ['quanto-tempo-mounjaro-faz-efeito', 'mounjaro-ou-ozempic-qual-escolher', 'precisa-de-receita-mounjaro-tirzepatida', 'tirzepatida-florianopolis'],
+    faq: [
+      { q: 'Quanto custa o Mounjaro por mês?', a: 'Depende da dose. No programa de desconto do laboratório, a caixa com 4 canetas vai de cerca de R$ 1.400 (2,5 mg) a R$ 3.500 (15 mg), segundo referências de 2026. O preço máximo ao consumidor chega a R$ 3.811 e varia por estado. Confira na farmácia no dia, porque os valores mudam.' },
+      { q: 'Qual dose a maioria das pessoas usa na manutenção?', a: 'Cada caso é um caso: a dose de manutenção depende da resposta, da tolerância e do histórico, avaliados em consulta. Conforme a bula, as doses de manutenção recomendadas são 5, 10 ou 15 mg; muitas pacientes ficam em 5 ou 7,5 mg, o que mantém o custo mensal mais baixo.' },
+      { q: 'Existe Mounjaro genérico?', a: 'Não. Não há tirzepatida genérica registrada na Anvisa. Produtos vendidos pela internet como tirzepatida sem registro são irregulares e foram alvo de apreensão pela Anvisa em outubro de 2026.' },
+      { q: 'Plano de saúde cobre o Mounjaro?', a: 'Em geral não cobre medicamentos de uso em casa; cobre consultas e exames conforme o contrato. Vale confirmar com a operadora. No SUS não há tirzepatida; a semaglutida está em projeto-piloto.' },
+      { q: 'A clínica vende o medicamento?', a: 'Não. A médica prescreve e a paciente compra na farmácia com a receita, com o desconto do programa do laboratório. A clínica orienta a não comprar de sites sem registro.' },
+      { q: 'A semaglutida genérica é uma opção mais barata?', a: 'Pode ser, para parte das pacientes. A Anvisa registrou os primeiros genéricos da semaglutida em agosto de 2026, com preço anunciado bem menor. Se é adequada para o seu caso, é uma decisão médica, baseada no histórico e nas doenças associadas, não só no preço.' },
+    ],
+    content: `
+<div class="resposta"><strong>Resposta rápida:</strong> o medicamento é a maior parte do custo. No programa de desconto do laboratório, uma caixa com 4 canetas de Mounjaro (um mês) vai de cerca de <strong>R$ 1.400 na dose de 2,5 mg a R$ 3.500 na dose de 15 mg</strong>, e o preço máximo ao consumidor chega a R$ 3.811 por caixa, variando com o imposto de cada estado. A isso se soma a consulta médica, os exames e, se quiser, a aplicação na clínica. Cada caso é um caso: a dose de manutenção, e portanto o custo mensal, depende da resposta de cada paciente, definida em consulta. <a href="/blog/tema/tirzepatida-mounjaro">Veja o guia completo sobre tirzepatida</a>.</div>
+<p>Preço é uma das perguntas mais feitas por quem pensa em tratar a obesidade com tirzepatida, e uma das menos respondidas com clareza. Este artigo explica de onde vem o custo, como ele muda ao longo dos meses e o que dá para fazer para gastar menos sem abrir mão da segurança. Os valores são referências públicas de 2026 e mudam com frequência: confira na farmácia no dia da compra. Nada aqui é oferta nem venda: a clínica não comercializa o medicamento.</p>
+
+<h2>De onde vem o custo do tratamento</h2>
+<p>O custo mensal tem quatro partes, e só a primeira é obrigatória todo mês:</p>
+<ul>
+  <li><strong>O medicamento</strong>, comprado na farmácia com receita. É a parcela maior.</li>
+  <li><strong>A consulta médica</strong>: a primeira, de cerca de 90 minutos com bioimpedância, e as revisões mensais ou bimestrais.</li>
+  <li><strong>Exames de sangue</strong> no início e periodicamente, pelo plano de saúde ou particulares.</li>
+  <li><strong>Aplicação na clínica</strong>, opcional. A maioria aplica em casa depois da orientação.</li>
+</ul>
+
+<h2>Quanto custa o Mounjaro por dose</h2>
+<p>O Mounjaro é vendido em caixas com 4 canetas, uma por semana, ou seja, uma caixa por mês. O laboratório mantém um programa de desconto gratuito, o Lilly Melhor Para Você, com preços menores que o teto de farmácia. Referências publicadas em 2026:</p>
+<table>
+  <thead><tr><th>Dose semanal</th><th>Programa do laboratório (site)</th><th>Programa (loja física)</th><th>Preço máximo ao consumidor</th></tr></thead>
+  <tbody>
+    <tr><td>2,5 mg (mês 1)</td><td>R$ 1.406,75</td><td>R$ 1.506,76</td><td>até R$ 1.907 (18% de ICMS)</td></tr>
+    <tr><td>5 mg (a partir do mês 2)</td><td>cerca de R$ 1.760</td><td>cerca de R$ 1.860</td><td>até R$ 2.384 (18% de ICMS)</td></tr>
+    <tr><td>7,5 a 12,5 mg</td><td>entre R$ 1.760 e R$ 3.499</td><td>entre R$ 1.860 e R$ 3.599</td><td>até R$ 3.811</td></tr>
+    <tr><td>15 mg (dose máxima)</td><td>R$ 3.499,00</td><td>R$ 3.599,00</td><td>até R$ 3.811,36</td></tr>
+  </tbody>
+</table>
+<p>Fontes: tabela do programa do laboratório reproduzida pelo <a href="https://www.mdsaude.com/bulas/tirzepatida-mounjaro/" rel="nofollow">MD.Saúde (atualizado em 31/03/2026)</a> e preços de lançamento publicados pela <a href="https://istoedinheiro.com.br/anvisa-aprova-mounjaro-obesidade-veja-precos" rel="nofollow">IstoÉ Dinheiro</a>. O teto varia por estado conforme o ICMS; em Santa Catarina a alíquota é diferente da usada nos exemplos. Redes de farmácia praticam descontos próprios por CPF, e a diferença entre redes para a mesma caixa pode passar de algumas centenas de reais.</p>
+
+<h2>O custo ao longo dos meses</h2>
+<p>Como a dose sobe aos poucos, o custo também sobe. Um cenário comum, seguindo o esquema da bula e com os preços do programa:</p>
+<ul>
+  <li><strong>Mês 1 (2,5 mg):</strong> cerca de R$ 1.400 de medicamento, mais a primeira consulta e os exames.</li>
+  <li><strong>Mês 2 (5 mg):</strong> cerca de R$ 1.760.</li>
+  <li><strong>Meses 3 a 4 (7,5 a 10 mg, se necessário):</strong> entre R$ 1.760 e R$ 3.500, dependendo da dose.</li>
+  <li><strong>Manutenção:</strong> na dose em que a paciente ficou. Muita gente se mantém em 5 ou 7,5 mg; quem precisa de 15 mg chega a R$ 3.500 por mês.</li>
+</ul>
+<p>É por isso que a dose certa importa também no bolso: a menor dose que controla o apetite com efeitos colaterais toleráveis é a meta clínica e a mais econômica. Essa decisão é individual e revista em cada consulta. <a href="/blog/quanto-tempo-mounjaro-faz-efeito">Veja como o efeito evolui por dose</a>.</p>
+<!--CTA-->
+
+<h2>Caneta multidose: o que muda</h2>
+<p>Em março de 2026 a Anvisa aprovou a versão multidose do Mounjaro (KwikPen), em que uma única caneta fornece 4 doses, para diabetes tipo 2 (<a href="https://portal.afya.com.br/saude/anvisa-aprova-versao-multidose-do-mounjaro-para-diabetes-tipo-2" rel="nofollow">Portal Afya</a>). A chegada às farmácias e o preço dependem da definição da CMED, a câmara que regula preços de medicamentos no Brasil. Em outros países a multidose costuma custar menos por dose do que as 4 canetas separadas, mas ainda não há preço oficial brasileiro para citar.</p>
+
+<h2>Existe genérico? E a semaglutida mais barata?</h2>
+<p>Não existe tirzepatida genérica registrada na Anvisa. Produtos vendidos na internet como "tirzepatida" sem registro são irregulares, e a Anvisa determinou a apreensão deles em 14 de outubro de 2026 (<a href="https://forbes.com.br/forbes-saude/2026/10/anvisa-proibe-canetas-emagrecedoras-sem-registro-vendidas-na-internet/" rel="nofollow">Forbes</a>). Não há como saber o que há dentro dessas canetas.</p>
+<p>A semaglutida (o princípio ativo do Ozempic e do Wegovy) é outra história: a Anvisa registrou os primeiros genéricos em agosto de 2026, e a versão sintética da EMS foi anunciada por R$ 333 no programa de fidelidade do laboratório (<a href="https://forbes.com.br/forbes-saude/2026/08/anvisa-autoriza-primeiro-generico-de-semaglutida-em-caneta-no-brasil/" rel="nofollow">Forbes</a>). Para parte das pacientes, a semaglutida é uma alternativa adequada e mais barata; para outras, a tirzepatida continua sendo a melhor escolha. Isso se decide na consulta, pelo histórico, pelas doenças associadas e pela resposta, não pelo preço sozinho. <a href="/blog/mounjaro-ou-ozempic-qual-escolher">Entenda a diferença entre os dois</a>.</p>
+
+<h2>Plano de saúde e SUS cobrem?</h2>
+<p>Em geral, os planos de saúde não cobrem medicamentos de uso domiciliar como o Mounjaro; cobrem a consulta e os exames conforme o contrato. No SUS, a semaglutida está em um projeto-piloto com 250 pacientes no Rio Grande do Sul desde junho de 2026 (<a href="https://agenciabrasil.ebc.com.br/saude/noticia/2026-06/ministerio-da-saude-inicia-projeto-piloto-com-semaglutida-no-sus" rel="nofollow">Agência Brasil</a>); não há oferta de tirzepatida na rede pública.</p>
+
+<h2>Como gastar menos com segurança</h2>
+<ul>
+  <li><strong>Cadastre-se no programa do laboratório.</strong> É gratuito e o desconto é relevante em todas as doses.</li>
+  <li><strong>Compare redes.</strong> Peça o preço com CPF em duas ou três farmácias; a diferença existe.</li>
+  <li><strong>Fique na menor dose eficaz.</strong> Subir dose por ansiedade custa mais e não acelera o resultado.</li>
+  <li><strong>Não compre de site sem registro nem "manipulado".</strong> O risco é de saúde e de dinheiro: muitas vezes não há substância ativa, e a Anvisa está apreendendo esses produtos.</li>
+  <li><strong>Não divida nem reaproveite canetas</strong> para "render mais". Erro de dose é comum e perigoso.</li>
+  <li><strong>Planeje a manutenção antes.</strong> Parar de uma vez quando o dinheiro aperta costuma devolver parte do peso. Em consulta dá para planejar redução de dose, espaçamento ou troca de medicamento.</li>
+</ul>
+
+<h2>O custo que a balança não mostra</h2>
+<p>Comparar o preço do medicamento com o preço de não tratar faz parte da conversa: a obesidade cobra em consultas, exames, remédios para pressão, glicose e colesterol, e em qualidade de vida. Não existe resposta única sobre valer a pena; existe a sua conta, feita com a médica, a partir do seu quadro. A Dra. Isabel Aragão (CRM-SC 26139) atende em São José/SC e online, faz a avaliação completa com bioimpedância antes de qualquer prescrição e acompanha o tratamento ajustando a dose, inclusive pensando no custo. A clínica não vende o medicamento: a paciente compra na farmácia com a receita.</p>
+`,
+  },
 ]

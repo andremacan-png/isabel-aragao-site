@@ -31,6 +31,7 @@ export const TEMAS: Tema[] = [
       'mounjaro-ou-ozempic-qual-escolher',
       'efeitos-colaterais-mounjaro-tirzepatida',
       'precisa-de-receita-mounjaro-tirzepatida',
+      'quanto-custa-tratamento-mounjaro-tirzepatida',
       'tirzepatida-florianopolis',
       'mounjaro-florianopolis',
       'aplicacao-tirzepatida-sao-jose',
