@@ -672,7 +672,7 @@ export const POSTS: Post[] = [
     faq: [
       { q: 'A clínica vende a tirzepatida?', a: 'Não. A médica prescreve e a paciente compra na farmácia com a receita. Produtos vendidos como "tirzepatida" sem registro na Anvisa são irregulares.' },
       { q: 'Preciso ir a São José toda semana?', a: 'Não. A aplicação pode ser feita em casa, após orientação. Quem prefere aplica na clínica com a enfermeira. As consultas de revisão são mensais ou bimestrais.' },
-      { q: 'Quanto tempo até fazer efeito?', a: 'O apetite costuma mudar nas primeiras semanas; a mudança na balança e na composição corporal se consolida em 3 a 6 meses, porque a dose sobe aos poucos.' },
+      { q: 'Quanto tempo até fazer efeito?', a: 'Depende de cada caso, mas usualmente o apetite muda nas primeiras semanas e a mudança na balança e na composição corporal se consolida em 3 a 6 meses, porque a dose sobe aos poucos, conforme a bula e os estudos. A evolução é acompanhada em consulta.' },
       { q: 'Atende online?', a: 'Sim, para pacientes de outras cidades. A bioimpedância, por exigir o aparelho, é feita na clínica.' },
     ],
     content: `
@@ -717,10 +717,10 @@ export const POSTS: Post[] = [
       { q: 'Mounjaro e tirzepatida são o mesmo remédio?', a: 'Sim. Tirzepatida é o princípio ativo e Mounjaro é a marca. Na receita e na farmácia os dois nomes podem aparecer.' },
       { q: 'Onde comprar Mounjaro em Florianópolis?', a: 'Em farmácias, com receita médica. A clínica não vende o medicamento e orienta a não comprar de sites sem registro.' },
       { q: 'Posso usar Mounjaro sem ter diabetes?', a: 'Sim, quando há indicação para obesidade ou sobrepeso com doença associada. A Anvisa aprovou o uso para obesidade em 2025. A avaliação define se é o seu caso.' },
-      { q: 'Qual é a primeira dose?', a: 'O tratamento começa com 2,5 mg por semana e sobe a cada 4 semanas conforme a tolerância, até a dose de manutenção definida pela médica.' },
+      { q: 'Qual é a primeira dose?', a: 'Cada caso é um caso: a dose depende do histórico, de uso anterior, de reações e de outras condições, avaliados na consulta. Usualmente, conforme a bula e os protocolos dos estudos, o tratamento começa com 2,5 mg por semana durante 4 semanas e sobe de forma gradual, até a dose de manutenção definida pela médica.' },
     ],
     content: `
-<div class="resposta"><strong>Resposta rápida:</strong> Mounjaro é o nome comercial da tirzepatida, injetável semanal da Eli Lilly aprovado pela Anvisa para diabetes tipo 2 e obesidade. Quem busca Mounjaro em Florianópolis encontra prescrição e acompanhamento com a Dra. Isabel Aragão (CRM-SC 26139) em São José, ao lado da Ilha, com avaliação por bioimpedância antes de qualquer receita. <a href="/blog/quanto-tempo-mounjaro-faz-efeito">Veja em quanto tempo ele faz efeito</a>.</div>
+<div class="resposta"><strong>Resposta rápida:</strong> Mounjaro é o nome comercial da tirzepatida, injetável semanal da Eli Lilly aprovado pela Anvisa para diabetes tipo 2 e obesidade. Quem busca Mounjaro em Florianópolis encontra prescrição e acompanhamento com a Dra. Isabel Aragão (CRM-SC 26139) em São José, com avaliação por bioimpedância antes de qualquer receita. <a href="/blog/quanto-tempo-mounjaro-faz-efeito">Veja em quanto tempo ele faz efeito</a>.</div>
 <p>O Mounjaro é o nome de marca da tirzepatida — medicamento injetável desenvolvido pelo laboratório Eli Lilly para o tratamento de obesidade e diabetes tipo 2. Se você está buscando Mounjaro em Florianópolis ou na Grande Florianópolis, este artigo explica o que está disponível e o que envolve iniciar o tratamento.</p>
 <h2>Mounjaro e tirzepatida: é o mesmo medicamento</h2>
 <p>Sim. Mounjaro é o nome comercial — a molécula ativa é a tirzepatida. As duas denominações circulam: médicos e pacientes com mais familiaridade com a literatura científica tendem a usar "tirzepatida"; a maioria dos pacientes busca pelo nome de marca. É importante saber isso porque na receita médica e na farmácia podem aparecer ambos os nomes.</p>
@@ -962,7 +962,7 @@ export const POSTS: Post[] = [
     related: ['tirzepatida-florianopolis', 'ozempic-florianopolis-prescricao', 'mounjaro-florianopolis', 'glp1-medicamentos-injetaveis-emagrecer'],
     faq: [
       { q: 'Qual emagrece mais: Mounjaro ou Ozempic?', a: 'Na média dos estudos, o Mounjaro. Em um estudo comparativo direto, a tirzepatida levou a uma perda de peso maior que a semaglutida ao longo de 72 semanas. A resposta individual varia.' },
-      { q: 'Posso trocar um pelo outro no meio do tratamento?', a: 'Pode, com orientação médica, por exemplo quando a resposta é insuficiente ou os efeitos colaterais não melhoram. A troca é feita com ajuste de dose.' },
+      { q: 'Posso trocar um pelo outro no meio do tratamento?', a: 'Em geral sim, com orientação médica, por exemplo quando a resposta é insuficiente ou os efeitos colaterais não melhoram. Cada caso é avaliado individualmente, e a troca é feita com ajuste de dose conforme a bula e a literatura.' },
       { q: 'Qual tem menos efeitos colaterais?', a: 'Os efeitos são parecidos (náusea, estômago cheio, alteração intestinal) e dependem mais da velocidade de aumento da dose do que do medicamento em si.' },
       { q: 'Qual é mais barato?', a: 'O preço varia com a dose e a apresentação e muda com frequência. Com os genéricos da semaglutida chegando em 2026, a diferença tende a aumentar. A médica considera o custo na escolha.' },
     ],
@@ -1006,7 +1006,7 @@ export const POSTS: Post[] = [
     metaDesc: 'Efeitos colaterais do Mounjaro (tirzepatida): náusea, enjoo e outros sintomas, por que a dose sobe devagar e quando avisar o médico. Dra. Isabel Aragão.',
     related: ['tirzepatida-florianopolis', 'mounjaro-florianopolis', 'mounjaro-ou-ozempic-qual-escolher', 'glp1-medicamentos-injetaveis-emagrecer'],
     faq: [
-      { q: 'Quanto tempo dura a náusea?', a: 'Costuma ser mais forte nos primeiros dias após iniciar ou subir a dose e diminuir em 1 a 2 semanas. Comer menos, mais devagar e evitar gordura ajuda.' },
+      { q: 'Quanto tempo dura a náusea?', a: 'Varia de pessoa para pessoa. Usualmente é mais forte nos primeiros dias após iniciar ou subir a dose e diminui em 1 a 2 semanas, segundo os estudos. Comer menos, mais devagar e evitar gordura ajuda. Se persistir, a conduta é revista em consulta.' },
       { q: 'Mounjaro causa queda de cabelo?', a: 'A queda pode acontecer em emagrecimentos rápidos, por qualquer método, e não é efeito direto do medicamento. Ritmo moderado de perda e proteína adequada reduzem o risco.' },
       { q: 'Posso tomar remédio para enjoo?', a: 'Em alguns casos a médica prescreve. Nunca por conta própria, e nunca pular etapas de dose para acelerar o resultado.' },
       { q: 'Quando devo procurar atendimento?', a: 'Dor abdominal intensa e persistente (principalmente irradiando para as costas), vômitos que impedem de beber água, tontura por desidratação ou inchaço e falta de ar.' },
@@ -1094,38 +1094,112 @@ export const POSTS: Post[] = [
     shortTitle: 'Em Quanto Tempo o Mounjaro Faz Efeito',
     intro: 'Uma das primeiras perguntas de quem começa o Mounjaro é: quando eu vou sentir o efeito? A resposta tem duas partes, e entender isso ajuda a ter expectativas realistas e a não desistir cedo demais.',
     category: 'Medicamentos',
-    readTime: '4 min',
+    readTime: '9 min',
     date: 'Julho 2026',
-    metaDesc: 'Em quanto tempo o Mounjaro faz efeito: o que muda nas primeiras semanas, quando a balança responde e por que a dose sobe por etapas. Dra. Isabel Aragão.',
+    metaDesc: 'Mounjaro (tirzepatida): apetite muda em 1 a 2 semanas; balança responde a partir do 2º mês e segue até 18 meses. Semana a semana, por dose, e o que fazer se não fizer efeito.',
     related: ['quanto-emagrece-com-injetavel', 'precisa-de-receita-mounjaro-tirzepatida', 'mounjaro-florianopolis', 'efeitos-colaterais-mounjaro-tirzepatida', 'perda-de-peso-saudavel-quantos-kg-por-mes'],
     faq: [
-      { q: 'Em quantos dias o Mounjaro começa a fazer efeito?', a: 'O efeito no apetite costuma ser percebido já nos primeiros dias a semanas: menos fome, saciedade mais rápida, menos vontade de beliscar. A mudança na balança vem depois e é gradual.' },
-      { q: 'Com quantas semanas o Mounjaro faz efeito na balança?', a: 'Varia de pessoa para pessoa. Como a dose começa baixa e sobe por etapas ao longo das semanas, a mudança de peso e de composição corporal se constrói ao longo de meses, não de dias. Nada aqui é promessa.' },
-      { q: 'O Mounjaro faz efeito já na primeira dose?', a: 'Algumas pessoas notam redução do apetite logo na primeira semana; outras, um pouco depois. A primeira dose é de adaptação, pensada para o corpo se acostumar com menos efeitos colaterais.' },
-      { q: 'Por que a dose começa baixa e sobe devagar?', a: 'Para reduzir náusea e desconforto e permitir que o organismo se adapte. Subir a dose rápido demais aumenta os efeitos colaterais sem ganho real no resultado.' },
-      { q: 'Quanto tempo dura o tratamento com Mounjaro?', a: 'É individual e definido pelo médico conforme a resposta, os objetivos e a fase de manutenção. O tratamento da obesidade é de longo prazo, e o acompanhamento é o que sustenta o resultado.' },
+      { q: 'Em quantos dias o Mounjaro começa a fazer efeito?', a: 'O efeito no apetite costuma aparecer entre 7 e 14 dias, ainda na dose de 2,5 mg: menos fome, saciedade mais rápida e menos vontade de beliscar. Em algumas pessoas é perceptível já na primeira aplicação.' },
+      { q: 'Com quantas semanas o Mounjaro faz efeito na balança?', a: 'A queda consistente costuma começar entre a 5ª e a 8ª semana, quando a dose passa para 5 mg. No primeiro mês a perda é pequena, em geral de 1 a 3 kg, porque a dose inicial serve para adaptação.' },
+      { q: 'Quanto se perde nos primeiros 3 meses?', a: 'Na média dos estudos, ao redor de 5% do peso inicial. Para 90 kg, algo perto de 4 a 5 kg. A variação individual é grande e os dois extremos podem estar dentro do esperado.' },
+      { q: 'Por que a dose começa baixa e sobe devagar?', a: 'Para o organismo se adaptar com menos náusea e desconforto. Conforme a bula e os estudos, os aumentos acontecem a cada 4 semanas no mínimo, mas o ritmo é individual: depende da tolerância, da resposta e do histórico de cada paciente, avaliados em consulta. Nem todo mundo precisa chegar à dose máxima.' },
+      { q: 'O que fazer se o Mounjaro não estiver fazendo efeito?', a: 'Primeiro, conferir o tempo: com menos de 8 semanas ainda é cedo. Depois, avaliar com a médica a dose, a bioimpedância, a alimentação e o sono. Produto comprado sem registro na Anvisa pode não conter a substância.' },
+      { q: 'Esqueci a aplicação. E agora?', a: 'A orientação da bula é: se passaram até 4 dias do dia previsto, aplique assim que lembrar e mantenha o dia habitual na semana seguinte; se passaram mais de 4 dias, pule a dose e siga no dia normal. Nunca aplique duas doses juntas. Em caso de dúvida, confirme com a médica, porque a conduta pode mudar conforme o seu caso.' },
+      { q: 'Quanto tempo dura o tratamento com Mounjaro?', a: 'A obesidade é crônica e o tratamento é pensado em meses a anos. O resultado tende a se estabilizar entre 12 e 18 meses; a partir daí a médica define a dose de manutenção e o plano para evitar o reganho.' },
     ],
     content: `
-<div class="resposta"><strong>Resposta rápida:</strong> o efeito no <strong>apetite aparece já nas primeiras semanas</strong> (menos fome, saciedade mais rápida). A mudança <strong>na balança e no corpo é gradual e se consolida ao longo de meses</strong>, porque a dose sobe devagar de propósito. A resposta é individual e não é promessa de resultado.</div>
-<p>Entre as dúvidas mais comuns de quem vai começar o Mounjaro (tirzepatida), essa é quase sempre a primeira: em quanto tempo ele começa a fazer efeito? A resposta ajuda a criar expectativas realistas, e isso importa mais do que parece. Muita gente desiste cedo demais por esperar um resultado que ainda não era para ter aparecido.</p>
-<p>Antes de tudo, um aviso: os prazos abaixo são referências gerais, baseadas no que costuma acontecer e no que os estudos observam em grupos de pacientes. A resposta é individual e varia de pessoa para pessoa. Nada aqui é promessa de resultado.</p>
-<h2>O efeito no apetite aparece cedo</h2>
-<p>Há dois tipos de efeito, e eles acontecem em tempos diferentes. O primeiro é o efeito sobre o apetite, e esse costuma ser percebido logo. Já nas primeiras semanas, muitas pessoas relatam:</p>
+<div class="resposta"><strong>Resposta rápida:</strong> o efeito no <strong>apetite aparece já nas primeiras semanas</strong> (menos fome, saciedade mais rápida), ainda na dose inicial de 2,5 mg. A mudança <strong>na balança e no corpo é gradual</strong>: nos estudos, a média fica ao redor de 5% do peso nos primeiros 3 meses e segue caindo até perto de um ano e meio, porque a dose sobe a cada 4 semanas de propósito. A resposta é individual e não é promessa de resultado.</div>
+<p>Entre as dúvidas de quem vai começar o Mounjaro (tirzepatida), essa é quase sempre a primeira: em quanto tempo ele faz efeito? A resposta ajuda a criar expectativas realistas, e isso importa mais do que parece. Muita gente desiste na terceira semana por esperar um resultado que ainda não era para ter aparecido, e outras tantas sobem a dose rápido demais e passam mal sem necessidade.</p>
+<p>Um aviso antes de tudo: os prazos abaixo são referências gerais, baseadas no que costuma acontecer no consultório e no que os estudos observam em grupos de pacientes. A resposta é individual e varia de pessoa para pessoa. Nada aqui é promessa de resultado. Se ainda não leu, vale começar pelo <a href="/blog/tema/tirzepatida-mounjaro">guia completo sobre tirzepatida e Mounjaro</a>.</p>
+
+<h2>Dois efeitos, dois tempos</h2>
+<p>O Mounjaro age em dois hormônios do intestino, o GLP-1 e o GIP. Ele reduz a fome, acelera a saciedade e deixa o estômago esvaziar mais devagar. Isso produz dois efeitos que acontecem em tempos diferentes:</p>
 <ul>
-  <li>Menos fome ao longo do dia</li>
-  <li>Saciedade mais rápida durante as refeições</li>
-  <li>Menos vontade de beliscar entre as refeições</li>
-  <li>Uma relação mais tranquila com a comida, com menos pensamento constante em comer</li>
+  <li><strong>Efeito no apetite:</strong> rápido. Costuma ser percebido nos primeiros 7 a 14 dias, ainda na menor dose.</li>
+  <li><strong>Efeito no corpo:</strong> gradual. A perda de gordura se constrói ao longo de meses, acompanhando a subida da dose, e se consolida entre 12 e 18 meses de tratamento contínuo.</li>
 </ul>
-<p>Esse é o sinal de que o medicamento está agindo. Ele aparece antes de qualquer mudança grande na balança.</p>
-<h2>A mudança no corpo é gradual</h2>
-<p>O segundo efeito, a mudança de composição corporal, é mais lento e progressivo. Isso é proposital e é o jeito saudável de acontecer. O tratamento começa em dose baixa e sobe aos poucos, ao longo de semanas, justamente para o organismo se adaptar com menos efeitos colaterais. É por isso que o resultado se constrói ao longo de meses, não de dias.</p>
-<p>Nos estudos clínicos, os resultados mais expressivos de composição corporal se consolidam ao longo de vários meses de tratamento contínuo. Querer antecipar isso subindo a dose rápido demais só aumenta o desconforto, sem ganho real. Se a sua dúvida também é <a href="/blog/quanto-emagrece-com-injetavel">quanto dá pra emagrecer</a>, a lógica é a mesma: o resultado é individual e se constrói com o tempo.</p>
+<p>Quem entende essa diferença não desanima cedo nem tenta acelerar. O resto deste artigo detalha o que esperar em cada fase.</p>
+
+<h2>Semana a semana: o que costuma acontecer</h2>
+<h3>Semanas 1 a 4 (dose inicial, 2,5 mg)</h3>
+<p>A primeira dose é a menor, e ela existe para o organismo se adaptar, não para emagrecer. Mesmo assim, a maioria das pessoas nota já na primeira ou segunda semana:</p>
+<ul>
+  <li>Menos fome ao longo do dia e menos vontade de beliscar</li>
+  <li>Saciedade mais rápida nas refeições, com o prato de sempre sobrando</li>
+  <li>Menos pensamento constante em comida</li>
+  <li>Em algumas pessoas, náusea leve e sensação de estômago cheio, principalmente nos primeiros dias após a aplicação</li>
+</ul>
+<p>Na balança, o primeiro mês costuma mostrar uma queda pequena, muitas vezes de 1 a 3 kg, em parte por água e pela redução do volume de comida. É normal ser pouco. O medicamento ainda está na dose de adaptação.</p>
+
+<h3>Semanas 5 a 8 (5 mg)</h3>
+<p>Com o aumento para 5 mg, o efeito no apetite fica mais estável ao longo da semana. É aqui que muita gente diz que "agora sim" sentiu diferença. A perda de peso passa a ser mais consistente, e a bioimpedância já consegue mostrar se a queda está vindo de gordura, que é o objetivo, ou de músculo, que é o que se quer evitar.</p>
+<p>Os efeitos colaterais podem voltar por alguns dias logo após cada aumento de dose. Isso é esperado e costuma passar em uma ou duas semanas. <a href="/blog/efeitos-colaterais-mounjaro-tirzepatida">Veja o que é normal e o que merece atenção</a>.</p>
+
+<h3>Terceiro mês (7,5 mg, se indicado)</h3>
+<p>Aos 3 meses, a maior parte das pessoas já percebe mudança na roupa e no espelho. Na média dos estudos, a perda nesse ponto fica ao redor de 5% do peso inicial. Para quem pesa 90 kg, isso representa algo perto de 4 a 5 kg. Há quem perca mais e quem perca menos, e os dois casos podem estar dentro do esperado.</p>
+<p>É também o momento em que a médica avalia se vale continuar subindo a dose ou manter. Nem todo mundo precisa chegar à dose máxima: a dose certa é a menor que mantém o apetite controlado com efeitos colaterais toleráveis.</p>
+
+<h3>Do quarto ao sexto mês (10 mg ou dose de manutenção)</h3>
+<p>Entre 4 e 6 meses o resultado fica mais visível para os outros, e os exames costumam acompanhar: glicemia, insulina, triglicerídeos e pressão tendem a melhorar junto com o peso. Nos estudos, a perda média aos 6 meses fica na faixa de 10% a 12% do peso inicial nas doses de 10 mg ou mais.</p>
+
+<h3>De 6 meses a 1 ano e meio</h3>
+<p>O ritmo de perda desacelera naturalmente, e isso não é falha do medicamento: quanto menos peso sobra para perder, mais devagar ele sai. No estudo SURMOUNT-1, com 72 semanas de tratamento, a perda média foi de 15% com 5 mg, 19,5% com 10 mg e 20,9% com 15 mg, contra 3,1% no grupo que recebeu placebo e fez só mudança de hábitos. O resultado tende a se estabilizar entre 12 e 18 meses.</p>
+
+<h2>O efeito por dose</h2>
+<table>
+  <thead><tr><th>Dose semanal</th><th>Quando costuma ser usada</th><th>O que esperar</th></tr></thead>
+  <tbody>
+    <tr><td>2,5 mg</td><td>Semanas 1 a 4</td><td>Adaptação. Apetite já cai; balança muda pouco.</td></tr>
+    <tr><td>5 mg</td><td>A partir da semana 5</td><td>Primeira dose com efeito completo. Perda de peso consistente para muitas pessoas; pode ser dose de manutenção.</td></tr>
+    <tr><td>7,5 mg</td><td>A partir da semana 9, se necessário</td><td>Reforço para quem perdeu pouco ou voltou a sentir fome.</td></tr>
+    <tr><td>10 mg</td><td>A partir da semana 13, se necessário</td><td>Dose de manutenção comum nos estudos de obesidade.</td></tr>
+    <tr><td>12,5 e 15 mg</td><td>Após 4 meses, caso a caso</td><td>Doses máximas, para quem tolera bem e precisa de mais efeito. Nem todo mundo chega aqui.</td></tr>
+  </tbody>
+</table>
+<p>Esse é o esquema de referência da bula e dos estudos: início com 2,5 mg por 4 semanas e aumentos, no mínimo, a cada 4 semanas. Na prática cada caso é um caso: histórico, uso anterior, reações e outras condições mudam o ritmo, e isso é decidido em consulta. Subir mais rápido não antecipa o resultado e aumenta a náusea. Em alguns casos a médica mantém a mesma dose por mais tempo, justamente para o corpo acompanhar.</p>
 <!--CTA-->
+
+<h2>E se o Mounjaro não estiver fazendo efeito?</h2>
+<p>Essa pergunta aparece com frequência, quase sempre por um destes motivos:</p>
+<ul>
+  <li><strong>Ainda é cedo.</strong> Com menos de 8 semanas, o corpo está na dose de adaptação. Avaliar resultado de balança nesse ponto é injusto com o tratamento.</li>
+  <li><strong>A dose está baixa para o seu caso.</strong> Parte das pessoas responde a 5 mg; outras precisam de 10 mg ou mais. Isso é ajustado na consulta, não por conta própria.</li>
+  <li><strong>A balança não é o melhor medidor.</strong> Retenção de líquido, ciclo menstrual e ganho de músculo mascaram a perda de gordura. A bioimpedância mostra o que mudou de verdade.</li>
+  <li><strong>O apetite caiu, mas a comida mudou pouco.</strong> O medicamento reduz a fome; o que se come quando se come ainda conta. Álcool, líquidos calóricos e beliscos "porque não sinto fome mesmo" somam.</li>
+  <li><strong>Sono e estresse.</strong> Dormir mal aumenta a grelina e o cortisol, e pode anular parte do efeito.</li>
+  <li><strong>Platô real.</strong> Depois de meses de perda, o corpo estabiliza. É esperado e não significa que o tratamento falhou. A conduta pode ser manter, ajustar a dose ou rever o plano.</li>
+</ul>
+<p>Um ponto importante: quem comprou tirzepatida de site sem registro na Anvisa pode estar usando um produto sem a substância ou com dose errada. A Anvisa determinou a apreensão desses produtos em outubro de 2026. Medicamento de farmácia, com receita, é a única garantia do que está na caneta.</p>
+
+<h2>Sinais de que está funcionando, além da balança</h2>
+<ul>
+  <li>Você termina a refeição antes e sem vontade de repetir</li>
+  <li>Passa horas sem pensar em comida</li>
+  <li>A roupa fica folgada antes de a balança "aprovar"</li>
+  <li>A bioimpedância mostra gordura caindo com massa muscular estável</li>
+  <li>Exames de glicose, insulina e triglicerídeos melhoram</li>
+  <li>Menos episódios de comer por ansiedade</li>
+</ul>
+
+<h2>Erros que atrasam o resultado</h2>
+<ul>
+  <li><strong>Subir a dose por conta própria</strong> para "acelerar": mais náusea, mesmo resultado.</li>
+  <li><strong>Pular aplicações</strong>: o efeito depende da constância semanal. Esqueceu? A bula orienta aplicar em até 4 dias do dia previsto; depois disso, pula e segue no dia normal.</li>
+  <li><strong>Comer muito pouco</strong>: sem proteína suficiente, a perda vem de músculo e o metabolismo cai. A meta é perder gordura, não peso a qualquer custo.</li>
+  <li><strong>Parar sem plano</strong>: interromper de uma vez, sem manutenção, costuma trazer parte do peso de volta em meses.</li>
+  <li><strong>Comparar com outra pessoa</strong>: dose, ponto de partida e genética mudam tudo. A referência é a sua própria curva.</li>
+</ul>
+
+<h2>O que os estudos mostram sobre o tempo de resposta</h2>
+<p>O SURMOUNT-1 acompanhou mais de 2.500 adultos com obesidade por 72 semanas. A curva de perda foi contínua: mais acentuada nos primeiros 6 meses, mais lenta depois, com estabilização perto do fim do estudo. Quem perdeu mais de 5% do peso nas primeiras 12 semanas tendeu a ter um resultado final melhor, o que reforça a ideia de que a resposta inicial, medida com calma, ajuda a prever o caminho. Na comparação direta com a semaglutida (SURMOUNT-5, 72 semanas), a tirzepatida levou a uma perda média maior. Se quiser entender a diferença entre os dois, veja <a href="/blog/mounjaro-ou-ozempic-qual-escolher">Mounjaro ou Ozempic</a>.</p>
+<p>Médias de estudo são médias. Servem para calibrar a expectativa, não para prever o seu número. Se a sua dúvida é <a href="/blog/quanto-emagrece-com-injetavel">quanto dá para emagrecer</a>, a lógica é a mesma: individual e construído com o tempo.</p>
+
 <h2>Por que a expectativa realista protege o resultado</h2>
-<p>Entender esses dois tempos, o rápido (apetite) e o gradual (corpo), evita duas armadilhas comuns. A primeira é desanimar na terceira semana porque a balança não mudou o suficiente, quando o corpo está exatamente onde deveria estar. A segunda é a pressa de acelerar, que cobra o preço em náusea e desconforto. O tratamento bem conduzido respeita o ritmo do organismo.</p>
+<p>Entender os dois tempos, o rápido (apetite) e o gradual (corpo), evita duas armadilhas. A primeira é desanimar na terceira semana porque a balança não mudou o suficiente, quando o corpo está exatamente onde deveria estar. A segunda é a pressa de acelerar, que cobra o preço em náusea e desconforto. O tratamento bem conduzido respeita o ritmo do organismo.</p>
+
 <h2>O papel do acompanhamento</h2>
-<p>É no acompanhamento que essas expectativas ganham realidade. Com bioimpedância regular, dá para enxergar o que a balança sozinha esconde: se a perda está sendo de gordura, se a massa muscular está preservada, se o ritmo está adequado. A Dra. Isabel Aragão (CRM-SC 26139) atende em São José/SC e conduz o <a href="/blog/aplicacao-tirzepatida-sao-jose">tratamento com injetáveis como a tirzepatida</a> de forma individualizada, ajustando a dose conforme a resposta de cada paciente. Também atende quem é de <a href="/blog/mounjaro-florianopolis">Florianópolis</a> e região, presencialmente e online.</p>`,
+<p>É no acompanhamento que essas expectativas ganham realidade. Com bioimpedância regular, dá para enxergar o que a balança esconde: se a perda está sendo de gordura, se a massa muscular está preservada, se o ritmo está adequado e se a dose atual ainda é a certa. A Dra. Isabel Aragão (CRM-SC 26139) atende em São José/SC e conduz o <a href="/blog/aplicacao-tirzepatida-sao-jose">tratamento com injetáveis como a tirzepatida</a> de forma individualizada, ajustando a dose conforme a resposta de cada paciente. Também atende quem é de <a href="/blog/mounjaro-florianopolis">Florianópolis</a> e região, presencialmente e online. A clínica não vende o medicamento: a paciente compra na farmácia com a receita.</p>
+`,
   },
   {
     slug: 'lipedema-ou-gordura-localizada',
@@ -1207,7 +1281,7 @@ export const POSTS: Post[] = [
 <h2>Quando vale procurar</h2>
 <p>Se você já tentou várias vezes sem resultado duradouro, sente fome o tempo todo, tem IMC acima de 30 ou condições ligadas ao peso, vale uma avaliação. Você pode ler os <a href="/blog/quando-procurar-medico-para-emagrecer">sinais de que a dieta sozinha não basta</a> e entender <a href="/blog/como-funciona-acompanhamento-medico-emagrecimento">como funciona o acompanhamento</a> do começo ao fim.</p>
 <h2>Agende de Florianópolis</h2>
-<p>A avaliação com a Dra. Isabel acontece em São José, ao lado da Ilha, com bioimpedância e plano individualizado. Para quem prefere, parte do acompanhamento pode ser feita online. Fale pelo WhatsApp para entender o passo a passo, sem compromisso.</p>`,
+<p>A avaliação com a Dra. Isabel acontece em São José, com bioimpedância e plano individualizado. Para quem prefere, parte do acompanhamento pode ser feita online. Fale pelo WhatsApp para entender o passo a passo, sem compromisso.</p>`,
   },
   {
     slug: 'medica-emagrecimento-palhoca',
@@ -1323,7 +1397,7 @@ export const POSTS: Post[] = [
     num: 30,
     title: 'Aplicação de Tirzepatida em Florianópolis: Onde Fazer com Acompanhamento',
     shortTitle: 'Aplicação de Tirzepatida em Florianópolis',
-    intro: 'Quem é de Florianópolis pode fazer a aplicação de tirzepatida com acompanhamento médico em São José, ao lado da Ilha. Prescrição, ajuste de dose e monitoramento fazem toda a diferença.',
+    intro: 'Quem é de Florianópolis pode fazer a aplicação de tirzepatida com acompanhamento médico em São José. Prescrição, ajuste de dose e monitoramento fazem toda a diferença.',
     category: 'Medicamentos',
     readTime: '5 min',
     date: 'Agosto 2026',
@@ -1335,8 +1409,8 @@ export const POSTS: Post[] = [
       { q: 'Onde é a aplicação no corpo?', a: 'Subcutânea, no abdome, na coxa ou na parte de trás do braço, alternando o local a cada semana.' },
     ],
     content: `
-<div class="resposta"><strong>Resposta rápida:</strong> quem é de Florianópolis pode fazer a aplicação de tirzepatida com prescrição e acompanhamento em São José, ao lado da Ilha, com a Dra. Isabel Aragão (CRM-SC 26139) e aplicação pela enfermeira na clínica ou autoaplicação orientada. A dose começa baixa e sobe aos poucos, com bioimpedância para acompanhar a resposta. <a href="/blog/tema/tirzepatida-mounjaro">Guia sobre tirzepatida</a>.</div>
-<p>Quem é de Florianópolis e quer fazer a aplicação de tirzepatida com acompanhamento médico tem uma opção próxima: a Dra. Isabel Aragão (CRM-SC 26139) atende em São José, ao lado da Ilha, com prescrição, ajuste de dose e monitoramento. Parte do acompanhamento também pode ser feita online.</p>
+<div class="resposta"><strong>Resposta rápida:</strong> quem é de Florianópolis pode fazer a aplicação de tirzepatida com prescrição e acompanhamento em São José, com a Dra. Isabel Aragão (CRM-SC 26139) e aplicação pela enfermeira na clínica ou autoaplicação orientada. A dose começa baixa e sobe aos poucos, com bioimpedância para acompanhar a resposta. <a href="/blog/tema/tirzepatida-mounjaro">Guia sobre tirzepatida</a>.</div>
+<p>Quem é de Florianópolis e quer fazer a aplicação de tirzepatida com acompanhamento médico tem uma opção próxima: a Dra. Isabel Aragão (CRM-SC 26139) atende em São José, com prescrição, ajuste de dose e monitoramento. Parte do acompanhamento também pode ser feita online.</p>
 <h2>Aplicação com acompanhamento, e não por conta própria</h2>
 <p>A tirzepatida é um injetável semanal que reduz o apetite e aumenta a saciedade. O ponto que muita gente subestima é que o resultado seguro depende do acompanhamento: dose que sobe no tempo certo, avaliação da resposta e atenção aos efeitos colaterais. Comprar e aplicar por conta própria, sem prescrição, é arriscado. Vale entender <a href="/blog/glp1-medicamentos-injetaveis-emagrecer">como os injetáveis funcionam</a> antes de começar.</p>
 <h2>Perto de Florianópolis, em São José</h2>
@@ -1345,7 +1419,7 @@ export const POSTS: Post[] = [
 <h2>Como funciona o tratamento</h2>
 <p>O tratamento começa em dose baixa e sobe gradualmente. A cada etapa, a bioimpedância mostra se a perda é de gordura e se a massa muscular está preservada. Esse acompanhamento também cuida dos <a href="/blog/efeitos-colaterais-mounjaro-tirzepatida">efeitos colaterais</a> e mantém <a href="/blog/quanto-tempo-mounjaro-faz-efeito">expectativas realistas sobre o tempo de resposta</a>. A tirzepatida é a mesma substância do <a href="/blog/mounjaro-florianopolis">Mounjaro</a>.</p>
 <h2>Agende de Florianópolis</h2>
-<p>A aplicação de tirzepatida com acompanhamento acontece em São José, ao lado da Ilha. Fale pelo WhatsApp para conhecer o passo a passo, sem compromisso. Nada aqui é promessa de resultado: é tratamento médico individualizado.</p>`,
+<p>A aplicação de tirzepatida com acompanhamento acontece em São José. Fale pelo WhatsApp para conhecer o passo a passo, sem compromisso. Nada aqui é promessa de resultado: é tratamento médico individualizado.</p>`,
   },
   {
     slug: 'aplicacao-tirzepatida-palhoca',
@@ -1418,7 +1492,7 @@ export const POSTS: Post[] = [
     related: ['quanto-tempo-mounjaro-faz-efeito', 'perda-de-peso-saudavel-quantos-kg-por-mes', 'efeitos-colaterais-mounjaro-tirzepatida', 'mounjaro-ou-ozempic-qual-escolher'],
     faq: [
       { q: 'Mounjaro emagrece quantos quilos?', a: 'Depende do peso inicial. Para uma pessoa de 100 kg, a média dos estudos (15% a 22%) representaria 15 a 22 kg ao longo de cerca de 72 semanas. É média, não promessa.' },
-      { q: 'Em quanto tempo vejo resultado?', a: 'O apetite muda nas primeiras semanas. A balança responde mais a partir do segundo e terceiro mês, quando a dose já subiu.' },
+      { q: 'Em quanto tempo vejo resultado?', a: 'Depende do seu caso. Usualmente o apetite muda nas primeiras semanas e a balança responde mais a partir do segundo e terceiro mês, quando a dose já subiu conforme o protocolo. O acompanhamento mede isso por bioimpedância.' },
       { q: 'O que acontece se eu parar?', a: 'Sem plano de manutenção, parte do peso costuma voltar. Por isso o tratamento inclui hábitos, acompanhamento e, quando necessário, dose de manutenção.' },
       { q: 'Perder rápido é bom?', a: 'Não necessariamente. Perda muito rápida costuma levar músculo e cabelo junto e facilita o efeito sanfona. O ritmo seguro é de 0,5 a 1% do peso por semana.' },
     ],

@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
+import Image from 'next/image'
+import { capaDoPost, AVATAR } from '@/lib/blog/imagens'
 import { POSTS, getPost, getRelatedPosts } from '@/lib/blog/posts'
 import { publicadoEm, atualizadoEm } from '@/lib/blog/lastmod'
 import { TEMAS, temaDoPost, postsDoTema } from '@/lib/blog/temas'
@@ -39,6 +41,12 @@ function waForPost(title: string) {
 }
 
 const STYLES = `
+.bp-content table{width:100%;border-collapse:collapse;font-size:14px;margin:12px 0 18px;display:block;overflow-x:auto;}
+.bp-content th,.bp-content td{border:1px solid rgba(30,17,69,.12);padding:8px 10px;text-align:left;vertical-align:top;}
+.bp-content th{background:var(--cream2,#EDE6DC);font-weight:800;}
+.bp-capa{position:relative;width:100%;aspect-ratio:4/3;border-radius:16px;overflow:hidden;margin:0 0 24px;background:#EDE6DC;}
+@media(min-width:768px){.bp-capa{aspect-ratio:16/9;}}
+.bp-av,.bp-author-av{object-fit:cover;}
 .bp-tema-link{margin-top:14px;font-size:13px;font-weight:800;}
 .bp-tema-link a{color:var(--ambar,#E8823A);text-decoration:none;}
 
@@ -162,6 +170,7 @@ export default async function BlogPost({ params }: Props) {
 
   const related = getRelatedPosts(post)
   const tema = temaDoPost(post.slug)
+  const capa = capaDoPost(post.slug)
   const irmaos = tema ? postsDoTema(tema).filter((p) => p.slug !== post.slug).slice(0, 6) : []
   const waMid = waForPost(post.title)
 
@@ -177,6 +186,7 @@ export default async function BlogPost({ params }: Props) {
       headline: post.title,
       description: post.metaDesc,
       mainEntityOfPage: url,
+      image: `${SITE}${capa.src}`,
       inLanguage: 'pt-BR',
       datePublished: publicadoEm(post),
       dateModified: atualizadoEm(post),
@@ -236,7 +246,7 @@ export default async function BlogPost({ params }: Props) {
               <h1 className="bp-title">{post.title}</h1>
               <p className="bp-intro">{post.intro}</p>
               <div className="bp-meta">
-                <div className="bp-av">IA</div>
+                <Image className="bp-av" src={AVATAR.src} alt={AVATAR.alt} width={34} height={34} />
                 <div>
                   <div className="bp-av-name">Dra. Isabel Aragão · CRM-SC 26139</div>
                   <div>Médica especialista em emagrecimento · São José/SC</div>
@@ -245,6 +255,11 @@ export default async function BlogPost({ params }: Props) {
                   <span>📅 {post.date}</span>
                   <span>⏱ {post.readTime}</span>
                 </div>
+              </div>
+
+              {/* CAPA: foto da autora (padrão 2.0) */}
+              <div className="bp-capa">
+                <Image src={capa.src} alt={capa.alt} fill sizes="(max-width: 768px) 100vw, 680px" style={{ objectFit: 'cover', objectPosition: capa.posicao }} fetchPriority="high" />
               </div>
 
               {/* CONTENT BEFORE CTA */}
@@ -280,7 +295,7 @@ export default async function BlogPost({ params }: Props) {
 
               {/* AUTHOR */}
               <div className="bp-author">
-                <div className="bp-author-av">IA</div>
+                <Image className="bp-author-av" src={AVATAR.src} alt={AVATAR.alt} width={64} height={64} />
                 <div>
                   <div className="bp-author-lbl">Sobre a autora</div>
                   <div className="bp-author-name">Dra. Isabel Aragão</div>
