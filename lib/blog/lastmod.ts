@@ -6,18 +6,18 @@
 // Ao editar o conteúdo de um post, atualize ATUALIZADO[slug]. Post novo: entra sozinho pelo fallback.
 
 const PUBLICADO: Record<string, string> = {
-  'bioimpedancia-o-que-e': '2026-07-15',
+  'bioimpedancia-o-que-e': '2026-10-29', // resposta rápida + FAQ (padrão 2.0)
   'bioimpedancia-sao-jose-sc': '2026-07-15',
   'como-escolher-medico-emagrecimento': '2026-07-15',
   'como-funciona-acompanhamento-medico-emagrecimento': '2026-07-15',
-  'emagrecimento-apos-40-anos': '2026-07-15',
+  'emagrecimento-apos-40-anos': '2026-10-29', // resposta rápida + FAQ (padrão 2.0)
   'endocrinologista-nutrologo-medico-emagrecimento': '2026-07-15',
   'glp1-medicamentos-injetaveis-emagrecer': '2026-07-15',
-  'hormonios-ganho-de-peso': '2026-07-15',
+  'hormonios-ganho-de-peso': '2026-10-29', // resposta rápida + FAQ (padrão 2.0)
   'medica-emagrecimento-sao-jose': '2026-07-15',
   'obesidade-e-uma-doenca': '2026-07-15',
   'perda-de-peso-saudavel-quantos-kg-por-mes': '2026-07-15',
-  'por-que-dieta-sozinha-falha': '2026-07-15',
+  'por-que-dieta-sozinha-falha': '2026-10-29', // resposta rápida + FAQ (padrão 2.0)
   'primeira-consulta-medica-emagrecimento': '2026-07-15',
   'quando-procurar-medico-para-emagrecer': '2026-07-15',
   'aplicacao-injecao-emagrecer-sao-jose': '2026-07-16',
@@ -48,6 +48,28 @@ const PUBLICADO: Record<string, string> = {
 }
 
 const ATUALIZADO: Record<string, string> = {
+  'quanto-emagrece-com-injetavel': '2026-10-29', // resposta rápida + FAQ (padrão 2.0)
+  'aplicacao-tirzepatida-biguacu': '2026-10-29', // resposta rápida + FAQ (padrão 2.0)
+  'aplicacao-tirzepatida-palhoca': '2026-10-29', // resposta rápida + FAQ (padrão 2.0)
+  'aplicacao-tirzepatida-florianopolis': '2026-10-29', // resposta rápida + FAQ (padrão 2.0)
+  'medica-emagrecimento-biguacu': '2026-10-29', // resposta rápida + FAQ (padrão 2.0)
+  'medica-emagrecimento-palhoca': '2026-10-29', // resposta rápida + FAQ (padrão 2.0)
+  'medica-emagrecimento-florianopolis': '2026-10-29', // resposta rápida + FAQ (padrão 2.0)
+  'lipedema-ou-gordura-localizada': '2026-10-29', // resposta rápida + FAQ (padrão 2.0)
+  'wegovy-florianopolis': '2026-10-29', // resposta rápida + FAQ (padrão 2.0)
+  'efeitos-colaterais-mounjaro-tirzepatida': '2026-10-29', // resposta rápida + FAQ (padrão 2.0)
+  'mounjaro-ou-ozempic-qual-escolher': '2026-10-29', // resposta rápida + FAQ (padrão 2.0)
+  'lipedema-florianopolis-tratamento': '2026-10-29', // resposta rápida + FAQ (padrão 2.0)
+  'ozempic-florianopolis-prescricao': '2026-10-29', // resposta rápida + FAQ (padrão 2.0)
+  'mounjaro-florianopolis': '2026-10-29', // resposta rápida + FAQ (padrão 2.0)
+  'tirzepatida-florianopolis': '2026-10-29', // resposta rápida + FAQ (padrão 2.0)
+  'como-escolher-medico-emagrecimento': '2026-10-29', // resposta rápida + FAQ (padrão 2.0)
+  'quando-procurar-medico-para-emagrecer': '2026-10-29', // resposta rápida + FAQ (padrão 2.0)
+  'primeira-consulta-medica-emagrecimento': '2026-10-29', // resposta rápida + FAQ (padrão 2.0)
+  'glp1-medicamentos-injetaveis-emagrecer': '2026-10-29', // resposta rápida + FAQ (padrão 2.0)
+  'como-funciona-acompanhamento-medico-emagrecimento': '2026-10-29', // resposta rápida + FAQ (padrão 2.0)
+  'endocrinologista-nutrologo-medico-emagrecimento': '2026-10-29', // resposta rápida + FAQ (padrão 2.0)
+  'obesidade-e-uma-doenca': '2026-10-29', // resposta rápida + FAQ (padrão 2.0)
   'medica-emagrecimento-sao-jose': '2026-10-09', // resposta rápida + onde fica + FAQ (São José)
   'aplicacao-tirzepatida-sao-jose': '2026-10-09', // resposta rápida + onde fica + FAQ (São José)
   'clinica-emagrecimento-sao-jose-sc': '2026-10-09', // resposta rápida + onde fica + FAQ (São José)
@@ -55,10 +77,10 @@ const ATUALIZADO: Record<string, string> = {
   'aplicacao-injecao-emagrecer-sao-jose': '2026-10-09', // resposta rápida + onde fica + FAQ (São José)
   'perda-de-peso-saudavel-quantos-kg-por-mes': '2026-09-03',
   'quanto-tempo-mounjaro-faz-efeito': '2026-09-03',
-  'bioimpedancia-o-que-e': '2026-09-03',
-  'emagrecimento-apos-40-anos': '2026-09-03',
-  'por-que-dieta-sozinha-falha': '2026-09-03',
-  'hormonios-ganho-de-peso': '2026-09-03',
+  'bioimpedancia-o-que-e': '2026-10-29', // resposta rápida + FAQ (padrão 2.0)
+  'emagrecimento-apos-40-anos': '2026-10-29', // resposta rápida + FAQ (padrão 2.0)
+  'por-que-dieta-sozinha-falha': '2026-10-29', // resposta rápida + FAQ (padrão 2.0)
+  'hormonios-ganho-de-peso': '2026-10-29', // resposta rápida + FAQ (padrão 2.0)
 }
 
 const MESES: Record<string, string> = {

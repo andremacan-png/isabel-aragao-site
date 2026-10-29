@@ -74,7 +74,14 @@ export const POSTS: Post[] = [
     date: 'Julho 2026',
     metaDesc: 'Obesidade é doença crônica, não falta de força de vontade: o que a ciência diz, por que o corpo resiste e como o tratamento médico ajuda. Dra. Isabel Aragão.',
     related: ['por-que-dieta-sozinha-falha', 'hormonios-ganho-de-peso', 'quando-procurar-medico-para-emagrecer', 'como-funciona-acompanhamento-medico-emagrecimento'],
+    faq: [
+      { q: 'Obesidade é mesmo uma doença?', a: 'Sim. A OMS a classifica como doença crônica desde 1997 e as sociedades médicas brasileiras seguem a mesma definição. Ela tem causas biológicas, genéticas e ambientais, e por isso exige tratamento contínuo.' },
+      { q: 'Se é doença, não adianta mudar hábitos?', a: 'Adianta, e muito. Alimentação, sono e atividade física fazem parte de qualquer tratamento. A diferença é que, sozinhos, raramente bastam em quem já tem obesidade, porque o corpo defende o peso mais alto.' },
+      { q: 'Como a médica investiga a causa?', a: 'Com histórico de peso, bioimpedância, exames de sangue (glicemia, insulina, tireoide) e avaliação do sono e do estresse. O plano é montado a partir do que foi encontrado.' },
+      { q: 'Obesidade tem cura?', a: 'É uma doença crônica: pode ser controlada por anos, mas pede acompanhamento para evitar o reganho, que é a regra quando o tratamento para.' },
+    ],
     content: `
+<div class="resposta"><strong>Resposta rápida:</strong> a obesidade é reconhecida como doença crônica pela Organização Mundial da Saúde desde 1997, com causas genéticas, hormonais e ambientais. Isso muda o tratamento: em vez de "mais força de vontade", o caminho é investigar a causa (hormônios, sono, resistência à insulina) e tratar com acompanhamento, como se faz com hipertensão ou diabetes. <a href="/blog/tema/por-que-o-peso-sobe">Veja o guia completo sobre por que o peso sobe</a>.</div>
 <p>A Organização Mundial da Saúde classifica a obesidade como doença crônica desde 1997. Mas essa definição ainda não chegou ao entendimento popular — e isso tem consequências sérias na forma como as pessoas buscam (ou não buscam) tratamento.</p>
 <p>Quando tratamos obesidade como "falta de disciplina", a resposta óbvia é "se esforce mais". Quando entendemos que é uma doença com causas biológicas, genéticas e ambientais, a resposta muda completamente — e os resultados também.</p>
 <h2>O que a ciência diz sobre as causas do excesso de peso</h2>
@@ -105,7 +112,14 @@ export const POSTS: Post[] = [
     date: 'Julho 2026',
     metaDesc: 'Bioimpedância: o que o exame mede (gordura, músculo, água, metabolismo), como se preparar e por que importa mais que a balança. Dra. Isabel Aragão, São José/SC.',
     related: ['bioimpedancia-sao-jose-sc', 'medica-emagrecimento-sao-jose', 'primeira-consulta-medica-emagrecimento', 'perda-de-peso-saudavel-quantos-kg-por-mes', 'como-ler-resultado-bioimpedancia'],
+    faq: [
+      { q: 'A bioimpedância dói ou tem risco?', a: 'Não dói: a corrente é tão fraca que não se sente. A única restrição é para quem usa marca-passo ou outro dispositivo eletrônico implantado.' },
+      { q: 'Como me preparar para o exame?', a: 'Evite exercício intenso nas 12 horas anteriores, não consuma álcool no dia anterior, mantenha a hidratação normal e faça o exame sempre no mesmo horário. Mulheres devem evitar o período menstrual.' },
+      { q: 'Qual é o número mais importante do laudo?', a: 'A massa de gordura (em kg e em %) e a gordura visceral. Ao longo do tratamento, o que importa é a gordura cair com a massa muscular preservada.' },
+      { q: 'Onde fazer bioimpedância em São José?', a: 'Na clínica da Dra. Isabel Aragão, no Kennedy Towers, o exame faz parte da consulta, sem custo separado.' },
+    ],
     content: `
+<div class="resposta"><strong>Resposta rápida:</strong> a bioimpedância é um exame rápido e indolor que estima a composição do corpo: gordura, massa muscular, água, gordura visceral e taxa metabólica basal. Ela mostra o que a balança esconde, por exemplo se o peso perdido foi gordura ou músculo. Na clínica é feita na própria consulta e repetida a cada 30 a 60 dias. <a href="/blog/como-ler-resultado-bioimpedancia">Aprenda a ler o resultado</a>.</div>
 <p>A balança é um instrumento limitado. Ela mostra um número total, mas não revela o que compõe esse peso. Você pode estar perdendo músculo e ganhando gordura e a balança mostrar o mesmo valor — ou até menos. A bioimpedância resolve esse problema.</p>
 <p>É um exame simples, rápido e indolor que analisa a composição corporal com muito mais precisão do que qualquer balança convencional.</p>
 <h2>Como funciona a bioimpedância</h2>
@@ -139,7 +153,14 @@ export const POSTS: Post[] = [
     date: 'Julho 2026',
     metaDesc: 'Endocrinologista, nutrólogo ou médico de emagrecimento: o que cada um faz e quem procurar para tratar o peso com segurança. Dra. Isabel Aragão, São José/SC.',
     related: ['medica-emagrecimento-sao-jose', 'quando-procurar-medico-para-emagrecer', 'como-funciona-acompanhamento-medico-emagrecimento', 'primeira-consulta-medica-emagrecimento'],
+    faq: [
+      { q: 'Preciso de endocrinologista para emagrecer?', a: 'Só quando há suspeita de doença hormonal, como hipotireoidismo ou síndrome dos ovários policísticos. Na maioria dos casos de obesidade não há uma causa endócrina isolada.' },
+      { q: 'Nutrólogo e nutricionista são a mesma coisa?', a: 'Não. Nutrólogo é médico, com CRM. Nutricionista tem formação própria e registro no CRN. As duas profissões se complementam.' },
+      { q: 'Existe a especialidade "medicina do emagrecimento"?', a: 'O CFM não a reconhece como especialidade formal. O que existe são médicos de várias formações com dedicação ao tratamento da obesidade. Confira sempre o CRM e a experiência na área.' },
+      { q: 'A Dra. Isabel é endocrinologista?', a: 'Não. A Dra. Isabel Aragão (CRM-SC 26139) é médica dedicada ao tratamento do excesso de peso e da obesidade, com avaliação por bioimpedância e acompanhamento individual.' },
+    ],
     content: `
+<div class="resposta"><strong>Resposta rápida:</strong> o endocrinologista cuida de glândulas e hormônios (tireoide, diabetes, SOP); o nutrólogo é o médico da nutrição clínica; e a médica de emagrecimento é quem investiga as causas do excesso de peso, mede a composição corporal e acompanha o tratamento de perto. Para quem quer tratar a obesidade como um todo, o terceiro perfil é o mais completo, e os outros entram quando há uma condição específica.</div>
 <p>Quando a decisão de buscar acompanhamento médico para emagrecer finalmente é tomada, a próxima dúvida quase sempre é: qual médico procurar? Endocrinologista? Nutrólogo? Clínico com foco em obesidade? A diferença importa — e entendê-la evita frustração.</p>
 <h2>Endocrinologista</h2>
 <p>O endocrinologista é especialista em glândulas e hormônios: tireoide, suprarrenais, pâncreas, hipófise. É o médico ideal quando há uma condição hormonal que precisa ser investigada ou tratada — hipotireoidismo, síndrome dos ovários policísticos, diabetes mellitus, síndrome de Cushing.</p>
@@ -171,7 +192,14 @@ export const POSTS: Post[] = [
     date: 'Julho 2026',
     metaDesc: 'Por que a dieta sozinha falha: adaptação do metabolismo, fome de rebote e efeito sanfona. O que o acompanhamento médico muda. Dra. Isabel Aragão, São José/SC.',
     related: ['obesidade-e-uma-doenca', 'hormonios-ganho-de-peso', 'quando-procurar-medico-para-emagrecer', 'perda-de-peso-saudavel-quantos-kg-por-mes', 'efeito-sanfona-por-que-o-peso-volta', 'compulsao-alimentar-noite'],
+    faq: [
+      { q: 'Por que sinto mais fome depois de uma dieta?', a: 'Porque a grelina, hormônio da fome, sobe quando o corpo detecta restrição, e a leptina, da saciedade, cai. Esse efeito pode durar meses depois de a dieta acabar.' },
+      { q: 'O que é adaptação metabólica?', a: 'É a redução do gasto de energia em repouso que acontece quando se emagrece. O corpo passa a gastar menos para o mesmo peso, o que facilita o reganho.' },
+      { q: 'Então dieta não serve para nada?', a: 'Serve, como parte do tratamento. O que não funciona é a dieta restritiva isolada, sem preservação de músculo, sem acompanhamento e sem olhar para as causas do ganho de peso.' },
+      { q: 'Como evitar o efeito sanfona?', a: 'Perder peso em ritmo moderado, manter a massa muscular com proteína e treino de força, e seguir em acompanhamento depois de chegar ao peso desejado. Quando há indicação, medicamentos ajudam a manter.' },
+    ],
     content: `
+<div class="resposta"><strong>Resposta rápida:</strong> entre 80% e 95% das pessoas que emagrecem só com dieta recuperam o peso em até cinco anos. Não é falta de disciplina: ao restringir calorias, o corpo reduz o metabolismo, aumenta a grelina (fome) e diminui a leptina (saciedade), defendendo o peso anterior. O tratamento médico atua nesses mecanismos, preserva o músculo e ajusta o plano ao longo do tempo.</div>
 <p>Pesquisas indicam que entre 80% e 95% das pessoas que emagrecem com dieta recuperam o peso em cinco anos. Esse número assustador não é resultado de preguiça ou falta de disciplina. É resultado de como o corpo humano funciona — e de como a dieta restritiva interage com essa biologia.</p>
 <h2>O que acontece no corpo quando você faz dieta</h2>
 <p>Quando você reduz drasticamente as calorias, o seu organismo interpreta isso como escassez de alimento — uma ameaça à sobrevivência. A resposta é imediata e automática:</p>
@@ -209,10 +237,17 @@ export const POSTS: Post[] = [
     date: 'Julho 2026',
     metaDesc: 'Como funciona o acompanhamento médico para emagrecer: consultas, bioimpedância, ajuste do plano e, quando indicado, medicação. Dra. Isabel Aragão, São José/SC.',
     related: ['primeira-consulta-medica-emagrecimento', 'medica-emagrecimento-sao-jose', 'bioimpedancia-o-que-e', 'quando-procurar-medico-para-emagrecer'],
+    faq: [
+      { q: 'Quanto tempo dura o tratamento?', a: 'O acompanhamento mais próximo costuma durar 12 meses. Depois disso, as revisões ficam mais espaçadas, mas o cuidado com o peso continua, como em qualquer doença crônica.' },
+      { q: 'De quanto em quanto tempo são as revisões?', a: 'Em geral a cada 30 a 60 dias, com nova bioimpedância a cada visita. Quem usa medicamento injetável pode ter contatos mais frequentes na fase de ajuste de dose.' },
+      { q: 'Preciso trazer exames na primeira consulta?', a: 'Se tiver exames dos últimos 12 meses, traga. Se não tiver, a médica solicita o que for necessário e o plano inicial começa no mesmo dia.' },
+      { q: 'O acompanhamento pode ser online?', a: 'Sim, para quem mora longe ou prefere. A bioimpedância, por exigir o aparelho, é feita na clínica em São José.' },
+    ],
     content: `
+<div class="resposta"><strong>Resposta rápida:</strong> o acompanhamento começa com uma consulta de cerca de 90 minutos, com bioimpedância, histórico completo e revisão dos exames, e segue com revisões mensais ou bimestrais em que o plano é ajustado conforme a resposta do corpo. A fase mais intensa são os primeiros 12 meses: adaptação (1 a 3 meses), consolidação (3 a 6) e manutenção (6 a 12).</div>
 <p>Quando as pessoas pensam em acompanhamento médico para emagrecer, muitas imaginam uma consulta onde o médico passa uma dieta e um remédio — e pronto. Na prática, um tratamento bem feito é muito mais do que isso.</p>
 <h2>A primeira consulta</h2>
-<p>A primeira consulta costuma durar entre 45 minutos e 1 hora. O objetivo é fazer uma avaliação completa e já começar a montar um plano. Isso inclui:</p>
+<p>A primeira consulta dura cerca de 90 minutos. O objetivo é fazer uma avaliação completa e já começar a montar um plano. Isso inclui:</p>
 <ul>
   <li><strong>Bioimpedância:</strong> composição corporal completa — gordura, músculo, hidratação, taxa metabólica basal</li>
   <li><strong>Anamnese detalhada:</strong> histórico de peso, tentativas anteriores, histórico familiar, uso de medicamentos, padrão de sono e estresse</li>
@@ -249,7 +284,14 @@ export const POSTS: Post[] = [
     date: 'Julho 2026',
     metaDesc: 'Medicamentos injetáveis para emagrecer (GLP-1 e GIP): como agem, para quem são indicados, efeitos colaterais e por que exigem acompanhamento médico.',
     related: ['quando-procurar-medico-para-emagrecer', 'por-que-dieta-sozinha-falha', 'como-funciona-acompanhamento-medico-emagrecimento', 'emagrecimento-apos-40-anos'],
+    faq: [
+      { q: 'Quais medicamentos são GLP-1?', a: 'A semaglutida (Ozempic e Wegovy) e a liraglutida (Saxenda) são agonistas de GLP-1. A tirzepatida (Mounjaro) age no GLP-1 e no GIP, por isso é chamada de agonista duplo.' },
+      { q: 'Quem tem indicação?', a: 'Adultos com IMC igual ou acima de 30, ou entre 27 e 30 com doença associada (diabetes tipo 2, hipertensão, colesterol alto), sem contraindicação. A avaliação é individual.' },
+      { q: 'Quais são os efeitos colaterais?', a: 'Os mais comuns são náusea, estômago cheio, prisão de ventre ou diarreia, principalmente no início e a cada aumento de dose. Tendem a diminuir com o tempo e com a dose subindo devagar.' },
+      { q: 'O efeito se mantém se eu parar?', a: 'Parte do peso costuma voltar quando o medicamento é suspenso sem um plano de manutenção. Por isso o tratamento é combinado com mudança de hábitos e acompanhamento.' },
+    ],
     content: `
+<div class="resposta"><strong>Resposta rápida:</strong> os análogos de GLP-1 (semaglutida, do Ozempic e Wegovy) e o agonista duplo GLP-1 e GIP (tirzepatida, do Mounjaro) são injetáveis semanais que imitam hormônios do intestino: reduzem a fome, aceleram a saciedade e retardam o esvaziamento do estômago. Nos estudos, a perda média fica entre 10% e 15% do peso com semaglutida e é maior com tirzepatida. Exigem receita, dose crescente e acompanhamento. <a href="/blog/tema/tirzepatida-mounjaro">Veja o guia sobre tirzepatida</a>.</div>
 <p>Nos últimos anos, uma classe de medicamentos injetáveis para emagrecimento ganhou grande visibilidade — e gerou tanto entusiasmo quanto confusão. São os análogos de GLP-1, e entender como funcionam é essencial para ter expectativas realistas sobre eles.</p>
 <h2>O que é o GLP-1</h2>
 <p>GLP-1 (Glucagon-Like Peptide 1) é um hormônio produzido naturalmente pelo intestino após a refeição. Ele atua em múltiplos sistemas:</p>
@@ -288,7 +330,14 @@ export const POSTS: Post[] = [
     date: 'Julho 2026',
     metaDesc: 'Emagrecer depois dos 40: o que muda no metabolismo, nos hormônios e na massa muscular, e como ajustar o tratamento. Dra. Isabel Aragão, São José/SC.',
     related: ['hormonios-ganho-de-peso', 'por-que-dieta-sozinha-falha', 'bioimpedancia-o-que-e', 'quando-procurar-medico-para-emagrecer', 'menopausa-ganho-de-peso'],
+    faq: [
+      { q: 'Por que engordo comendo a mesma coisa de antes?', a: 'Porque o gasto de energia em repouso cai com a perda de músculo e com as mudanças hormonais da faixa dos 40. O mesmo prato passa a sobrar.' },
+      { q: 'Dieta rápida funciona depois dos 40?', a: 'Funciona mal. Com menos músculo e metabolismo mais lento, a restrição forte queima músculo, piora o metabolismo e facilita o reganho.' },
+      { q: 'Que exames vale fazer?', a: 'TSH e T4 (tireoide), glicemia e insulina, perfil lipídico, vitamina D e B12 e hemograma. Na menopausa, a avaliação hormonal entra na conversa.' },
+      { q: 'Treino de força é obrigatório?', a: 'É o melhor estímulo para manter e recuperar músculo, que é o tecido que mais gasta energia. Pode ser adaptado a qualquer condição física.' },
+    ],
     content: `
+<div class="resposta"><strong>Resposta rápida:</strong> depois dos 40 o corpo perde massa muscular (sarcopenia), os hormônios mudam, a gordura migra para o abdome e a resistência à insulina fica mais comum, então a mesma rotina de antes passa a engordar. O que funciona é preservar músculo (proteína e treino de força), dormir bem, investigar tireoide e insulina e, quando indicado, tratar com medicação sob acompanhamento.</div>
 <p>É muito comum ouvir de pacientes acima dos 40: "Eu como a mesma coisa de antes e engordei. Faço a mesma academia e não emagreço mais." Não é impressão. É biologia.</p>
 <p>A partir dos 40 anos, uma série de mudanças acontece no organismo que torna o emagrecimento genuinamente mais difícil — e que exige uma abordagem diferente da que funcionava antes.</p>
 <h2>O que muda no corpo após os 40</h2>
@@ -325,7 +374,14 @@ export const POSTS: Post[] = [
     date: 'Julho 2026',
     metaDesc: 'Hormônios e ganho de peso: o que realmente influencia, quando vale investigar e como o tratamento médico atua. Dra. Isabel Aragão, São José/SC.',
     related: ['obesidade-e-uma-doenca', 'por-que-dieta-sozinha-falha', 'emagrecimento-apos-40-anos', 'quando-procurar-medico-para-emagrecer', 'metabolismo-lento-existe', 'menopausa-ganho-de-peso'],
+    faq: [
+      { q: 'Como sei se tenho resistência à insulina?', a: 'Pelos exames de glicemia e insulina em jejum (índice HOMA) e por sinais como gordura abdominal, manchas escuras no pescoço e fome logo após comer. A médica interpreta no contexto.' },
+      { q: 'Hipotireoidismo engorda muito?', a: 'Costuma causar ganho moderado de peso, cansaço e retenção de líquido. Tratado, o metabolismo volta ao normal, mas o excesso de peso acumulado ainda precisa de tratamento próprio.' },
+      { q: 'Estresse engorda mesmo?', a: 'Sim. O cortisol cronicamente alto aumenta o apetite por alimentos calóricos, favorece a gordura visceral e piora o sono, que por sua vez desregula fome e saciedade.' },
+      { q: 'Dá para corrigir a resistência à leptina?', a: 'Não existe remédio direto para ela, mas perder gordura, dormir bem e, quando indicado, usar medicamentos que agem na saciedade melhora a resposta do cérebro.' },
+    ],
     content: `
+<div class="resposta"><strong>Resposta rápida:</strong> insulina alta favorece armazenar gordura, a resistência à leptina faz o cérebro não registrar saciedade, a grelina sobe com dietas restritivas, o cortisol do estresse acumula gordura abdominal e a tireoide lenta reduz o metabolismo. Por isso tratar o peso começa por exames e avaliação clínica, para saber qual desses sistemas está ativo no seu caso.</div>
 <p>Quando falamos em emagrecimento, a equação "coma menos, gaste mais" captura apenas uma parte da realidade. O que poucos explicam é que hormônios regulam diretamente o quanto você come, onde o corpo armazena gordura e como o metabolismo funciona. Ignorar esse sistema é a principal razão pela qual tantos tratamentos falham.</p>
 <h2>Insulina: o hormônio do armazenamento</h2>
 <p>A insulina é produzida pelo pâncreas em resposta à glicose no sangue. Ela "abre a porta" das células para receber essa glicose como energia. O problema começa quando há exposição crônica a níveis elevados de insulina — geralmente por dietas ricas em carboidratos refinados e açúcar:</p>
@@ -410,7 +466,14 @@ export const POSTS: Post[] = [
     date: 'Julho 2026',
     metaDesc: 'Como é a primeira consulta com médica de emagrecimento: duração, histórico, bioimpedância, exames e o plano individual. Dra. Isabel Aragão, São José/SC.',
     related: ['medica-emagrecimento-sao-jose', 'como-funciona-acompanhamento-medico-emagrecimento', 'bioimpedancia-o-que-e', 'quando-procurar-medico-para-emagrecer'],
+    faq: [
+      { q: 'O que levar na primeira consulta?', a: 'Exames dos últimos 6 a 12 meses, se tiver, a lista de medicamentos e suplementos em uso e o histórico de peso. Roupa confortável ajuda na bioimpedância.' },
+      { q: 'Preciso estar em jejum?', a: 'Jejum de 2 a 4 horas é suficiente para a bioimpedância. Não é preciso jejum longo nem exames prévios obrigatórios.' },
+      { q: 'Já saio da consulta com o tratamento?', a: 'Sim. A orientação inicial começa no mesmo dia. Se faltar algum exame, ele é pedido e o plano é ajustado na revisão.' },
+      { q: 'Tenho vergonha do meu peso. Isso atrapalha?', a: 'Não. O consultório é um espaço sem julgamento: a conversa é sobre causas e caminhos, não sobre culpa.' },
+    ],
     content: `
+<div class="resposta"><strong>Resposta rápida:</strong> a primeira consulta dura cerca de 90 minutos e inclui bioimpedância na hora, conversa detalhada sobre histórico de peso, tentativas anteriores, sono e rotina, exame físico básico e revisão dos exames que você trouxer. Você sai com o laudo explicado, uma avaliação completa e a orientação inicial de tratamento, sem julgamento sobre o peso.</div>
 <p>Muitas pessoas adiam a consulta porque não sabem o que vai acontecer — e o desconhecido gera ansiedade. Este artigo detalha exatamente o que você vai encontrar, para que você chegue preparada e aproveite ao máximo o tempo com a médica.</p>
 <h2>O que levar na primeira consulta</h2>
 <ul>
@@ -449,7 +512,14 @@ export const POSTS: Post[] = [
     date: 'Julho 2026',
     metaDesc: 'Quando procurar um médico para emagrecer: sinais de que a dieta não basta, IMC, saúde metabólica e o que esperar da consulta. Dra. Isabel Aragão, São José/SC.',
     related: ['primeira-consulta-medica-emagrecimento', 'por-que-dieta-sozinha-falha', 'como-funciona-acompanhamento-medico-emagrecimento', 'hormonios-ganho-de-peso'],
+    faq: [
+      { q: 'Com que IMC devo procurar tratamento?', a: 'A partir de 30, ou a partir de 27 quando há doença associada. Mas a decisão não é só o IMC: histórico de tentativas, composição corporal e sintomas pesam tanto quanto.' },
+      { q: 'Não é melhor tentar sozinha primeiro?', a: 'Se você nunca tentou de forma estruturada, pode tentar. Se já tentou mais de duas vezes e o peso voltou, repetir a mesma estratégia tende a dar o mesmo resultado.' },
+      { q: 'O que o médico faz que a dieta não faz?', a: 'Investiga a causa (bioimpedância, exames, sono, hormônios), monta um plano para o seu caso e ajusta ao longo do tempo. Quando indicado, usa medicamentos que agem na fome e na saciedade.' },
+      { q: 'Preciso de encaminhamento?', a: 'Não. O atendimento é particular e a consulta é marcada direto pelo WhatsApp (48) 99159-3468.' },
+    ],
     content: `
+<div class="resposta"><strong>Resposta rápida:</strong> vale procurar médico quando você já tentou mais de duas vezes com disciplina e não sustentou o resultado por 6 meses, quando a balança não se move mesmo "fazendo tudo certo", quando o IMC está acima de 30 ou quando há pressão alta, diabetes, apneia, SOP ou sofrimento com a comida. Dois desses sinais já justificam uma avaliação.</div>
 <p>Todo mundo sabe o que fazer para emagrecer, certo? Comer menos, se mexer mais. Parece simples. Então por que tanta gente tenta — com disciplina, com esforço real — e não consegue resultados duradouros?</p>
 <p>A resposta está na biologia, não na força de vontade. E entender isso é o primeiro passo para sair do ciclo de tentativas frustradas.</p>
 <h2>Por que a dieta sozinha quase sempre falha</h2>
@@ -543,7 +613,14 @@ export const POSTS: Post[] = [
     date: 'Julho 2026',
     metaDesc: 'Como escolher um médico para emagrecer: CRM, avaliação antes da prescrição, bioimpedância, acompanhamento e sinais de alerta. Dra. Isabel Aragão, São José/SC.',
     related: ['medica-emagrecimento-sao-jose', 'quando-procurar-medico-para-emagrecer', 'primeira-consulta-medica-emagrecimento', 'como-funciona-acompanhamento-medico-emagrecimento'],
+    faq: [
+      { q: 'Como verificar o CRM de um médico?', a: 'No site do CFM (portal.cfm.org.br), em "Busca por médicos", pelo nome ou pelo número. O registro precisa estar ativo no estado onde ele atende.' },
+      { q: 'Médico pode mostrar antes e depois?', a: 'Não. O Código de Ética Médica e a Resolução CFM 2.336/2023 proíbem antes e depois com fins de autopromoção e promessas de resultado. Quem faz isso descumpre a norma.' },
+      { q: 'Que perguntas fazer na primeira consulta?', a: 'Como você avalia a composição corporal? Quais exames pede antes de prescrever? Com que frequência acompanha? Como ajusta o plano se o resultado não vem?' },
+      { q: 'Preço baixo ou pacote fechado é problema?', a: 'Pacote que inclui medicamento de alto custo sem investigar o caso é sinal de alerta. O custo deve ser transparente e a prescrição, individual.' },
+    ],
     content: `
+<div class="resposta"><strong>Resposta rápida:</strong> escolha um médico com CRM ativo (confira no site do CFM), que comunique dentro das regras do conselho (sem antes e depois nem promessa de quilos), que avalie antes de prescrever (bioimpedância, histórico, exames) e que ofereça acompanhamento depois da prescrição. Promessa de resultado em prazo fixo e pacote com medicamento sem avaliação são sinais de alerta.</div>
 <p>O mercado de emagrecimento é enorme — e, infelizmente, cheio de profissionais que oferecem resultados rápidos sem a estrutura necessária para entregá-los com segurança. Saber o que avaliar antes de iniciar um tratamento pode poupar meses de frustração.</p>
 <h2>O que verificar antes da consulta</h2>
 <ul>
@@ -592,7 +669,14 @@ export const POSTS: Post[] = [
     date: 'Julho 2026',
     metaDesc: 'Tirzepatida em Florianópolis: como funciona, para quem é indicada, por que exige prescrição e como é o acompanhamento médico. Dra. Isabel Aragão.',
     related: ['mounjaro-florianopolis', 'ozempic-florianopolis-prescricao', 'aplicacao-injecao-emagrecer-sao-jose', 'medica-emagrecimento-sao-jose'],
+    faq: [
+      { q: 'A clínica vende a tirzepatida?', a: 'Não. A médica prescreve e a paciente compra na farmácia com a receita. Produtos vendidos como "tirzepatida" sem registro na Anvisa são irregulares.' },
+      { q: 'Preciso ir a São José toda semana?', a: 'Não. A aplicação pode ser feita em casa, após orientação. Quem prefere aplica na clínica com a enfermeira. As consultas de revisão são mensais ou bimestrais.' },
+      { q: 'Quanto tempo até fazer efeito?', a: 'O apetite costuma mudar nas primeiras semanas; a mudança na balança e na composição corporal se consolida em 3 a 6 meses, porque a dose sobe aos poucos.' },
+      { q: 'Atende online?', a: 'Sim, para pacientes de outras cidades. A bioimpedância, por exigir o aparelho, é feita na clínica.' },
+    ],
     content: `
+<div class="resposta"><strong>Resposta rápida:</strong> a tirzepatida (Mounjaro) é um injetável semanal que age em dois hormônios do apetite, GLP-1 e GIP, com perda média de 15% a 22% do peso em 72 semanas nos estudos. Em Florianópolis e São José, a Dra. Isabel Aragão (CRM-SC 26139) avalia a indicação, prescreve e acompanha o tratamento com bioimpedância; a aplicação pode ser feita na clínica, em São José. <a href="/blog/tema/tirzepatida-mounjaro">Guia completo sobre tirzepatida</a>.</div>
 <p>Se você chegou até aqui buscando tirzepatida em Florianópolis ou na região de São José/SC, provavelmente já conhece o medicamento e está procurando onde iniciar ou continuar o tratamento com acompanhamento adequado. Este artigo explica o que você precisa saber.</p>
 <h2>O que é a tirzepatida</h2>
 <p>A tirzepatida é um medicamento injetável de uso semanal desenvolvido para o tratamento da obesidade. Ela pertence a uma nova geração de tratamentos: atua como agonista dual de GLP-1 e GIP — dois hormônios intestinais que influenciam o apetite, a saciedade e o controle da glicose no sangue. Essa ação dupla é o que diferencia a tirzepatida de outros medicamentos da mesma família.</p>
@@ -629,7 +713,14 @@ export const POSTS: Post[] = [
     date: 'Julho 2026',
     metaDesc: 'Mounjaro em Florianópolis: o que é, como age, quem pode usar e como funciona o tratamento com prescrição e acompanhamento médico. Dra. Isabel Aragão.',
     related: ['tirzepatida-florianopolis', 'ozempic-florianopolis-prescricao', 'aplicacao-injecao-emagrecer-sao-jose', 'medica-emagrecimento-sao-jose'],
+    faq: [
+      { q: 'Mounjaro e tirzepatida são o mesmo remédio?', a: 'Sim. Tirzepatida é o princípio ativo e Mounjaro é a marca. Na receita e na farmácia os dois nomes podem aparecer.' },
+      { q: 'Onde comprar Mounjaro em Florianópolis?', a: 'Em farmácias, com receita médica. A clínica não vende o medicamento e orienta a não comprar de sites sem registro.' },
+      { q: 'Posso usar Mounjaro sem ter diabetes?', a: 'Sim, quando há indicação para obesidade ou sobrepeso com doença associada. A Anvisa aprovou o uso para obesidade em 2025. A avaliação define se é o seu caso.' },
+      { q: 'Qual é a primeira dose?', a: 'O tratamento começa com 2,5 mg por semana e sobe a cada 4 semanas conforme a tolerância, até a dose de manutenção definida pela médica.' },
+    ],
     content: `
+<div class="resposta"><strong>Resposta rápida:</strong> Mounjaro é o nome comercial da tirzepatida, injetável semanal da Eli Lilly aprovado pela Anvisa para diabetes tipo 2 e obesidade. Quem busca Mounjaro em Florianópolis encontra prescrição e acompanhamento com a Dra. Isabel Aragão (CRM-SC 26139) em São José, ao lado da Ilha, com avaliação por bioimpedância antes de qualquer receita. <a href="/blog/quanto-tempo-mounjaro-faz-efeito">Veja em quanto tempo ele faz efeito</a>.</div>
 <p>O Mounjaro é o nome de marca da tirzepatida — medicamento injetável desenvolvido pelo laboratório Eli Lilly para o tratamento de obesidade e diabetes tipo 2. Se você está buscando Mounjaro em Florianópolis ou na Grande Florianópolis, este artigo explica o que está disponível e o que envolve iniciar o tratamento.</p>
 <h2>Mounjaro e tirzepatida: é o mesmo medicamento</h2>
 <p>Sim. Mounjaro é o nome comercial — a molécula ativa é a tirzepatida. As duas denominações circulam: médicos e pacientes com mais familiaridade com a literatura científica tendem a usar "tirzepatida"; a maioria dos pacientes busca pelo nome de marca. É importante saber isso porque na receita médica e na farmácia podem aparecer ambos os nomes.</p>
@@ -664,7 +755,14 @@ export const POSTS: Post[] = [
     date: 'Julho 2026',
     metaDesc: 'Ozempic em Florianópolis: quando é indicado para emagrecer, por que exige receita e como é o acompanhamento médico. Dra. Isabel Aragão, Grande Florianópolis.',
     related: ['tirzepatida-florianopolis', 'mounjaro-florianopolis', 'medica-emagrecimento-sao-jose', 'glp1-medicamentos-injetaveis-emagrecer'],
+    faq: [
+      { q: 'Ozempic emagrece?', a: 'Reduz o apetite e a velocidade do esvaziamento do estômago, o que leva a comer menos. Nos estudos com semaglutida na dose para obesidade, a perda média ficou perto de 15% do peso em pouco mais de um ano.' },
+      { q: 'Ozempic ou Wegovy: qual usar para emagrecer?', a: 'O Wegovy é a formulação registrada para obesidade, com dose máxima maior. O Ozempic é usado com avaliação individual. A escolha é da médica, conforme o caso e a disponibilidade.' },
+      { q: 'Existe genérico do Ozempic?', a: 'A Anvisa registrou em 2026 os primeiros genéricos da semaglutida (EMS e Germed). A chegada às farmácias e o preço dependem de cada laboratório.' },
+      { q: 'A consulta pode ser online?', a: 'Sim. A primeira avaliação completa, com bioimpedância, é presencial em São José; o acompanhamento pode seguir a distância.' },
+    ],
     content: `
+<div class="resposta"><strong>Resposta rápida:</strong> Ozempic é a semaglutida da Novo Nordisk, aprovada para diabetes tipo 2 e usada, com avaliação individual, no tratamento da obesidade; o Wegovy é a mesma substância registrada para obesidade. Em Florianópolis e São José, a Dra. Isabel Aragão (CRM-SC 26139) avalia se a semaglutida, a tirzepatida ou outro recurso é o mais indicado e acompanha o tratamento. <a href="/blog/tema/semaglutida">Guia sobre semaglutida</a>.</div>
 <p>O Ozempic é um dos medicamentos injetáveis mais buscados para emagrecimento no Brasil. Se você está procurando Ozempic em Florianópolis — para iniciar o tratamento, continuar com acompanhamento médico adequado ou entender as opções disponíveis —, este artigo traz o que você precisa saber.</p>
 <h2>O que é o Ozempic</h2>
 <p>O Ozempic é o nome de marca da semaglutida, desenvolvido pelo laboratório Novo Nordisk. Foi aprovado originalmente para o tratamento de diabetes tipo 2, mas tornou-se amplamente conhecido pelo efeito de redução de peso. A semaglutida age como agonista de GLP-1 — um hormônio intestinal que sinaliza saciedade ao cérebro, retarda o esvaziamento gástrico e melhora o controle glicêmico.</p>
@@ -755,7 +853,14 @@ export const POSTS: Post[] = [
     date: 'Julho 2026',
     metaDesc: 'Lipedema em Florianópolis: como é o diagnóstico, o que o tratamento médico pode fazer e a diferença para gordura localizada. Dra. Isabel Aragão, Grande Floripa.',
     related: ['medica-emagrecimento-sao-jose', 'quando-procurar-medico-para-emagrecer', 'emagrecimento-apos-40-anos', 'clinica-emagrecimento-sao-jose-sc'],
+    faq: [
+      { q: 'Lipedema tem cura?', a: 'Não, mas tem tratamento que controla a dor, reduz a progressão e melhora a qualidade de vida. Quanto mais cedo o diagnóstico, melhor.' },
+      { q: 'Qual exame detecta lipedema?', a: 'Nenhum exame de sangue ou de imagem confirma sozinho. O diagnóstico é clínico, pela história, pelo exame físico e pelo descarte de outras condições, como linfedema.' },
+      { q: 'Emagrecer resolve?', a: 'Ajuda quando há obesidade associada, mas a gordura do lipedema responde menos à dieta. Por isso o tratamento é combinado e o acompanhamento mede a composição corporal, não só o peso.' },
+      { q: 'Quem trata lipedema em Florianópolis?', a: 'A Dra. Isabel Aragão (CRM-SC 26139) faz a avaliação clínica e de composição corporal em São José e acompanha o tratamento. Quando há indicação cirúrgica, encaminha ao cirurgião.' },
+    ],
     content: `
+<div class="resposta"><strong>Resposta rápida:</strong> lipedema é uma doença do tecido gorduroso, quase só em mulheres, com acúmulo simétrico e doloroso nas pernas (às vezes nos braços), hematomas fáceis e pouca resposta à dieta. O diagnóstico é clínico, sem exame específico, e o tratamento combina compressão, drenagem, atividade física adaptada, controle do peso quando há obesidade junto e, em casos selecionados, medicamentos. <a href="/blog/tema/lipedema">Guia sobre lipedema</a>.</div>
 <p>O lipedema é uma condição crônica caracterizada pelo acúmulo anormal e desproporcional de gordura — geralmente nos membros inferiores — que acomete principalmente mulheres. Apesar de relativamente comum, é frequentemente confundido com obesidade ou com "inchaço" e permanece sem diagnóstico por anos. Se você mora em Florianópolis ou na Grande Florianópolis e suspeita de lipedema, este artigo explica o que é a condição e o que o tratamento médico oferece.</p>
 <h2>O que é o lipedema</h2>
 <p>O lipedema é uma doença do tecido adiposo em que o acúmulo acontece em padrões específicos — principalmente quadris, coxas e pernas —, é simétrico nos dois lados do corpo e não responde da forma esperada à dieta ou ao exercício. A gordura do lipedema tem características distintas da gordura convencional: é dolorosa ao toque, causa formação fácil de hematomas e não diminui proporcionalmente com a perda de peso.</p>
@@ -855,7 +960,14 @@ export const POSTS: Post[] = [
     date: 'Julho 2026',
     metaDesc: 'Mounjaro ou Ozempic: diferenças de ação, resultados esperados, efeitos colaterais e como o médico decide qual indicar. Dra. Isabel Aragão, São José/SC.',
     related: ['tirzepatida-florianopolis', 'ozempic-florianopolis-prescricao', 'mounjaro-florianopolis', 'glp1-medicamentos-injetaveis-emagrecer'],
+    faq: [
+      { q: 'Qual emagrece mais: Mounjaro ou Ozempic?', a: 'Na média dos estudos, o Mounjaro. Em um estudo comparativo direto, a tirzepatida levou a uma perda de peso maior que a semaglutida ao longo de 72 semanas. A resposta individual varia.' },
+      { q: 'Posso trocar um pelo outro no meio do tratamento?', a: 'Pode, com orientação médica, por exemplo quando a resposta é insuficiente ou os efeitos colaterais não melhoram. A troca é feita com ajuste de dose.' },
+      { q: 'Qual tem menos efeitos colaterais?', a: 'Os efeitos são parecidos (náusea, estômago cheio, alteração intestinal) e dependem mais da velocidade de aumento da dose do que do medicamento em si.' },
+      { q: 'Qual é mais barato?', a: 'O preço varia com a dose e a apresentação e muda com frequência. Com os genéricos da semaglutida chegando em 2026, a diferença tende a aumentar. A médica considera o custo na escolha.' },
+    ],
     content: `
+<div class="resposta"><strong>Resposta rápida:</strong> Ozempic é semaglutida (age no GLP-1); Mounjaro é tirzepatida (age no GLP-1 e no GIP). Nos estudos, a tirzepatida leva a uma perda de peso média maior, mas a escolha depende das doenças associadas, da tolerância aos efeitos colaterais, da resposta nas primeiras semanas e do custo. Os dois exigem receita, dose crescente e acompanhamento.</div>
 <p>Se você está pesquisando tratamento injetável para emagrecer, provavelmente já se deparou com os dois nomes mais buscados: Mounjaro e Ozempic. Eles funcionam de formas parecidas, mas não são o mesmo medicamento, e a diferença entre eles importa na hora de decidir. Este artigo explica cada um em linguagem clara.</p>
 <h2>O que é cada um</h2>
 <p>Os dois são medicamentos injetáveis de uso semanal, mas têm princípios ativos diferentes:</p>
@@ -893,7 +1005,14 @@ export const POSTS: Post[] = [
     date: 'Julho 2026',
     metaDesc: 'Efeitos colaterais do Mounjaro (tirzepatida): náusea, enjoo e outros sintomas, por que a dose sobe devagar e quando avisar o médico. Dra. Isabel Aragão.',
     related: ['tirzepatida-florianopolis', 'mounjaro-florianopolis', 'mounjaro-ou-ozempic-qual-escolher', 'glp1-medicamentos-injetaveis-emagrecer'],
+    faq: [
+      { q: 'Quanto tempo dura a náusea?', a: 'Costuma ser mais forte nos primeiros dias após iniciar ou subir a dose e diminuir em 1 a 2 semanas. Comer menos, mais devagar e evitar gordura ajuda.' },
+      { q: 'Mounjaro causa queda de cabelo?', a: 'A queda pode acontecer em emagrecimentos rápidos, por qualquer método, e não é efeito direto do medicamento. Ritmo moderado de perda e proteína adequada reduzem o risco.' },
+      { q: 'Posso tomar remédio para enjoo?', a: 'Em alguns casos a médica prescreve. Nunca por conta própria, e nunca pular etapas de dose para acelerar o resultado.' },
+      { q: 'Quando devo procurar atendimento?', a: 'Dor abdominal intensa e persistente (principalmente irradiando para as costas), vômitos que impedem de beber água, tontura por desidratação ou inchaço e falta de ar.' },
+    ],
     content: `
+<div class="resposta"><strong>Resposta rápida:</strong> os efeitos colaterais mais comuns do Mounjaro (tirzepatida) são náusea, sensação de estômago cheio, prisão de ventre ou diarreia, gases e cansaço, principalmente nas primeiras semanas e a cada aumento de dose. Em geral são leves e passam. Dor abdominal forte, vômitos persistentes, sinais de desidratação ou reação alérgica pedem contato imediato com a médica.</div>
 <p>Quem pensa em começar o tratamento com Mounjaro (tirzepatida) quase sempre tem a mesma dúvida: quais são os efeitos colaterais e o quanto eles atrapalham a vida. É uma preocupação legítima. A boa notícia é que a maioria dos efeitos é previsível, ligada ao início do tratamento, e tende a diminuir com o tempo. Este artigo explica o que costuma acontecer e o que merece atenção.</p>
 <p>Importante: este conteúdo é informativo e não substitui a orientação da sua médica. Qualquer sintoma que preocupe deve ser conversado com quem acompanha o seu tratamento.</p>
 <h2>Por que o Mounjaro causa efeitos colaterais</h2>
@@ -939,7 +1058,14 @@ export const POSTS: Post[] = [
     date: 'Julho 2026',
     metaDesc: 'Wegovy em Florianópolis: o que é, para quem é indicado, diferença para o Ozempic e como é o tratamento com acompanhamento médico. Dra. Isabel Aragão.',
     related: ['ozempic-florianopolis-prescricao', 'mounjaro-ou-ozempic-qual-escolher', 'glp1-medicamentos-injetaveis-emagrecer', 'tirzepatida-florianopolis'],
+    faq: [
+      { q: 'Wegovy e Ozempic são a mesma coisa?', a: 'O princípio ativo é o mesmo, a semaglutida. O Wegovy é registrado para obesidade e vai até 2,4 mg; o Ozempic é registrado para diabetes tipo 2 e vai até 2 mg.' },
+      { q: 'Quanto se perde com Wegovy?', a: 'Nos estudos, a média foi de cerca de 15% do peso em 68 semanas, junto com mudança de hábitos. A resposta individual varia e não é promessa.' },
+      { q: 'Wegovy ou Mounjaro?', a: 'O Mounjaro (tirzepatida) age em duas vias e teve perda média maior nos estudos. A escolha considera doenças associadas, tolerância, custo e disponibilidade.' },
+      { q: 'Preciso de receita?', a: 'Sim. É medicamento de uso controlado. A avaliação prévia confirma a indicação e identifica contraindicações.' },
+    ],
     content: `
+<div class="resposta"><strong>Resposta rápida:</strong> Wegovy é a semaglutida na formulação registrada para obesidade, injetável semanal de até 2,4 mg que reduz o apetite e aumenta a saciedade. Em Florianópolis e São José, a Dra. Isabel Aragão (CRM-SC 26139) avalia a indicação, prescreve e acompanha com bioimpedância; a clínica não vende o medicamento. <a href="/blog/tema/semaglutida">Guia sobre semaglutida</a>.</div>
 <p>O Wegovy é um dos medicamentos injetáveis mais associados ao tratamento da obesidade. Se você está buscando Wegovy em Florianópolis ou na Grande Florianópolis, este artigo explica o que ele é, como funciona e o que envolve iniciar o tratamento com acompanhamento adequado.</p>
 <h2>O que é o Wegovy</h2>
 <p>O Wegovy é o nome de marca da <strong>semaglutida</strong>, do laboratório Novo Nordisk, na formulação aprovada especificamente para o tratamento da obesidade. A semaglutida age como agonista de GLP-1, um hormônio intestinal que reduz o apetite, aumenta a saciedade e retarda o esvaziamento do estômago. O resultado, na prática, é comer menos e se sentir satisfeito por mais tempo.</p>
@@ -1012,7 +1138,14 @@ export const POSTS: Post[] = [
     date: 'Julho 2026',
     metaDesc: 'Lipedema ou gordura localizada: como diferenciar, sinais típicos (dor, simetria, pernas) e o que muda no tratamento. Dra. Isabel Aragão, São José/SC.',
     related: ['lipedema-florianopolis-tratamento', 'bioimpedancia-o-que-e', 'medica-emagrecimento-sao-jose', 'quando-procurar-medico-para-emagrecer'],
+    faq: [
+      { q: 'Lipedema aparece em homens?', a: 'É raro. A doença atinge quase só mulheres e costuma começar ou piorar na puberdade, na gestação ou na menopausa.' },
+      { q: 'Lipedema é o mesmo que linfedema?', a: 'Não. O linfedema é acúmulo de linfa, geralmente em um lado só, com inchaço que deixa marca ao pressionar. O lipedema é gordura, simétrico, e pode evoluir para um quadro misto se não for tratado.' },
+      { q: 'Celulite é sinal de lipedema?', a: 'Não necessariamente. Celulite é comum em quem não tem lipedema. O que diferencia é a dor, os hematomas, a simetria e a resistência à perda de peso.' },
+      { q: 'Como confirmar o diagnóstico?', a: 'Com avaliação clínica por profissional que conheça a condição: história, exame físico, medidas e descarte de outras causas. Não há exame de sangue específico.' },
+    ],
     content: `
+<div class="resposta"><strong>Resposta rápida:</strong> gordura localizada responde, ainda que devagar, a dieta e exercício e não dói; lipedema é simétrico, dói ao toque, forma hematomas com facilidade, desproporciona pernas e quadril em relação ao tronco e quase não muda com emagrecimento. Vários desses sinais juntos pedem avaliação médica, porque o tratamento dos dois é diferente.</div>
 <p>Muita gente convive por anos com um acúmulo de gordura nas pernas que não responde a dieta nem a exercício, e ouve sempre a mesma explicação: é só se esforçar mais. Em parte dos casos, o problema não é falta de esforço. É lipedema, uma condição diferente da gordura localizada comum, que exige um olhar médico específico. Saber diferenciar as duas é o primeiro passo.</p>
 <h2>O que é gordura localizada</h2>
 <p>A gordura localizada é o acúmulo de gordura em regiões específicas do corpo, como abdômen, culote ou coxas. Ela é influenciada por genética, hormônios e estilo de vida e, apesar de teimosa, tende a responder, ainda que devagar, à perda de peso geral, à alimentação e ao exercício. É uma questão estética e metabólica comum, sem a dor característica do lipedema.</p>
@@ -1048,7 +1181,13 @@ export const POSTS: Post[] = [
     date: 'Agosto 2026',
     metaDesc: 'Médica de emagrecimento em Florianópolis: consulta de 90 min, bioimpedância e plano individual, a minutos do centro, em São José. Dra. Isabel Aragão.',
     related: ['medica-emagrecimento-sao-jose', 'aplicacao-tirzepatida-florianopolis', 'como-funciona-acompanhamento-medico-emagrecimento', 'clinica-emagrecimento-sao-jose-sc'],
+    faq: [
+      { q: 'Onde fica a clínica?', a: 'Av. Mal. Castelo Branco, 65, Sala 1102 B, Kennedy Towers, bairro Campinas, São José, ao lado do Kobrasol. Cerca de 15 minutos do centro de Florianópolis pela BR-282.' },
+      { q: 'Atende online para quem é da Ilha?', a: 'Sim. A primeira consulta, com bioimpedância, é presencial; as revisões podem alternar entre presencial e online.' },
+      { q: 'Quanto custa a consulta?', a: 'O atendimento é particular. O valor e as formas de pagamento são informados pelo WhatsApp antes do agendamento.' },
+    ],
     content: `
+<div class="resposta"><strong>Resposta rápida:</strong> a Dra. Isabel Aragão (CRM-SC 26139) atende pacientes de Florianópolis em São José, a poucos minutos da Ilha pela BR-282, com consulta de 90 minutos, bioimpedância na hora e plano individual. Parte do acompanhamento pode ser feita online. Agendamento direto pelo WhatsApp (48) 99159-3468, sem encaminhamento.</div>
 <p>Quem mora em Florianópolis e busca tratamento médico para emagrecer tem uma boa notícia: não é preciso encarar trânsito longo para ter acompanhamento de qualidade. A Dra. Isabel Aragão (CRM-SC 26139) atende em São José, na Grande Florianópolis, a poucos minutos da Ilha pela BR-282, e também oferece acompanhamento online.</p>
 <h2>Atendimento para quem é de Florianópolis</h2>
 <p>São José faz divisa com Florianópolis e é um dos acessos mais rápidos para quem vem do continente ou da Ilha. Para pacientes do centro, da Trindade, do sul ou do norte da Ilha, a clínica é uma alternativa próxima e sem a disputa por vaga das regiões mais concentradas. Quem prefere não se deslocar toda semana pode fazer parte do acompanhamento a distância.</p>
@@ -1081,7 +1220,13 @@ export const POSTS: Post[] = [
     date: 'Agosto 2026',
     metaDesc: 'Médica de emagrecimento para quem mora em Palhoça: consulta de 90 min, bioimpedância e acompanhamento na clínica em São José. Dra. Isabel Aragão.',
     related: ['medica-emagrecimento-sao-jose', 'aplicacao-tirzepatida-palhoca', 'clinica-emagrecimento-sao-jose-sc', 'por-que-dieta-sozinha-falha'],
+    faq: [
+      { q: 'Quanto tempo de Palhoça até a clínica?', a: 'Do centro de Palhoça ao Kennedy Towers, em Campinas (São José), são cerca de 15 a 20 minutos pela BR-101, fora de horário de pico.' },
+      { q: 'A aplicação de injetável pode ser feita na clínica?', a: 'Sim, com a enfermeira, com horário marcado. Quem prefere aprende a aplicar em casa.' },
+      { q: 'Preciso de encaminhamento ou convênio?', a: 'Não. O atendimento é particular e a consulta é marcada direto pelo WhatsApp.' },
+    ],
     content: `
+<div class="resposta"><strong>Resposta rápida:</strong> a Dra. Isabel Aragão (CRM-SC 26139) atende pacientes de Palhoça na vizinha São José, com acesso rápido pela BR-101, em consulta de 90 minutos com bioimpedância e plano individual. Parte do acompanhamento pode ser online. Agendamento pelo WhatsApp (48) 99159-3468, sem encaminhamento.</div>
 <p>Se você é de Palhoça e quer tratar o emagrecimento com acompanhamento médico, a boa notícia é que a clínica da Dra. Isabel Aragão (CRM-SC 26139) fica logo ao lado, em São José, com acesso rápido pela BR-101. E parte do acompanhamento pode ser feita online, para quem prefere.</p>
 <h2>Atendimento para quem é de Palhoça</h2>
 <p>Palhoça e São José são cidades vizinhas, ligadas pela BR-101 e por vias que tornam o deslocamento curto para a maior parte dos bairros, do centro ao Pagani e à Enseada de Brito. Para quem já circula por São José no dia a dia, encaixar a consulta fica simples. E quem prefere resolver de casa pode fazer o acompanhamento a distância.</p>
@@ -1112,7 +1257,13 @@ export const POSTS: Post[] = [
     date: 'Agosto 2026',
     metaDesc: 'Médica de emagrecimento para quem mora em Biguaçu: consulta de 90 min, bioimpedância e acompanhamento na clínica em São José. Dra. Isabel Aragão.',
     related: ['medica-emagrecimento-sao-jose', 'aplicacao-tirzepatida-biguacu', 'clinica-emagrecimento-sao-jose-sc', 'quando-procurar-medico-para-emagrecer'],
+    faq: [
+      { q: 'Quanto tempo de Biguaçu até a clínica?', a: 'Do centro de Biguaçu ao Kennedy Towers, em Campinas (São José), são cerca de 15 minutos pela BR-101.' },
+      { q: 'Tem estacionamento?', a: 'O Kennedy Towers tem estacionamento no prédio e nas ruas próximas. Informe pelo WhatsApp se precisar de orientação de acesso.' },
+      { q: 'Preciso de encaminhamento ou convênio?', a: 'Não. O atendimento é particular e a consulta é marcada direto pelo WhatsApp.' },
+    ],
     content: `
+<div class="resposta"><strong>Resposta rápida:</strong> a Dra. Isabel Aragão (CRM-SC 26139) atende pacientes de Biguaçu na vizinha São José, poucos minutos ao sul pela BR-101, em consulta de 90 minutos com bioimpedância e plano individual, com opção de acompanhamento online. Agendamento pelo WhatsApp (48) 99159-3468, sem encaminhamento.</div>
 <p>Para quem mora em Biguaçu e busca tratamento médico para emagrecer, não é preciso ir longe: a Dra. Isabel Aragão (CRM-SC 26139) atende na vizinha São José, poucos minutos ao sul pela BR-101, com opção de acompanhamento online.</p>
 <h2>Atendimento para quem é de Biguaçu</h2>
 <p>Biguaçu fica na entrada norte da Grande Florianópolis, colada a São José pela BR-101. Para pacientes do centro, do bairro Universitário ou das localidades ao longo da rodovia, chegar à clínica é rápido, sem enfrentar o trânsito das regiões mais concentradas. Quem prefere pode iniciar e manter parte do acompanhamento de casa.</p>
@@ -1178,7 +1329,13 @@ export const POSTS: Post[] = [
     date: 'Agosto 2026',
     metaDesc: 'Aplicação de tirzepatida em Florianópolis com acompanhamento médico: avaliação, prescrição, ajuste de dose e aplicação com enfermeira. Dra. Isabel Aragão.',
     related: ['aplicacao-tirzepatida-sao-jose', 'tirzepatida-florianopolis', 'mounjaro-florianopolis', 'efeitos-colaterais-mounjaro-tirzepatida'],
+    faq: [
+      { q: 'Preciso aplicar na clínica toda semana?', a: 'Não. A maioria das pacientes aprende a aplicar em casa na primeira consulta. Quem prefere agenda a aplicação na clínica com a enfermeira.' },
+      { q: 'A clínica fornece o medicamento?', a: 'Não. A paciente compra na farmácia com a receita e leva à clínica se quiser aplicar lá.' },
+      { q: 'Onde é a aplicação no corpo?', a: 'Subcutânea, no abdome, na coxa ou na parte de trás do braço, alternando o local a cada semana.' },
+    ],
     content: `
+<div class="resposta"><strong>Resposta rápida:</strong> quem é de Florianópolis pode fazer a aplicação de tirzepatida com prescrição e acompanhamento em São José, ao lado da Ilha, com a Dra. Isabel Aragão (CRM-SC 26139) e aplicação pela enfermeira na clínica ou autoaplicação orientada. A dose começa baixa e sobe aos poucos, com bioimpedância para acompanhar a resposta. <a href="/blog/tema/tirzepatida-mounjaro">Guia sobre tirzepatida</a>.</div>
 <p>Quem é de Florianópolis e quer fazer a aplicação de tirzepatida com acompanhamento médico tem uma opção próxima: a Dra. Isabel Aragão (CRM-SC 26139) atende em São José, ao lado da Ilha, com prescrição, ajuste de dose e monitoramento. Parte do acompanhamento também pode ser feita online.</p>
 <h2>Aplicação com acompanhamento, e não por conta própria</h2>
 <p>A tirzepatida é um injetável semanal que reduz o apetite e aumenta a saciedade. O ponto que muita gente subestima é que o resultado seguro depende do acompanhamento: dose que sobe no tempo certo, avaliação da resposta e atenção aos efeitos colaterais. Comprar e aplicar por conta própria, sem prescrição, é arriscado. Vale entender <a href="/blog/glp1-medicamentos-injetaveis-emagrecer">como os injetáveis funcionam</a> antes de começar.</p>
@@ -1201,7 +1358,13 @@ export const POSTS: Post[] = [
     date: 'Agosto 2026',
     metaDesc: 'Aplicação de tirzepatida para quem mora em Palhoça: prescrição, ajuste de dose e aplicação com enfermeira na clínica em São José. Dra. Isabel Aragão.',
     related: ['aplicacao-tirzepatida-sao-jose', 'medica-emagrecimento-palhoca', 'tirzepatida-florianopolis', 'efeitos-colaterais-mounjaro-tirzepatida'],
+    faq: [
+      { q: 'Preciso aplicar na clínica toda semana?', a: 'Não. A aplicação pode ser feita em casa após a orientação. A clínica fica disponível para quem prefere aplicar com a enfermeira.' },
+      { q: 'A clínica vende a tirzepatida?', a: 'Não. A compra é na farmácia, com receita. Produtos sem registro na Anvisa vendidos pela internet são irregulares.' },
+      { q: 'Quanto tempo leva a aplicação na clínica?', a: 'Cerca de 10 minutos, com horário marcado, de segunda a sexta, das 8h às 18h.' },
+    ],
     content: `
+<div class="resposta"><strong>Resposta rápida:</strong> quem é de Palhoça pode fazer a aplicação de tirzepatida com prescrição e acompanhamento na vizinha São José, pela BR-101, com a Dra. Isabel Aragão (CRM-SC 26139): aplicação pela enfermeira na clínica ou autoaplicação orientada, dose crescente e bioimpedância para acompanhar a resposta. <a href="/blog/tema/tirzepatida-mounjaro">Guia sobre tirzepatida</a>.</div>
 <p>Se você é de Palhoça e pensa em fazer a aplicação de tirzepatida, o ideal é começar do jeito certo: com prescrição e acompanhamento médico. A Dra. Isabel Aragão (CRM-SC 26139) atende na vizinha São José, com acesso rápido pela BR-101, e conduz o tratamento de forma individualizada.</p>
 <h2>Por que aplicar com acompanhamento</h2>
 <p>A tirzepatida é um injetável semanal que reduz o apetite e aumenta a saciedade, e virou um dos tratamentos mais procurados para emagrecer. Mas ela é medicamento de prescrição, com contraindicações e efeitos colaterais que precisam de avaliação médica. Fazer com acompanhamento garante a dose certa no tempo certo e a leitura da resposta por bioimpedância. Entenda antes <a href="/blog/glp1-medicamentos-injetaveis-emagrecer">como os injetáveis para emagrecer funcionam</a>.</p>
@@ -1224,7 +1387,13 @@ export const POSTS: Post[] = [
     date: 'Agosto 2026',
     metaDesc: 'Aplicação de tirzepatida para quem mora em Biguaçu: prescrição, ajuste de dose e aplicação com enfermeira na clínica em São José. Dra. Isabel Aragão.',
     related: ['aplicacao-tirzepatida-sao-jose', 'medica-emagrecimento-biguacu', 'tirzepatida-florianopolis', 'efeitos-colaterais-mounjaro-tirzepatida'],
+    faq: [
+      { q: 'Preciso aplicar na clínica toda semana?', a: 'Não. A aplicação pode ser feita em casa após a orientação. Quem prefere agenda com a enfermeira na clínica.' },
+      { q: 'A clínica vende a tirzepatida?', a: 'Não. A compra é na farmácia, com receita. Evite sites que vendem "tirzepatida" sem registro na Anvisa.' },
+      { q: 'Como marcar?', a: 'Pelo WhatsApp (48) 99159-3468. A primeira consulta é com a médica; as aplicações seguintes são agendadas com a enfermeira.' },
+    ],
     content: `
+<div class="resposta"><strong>Resposta rápida:</strong> quem é de Biguaçu pode fazer a aplicação de tirzepatida com prescrição e acompanhamento na vizinha São José, poucos minutos pela BR-101, com a Dra. Isabel Aragão (CRM-SC 26139): aplicação pela enfermeira na clínica ou autoaplicação orientada, dose crescente e bioimpedância para acompanhar. <a href="/blog/tema/tirzepatida-mounjaro">Guia sobre tirzepatida</a>.</div>
 <p>Para quem é de Biguaçu e quer fazer a aplicação de tirzepatida com segurança, o caminho é começar com prescrição e acompanhamento. A Dra. Isabel Aragão (CRM-SC 26139) atende na vizinha São José, poucos minutos ao sul pela BR-101, e conduz o tratamento de forma individualizada, com opção de acompanhamento online.</p>
 <h2>Aplicar com médico faz diferença</h2>
 <p>A tirzepatida é um injetável semanal que age no apetite e na saciedade. Por ser medicamento de prescrição, tem contraindicações e efeitos colaterais que exigem avaliação antes de começar. O acompanhamento garante a dose certa no tempo certo e a avaliação da resposta por bioimpedância, algo que a balança sozinha não mostra. Vale conhecer <a href="/blog/glp1-medicamentos-injetaveis-emagrecer">como os injetáveis para emagrecer funcionam</a>.</p>
@@ -1247,7 +1416,14 @@ export const POSTS: Post[] = [
     date: 'Agosto 2026',
     metaDesc: 'Quanto dá para emagrecer com injetável: o que os estudos mostram, por que a resposta é individual e o que muda com acompanhamento médico. Dra. Isabel Aragão.',
     related: ['quanto-tempo-mounjaro-faz-efeito', 'perda-de-peso-saudavel-quantos-kg-por-mes', 'efeitos-colaterais-mounjaro-tirzepatida', 'mounjaro-ou-ozempic-qual-escolher'],
+    faq: [
+      { q: 'Mounjaro emagrece quantos quilos?', a: 'Depende do peso inicial. Para uma pessoa de 100 kg, a média dos estudos (15% a 22%) representaria 15 a 22 kg ao longo de cerca de 72 semanas. É média, não promessa.' },
+      { q: 'Em quanto tempo vejo resultado?', a: 'O apetite muda nas primeiras semanas. A balança responde mais a partir do segundo e terceiro mês, quando a dose já subiu.' },
+      { q: 'O que acontece se eu parar?', a: 'Sem plano de manutenção, parte do peso costuma voltar. Por isso o tratamento inclui hábitos, acompanhamento e, quando necessário, dose de manutenção.' },
+      { q: 'Perder rápido é bom?', a: 'Não necessariamente. Perda muito rápida costuma levar músculo e cabelo junto e facilita o efeito sanfona. O ritmo seguro é de 0,5 a 1% do peso por semana.' },
+    ],
     content: `
+<div class="resposta"><strong>Resposta rápida:</strong> não existe número garantido. Nos estudos, a semaglutida (Ozempic, Wegovy) levou a uma perda média próxima de 15% do peso e a tirzepatida (Mounjaro) entre 15% e 22% em pouco mais de um ano, sempre com acompanhamento e mudança de hábitos. A sua perda pode ser maior ou menor, e o que importa é perder gordura preservando músculo, o que só a bioimpedância mostra.</div>
 <p>"Mounjaro emagrece quantos quilos?" "Quanto dá pra perder com Ozempic?" É a pergunta que mais aparece de quem pensa em usar um injetável pra emagrecer. A resposta honesta tem três partes: <strong>depende, é individual, e não é promessa</strong>. Mas dá pra explicar o que esperar de verdade.</p>
 <h2>Por que não existe um número mágico</h2>
 <p>Os injetáveis da classe GLP-1 (como a semaglutida e a tirzepatida, os princípios ativos por trás de nomes como Ozempic, Wegovy e Mounjaro) agem reduzindo o apetite e aumentando a saciedade. Mas o quanto cada pessoa perde varia bastante, porque depende de fatores que são só seus:</p>
