@@ -5,7 +5,7 @@
 
 import { getMetaData } from './metaAdsData'
 import { getGscData, getGscSeries } from './gscData'
-import { getCustoConsultaCanais, CONSULTAS_MES } from './painel2Data'
+import { getCustoConsultaCanais, CONSULTAS_MES, PACIENTES_MES_TOTAL } from './painel2Data'
 import {
   janela, isPeriodo, conectado, hojeSP, addDays, fmtDia, diaSemana,
   getSerie, getCampanhas, getCampanhasPeriodo, getKeywords, getTermos, getIdade, getGenero, getSegmentos, getAnuncios, getNegativas, negativada,
@@ -68,7 +68,7 @@ async function Resumo({ j, periodo }: { j: Janela; periodo: PeriodoKey }) {
   const s7 = periodo === '7d' ? serie : serie7
   const alertas = montarAlertas({ campanhas, serie7: s7, termos14, anuncios, negativas, ontem })
 
-  const pacientesMes = CONSULTAS_MES.google + CONSULTAS_MES.meta
+  const pacientesMes = PACIENTES_MES_TOTAL
   const custoPaciente = canais?.google.consultas ? canais.google.custo : null
 
   return (
@@ -88,7 +88,7 @@ async function Resumo({ j, periodo }: { j: Janela; periodo: PeriodoKey }) {
           <Kpi eyebrow="Custo por contato" valor={serie.atual.contatos ? brl(serie.atual.gasto / serie.atual.contatos) : '—'} nota={`Conversão clique → contato: ${pct(taxa(serie.atual.contatos, serie.atual.cliques))} em ${num(serie.atual.cliques)} cliques.`}>
             <Delta atual={serie.atual.contatos ? serie.atual.gasto / serie.atual.contatos : 0} anterior={serie.anterior.contatos ? serie.anterior.gasto / serie.anterior.contatos : 0} invert texto={j.comparacao} />
           </Kpi>
-          <Kpi eyebrow={`Pacientes novos · ${CONSULTAS_MES.label}`} valor={pacientesMes ? String(pacientesMes) : '—'} nota={pacientesMes ? `Site/Google ${CONSULTAS_MES.google} · Meta ${CONSULTAS_MES.meta}. Vem da lista mensal; a aba Pacientes detalha.` : `Aguardando a lista de ${CONSULTAS_MES.label}. Setembro fechou com 14 (agosto, 26).`}>
+          <Kpi eyebrow={`Pacientes novos · ${CONSULTAS_MES.label}`} valor={pacientesMes ? String(pacientesMes) : '—'} nota={pacientesMes ? `Site/Google ${CONSULTAS_MES.google} · Instagram ${CONSULTAS_MES.instagram} · Indicação ${CONSULTAS_MES.indicacao} · Meta ${CONSULTAS_MES.meta}. Vem da lista mensal; a aba Pacientes detalha.` : `Aguardando a lista de ${CONSULTAS_MES.label}. Setembro fechou com 14 (agosto, 26).`}>
             {pacientesMes ? <Pill tom="brand">lista do mês</Pill> : <Pill>lista pendente</Pill>}
           </Kpi>
           <Kpi eyebrow={`Custo por paciente · Google · ${CONSULTAS_MES.label}`} valor={custoPaciente ? brl0(custoPaciente) : '—'} nota={canais ? `${brl0(canais.google.invest)} gastos no Google de 1º de ${canais.label} até hoje, ${canais.google.consultas} ${canais.google.consultas === 1 ? 'paciente' : 'pacientes'} do site.` : 'Gasto do mês indisponível.'}>
@@ -572,14 +572,14 @@ async function Busca() {
 // ───────────────────────────── PACIENTES ─────────────────────────────
 async function Pacientes() {
   const canais = await getCustoConsultaCanais()
-  const total = CONSULTAS_MES.google + CONSULTAS_MES.meta
+  const total = PACIENTES_MES_TOTAL
   return (
     <>
       <div className="pn-alerts">
         <div className="pn-alert warn"><span className="pn-ico" aria-hidden="true">!</span><div><b>Registro de contatos entra na fase 3</b><span>Hoje a contagem de pacientes vem da lista que você fecha no fim do mês. O formulário de registro de cada contato (origem, data, virou consulta ou não) substitui essa lista e passa a medir tempo de resposta.</span></div></div>
       </div>
       <div className="pn-row kpis">
-        <Kpi eyebrow={`Pacientes novos · ${CONSULTAS_MES.label}`} valor={total ? String(total) : '—'} nota={total ? undefined : `Aguardando a lista de ${CONSULTAS_MES.label}.`} />
+        <Kpi eyebrow={`Pacientes novos · ${CONSULTAS_MES.label}`} valor={total ? String(total) : '—'} nota={total ? `Site ${CONSULTAS_MES.google} · Instagram ${CONSULTAS_MES.instagram} · Indicação ${CONSULTAS_MES.indicacao} · Meta ${CONSULTAS_MES.meta}. Lista de 29/10; o mês ainda não fechou.` : `Aguardando a lista de ${CONSULTAS_MES.label}.`} />
         <Kpi eyebrow="Setembro fechado" valor="14" nota="Site 6 · Indicação 6 · Instagram 2 · Facebook 0. Agosto: 26 (Site 9 · Meta 9 · Indicação 8)." />
         <Kpi eyebrow="Custo por paciente · setembro" valor="R$ 384" nota="R$ 2.305 no Google sobre 6 pacientes do site. Tudo incluído (Google + Meta sobre 14): R$ 205." />
       </div>

@@ -202,11 +202,16 @@ async function metaDaily(n: number): Promise<ByDate | null> {
 export const CONSULTAS_MES = {
   label: 'outubro',
   inicio: '2026-10-01',
-  google: 0, // consultas do SITE (Google/orgânico) — outubro, parcial (André atualiza)
+  google: 6, // consultas do SITE (Google/orgânico) — lista do André de 29/10
   meta: 0, // consultas do META — outubro (Meta pausada desde 10/09)
-  // SETEMBRO FECHADO (lista do André): 14 novos = Site 6 (Kamille, Ana Caroline, Elana, Jéssica Raniel, Leonice Ramalho, Rosana Sardo) · Indicação 6 (Francisco, Juliana, Elisana, Carolina Probst, Filipe Simoni, Izabela Ramalho) · Instagram 2 (Luciana Castelleoni, Paola Platt) · Facebook 0
+  instagram: 5,
+  indicacao: 8,
+  // Só contagens aqui (nomes de pacientes ficam fora do código).
+  // OUTUBRO (lista de 29/10): 19 novos = Site 6 · Instagram 5 · Indicação 8 · Facebook 0
+  // SETEMBRO FECHADO: 14 novos = Site 6 · Indicação 6 · Instagram 2 · Facebook 0
   // Agosto: 26 (Site 9 · Meta 9 · Indicação 8)
 }
+export const PACIENTES_MES_TOTAL = CONSULTAS_MES.google + CONSULTAS_MES.meta + CONSULTAS_MES.instagram + CONSULTAS_MES.indicacao
 
 
 
