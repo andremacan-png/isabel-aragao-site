@@ -416,9 +416,9 @@ export const POSTS: Post[] = [
     shortTitle: 'Quanto Kg por Mês é Seguro Emagrecer',
     intro: 'Emagrecer rápido parece ótimo, até você descobrir o preço. Perda de cabelo, perda de músculo, cálculos na vesícula e efeito sanfona. Entenda por que o ritmo certo é fundamental.',
     category: 'Saúde',
-    readTime: '5 min',
+    readTime: '8 min',
     date: 'Julho 2026',
-    metaDesc: 'Quantos kg por mês é saudável perder: o ritmo seguro (0,5 a 1 kg por semana), por que mais rápido custa músculo e como medir com bioimpedância.',
+    metaDesc: 'Quantos kg por mês é saudável perder: 0,5 a 1% do peso por semana (2 a 4 kg por mês), tabela por peso inicial, com e sem medicação, sinais de que está rápido demais.',
     related: ['bioimpedancia-o-que-e', 'quanto-emagrece-com-injetavel', 'efeito-sanfona-por-que-o-peso-volta', 'como-ler-resultado-bioimpedancia', 'clinica-emagrecimento-sao-jose-sc'],
     faq: [
       { q: 'Quantos kg por semana é saudável perder?', a: 'De 0,5 a 1 kg por semana, o que dá 2 a 4 kg por mês. Nesse ritmo a maior parte do peso perdido é gordura, e o corpo tem tempo de se adaptar sem perder músculo em excesso.' },
@@ -426,34 +426,85 @@ export const POSTS: Post[] = [
       { q: 'Perder peso rápido faz cair cabelo?', a: 'Pode. A queda (eflúvio telógeno) costuma aparecer 2 a 4 meses depois de uma restrição muito severa e tende a se resolver quando o corpo se reequilibra. É um dos sinais de que o ritmo foi rápido demais.' },
       { q: 'Como saber se estou perdendo gordura ou músculo?', a: 'A balança não diferencia. A bioimpedância mostra o percentual de gordura e a massa muscular; se o peso cai e o músculo cai junto, o plano precisa de ajuste.' },
       { q: 'Com Mounjaro ou tirzepatida, quantos kg por mês dá para perder?', a: 'Varia muito de pessoa para pessoa e nunca é promessa. O ritmo saudável continua sendo a referência: o medicamento ajuda a controlar a fome para que a perda aconteça de forma sustentável, com acompanhamento e bioimpedância.' },
+      { q: 'Perdi 5 kg no primeiro mês. É normal?', a: 'Pode ser. No primeiro mês boa parte da perda é água e glicogênio, não gordura, e por isso a balança cai mais rápido. O ritmo esperado a partir do segundo mês é menor. Se a perda rápida continuar por várias semanas, com cansaço ou queda de cabelo, o plano deve ser revisto em consulta.' },
+      { q: 'Estagnei depois de alguns meses. O que fazer?', a: 'Platô é esperado: o corpo mais leve gasta menos e se adapta. A conduta depende do caso e é definida em consulta: rever alimentação e treino, ajustar a dose do medicamento quando há, cuidar do sono e, às vezes, apenas manter por um período antes de retomar.' },
     ],
     content: `
-<div class="resposta"><strong>Resposta rápida:</strong> o ritmo saudável é de <strong>0,5 a 1 kg por semana, ou 2 a 4 kg por mês</strong>. Mais rápido que isso costuma custar músculo, cabelo e efeito sanfona. O certo é medir com bioimpedância se a perda é de gordura, e não só de peso. Quer um primeiro sinal? Use a <a href="/calculadora-imc">calculadora de IMC</a>.</div>
-<p>Toda paciente quer emagrecer o mais rápido possível. É compreensível — carregar peso extra é desconfortável, e a motivação no início do tratamento costuma ser alta. Mas a velocidade importa: emagrecer muito rápido cobra um preço que muitas pessoas não sabem que estão pagando.</p>
+<div class="resposta"><strong>Resposta rápida:</strong> o ritmo saudável é de <strong>0,5 a 1% do peso por semana</strong>, o que para a maioria das pessoas dá <strong>2 a 4 kg por mês</strong>. Mais rápido que isso costuma custar músculo, cabelo e efeito sanfona. Com medicação injetável sob acompanhamento, a média dos estudos fica perto de 5% do peso nos primeiros 3 meses, dentro dessa faixa. O certo é medir com bioimpedância se a perda é de gordura, e não só de peso. Quer um primeiro sinal? Use a <a href="/calculadora-imc">calculadora de IMC</a>.</div>
+<p>Toda paciente quer emagrecer o mais rápido possível. É compreensível: carregar peso extra é desconfortável, e a motivação no início do tratamento costuma ser alta. Mas a velocidade importa. Emagrecer muito rápido cobra um preço que muita gente não sabe que está pagando, e emagrecer no ritmo certo é o que faz o resultado durar.</p>
+<p>Um aviso antes de tudo: os números abaixo são referências de diretrizes e de estudos. Cada caso é um caso, e o ritmo adequado para você depende do peso inicial, da composição corporal, das doenças associadas e do tratamento escolhido, tudo avaliado em consulta. Nada aqui é promessa de resultado.</p>
+
 <h2>O ritmo saudável segundo as evidências</h2>
-<p>As principais diretrizes de medicina da obesidade recomendam uma perda de peso de <strong>0,5 a 1 kg por semana</strong>, o que equivale a <strong>2 a 4 kg por mês</strong>. Esse ritmo:</p>
+<p>As diretrizes de medicina da obesidade recomendam uma perda de <strong>0,5 a 1% do peso corporal por semana</strong>. Para quem pesa entre 70 e 100 kg, isso equivale a <strong>0,5 a 1 kg por semana, ou 2 a 4 kg por mês</strong>. Esse ritmo:</p>
 <ul>
   <li>Permite que a maior parte do peso perdido seja gordura, não músculo</li>
-  <li>É sustentável a longo prazo sem adaptação metabólica severa</li>
-  <li>Reduz o risco de complicações associadas ao emagrecimento rápido</li>
-  <li>Favorece resultados mantidos após o término do tratamento ativo</li>
+  <li>É sustentável a longo prazo, sem adaptação metabólica severa</li>
+  <li>Reduz o risco de complicações do emagrecimento rápido, como cálculos na vesícula</li>
+  <li>Favorece resultados mantidos depois da fase ativa do tratamento</li>
 </ul>
-<p>Em alguns casos específicos, com supervisão médica rigorosa, ritmos um pouco mais acelerados são conduzidos com segurança — mas são exceção, não regra.</p>
-<h2>O que acontece quando você perde peso muito rápido</h2>
-<p>Dietas muito restritivas (<1.200 kcal/dia sem supervisão) e métodos radicais têm consequências documentadas:</p>
-<ul>
-  <li><strong>Perda de massa muscular:</strong> em jejuns e dietas extremas, até 30-40% da perda de peso pode ser músculo — não gordura. Menos músculo = metabolismo permanentemente mais lento</li>
-  <li><strong>Queda de cabelo (eflúvio telógeno):</strong> ocorre 2 a 4 meses após uma dieta muito restritiva e pode durar até 6 meses</li>
-  <li><strong>Cálculos biliares:</strong> emagrecimento rápido aumenta significativamente o risco de formação de pedras na vesícula</li>
-  <li><strong>Deficiências nutricionais:</strong> vitaminas, minerais e proteínas ficam abaixo do necessário</li>
-  <li><strong>Efeito sanfona acelerado:</strong> quanto mais rápido se perde, mais rápido se recupera</li>
-</ul>
+<p>Em situações específicas, como obesidade grave ou preparo para cirurgia, ritmos um pouco mais acelerados são conduzidos com supervisão médica rigorosa. São exceção, não regra.</p>
+
+<h2>Quantos kg por mês pelo seu peso inicial</h2>
+<p>A faixa de 0,5 a 1% por semana muda bastante conforme o ponto de partida. A tabela abaixo mostra a referência mensal (4 semanas) por peso inicial:</p>
+<table>
+  <thead><tr><th>Peso inicial</th><th>Ritmo saudável por semana</th><th>Por mês (referência)</th></tr></thead>
+  <tbody>
+    <tr><td>70 kg</td><td>0,35 a 0,7 kg</td><td>1,5 a 3 kg</td></tr>
+    <tr><td>90 kg</td><td>0,45 a 0,9 kg</td><td>2 a 3,5 kg</td></tr>
+    <tr><td>110 kg</td><td>0,55 a 1,1 kg</td><td>2 a 4,5 kg</td></tr>
+    <tr><td>130 kg</td><td>0,65 a 1,3 kg</td><td>2,5 a 5 kg</td></tr>
+  </tbody>
+</table>
+<p>Repare que quem pesa mais perde mais quilos no mesmo ritmo percentual, e isso é esperado. Comparar o seu número com o de outra pessoa quase nunca faz sentido.</p>
+
+<h2>Com e sem medicação: o que muda no ritmo</h2>
+<p>Sem medicação, com alimentação ajustada, atividade física e acompanhamento, a referência é a da tabela: 2 a 4 kg por mês para a maioria, com o ritmo caindo ao longo dos meses.</p>
+<p>Com medicamentos injetáveis como a semaglutida e a tirzepatida, sob prescrição e acompanhamento, o ritmo costuma ficar dentro da mesma faixa saudável, mas se mantém por mais tempo. Nos estudos, a perda média fica ao redor de 5% do peso nos primeiros 3 meses, chega a 10% a 12% por volta dos 6 meses nas doses de manutenção e continua até 12 a 18 meses, quando tende a estabilizar. Para 90 kg, 5% em 3 meses são cerca de 4,5 kg, ou 1,5 kg por mês: um ritmo tranquilo, não uma corrida. Se quiser entender como a dose influencia o tempo de resposta, veja <a href="/blog/quanto-tempo-mounjaro-faz-efeito">em quanto tempo o Mounjaro faz efeito</a> e <a href="/blog/quanto-emagrece-com-injetavel">quanto dá para emagrecer com injetável</a>.</p>
+
+<h2>O primeiro mês engana</h2>
+<p>No primeiro mês de qualquer tratamento, a balança costuma cair mais rápido: 3, 4, até 5 kg. Boa parte disso é água e glicogênio (a reserva de energia do músculo e do fígado, que carrega água junto), não gordura. Por isso o ritmo "desacelera" no segundo mês e muita gente desanima justamente quando a perda passou a ser de gordura de verdade. A referência de 2 a 4 kg por mês vale para a média dos meses, não para o primeiro.</p>
 <!--CTA-->
-<h2>Peso ≠ gordura: a confusão que atrapalha</h2>
-<p>A balança mede peso total: gordura, músculo, água, ossos. Você pode perder 3 kg de músculo e água e ganhar 1 kg de gordura — e a balança vai mostrar que você "emagreceu" 2 kg. A bioimpedância desfaz essa confusão: ela mede separadamente cada componente e mostra se o processo está indo no caminho certo.</p>
-<p>Por isso, o acompanhamento médico com bioimpedância regular é tão importante: ele garante que a perda que está acontecendo é a perda que importa.</p>
+
+<h2>O que acontece quando você perde peso muito rápido</h2>
+<p>Dietas muito restritivas (menos de 1.200 kcal por dia sem supervisão) e métodos radicais têm consequências documentadas:</p>
+<ul>
+  <li><strong>Perda de massa muscular:</strong> em jejuns e dietas extremas, até 30% a 40% do peso perdido pode ser músculo. Menos músculo significa metabolismo mais lento e mais facilidade para reganhar.</li>
+  <li><strong>Queda de cabelo (eflúvio telógeno):</strong> aparece 2 a 4 meses depois de uma restrição forte e pode durar até 6 meses.</li>
+  <li><strong>Cálculos biliares:</strong> emagrecimento rápido aumenta o risco de pedras na vesícula.</li>
+  <li><strong>Deficiências nutricionais:</strong> proteína, ferro, vitamina D e B12 ficam abaixo do necessário.</li>
+  <li><strong>Efeito sanfona acelerado:</strong> quanto mais rápido se perde, mais forte a resposta do corpo para recuperar. <a href="/blog/efeito-sanfona-por-que-o-peso-volta">Entenda por que o peso volta</a>.</li>
+</ul>
+
+<h2>Sinais de que está rápido demais</h2>
+<ul>
+  <li>Mais de 1,5% do peso por semana por várias semanas seguidas, fora do primeiro mês</li>
+  <li>Cansaço constante, tontura ao levantar, sensação de frio</li>
+  <li>Queda de cabelo acima do normal</li>
+  <li>Força caindo na academia ou nas tarefas do dia</li>
+  <li>Bioimpedância mostrando massa muscular em queda junto com a gordura</li>
+  <li>Irritabilidade, sono ruim e pensamento constante em comida</li>
+</ul>
+<p>Qualquer um desses sinais é motivo para rever o plano com a médica, não para "aguentar".</p>
+
+<h2>Por que o ritmo desacelera com o tempo</h2>
+<p>É normal e esperado. Três coisas acontecem: o corpo mais leve gasta menos energia para existir e se mover; o organismo reduz o gasto em repouso como defesa (a adaptação metabólica); e a fome aumenta por mudanças hormonais. Por isso o plano precisa ser ajustado ao longo do caminho, e não repetido. O platô depois de alguns meses não é falha sua nem do tratamento; é o momento de reavaliar dose, alimentação, treino e sono.</p>
+
+<h2>Peso não é gordura: a confusão que atrapalha</h2>
+<p>A balança mede o peso total: gordura, músculo, água e ossos. Você pode perder 3 kg de músculo e água e ganhar 1 kg de gordura, e a balança vai dizer que "emagreceu" 2 kg. A <a href="/blog/bioimpedancia-o-que-e">bioimpedância</a> desfaz essa confusão: mede cada componente separadamente e mostra se o processo está indo no caminho certo. Um bom mês é aquele em que a gordura cai e a massa muscular fica estável, mesmo que a balança tenha mudado menos do que você queria.</p>
+
+<h2>Como manter o ritmo saudável</h2>
+<ul>
+  <li><strong>Proteína suficiente</strong> em todas as refeições, para proteger o músculo</li>
+  <li><strong>Treino de força</strong> 2 a 3 vezes por semana, adaptado à sua condição</li>
+  <li><strong>Sono de 7 a 8 horas</strong>, porque dormir pouco aumenta a fome e o cortisol</li>
+  <li><strong>Déficit moderado</strong>, não radical: comer pouco demais acelera a perda de músculo</li>
+  <li><strong>Bioimpedância a cada 30 a 60 dias</strong> para ajustar o plano pelo que mudou de verdade</li>
+  <li><strong>Plano de manutenção</strong> definido antes de chegar ao peso desejado, não depois</li>
+</ul>
+
 <h2>O número que não aparece na balança</h2>
-<p>A meta não é um número na balança, e sim uma composição corporal mais saudável. Com o tratamento adequado, é possível reduzir gordura enquanto se mantém (ou até se aumenta) a massa muscular. Isso não se consegue com dietas radicais: se consegue com um <a href="/blog/como-funciona-acompanhamento-medico-emagrecimento">plano individualizado e bem monitorado</a>. Se você está na Grande Florianópolis, veja como isso funciona na prática em uma <a href="/blog/clinica-emagrecimento-sao-jose-sc">clínica de emagrecimento em São José/SC</a>.</p>`,
+<p>A meta não é um número na balança, e sim uma composição corporal mais saudável. Com o tratamento adequado, é possível reduzir gordura mantendo, ou até aumentando, a massa muscular. Isso não se consegue com dietas radicais: se consegue com um <a href="/blog/como-funciona-acompanhamento-medico-emagrecimento">plano individualizado e bem monitorado</a>. A Dra. Isabel Aragão (CRM-SC 26139) atende em São José/SC, com bioimpedância na consulta e revisões periódicas, e também online. Se você está na Grande Florianópolis, veja como isso funciona na prática em uma <a href="/blog/clinica-emagrecimento-sao-jose-sc">clínica de emagrecimento em São José/SC</a>.</p>
+`,
   },
   {
     slug: 'primeira-consulta-medica-emagrecimento',

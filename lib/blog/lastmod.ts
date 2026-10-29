@@ -75,7 +75,7 @@ const ATUALIZADO: Record<string, string> = {
   'clinica-emagrecimento-sao-jose-sc': '2026-10-09', // resposta rápida + onde fica + FAQ (São José)
   'bioimpedancia-sao-jose-sc': '2026-10-09', // resposta rápida + onde fica + FAQ (São José)
   'aplicacao-injecao-emagrecer-sao-jose': '2026-10-09', // resposta rápida + onde fica + FAQ (São José)
-  'perda-de-peso-saudavel-quantos-kg-por-mes': '2026-09-03',
+  'perda-de-peso-saudavel-quantos-kg-por-mes': '2026-10-29', // expansão 2.0: tabela por peso, com/sem medicação, sinais, FAQ 7
   'quanto-tempo-mounjaro-faz-efeito': '2026-10-29', // expansão 2.0: semana a semana, por dose, platô, FAQ 7
   'bioimpedancia-o-que-e': '2026-10-29', // resposta rápida + FAQ (padrão 2.0)
   'emagrecimento-apos-40-anos': '2026-10-29', // resposta rápida + FAQ (padrão 2.0)
