@@ -6,6 +6,8 @@
 // Ao editar o conteúdo de um post, atualize ATUALIZADO[slug]. Post novo: entra sozinho pelo fallback.
 
 const PUBLICADO: Record<string, string> = {
+  'remedio-para-emagrecer-em-comprimido-orforglipron-semaglutida-oral': '2026-10-29',
+  'resistencia-a-insulina-ganho-de-peso': '2026-10-29',
   'gordura-visceral-o-que-e-como-reduzir': '2026-10-29',
   'mounjaro-parou-de-funcionar': '2026-10-29',
   'mounjaro-sao-jose-sc': '2026-10-29',
@@ -55,6 +57,7 @@ const PUBLICADO: Record<string, string> = {
 }
 
 const ATUALIZADO: Record<string, string> = {
+  'compulsao-alimentar-noite': '2026-10-29', // expansão 2.0
   'quanto-emagrece-com-injetavel': '2026-10-29', // resposta rápida + FAQ (padrão 2.0)
   'aplicacao-tirzepatida-biguacu': '2026-10-29', // resposta rápida + FAQ (padrão 2.0)
   'aplicacao-tirzepatida-palhoca': '2026-10-29', // resposta rápida + FAQ (padrão 2.0)

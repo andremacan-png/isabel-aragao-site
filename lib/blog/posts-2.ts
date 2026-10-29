@@ -141,48 +141,71 @@ export const POSTS_2: Post[] = [
   {
     slug: 'compulsao-alimentar-noite',
     num: 37,
-    title: 'Compulsão Alimentar à Noite: Por Que Acontece e Como Tratar',
+    title: 'Compulsão Alimentar: Por Que Acontece, Por Que Piora à Noite e Como o Tratamento Médico Ajuda',
     shortTitle: 'Compulsão Alimentar à Noite',
     intro: 'O dia foi controlado. Aí chega a noite e parece que outra pessoa assume o comando na frente da geladeira. Se isso soa familiar, saiba: quase nunca é falta de controle. Tem causa, tem padrão e tem tratamento.',
     category: 'Saúde',
-    readTime: '6 min',
+    readTime: '8 min',
     date: 'Setembro 2026',
-    metaDesc: 'Compulsão alimentar à noite: por que acontece (pouca comida de dia, sono, estresse), o que não é falta de controle e como tratar. Dra. Isabel Aragão.',
+    metaDesc: 'Compulsão alimentar: diferença entre fome, vontade e compulsão, o transtorno como diagnóstico, por que piora à noite e como o tratamento médico ajuda.',
     related: ['por-que-dieta-sozinha-falha', 'hormonios-ganho-de-peso', 'efeito-sanfona-por-que-o-peso-volta', 'como-funciona-acompanhamento-medico-emagrecimento'],
     faq: [
-      { q: 'Por que tenho compulsão alimentar à noite?', a: 'Os motivos mais comuns são restrição durante o dia (que gera rebote), cansaço e estresse acumulados (que reduzem o freio), sono ruim e o ambiente noturno de sofá, tela e comida à mão. Raramente é uma questão de caráter.' },
-      { q: 'Como parar de comer à noite?', a: 'Começa de manhã: fazer as refeições do dia com proteína e fibra, não pular o jantar, cuidar do sono e identificar os gatilhos. Quando o padrão é intenso e frequente, é caso de avaliação profissional.' },
-      { q: 'Compulsão alimentar é doença?', a: 'O transtorno de compulsão alimentar é um diagnóstico médico e psicológico, com critérios definidos. Nem toda vontade de comer à noite é compulsão, e é justamente a avaliação que diferencia uma coisa da outra.' },
-      { q: 'Remédio para emagrecer ajuda na compulsão?', a: 'Para algumas pessoas, tratamentos que reduzem a fome e o impulso alimentar fazem parte do plano, junto com o acompanhamento nutricional e, quando indicado, psicológico. É decisão médica e o resultado é individual.' },
-      { q: 'Pular o jantar ajuda a não comer à noite?', a: 'Geralmente piora. Chegar à noite com fome acumulada é um dos maiores gatilhos da compulsão. Um jantar completo costuma proteger mais do que restringir.' },
+      { q: 'Por que tenho compulsão alimentar à noite?', a: 'Quase sempre pela soma de restrição durante o dia, cansaço que reduz o freio, estresse acumulado e sono ruim. O corpo cobra à noite o que faltou de dia. Tem causa e tem tratamento.' },
+      { q: 'Compulsão alimentar é doença?', a: 'Pode ser. Episódios frequentes, com grande quantidade em pouco tempo, sensação de perda de controle e sofrimento, por pelo menos 3 meses, caracterizam o transtorno de compulsão alimentar, um diagnóstico reconhecido. A avaliação profissional diferencia isso de um episódio isolado.' },
+      { q: 'Como parar de comer à noite?', a: 'Comer de dia, com refeições completas e proteína, não pular o jantar, dormir melhor, mapear os gatilhos e, quando os episódios são frequentes, buscar tratamento com médico, nutricionista e psicólogo. Força de vontade sozinha não resolve um padrão com causa biológica.' },
+      { q: 'Remédio para emagrecer ajuda na compulsão?', a: 'Pode ajudar. Os injetáveis para obesidade reduzem a fome e o impulso alimentar em parte das pessoas, e existem medicamentos específicos para o transtorno de compulsão alimentar. Cada caso é um caso: a indicação é feita em consulta, muitas vezes junto com psicoterapia.' },
+      { q: 'Pular o jantar ajuda a não comer à noite?', a: 'Não. Costuma piorar: a restrição aumenta a fome e o rebote vem mais tarde, maior e com mais culpa. Um jantar completo protege mais do que qualquer restrição.' },
+      { q: 'Compulsão alimentar tem cura?', a: 'Tem tratamento com bons resultados, principalmente quando combina abordagem nutricional, psicológica e, quando indicada, medicamentosa. Os episódios podem diminuir muito ou desaparecer, e o acompanhamento evita recaídas.' },
     ],
     content: `
-<div class="resposta"><strong>Resposta rápida:</strong> a compulsão à noite quase nunca é "falta de controle". Costuma ser o resultado de comer pouco de dia, dormir mal, estresse acumulado e sinais de fome que chegam mais fortes ao anoitecer. <strong>Tem causa, e tem tratamento.</strong></div>
-<p>Existe um padrão que se repete em muitas histórias de consultório. A pessoa "vai bem" o dia inteiro: café pequeno, almoço leve, lanche evitado. E à noite, cansada, sozinha ou em frente à TV, come muito, rápido e com culpa. No dia seguinte, tenta compensar comendo ainda menos. E o ciclo recomeça.</p>
+<div class="resposta"><strong>Resposta rápida:</strong> compulsão alimentar é comer uma quantidade grande em pouco tempo com <strong>sensação de perda de controle e sofrimento depois</strong>. Quase nunca é "falta de controle": costuma ser o resultado de comer pouco de dia, dormir mal, estresse acumulado e sinais de fome que chegam mais fortes ao anoitecer. Quando os episódios são frequentes, pode ser o transtorno de compulsão alimentar, um diagnóstico com tratamento próprio, que combina nutrição, psicologia e, quando indicado, medicamentos. <a href="/blog/tema/por-que-o-peso-sobe">Veja o guia sobre por que o peso sobe</a>.</div>
+<p>Existe um padrão que se repete em muitas histórias de consultório. A pessoa "vai bem" o dia inteiro: café pequeno, almoço leve, lanche evitado. E à noite, cansada, sozinha ou em frente à TV, come muito, rápido e com culpa. No dia seguinte, tenta compensar comendo ainda menos. E o ciclo recomeça. Este artigo explica o que está por trás disso e o que ajuda de verdade.</p>
+
+<h2>Fome, vontade e compulsão não são a mesma coisa</h2>
+<table>
+  <thead><tr><th></th><th>Fome física</th><th>Vontade de comer</th><th>Compulsão</th></tr></thead>
+  <tbody>
+    <tr><td>Como começa</td><td>Aos poucos, horas após a última refeição</td><td>De repente, por gatilho (cheiro, emoção, tédio)</td><td>De repente, muitas vezes à noite ou após restrição</td></tr>
+    <tr><td>O que aceita</td><td>Qualquer comida</td><td>Algo específico (doce, salgado)</td><td>Grande quantidade, rápido, muitas vezes sem prazer</td></tr>
+    <tr><td>Controle</td><td>Dá para esperar</td><td>Dá para negociar</td><td>Sensação de não conseguir parar</td></tr>
+    <tr><td>Depois</td><td>Satisfação</td><td>Satisfação ou leve culpa</td><td>Culpa, vergonha, desconforto físico</td></tr>
+  </tbody>
+</table>
+<p>Quando os episódios de compulsão acontecem pelo menos uma vez por semana por 3 meses, com sofrimento e sem comportamento de compensação (como vômito), configura-se o transtorno de compulsão alimentar, o transtorno alimentar mais comum e ainda pouco diagnosticado. É um diagnóstico, não um rótulo, e é a avaliação profissional que diferencia uma coisa da outra.</p>
+
 <h2>Por que a noite é o horário crítico</h2>
 <ul>
   <li><strong>Restrição de dia, rebote à noite.</strong> O corpo não esquece o que deixou de receber. Quanto mais controlado foi o dia, mais forte chega o sinal de fome quando o freio afrouxa.</li>
-  <li><strong>Cansaço reduz o freio.</strong> A capacidade de resistir a impulsos é limitada e vai se gastando ao longo do dia. À noite, sobra pouca.</li>
+  <li><strong>Cansaço reduz o freio.</strong> A capacidade de resistir a impulsos é limitada e se gasta ao longo do dia. À noite, sobra pouca.</li>
   <li><strong>Estresse pede conforto.</strong> Comida é a forma mais rápida e disponível de alívio. Não é fraqueza: é um mecanismo de recompensa funcionando.</li>
   <li><strong>Sono ruim aumenta a fome.</strong> Dormir pouco desregula os hormônios que controlam apetite e saciedade, e o efeito aparece nas noites seguintes.</li>
   <li><strong>O ambiente ajuda o hábito.</strong> Sofá, tela, pacote aberto e ninguém olhando. O contexto convida.</li>
 </ul>
-<h2>Fome, vontade e compulsão não são a mesma coisa</h2>
-<p>Fome física cresce aos poucos e aceita qualquer comida. Vontade de comer aparece de repente e quer algo específico. Compulsão tem características próprias: quantidade grande em pouco tempo, sensação de perda de controle e sofrimento depois. Quando isso é frequente e persistente, pode configurar o transtorno de compulsão alimentar, que é um diagnóstico e não um rótulo. É a avaliação profissional que diferencia uma coisa da outra, e é por isso que ela importa.</p>
+
+<h2>A biologia por trás da compulsão</h2>
+<p>Depois de dias ou semanas de restrição, a grelina (hormônio da fome) sobe e a leptina (saciedade) cai; o cérebro passa a responder mais forte a estímulos de comida, principalmente de alto valor calórico. Em pessoas com obesidade, a saciedade já chega com atraso. Somam-se a isso o cortisol do estresse e a privação de sono, e o resultado é um impulso que não se vence com força de vontade porque não é uma questão de vontade. <a href="/blog/hormonios-ganho-de-peso">Entenda os hormônios do apetite</a>.</p>
+
 <h2>O ciclo que se alimenta sozinho</h2>
 <p>A culpa da noite leva à restrição do dia seguinte. A restrição leva à fome acumulada. A fome acumulada leva à compulsão da noite. E cada volta desse ciclo reforça o próximo. É a mesma armadilha que explicamos em <a href="/blog/por-que-dieta-sozinha-falha">por que a dieta sozinha falha</a>: o corpo se defende da escassez, e a defesa vem em forma de fome.</p>
 <!--CTA-->
+
 <h2>O que ajuda de verdade</h2>
 <ul>
   <li><strong>Comer de dia para não desabar de noite.</strong> Refeições completas, com proteína e fibra, distribuídas ao longo do dia. Parece contraintuitivo, e é o que mais funciona.</li>
   <li><strong>Não pular o jantar.</strong> Um jantar de verdade protege mais do que qualquer restrição.</li>
   <li><strong>Tratar o sono como prioridade</strong>, não como luxo.</li>
   <li><strong>Mapear os gatilhos.</strong> Que horário, que situação, que emoção. Padrão identificado é padrão que dá para interromper.</li>
-  <li><strong>Apoio profissional.</strong> Nutrição, psicologia e, quando indicado pelo médico, tratamento medicamentoso que reduz a fome e o impulso alimentar. Para algumas pessoas isso muda o jogo; é decisão médica, individual, sem promessa.</li>
+  <li><strong>Mudar o ambiente da noite:</strong> comida planejada à vista, o resto fora de alcance, menos tela no sofá.</li>
+  <li><strong>Apoio profissional.</strong> Nutrição, psicologia (a terapia cognitivo-comportamental é a abordagem com mais evidência) e, quando indicado pelo médico, tratamento medicamentoso.</li>
 </ul>
+
+<h2>Como o tratamento médico entra</h2>
+<p>Quando a compulsão está ligada à obesidade, os medicamentos injetáveis que reduzem a fome e o impulso alimentar (semaglutida, tirzepatida) ajudam parte das pessoas a quebrar o ciclo, porque atuam justamente nos sinais de fome que chegam fortes à noite. Para o transtorno de compulsão alimentar há também medicamentos específicos. Cada caso é um caso: a indicação depende do diagnóstico, do IMC, das doenças associadas e do histórico, e é feita em consulta, quase sempre junto com acompanhamento nutricional e psicológico. Nada disso é promessa: é tratamento, com acompanhamento.</p>
+
 <h2>Quando procurar ajuda</h2>
 <p>Se os episódios são frequentes, se vêm com sofrimento, ou se o peso está subindo por causa deles, é hora de avaliar. Não para ouvir "tenha mais força de vontade", que você já tentou, mas para entender a causa e tratar. Veja também <a href="/blog/quando-procurar-medico-para-emagrecer">quando procurar um médico para emagrecer</a>.</p>
-<p>A Dra. Isabel Aragão (CRM-SC 26139) atende em São José/SC e <a href="/blog/medica-emagrecimento-florianopolis">Florianópolis</a> e região, presencialmente e online, com avaliação completa e <a href="/blog/como-funciona-acompanhamento-medico-emagrecimento">acompanhamento de perto</a>. Compulsão à noite não é defeito de caráter. É um padrão com causa, e causa se trata.</p>`,
+<p>A Dra. Isabel Aragão (CRM-SC 26139) atende em São José/SC e <a href="/blog/medica-emagrecimento-florianopolis">Florianópolis</a> e região, presencialmente e online, com avaliação completa e <a href="/blog/como-funciona-acompanhamento-medico-emagrecimento">acompanhamento de perto</a>. Compulsão alimentar não é defeito de caráter. É um padrão com causa, e causa se trata.</p>
+`,
   },
   {
     slug: 'como-ler-resultado-bioimpedancia',
@@ -731,6 +754,145 @@ export const POSTS_2: Post[] = [
 
 <h2>Como acompanhar na consulta</h2>
 <p>Na clínica da Dra. Isabel Aragão (CRM-SC 26139), em São José/SC, a gordura visceral é medida na bioimpedância da primeira consulta e nas revisões, junto com a cintura e os exames de sangue. É um dos números que mais orientam o plano, porque mostra o risco real, que a balança esconde. Atendimento presencial e online. <a href="/blog/bioimpedancia-sao-jose-sc">Veja onde fazer a bioimpedância em São José</a>.</p>
+`,
+  },
+  {
+    slug: 'resistencia-a-insulina-ganho-de-peso',
+    num: 47,
+    title: 'Resistência à Insulina e Ganho de Peso: Sinais, Exames e Tratamento',
+    shortTitle: 'Resistência à Insulina e Ganho de Peso',
+    intro: 'Resistência à insulina é um dos motivos mais comuns de peso que não cede. Os sinais no corpo, os exames que confirmam (glicemia, insulina, HOMA), a relação com SOP e pré-diabetes e como o tratamento melhora.',
+    category: 'Saúde',
+    readTime: '7 min',
+    date: 'Outubro 2026',
+    metaDesc: 'Resistência à insulina: sinais (barriga, fome logo após comer, manchas no pescoço), exames (glicemia, insulina, HOMA), relação com SOP e como tratar.',
+    related: ['hormonios-ganho-de-peso', 'gordura-visceral-o-que-e-como-reduzir', 'emagrecimento-apos-40-anos', 'por-que-dieta-sozinha-falha'],
+    faq: [
+      { q: 'O que é resistência à insulina?', a: 'É quando as células respondem menos à insulina, e o pâncreas precisa produzir mais para manter a glicose normal. A insulina alta favorece armazenar gordura, principalmente no abdome, e dificulta queimá-la. É o passo anterior ao pré-diabetes e ao diabetes tipo 2.' },
+      { q: 'Quais exames detectam resistência à insulina?', a: 'Glicemia e insulina em jejum, com o cálculo do índice HOMA-IR, além de hemoglobina glicada e triglicerídeos. Valores de referência variam entre laboratórios, e a interpretação é feita no contexto clínico, com cintura e histórico.' },
+      { q: 'Resistência à insulina engorda ou é consequência de engordar?', a: 'As duas coisas. O excesso de gordura visceral causa resistência à insulina, e a insulina alta facilita acumular mais gordura. É um ciclo, e tratar o peso costuma melhorar a sensibilidade à insulina já nos primeiros meses.' },
+      { q: 'Metformina serve para emagrecer?', a: 'A metformina melhora a sensibilidade à insulina e tem efeito modesto sobre o peso; não é medicamento para obesidade. Cada caso é um caso: a indicação, assim como a dos injetáveis, é avaliada em consulta.' },
+      { q: 'Resistência à insulina tem cura?', a: 'Pode ser revertida em grande parte com perda de gordura, atividade física, sono e, quando indicado, tratamento medicamentoso. Quanto mais cedo, melhor a resposta.' },
+    ],
+    content: `
+<div class="resposta"><strong>Resposta rápida:</strong> resistência à insulina é quando as células respondem menos à insulina e o pâncreas compensa produzindo mais. A insulina alta <strong>favorece armazenar gordura, principalmente no abdome, e aumenta a fome</strong>, o que explica muito peso que "não cede". Sinais: barriga que cresce, fome logo depois de comer, cansaço após as refeições, manchas escuras no pescoço e nas axilas. Confirma-se com glicemia e insulina de jejum (índice HOMA) e trata-se com perda de gordura, exercício, sono e, quando indicado, medicamentos. <a href="/blog/tema/por-que-o-peso-sobe">Veja o guia sobre por que o peso sobe</a>.</div>
+<p>"Eu como pouco e engordo." "Tenho fome uma hora depois de almoçar." "A barriga cresce e o resto não." Essas frases, muito comuns no consultório, apontam para o mesmo mecanismo. Este artigo explica o que é a resistência à insulina, como reconhecer, como confirmar com exames e o que o tratamento faz.</p>
+
+<h2>O que a insulina faz</h2>
+<p>A insulina é o hormônio que o pâncreas libera quando a glicose sobe no sangue, depois das refeições. Ela abre as portas das células para a glicose entrar e ser usada como energia, e avisa o corpo que há energia sobrando: hora de guardar, não de queimar. Em quantidade normal, é indispensável. O problema começa quando ela precisa ficar alta o tempo todo.</p>
+
+<h2>O que é resistência à insulina</h2>
+<p>Com o tempo, por excesso de gordura visceral, sedentarismo, sono ruim, genética e alimentação rica em açúcar e farinha refinada, as células passam a responder menos à insulina. O pâncreas compensa produzindo mais. A glicose ainda fica normal nos exames comuns, mas a insulina fica alta, e a insulina alta tem efeitos próprios:</p>
+<ul>
+  <li><strong>Guarda gordura e bloqueia a queima</strong>, principalmente no abdome.</li>
+  <li><strong>Aumenta a fome</strong>, porque a glicose cai rápido depois do pico e o cérebro pede mais comida.</li>
+  <li><strong>Favorece inflamação</strong> e alterações de colesterol e triglicerídeos.</li>
+  <li><strong>Nas mulheres, piora a síndrome dos ovários policísticos</strong> e a irregularidade menstrual.</li>
+</ul>
+<p>Quando o pâncreas não consegue mais compensar, a glicose começa a subir: é o pré-diabetes, e depois o diabetes tipo 2. A resistência à insulina é o estágio anterior, e é o melhor momento para agir. <a href="/blog/hormonios-ganho-de-peso">Veja o papel dos outros hormônios no peso</a>.</p>
+
+<h2>Sinais no corpo</h2>
+<ul>
+  <li>Gordura concentrada no abdome, com cintura acima de 80 cm (mulheres) ou 94 cm (homens)</li>
+  <li>Fome ou vontade de doce pouco depois de comer, principalmente após carboidrato</li>
+  <li>Sonolência e cansaço depois das refeições</li>
+  <li>Manchas escuras e aveludadas no pescoço, nas axilas ou na virilha (acantose nigricans)</li>
+  <li>Pequenas verrugas de pele no pescoço e nas axilas</li>
+  <li>Dificuldade para emagrecer mesmo com dieta, e reganho rápido</li>
+  <li>Nas mulheres, ciclos irregulares, acne e pelos em excesso (sinais de SOP)</li>
+  <li>Triglicerídeos altos e HDL baixo nos exames</li>
+</ul>
+<p>Nenhum desses sinais fecha o diagnóstico sozinho. O conjunto, com os exames, é o que conta.</p>
+<!--CTA-->
+
+<h2>Exames que confirmam</h2>
+<table>
+  <thead><tr><th>Exame</th><th>O que mostra</th><th>Observação</th></tr></thead>
+  <tbody>
+    <tr><td>Glicemia de jejum</td><td>Nível de glicose; normal até 99 mg/dL, pré-diabetes de 100 a 125</td><td>Pode estar normal com insulina já alta</td></tr>
+    <tr><td>Insulina de jejum</td><td>Quanto o pâncreas está produzindo</td><td>Valores de referência variam por laboratório</td></tr>
+    <tr><td>HOMA-IR</td><td>Índice calculado a partir de glicemia e insulina; estima a resistência</td><td>Usado como triagem, interpretado no contexto clínico</td></tr>
+    <tr><td>Hemoglobina glicada</td><td>Média da glicose nos últimos 3 meses; pré-diabetes de 5,7% a 6,4%</td><td>Útil para acompanhar</td></tr>
+    <tr><td>Triglicerídeos e HDL</td><td>Perfil típico: triglicerídeos altos e HDL baixo</td><td>Pedidos junto</td></tr>
+    <tr><td>Cintura e bioimpedância</td><td>Gordura visceral, o principal motor da resistência</td><td>Feitos na consulta</td></tr>
+  </tbody>
+</table>
+<p>Os pontos de corte são referências gerais; a leitura é individual, feita pela médica com o histórico e o exame físico. <a href="/blog/gordura-visceral-o-que-e-como-reduzir">Entenda a gordura visceral</a>.</p>
+
+<h2>Resistência à insulina e SOP</h2>
+<p>A síndrome dos ovários policísticos é uma das condições mais ligadas à resistência à insulina: a insulina alta estimula os ovários a produzir mais hormônios masculinos, o que causa ciclos irregulares, acne, queda de cabelo e pelos em excesso, além de dificuldade para emagrecer. Tratar a resistência à insulina, principalmente com perda de gordura, melhora os sintomas da SOP em grande parte das mulheres.</p>
+
+<h2>Como se trata</h2>
+<ul>
+  <li><strong>Perder gordura, não só peso.</strong> Reduções de 5% a 10% do peso já melhoram a sensibilidade à insulina de forma mensurável, e a gordura visceral é a primeira a responder.</li>
+  <li><strong>Alimentação com menos açúcar e farinha refinada</strong>, mais proteína, fibra e gordura boa, distribuída ao longo do dia para evitar picos.</li>
+  <li><strong>Exercício:</strong> o músculo em atividade capta glicose sem precisar de tanta insulina. Caminhada após as refeições e treino de força são os mais eficientes.</li>
+  <li><strong>Sono de 7 a 8 horas:</strong> uma semana dormindo pouco já piora a sensibilidade à insulina.</li>
+  <li><strong>Medicamentos, quando indicados:</strong> a metformina melhora a sensibilidade à insulina; os injetáveis para obesidade (semaglutida, tirzepatida) reduzem a gordura visceral e a resistência à insulina junto com o peso. Cada caso é um caso: a indicação depende do IMC, dos exames e das doenças associadas, avaliados em consulta.</li>
+</ul>
+
+<h2>Por que isso muda o tratamento do peso</h2>
+<p>Tratar o peso sem olhar a insulina é remar contra a maré: a fome e o armazenamento de gordura continuam sendo empurrados pelo hormônio. Quando a resistência à insulina é identificada, o plano muda, da composição das refeições ao tipo de exercício e à escolha de medicamento. É por isso que a primeira consulta na clínica da Dra. Isabel Aragão (CRM-SC 26139), em São José/SC, inclui bioimpedância, cintura e a solicitação desses exames. Atendimento presencial e online. <a href="/blog/primeira-consulta-medica-emagrecimento">Veja como é a primeira consulta</a>.</p>
+`,
+  },
+  {
+    slug: 'remedio-para-emagrecer-em-comprimido-orforglipron-semaglutida-oral',
+    num: 48,
+    title: 'Remédio para Emagrecer em Comprimido: Orforglipron e Semaglutida Oral, Quando Chegam ao Brasil',
+    shortTitle: 'Remédio para Emagrecer em Comprimido',
+    intro: 'O orforglipron, primeiro GLP-1 em comprimido, foi aprovado nos EUA em 2026. O Rybelsus (semaglutida oral) já existe para diabetes. O que esperar de eficácia, efeitos colaterais, preço e prazo no Brasil.',
+    category: 'Medicamentos',
+    readTime: '7 min',
+    date: 'Outubro 2026',
+    metaDesc: 'Remédio para emagrecer em comprimido: orforglipron (aprovado nos EUA em 2026) e semaglutida oral. Eficácia, efeitos colaterais e quando chegam ao Brasil.',
+    related: ['glp1-medicamentos-injetaveis-emagrecer', 'semaglutida-generica-o-que-muda', 'retatrutida-o-que-e-quando-chega', 'mounjaro-ou-ozempic-qual-escolher'],
+    faq: [
+      { q: 'Já existe remédio para emagrecer em comprimido?', a: 'Nos Estados Unidos, sim: o orforglipron (Foundayo), aprovado em abril de 2026 para obesidade. No Brasil, o único GLP-1 em comprimido registrado é o Rybelsus (semaglutida oral), aprovado para diabetes tipo 2. Uso para emagrecer no Brasil é com avaliação médica individual.' },
+      { q: 'Comprimido funciona tão bem quanto a injeção?', a: 'Nos estudos, o orforglipron levou a perdas de peso relevantes, mas em média menores que as da tirzepatida injetável. A semaglutida oral em dose alta para obesidade mostrou resultados próximos da injetável nos estudos. Comparações entre estudos diferentes têm limitações.' },
+      { q: 'Quando o comprimido chega ao Brasil?', a: 'Não há data. O orforglipron precisa de pedido de registro na Anvisa, análise e definição de preço pela CMED. A semaglutida oral em dose para obesidade também depende de registro dessa indicação. Qualquer prazo hoje é especulação.' },
+      { q: 'O comprimido tem menos efeitos colaterais?', a: 'Não. Os efeitos são os da classe: náusea, vômito, prisão de ventre e diarreia, principalmente no início e nos aumentos de dose. A diferença é a conveniência de não injetar, não a tolerância.' },
+      { q: 'Vale esperar o comprimido para começar o tratamento?', a: 'Cada caso é um caso, mas em geral não. Os injetáveis registrados têm evidência longa e estão disponíveis agora; adiar o tratamento por anos tem custo de saúde. Quando o comprimido chegar, a troca pode ser avaliada em consulta.' },
+    ],
+    content: `
+<div class="resposta"><strong>Resposta rápida:</strong> o <strong>orforglipron (Foundayo)</strong>, da Eli Lilly, é o primeiro GLP-1 em comprimido aprovado para obesidade: liberado nos Estados Unidos em abril de 2026, no Reino Unido em agosto e com parecer positivo da agência europeia em outubro. No Brasil ainda não tem registro. O que já existe aqui em comprimido é o <strong>Rybelsus (semaglutida oral)</strong>, registrado para diabetes tipo 2. Os comprimidos têm os mesmos efeitos colaterais da classe e, nos estudos, eficácia média abaixo da tirzepatida injetável. Enquanto não chegam, o tratamento com evidência e registro é injetável, decidido caso a caso. <a href="/blog/tema/semaglutida">Veja o guia sobre semaglutida</a>.</div>
+<p>A pergunta "não tem em comprimido?" aparece em quase toda primeira consulta sobre injetáveis. Em 2026 a resposta mudou: o primeiro comprimido para obesidade foi aprovado fora do Brasil. Este artigo explica o que é, o que os estudos mostram, o que já existe aqui e o que esperar de prazo, sem confundir expectativa com disponibilidade.</p>
+
+<h2>Orforglipron: o primeiro GLP-1 em comprimido para obesidade</h2>
+<p>O orforglipron é uma molécula pequena, não peptídica, que ativa o receptor de GLP-1, o mesmo alvo da semaglutida. Por não ser um peptídeo, pode ser tomado por via oral sem as restrições de absorção dos comprimidos de peptídeo, uma vez ao dia, sem necessidade de jejum. Foi desenvolvido pela Eli Lilly, licenciado da Chugai.</p>
+<p>Conforme a página de referência da molécula na <a href="https://en.wikipedia.org/wiki/Orforglipron" rel="nofollow">Wikipedia</a>, que reúne os documentos regulatórios, o FDA aprovou o orforglipron em 1º de abril de 2026 para redução de peso em adultos com obesidade ou sobrepeso com doença associada, junto com dieta e atividade física; o Reino Unido aprovou em agosto; e em 16 de outubro de 2026 o comitê da agência europeia (EMA) emitiu parecer positivo para a autorização, para diabetes tipo 2 e controle de peso. Nome comercial: Foundayo.</p>
+
+<h2>O que os estudos mostram</h2>
+<p>Nos estudos de fase 3 em obesidade, o orforglipron levou a perdas médias de peso relevantes ao longo de pouco mais de um ano, dependentes da dose, com efeitos colaterais típicos da classe (náusea, vômito, prisão de ventre, diarreia), mais frequentes no início. Na comparação indireta com os injetáveis, a perda média ficou abaixo da observada com tirzepatida e próxima ou um pouco abaixo da semaglutida 2,4 mg. Comparar estudos diferentes tem limitações; o que se pode dizer com segurança é que o comprimido funciona e que a injeção, por enquanto, tende a ter efeito maior.</p>
+
+<h2>Semaglutida oral: o que já existe no Brasil</h2>
+<p>O Rybelsus é a semaglutida em comprimido, registrado na Anvisa para diabetes tipo 2, em doses de 3, 7 e 14 mg, tomado em jejum com pouca água e 30 minutos antes de comer, porque a absorção do peptídeo pelo estômago é limitada. Para obesidade, a Novo Nordisk estudou doses maiores (25 e 50 mg), com resultados de perda de peso próximos da semaglutida injetável nos estudos, e essa indicação em dose alta passou a ser aprovada em alguns países. No Brasil, o uso para emagrecer é feito com avaliação médica individual, dentro das doses registradas.</p>
+<!--CTA-->
+
+<h2>Comprimido ou injeção: as diferenças que importam</h2>
+<table>
+  <thead><tr><th></th><th>Orforglipron (comprimido)</th><th>Semaglutida oral (Rybelsus)</th><th>Injetáveis (semaglutida, tirzepatida)</th></tr></thead>
+  <tbody>
+    <tr><td>Frequência</td><td>1 vez por dia</td><td>1 vez por dia, em jejum, 30 min antes de comer</td><td>1 vez por semana</td></tr>
+    <tr><td>Registro no Brasil</td><td>Não</td><td>Sim, para diabetes tipo 2</td><td>Sim (Mounjaro, Wegovy para obesidade; Ozempic para diabetes)</td></tr>
+    <tr><td>Perda média nos estudos</td><td>Relevante, abaixo da tirzepatida</td><td>Em dose alta, próxima da injetável</td><td>Semaglutida cerca de 15%; tirzepatida 15% a 22%</td></tr>
+    <tr><td>Efeitos colaterais</td><td>Gastrointestinais, iguais à classe</td><td>Gastrointestinais, iguais à classe</td><td>Gastrointestinais, iguais à classe</td></tr>
+    <tr><td>Conservação</td><td>Temperatura ambiente</td><td>Temperatura ambiente</td><td>Geladeira</td></tr>
+  </tbody>
+</table>
+
+<h2>Quando chega ao Brasil</h2>
+<p>Para o orforglipron, o caminho é: pedido de registro à Anvisa pelo laboratório, análise da agência e definição de preço pela CMED. Até a data deste artigo não havia registro nem data divulgada. A experiência com o Mounjaro, aprovado no Brasil cerca de um ano depois dos Estados Unidos, serve como referência de ordem de grandeza, não como promessa. Para a semaglutida oral em dose de obesidade, depende do registro dessa indicação. Qualquer "comprimido de orforglipron" vendido hoje no Brasil é produto sem registro, com os mesmos riscos dos injetáveis irregulares. <a href="/blog/canetas-emagrecedoras-registro-anvisa">Veja como reconhecer produto irregular</a>.</p>
+
+<h2>Para quem o comprimido pode fazer diferença</h2>
+<ul>
+  <li>Quem tem medo de agulha ou dificuldade real com a autoaplicação.</li>
+  <li>Quem viaja muito e não consegue manter a caneta refrigerada.</li>
+  <li>Como manutenção, depois de uma fase de perda com injetável, quando os estudos nessa estratégia se consolidarem.</li>
+</ul>
+<p>Para a maioria das pacientes que precisa tratar a obesidade agora, esperar anos por um comprimido que tende a ter efeito menor não faz sentido clínico. Cada caso é um caso: a decisão de começar com injetável, e qual, é feita em consulta, considerando histórico, doenças associadas e preferências. Quando o comprimido chegar, a troca pode ser avaliada. <a href="/blog/mounjaro-ou-ozempic-qual-escolher">Entenda as opções atuais</a>.</p>
+
+<h2>Onde conversar sobre isso</h2>
+<p>A Dra. Isabel Aragão (CRM-SC 26139) atende em São José/SC e online, com avaliação por bioimpedância e acompanhamento. Acompanha as novidades regulatórias e explica, caso a caso, o que já está disponível e o que ainda é expectativa. A clínica não vende medicamento nem trabalha com produto sem registro.</p>
 `,
   },
 ]

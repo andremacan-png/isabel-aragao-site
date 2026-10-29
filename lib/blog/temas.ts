@@ -55,7 +55,7 @@ export const TEMAS: Tema[] = [
     resumo: 'Diferença entre Ozempic e Wegovy, o genérico, receita e acompanhamento.',
     resposta: 'A semaglutida é o princípio ativo do Ozempic (registrado para diabetes tipo 2) e do Wegovy (registrado para obesidade), ambos injetáveis semanais. Em 2026 a Anvisa aprovou os primeiros genéricos da semaglutida no Brasil, o que deve reduzir o preço. O uso para emagrecer exige receita e acompanhamento médico, e a escolha entre semaglutida e tirzepatida depende do caso.',
     intro: 'Os artigos deste tema explicam como a semaglutida é usada no tratamento da obesidade e como funciona a prescrição e o acompanhamento com a Dra. Isabel Aragão (CRM-SC 26139). Artigos sobre o genérico e a versão em comprimido estão no calendário do blog.',
-    posts: ['ozempic-florianopolis-prescricao', 'wegovy-florianopolis', 'semaglutida-generica-o-que-muda'],
+    posts: ['ozempic-florianopolis-prescricao', 'wegovy-florianopolis', 'semaglutida-generica-o-que-muda', 'remedio-para-emagrecer-em-comprimido-orforglipron-semaglutida-oral'],
     faq: [
       { q: 'Ozempic e Wegovy são iguais?', a: 'O princípio ativo é o mesmo, a semaglutida. A diferença está na dose máxima e no registro: o Ozempic é registrado para diabetes tipo 2 e o Wegovy para obesidade e sobrepeso com doença associada.' },
       { q: 'O genérico já está na farmácia?', a: 'A Anvisa registrou os primeiros genéricos em agosto de 2026 (EMS e Germed). A chegada às farmácias e o preço dependem de cada laboratório e da definição da CMED. Pela lei, o genérico precisa custar pelo menos 35% menos que o produto de referência.' },
@@ -107,7 +107,7 @@ export const TEMAS: Tema[] = [
       'obesidade-e-uma-doenca',
       'por-que-dieta-sozinha-falha',
       'efeito-sanfona-por-que-o-peso-volta',
-      'hormonios-ganho-de-peso',
+      'hormonios-ganho-de-peso', 'resistencia-a-insulina-ganho-de-peso',
       'metabolismo-lento-existe',
       'emagrecimento-apos-40-anos',
       'menopausa-ganho-de-peso',
