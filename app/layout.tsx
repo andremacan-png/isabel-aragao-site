@@ -2,8 +2,8 @@ import { jsonLdClinica } from '@/lib/entidade'
 import type { Metadata } from 'next'
 import { Playfair_Display, Inter } from 'next/font/google'
 import './globals.css'
-import Script from 'next/script'
 import ClarityInit from '@/components/ClarityInit'
+import TagManagerInit from '@/components/TagManagerInit'
 import AdsAttribution from '@/components/AdsAttribution'
 
 const playfair = Playfair_Display({
@@ -53,14 +53,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta name="google-site-verification" content="Ym99QkOwRJa6E_pbYn3_NXgD21RISGYy8uUv9V5j-fo" />
         {/* Dados estruturados: clínica + médica + enfermeira (fonte única em lib/entidade.ts, igual ao Maps) */}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdClinica()) }} />
-        {/* Google Tag Manager */}
-        <Script id="gtm" strategy="afterInteractive">{`
-          (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-          })(window,document,'script','dataLayer','GTM-P65FQQ9K');
-        `}</Script>
+        {/* Google Tag Manager: carregado tarde pelo <TagManagerInit /> (components/TagManagerInit.tsx) */}
         {/* Microsoft Clarity agora é inicializado no client via <ClarityInit /> (components/ClarityInit.tsx) */}
       </head>
       <body className={inter.className}>
@@ -73,6 +66,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             style={{ display: 'none', visibility: 'hidden' }}
           />
         </noscript>
+        <TagManagerInit />
         <ClarityInit />
         <AdsAttribution />
         {children}

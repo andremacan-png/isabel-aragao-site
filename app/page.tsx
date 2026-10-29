@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import AnchorBar from '../components/AnchorBar'
 import FaqAccordion from '../components/FaqAccordion'
 
@@ -132,7 +133,8 @@ export default function Home() {
           src="/images/hero-mobile.jpg"
           alt="Dra. Isabel Aragão — Médica Especialista em Emagrecimento"
           fill
-          priority
+          preload
+          fetchPriority="high"
           sizes="100vw"
           className="object-cover object-center"
         />
@@ -238,7 +240,8 @@ export default function Home() {
                 width={440}
                 height={560}
                 className="relative rounded-[2rem] object-cover shadow-2xl w-full"
-                priority
+                loading="eager"
+                fetchPriority="high"
                 sizes="(max-width: 768px) 80vw, 440px"
               />
             </div>
@@ -509,7 +512,7 @@ export default function Home() {
                 <div className="flex gap-0.5 mb-4">
                   {[...Array(5)].map((_, j) => <span key={j} className="text-yellow-400 text-sm">★</span>)}
                 </div>
-                <p className="text-white/80 leading-relaxed text-sm flex-1 mb-5">"{dep.text}"</p>
+                <p className="text-white/80 leading-relaxed text-sm flex-1 mb-5">“{dep.text}”</p>
                 <div>
                   <div className="font-semibold text-white text-sm">{dep.name}</div>
                   <div className="text-white/30 text-xs mt-0.5">via Google Reviews</div>
@@ -695,24 +698,24 @@ export default function Home() {
               <div className="text-white font-semibold mb-2 text-xs tracking-wider uppercase">Atendimento na região</div>
               <div className="flex flex-wrap gap-x-4 gap-y-1">
                 <a href="/servicos" className="hover:text-white transition-colors">Serviços da clínica</a>
-                <a href="/blog/medica-emagrecimento-sao-jose" className="hover:text-white transition-colors">Médica de emagrecimento em São José</a>
-                <a href="/blog/medica-emagrecimento-florianopolis" className="hover:text-white transition-colors">Florianópolis</a>
-                <a href="/blog/medica-emagrecimento-palhoca" className="hover:text-white transition-colors">Palhoça</a>
-                <a href="/blog/medica-emagrecimento-biguacu" className="hover:text-white transition-colors">Biguaçu</a>
-                <a href="/blog/clinica-emagrecimento-sao-jose-sc" className="hover:text-white transition-colors">Clínica de emagrecimento em São José</a>
-                <a href="/blog/aplicacao-injecao-emagrecer-sao-jose" className="hover:text-white transition-colors">Aplicação de injetável em São José</a>
-                <a href="/blog/bioimpedancia-sao-jose-sc" className="hover:text-white transition-colors">Bioimpedância em São José</a>
+                <Link prefetch={false} href="/blog/medica-emagrecimento-sao-jose" className="hover:text-white transition-colors">Médica de emagrecimento em São José</Link>
+                <Link prefetch={false} href="/blog/medica-emagrecimento-florianopolis" className="hover:text-white transition-colors">Florianópolis</Link>
+                <Link prefetch={false} href="/blog/medica-emagrecimento-palhoca" className="hover:text-white transition-colors">Palhoça</Link>
+                <Link prefetch={false} href="/blog/medica-emagrecimento-biguacu" className="hover:text-white transition-colors">Biguaçu</Link>
+                <Link prefetch={false} href="/blog/clinica-emagrecimento-sao-jose-sc" className="hover:text-white transition-colors">Clínica de emagrecimento em São José</Link>
+                <Link prefetch={false} href="/blog/aplicacao-injecao-emagrecer-sao-jose" className="hover:text-white transition-colors">Aplicação de injetável em São José</Link>
+                <Link prefetch={false} href="/blog/bioimpedancia-sao-jose-sc" className="hover:text-white transition-colors">Bioimpedância em São José</Link>
               </div>
             </div>
             <div>
               <div className="text-white font-semibold mb-2 text-xs tracking-wider uppercase">Guias e ferramentas</div>
               <div className="flex flex-wrap gap-x-4 gap-y-1">
                 <a href="/calculadora-imc" className="hover:text-white transition-colors">Calculadora de IMC</a>
-                <a href="/blog/quanto-emagrece-com-injetavel" className="hover:text-white transition-colors">Quanto dá pra emagrecer com injetável</a>
-                <a href="/blog/perda-de-peso-saudavel-quantos-kg-por-mes" className="hover:text-white transition-colors">Quantos kg por mês é saudável</a>
-                <a href="/blog/efeito-sanfona-por-que-o-peso-volta" className="hover:text-white transition-colors">Por que o peso volta</a>
-                <a href="/blog/menopausa-ganho-de-peso" className="hover:text-white transition-colors">Menopausa e ganho de peso</a>
-                <a href="/blog" className="hover:text-white transition-colors">Todos os artigos</a>
+                <Link prefetch={false} href="/blog/quanto-emagrece-com-injetavel" className="hover:text-white transition-colors">Quanto dá pra emagrecer com injetável</Link>
+                <Link prefetch={false} href="/blog/perda-de-peso-saudavel-quantos-kg-por-mes" className="hover:text-white transition-colors">Quantos kg por mês é saudável</Link>
+                <Link prefetch={false} href="/blog/efeito-sanfona-por-que-o-peso-volta" className="hover:text-white transition-colors">Por que o peso volta</Link>
+                <Link prefetch={false} href="/blog/menopausa-ganho-de-peso" className="hover:text-white transition-colors">Menopausa e ganho de peso</Link>
+                <Link prefetch={false} href="/blog" className="hover:text-white transition-colors">Todos os artigos</Link>
               </div>
             </div>
           </div>
