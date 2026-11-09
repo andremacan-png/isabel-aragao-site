@@ -159,3 +159,51 @@ export async function getGscSeries(dias = 60): Promise<GscDia[] | null> {
     return null
   }
 }
+
+// ── Consultas (termos digitados no Google) e consulta × página ───────────────────
+// Usado pelo planejamento de conteúdo: mostra em que busca cada página aparece.
+export type GscConsulta = { consulta: string; pagina?: string; cliques: number; impressoes: number; ctr: number; posicao: number }
+
+export async function getGscConsultas(dias = 90, porPagina = false, limite = 1000): Promise<GscConsulta[] | null> {
+  const { GSC_SITE_URL } = process.env
+  if (!GSC_SITE_URL) return null
+  try {
+    const token = await getGscToken()
+    if (!token) return null
+    const end = new Date()
+    end.setDate(end.getDate() - 2)
+    const start = new Date(end)
+    start.setDate(start.getDate() - (dias - 1))
+    const site = GSC_SITE_URL.replace(/\/$/, '')
+    const res = await fetch(
+      `https://searchconsole.googleapis.com/webmasters/v3/sites/${encodeURIComponent(GSC_SITE_URL)}/searchAnalytics/query`,
+      {
+        method: 'POST',
+        headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          startDate: fmtDate(start),
+          endDate: fmtDate(end),
+          dimensions: porPagina ? ['query', 'page'] : ['query'],
+          rowLimit: limite,
+        }),
+        cache: 'no-store',
+      }
+    )
+    if (!res.ok) return null
+    const j = await res.json()
+    const rows: any[] = j.rows ?? []
+    return rows.map((r) => {
+      const url: string = r.keys?.[1] ?? ''
+      return {
+        consulta: r.keys?.[0] ?? '',
+        ...(porPagina ? { pagina: url.startsWith(site) ? url.slice(site.length) || '/' : url } : {}),
+        cliques: Math.round(r.clicks ?? 0),
+        impressoes: Math.round(r.impressions ?? 0),
+        ctr: r.ctr ?? 0,
+        posicao: Math.round((r.position ?? 0) * 10) / 10,
+      }
+    })
+  } catch {
+    return null
+  }
+}
