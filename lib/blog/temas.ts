@@ -27,6 +27,8 @@ export const TEMAS: Tema[] = [
     posts: [
       'glp1-medicamentos-injetaveis-emagrecer',
       'quanto-tempo-mounjaro-faz-efeito',
+      'como-o-mounjaro-age-no-organismo', 'primeira-dose-mounjaro-o-que-esperar', 'mounjaro-em-quantas-horas-faz-efeito',
+      'uma-dose-de-mounjaro-faz-efeito-por-quantos-dias', 'mounjaro-tira-a-fome-em-quanto-tempo', 'tomei-mounjaro-e-nao-senti-nada',
       'quanto-emagrece-com-injetavel',
       'mounjaro-ou-ozempic-qual-escolher',
       'efeitos-colaterais-mounjaro-tirzepatida',
@@ -45,7 +47,7 @@ export const TEMAS: Tema[] = [
       { q: 'Preciso ir à clínica para aplicar?', a: 'Não é obrigatório. A aplicação é simples e a paciente aprende na consulta. Quem prefere pode aplicar na clínica com a enfermeira, em São José, com horário marcado.' },
       { q: 'Quanto custa o tratamento?', a: 'O medicamento é comprado na farmácia e o preço varia por dose e apresentação. Na consulta a médica explica as doses, o que entra além do medicamento e como o custo muda ao longo dos meses.' },
     ],
-    atualizadoEm: '2026-10-29',
+    atualizadoEm: '2026-11-09',
   },
   {
     slug: 'semaglutida',

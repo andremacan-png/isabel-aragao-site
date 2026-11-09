@@ -6,6 +6,13 @@
 // Ao editar o conteúdo de um post, atualize ATUALIZADO[slug]. Post novo: entra sozinho pelo fallback.
 
 const PUBLICADO: Record<string, string> = {
+  // onda 1 do plano de conteúdo (09/11/2026)
+  'uma-dose-de-mounjaro-faz-efeito-por-quantos-dias': '2026-11-09',
+  'primeira-dose-mounjaro-o-que-esperar': '2026-11-09',
+  'mounjaro-em-quantas-horas-faz-efeito': '2026-11-09',
+  'tomei-mounjaro-e-nao-senti-nada': '2026-11-09',
+  'como-o-mounjaro-age-no-organismo': '2026-11-09',
+  'mounjaro-tira-a-fome-em-quanto-tempo': '2026-11-09',
   'remedio-para-emagrecer-em-comprimido-orforglipron-semaglutida-oral': '2026-10-29',
   'resistencia-a-insulina-ganho-de-peso': '2026-10-29',
   'gordura-visceral-o-que-e-como-reduzir': '2026-10-29',

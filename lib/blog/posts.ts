@@ -1,4 +1,5 @@
 import { POSTS_2 } from './posts-2'
+import { POSTS_3 } from './posts-3'
 
 export type Post = {
   slug: string
@@ -1230,7 +1231,7 @@ export const POSTS: Post[] = [
 <p>Um aviso antes de tudo: os prazos abaixo são referências gerais, baseadas no que costuma acontecer no consultório e no que os estudos observam em grupos de pacientes. A resposta é individual e varia de pessoa para pessoa. Nada aqui é promessa de resultado. Se ainda não leu, vale começar pelo <a href="/blog/tema/tirzepatida-mounjaro">guia completo sobre tirzepatida e Mounjaro</a>.</p>
 
 <h2>Dois efeitos, dois tempos</h2>
-<p>O Mounjaro age em dois hormônios do intestino, o GLP-1 e o GIP. Ele reduz a fome, acelera a saciedade e deixa o estômago esvaziar mais devagar. Isso produz dois efeitos que acontecem em tempos diferentes:</p>
+<p>O Mounjaro age em dois hormônios do intestino, o GLP-1 e o GIP (veja <a href="/blog/como-o-mounjaro-age-no-organismo">como ele age no organismo</a>). Ele reduz a fome, acelera a saciedade e deixa o estômago esvaziar mais devagar. Isso produz dois efeitos que acontecem em tempos diferentes:</p>
 <ul>
   <li><strong>Efeito no apetite:</strong> rápido. Costuma ser percebido nos primeiros 7 a 14 dias, ainda na menor dose.</li>
   <li><strong>Efeito no corpo:</strong> gradual. A perda de gordura se constrói ao longo de meses, acompanhando a subida da dose, e se consolida entre 12 e 18 meses de tratamento contínuo.</li>
@@ -1240,7 +1241,7 @@ export const POSTS: Post[] = [
 <h2>Em quantas horas o Mounjaro faz efeito depois da aplicação</h2>
 <p>Depois da aplicação sob a pele, a tirzepatida é absorvida aos poucos. Segundo a bula, a concentração máxima no sangue é atingida <strong>entre 8 e 72 horas</strong>. Ou seja: o medicamento começa a agir no mesmo dia, mas o ponto mais forte da semana costuma cair entre o primeiro e o terceiro dia após a aplicação.</p>
 <p>Na prática, é nesses dias que a fome costuma estar mais baixa e que a náusea, quando aparece, é mais provável. Por isso muita gente escolhe o dia da aplicação pensando na rotina: quem prefere passar o fim de semana com menos apetite aplica na quinta ou na sexta, por exemplo. O horário do dia não muda o efeito, e a aplicação pode ser feita com ou sem alimento.</p>
-<p>Cada caso é um caso. Na dose inicial de 2,5 mg, parte das pessoas não sente nada nas primeiras horas nem nos primeiros dias, e isso não significa que o tratamento não vai funcionar.</p>
+<p>Cada caso é um caso. Na dose inicial de 2,5 mg, parte das pessoas não sente nada nas primeiras horas nem nos primeiros dias, e isso não significa que o tratamento não vai funcionar. Veja o detalhe em <a href="/blog/mounjaro-em-quantas-horas-faz-efeito">em quantas horas o Mounjaro faz efeito</a> e em <a href="/blog/tomei-mounjaro-e-nao-senti-nada">tomei Mounjaro e não senti nada</a>.</p>
 
 <h2>Primeira dose de Mounjaro: em quanto tempo faz efeito</h2>
 <p>A primeira dose é a pergunta mais comum de quem está começando. Usualmente, conforme a bula e os estudos, o tratamento inicia com 2,5 mg uma vez por semana, por 4 semanas. Essa dose serve para o organismo se adaptar. Ela não é a dose de tratamento, e o que se espera dela é diferente:</p>
@@ -1249,7 +1250,7 @@ export const POSTS: Post[] = [
   <li><strong>Balança:</strong> costuma mudar pouco no primeiro mês. Uma queda de 1 a 3 kg é comum, e não perder nada também pode estar dentro do esperado.</li>
   <li><strong>Efeitos colaterais:</strong> náusea leve, estômago cheio e intestino mais lento são os mais relatados, principalmente nos dias seguintes à aplicação.</li>
 </ul>
-<p>Não sentir nada com a primeira dose é mais comum do que parece e não indica falha. O histórico de cada paciente, o uso anterior de outros medicamentos e a tolerância mudam essa resposta, e é isso que a consulta avalia antes de decidir o próximo passo.</p>
+<p>Não sentir nada com a primeira dose é mais comum do que parece e não indica falha. O histórico de cada paciente, o uso anterior de outros medicamentos e a tolerância mudam essa resposta, e é isso que a consulta avalia antes de decidir o próximo passo. Veja <a href="/blog/primeira-dose-mounjaro-o-que-esperar">o que esperar da primeira dose, semana a semana</a>.</p>
 
 <h2>Uma dose de Mounjaro faz efeito por quantos dias</h2>
 <p>O Mounjaro é aplicado uma vez por semana porque a tirzepatida tem meia-vida de cerca de <strong>5 dias</strong>, segundo a bula. Isso quer dizer que, cinco dias depois da aplicação, ainda há aproximadamente metade da dose circulando. Uma aplicação cobre os 7 dias, mas não com a mesma força do começo ao fim.</p>
@@ -1259,7 +1260,7 @@ export const POSTS: Post[] = [
   <li><strong>Dias 6 e 7:</strong> o nível está mais baixo. É quando algumas pessoas percebem a fome voltando um pouco, principalmente no primeiro mês.</li>
 </ul>
 <p>Com as aplicações seguidas, o nível do medicamento se acumula e fica estável depois de umas 4 semanas. A partir daí a oscilação entre o começo e o fim da semana tende a diminuir. Se a fome volta muito antes da próxima aplicação, vale levar isso à consulta: não é motivo para antecipar a dose por conta própria.</p>
-<p>Depois da última aplicação, o medicamento leva cerca de um mês para sair do organismo. O efeito no apetite vai diminuindo ao longo dessas semanas.</p>
+<p>Depois da última aplicação, o medicamento leva cerca de um mês para sair do organismo. O efeito no apetite vai diminuindo ao longo dessas semanas. Veja <a href="/blog/uma-dose-de-mounjaro-faz-efeito-por-quantos-dias">por quantos dias uma dose faz efeito</a> e <a href="/blog/mounjaro-tira-a-fome-em-quanto-tempo">por que a fome volta no fim da semana</a>.</p>
 
 <h2>Tirzepatida: em quanto tempo faz efeito</h2>
 <p>Mounjaro é o nome comercial da tirzepatida. É a mesma substância, então os prazos deste artigo valem para as duas buscas: apetite nas primeiras semanas, balança a partir do segundo mês, resultado construído ao longo de 12 a 18 meses. O que muda o tempo de resposta não é o nome na caixa, e sim a dose, a constância das aplicações e a origem do produto.</p>
@@ -1673,6 +1674,7 @@ export const POSTS: Post[] = [
 <p>A pergunta "quanto vou emagrecer" só tem uma resposta de verdade: a que o seu corpo dá, ao longo do tratamento, medida de perto. A Dra. Isabel Aragão (CRM-SC 26139) atende em São José/SC e conduz o <a href="/blog/aplicacao-tirzepatida-sao-jose">tratamento com injetáveis</a> de forma individualizada, com prescrição, ajuste de dose e bioimpedância pra acompanhar o que a balança não mostra. Também atende quem é de <a href="/blog/mounjaro-florianopolis">Florianópolis</a> e região, presencialmente e online. Nada aqui é promessa de resultado: é cuidado médico sério.</p>`,
   },
   ...POSTS_2,
+  ...POSTS_3,
 ]
 
 export function getPost(slug: string): Post | undefined {
