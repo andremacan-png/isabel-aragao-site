@@ -4,7 +4,7 @@
 // E dizem que cada caso é avaliado em consulta; sem travessão; sem promessa de resultado; sem preço.
 import type { Post } from './posts'
 
-const FECHO = `<p>A Dra. Isabel Aragão (CRM-SC 26139) atende em São José/SC e por teleconsulta para pacientes de todo o Brasil. A avaliação inclui histórico, exames e, no atendimento presencial, bioimpedância. A clínica não vende o medicamento: quando há indicação, a paciente compra na farmácia com a receita.</p>`
+export const FECHO = `<p>A Dra. Isabel Aragão (CRM-SC 26139) atende em São José/SC e por teleconsulta para pacientes de todo o Brasil. A avaliação inclui histórico, exames e, no atendimento presencial, bioimpedância. A clínica não vende o medicamento: quando há indicação, a paciente compra na farmácia com a receita.</p>`
 
 export const POSTS_3: Post[] = [
   {

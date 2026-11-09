@@ -1,5 +1,7 @@
 import { POSTS_2 } from './posts-2'
 import { POSTS_3 } from './posts-3'
+import { POSTS_4 } from './posts-4'
+import { POSTS_5 } from './posts-5'
 
 export type Post = {
   slug: string
@@ -1675,6 +1677,8 @@ export const POSTS: Post[] = [
   },
   ...POSTS_2,
   ...POSTS_3,
+  ...POSTS_4,
+  ...POSTS_5,
 ]
 
 export function getPost(slug: string): Post | undefined {

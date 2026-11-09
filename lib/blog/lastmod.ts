@@ -6,6 +6,26 @@
 // Ao editar o conteúdo de um post, atualize ATUALIZADO[slug]. Post novo: entra sozinho pelo fallback.
 
 const PUBLICADO: Record<string, string> = {
+  // ondas 2, 3 e 4 do plano de conteúdo (09/11/2026)
+  'esqueci-a-dose-do-mounjaro-o-que-fazer': '2026-11-09',
+  'onde-aplicar-o-mounjaro-barriga-coxa-ou-braco': '2026-11-09',
+  'como-guardar-o-mounjaro-geladeira-viagem-aviao': '2026-11-09',
+  'mounjaro-e-alcool-pode-beber': '2026-11-09',
+  'nausea-com-mounjaro-o-que-comer-e-o-que-evitar': '2026-11-09',
+  'prisao-de-ventre-com-mounjaro': '2026-11-09',
+  'queda-de-cabelo-emagrecimento-canetas': '2026-11-09',
+  'o-que-comer-usando-mounjaro': '2026-11-09',
+  'perda-de-massa-muscular-com-canetas-como-evitar': '2026-11-09',
+  'mounjaro-ou-wegovy-qual-a-diferenca': '2026-11-09',
+  'em-quanto-tempo-o-ozempic-faz-efeito': '2026-11-09',
+  'em-quanto-tempo-o-wegovy-faz-efeito': '2026-11-09',
+  'lipedema-sintomas-como-saber-se-voce-tem': '2026-11-09',
+  'lipedema-nas-pernas-e-nos-bracos-estagios': '2026-11-09',
+  'bioimpedancia-preparo-jejum-o-que-atrapalha': '2026-11-09',
+  'bioimpedancia-valores-de-referencia-gordura-e-musculo': '2026-11-09',
+  'gordura-visceral-niveis-na-bioimpedancia': '2026-11-09',
+  'plato-no-emagrecimento-por-que-o-peso-para': '2026-11-09',
+  'obesidade-grau-1-2-e-3-o-que-muda-no-tratamento': '2026-11-09',
   // onda 1 do plano de conteúdo (09/11/2026)
   'uma-dose-de-mounjaro-faz-efeito-por-quantos-dias': '2026-11-09',
   'primeira-dose-mounjaro-o-que-esperar': '2026-11-09',
