@@ -1190,16 +1190,18 @@ export const POSTS: Post[] = [
   {
     slug: 'quanto-tempo-mounjaro-faz-efeito',
     num: 24,
-    title: 'Em Quanto Tempo o Mounjaro Faz Efeito? Da 1ª Semana aos 3 Meses',
+    title: 'Em Quanto Tempo o Mounjaro Faz Efeito? Horas, Dias e Semanas',
     shortTitle: 'Em Quanto Tempo o Mounjaro Faz Efeito',
     intro: 'Uma das primeiras perguntas de quem começa o Mounjaro é: quando eu vou sentir o efeito? A resposta tem duas partes, e entender isso ajuda a ter expectativas realistas e a não desistir cedo demais.',
     category: 'Medicamentos',
-    readTime: '9 min',
+    readTime: '12 min',
     date: 'Julho 2026',
-    metaDesc: 'Mounjaro (tirzepatida): apetite muda em 1 a 2 semanas; balança responde a partir do 2º mês e segue até 18 meses. Semana a semana, por dose, e o que fazer se não fizer efeito.',
+    metaDesc: 'O Mounjaro age em horas, a fome costuma cair em 1 a 14 dias e a balança responde entre 4 e 8 semanas. Veja o efeito por hora, por semana e por dose (2,5 a 15 mg).',
     related: ['quanto-emagrece-com-injetavel', 'precisa-de-receita-mounjaro-tirzepatida', 'mounjaro-florianopolis', 'efeitos-colaterais-mounjaro-tirzepatida', 'perda-de-peso-saudavel-quantos-kg-por-mes'],
     faq: [
       { q: 'Em quantos dias o Mounjaro começa a fazer efeito?', a: 'O efeito no apetite costuma aparecer entre 7 e 14 dias, ainda na dose de 2,5 mg: menos fome, saciedade mais rápida e menos vontade de beliscar. Em algumas pessoas é perceptível já na primeira aplicação.' },
+      { q: 'Em quantas horas o Mounjaro faz efeito depois da aplicação?', a: 'Conforme a bula, a tirzepatida atinge a concentração máxima no sangue entre 8 e 72 horas após a aplicação. Por isso algumas pessoas sentem menos fome já no primeiro ou segundo dia. Cada caso é um caso: na dose inicial de 2,5 mg o efeito pode ser discreto, e isso é avaliado em consulta.' },
+      { q: 'Uma dose de Mounjaro faz efeito por quantos dias?', a: 'A aplicação é semanal porque a meia-vida da tirzepatida é de cerca de 5 dias, segundo a bula: a dose cobre os 7 dias, com efeito mais forte nos primeiros e mais fraco no fim da semana. O nível no sangue só fica estável depois de umas 4 aplicações seguidas.' },
       { q: 'Com quantas semanas o Mounjaro faz efeito na balança?', a: 'A queda consistente costuma começar entre a 5ª e a 8ª semana, quando a dose passa para 5 mg. No primeiro mês a perda é pequena, em geral de 1 a 3 kg, porque a dose inicial serve para adaptação.' },
       { q: 'Quanto se perde nos primeiros 3 meses?', a: 'Na média dos estudos, ao redor de 5% do peso inicial. Para 90 kg, algo perto de 4 a 5 kg. A variação individual é grande e os dois extremos podem estar dentro do esperado.' },
       { q: 'Por que a dose começa baixa e sobe devagar?', a: 'Para o organismo se adaptar com menos náusea e desconforto. Conforme a bula e os estudos, os aumentos acontecem a cada 4 semanas no mínimo, mas o ritmo é individual: depende da tolerância, da resposta e do histórico de cada paciente, avaliados em consulta. Nem todo mundo precisa chegar à dose máxima.' },
@@ -1209,6 +1211,21 @@ export const POSTS: Post[] = [
     ],
     content: `
 <div class="resposta"><strong>Resposta rápida:</strong> o efeito no <strong>apetite aparece já nas primeiras semanas</strong> (menos fome, saciedade mais rápida), ainda na dose inicial de 2,5 mg. A mudança <strong>na balança e no corpo é gradual</strong>: nos estudos, a média fica ao redor de 5% do peso nos primeiros 3 meses e segue caindo até perto de um ano e meio, porque a dose sobe a cada 4 semanas de propósito. A resposta é individual e não é promessa de resultado.</div>
+<h2>Resumo: o efeito do Mounjaro em horas, dias, semanas e meses</h2>
+<table>
+  <thead><tr><th>Quando</th><th>O que costuma acontecer</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Primeiras horas</strong></td><td>O medicamento começa a ser absorvido. O pico no sangue acontece entre 8 e 72 horas após a aplicação.</td></tr>
+    <tr><td><strong>1 a 3 dias</strong></td><td>Algumas pessoas já notam menos fome e saciedade mais rápida. Náusea leve pode aparecer.</td></tr>
+    <tr><td><strong>1 a 2 semanas</strong></td><td>Para a maioria, é quando a mudança no apetite fica clara, ainda em 2,5 mg.</td></tr>
+    <tr><td><strong>4 semanas</strong></td><td>Fim da dose de adaptação. Balança com queda pequena, em geral de 1 a 3 kg.</td></tr>
+    <tr><td><strong>5 a 8 semanas</strong></td><td>Com 5 mg, a perda de peso passa a ser consistente.</td></tr>
+    <tr><td><strong>3 meses</strong></td><td>Média dos estudos ao redor de 5% do peso inicial.</td></tr>
+    <tr><td><strong>6 meses</strong></td><td>Média de 10% a 12% nas doses de 10 mg ou mais.</td></tr>
+    <tr><td><strong>12 a 18 meses</strong></td><td>O resultado tende a se estabilizar. Começa a fase de manutenção.</td></tr>
+  </tbody>
+</table>
+<p>São referências da bula e dos estudos, não uma previsão para o seu caso. Cada pessoa responde em um ritmo, e a dose e o tempo são definidos em consulta.</p>
 <p>Entre as dúvidas de quem vai começar o Mounjaro (tirzepatida), essa é quase sempre a primeira: em quanto tempo ele faz efeito? A resposta ajuda a criar expectativas realistas, e isso importa mais do que parece. Muita gente desiste na terceira semana por esperar um resultado que ainda não era para ter aparecido, e outras tantas sobem a dose rápido demais e passam mal sem necessidade.</p>
 <p>Um aviso antes de tudo: os prazos abaixo são referências gerais, baseadas no que costuma acontecer no consultório e no que os estudos observam em grupos de pacientes. A resposta é individual e varia de pessoa para pessoa. Nada aqui é promessa de resultado. Se ainda não leu, vale começar pelo <a href="/blog/tema/tirzepatida-mounjaro">guia completo sobre tirzepatida e Mounjaro</a>.</p>
 
@@ -1220,7 +1237,34 @@ export const POSTS: Post[] = [
 </ul>
 <p>Quem entende essa diferença não desanima cedo nem tenta acelerar. O resto deste artigo detalha o que esperar em cada fase.</p>
 
-<h2>Semana a semana: o que costuma acontecer</h2>
+<h2>Em quantas horas o Mounjaro faz efeito depois da aplicação</h2>
+<p>Depois da aplicação sob a pele, a tirzepatida é absorvida aos poucos. Segundo a bula, a concentração máxima no sangue é atingida <strong>entre 8 e 72 horas</strong>. Ou seja: o medicamento começa a agir no mesmo dia, mas o ponto mais forte da semana costuma cair entre o primeiro e o terceiro dia após a aplicação.</p>
+<p>Na prática, é nesses dias que a fome costuma estar mais baixa e que a náusea, quando aparece, é mais provável. Por isso muita gente escolhe o dia da aplicação pensando na rotina: quem prefere passar o fim de semana com menos apetite aplica na quinta ou na sexta, por exemplo. O horário do dia não muda o efeito, e a aplicação pode ser feita com ou sem alimento.</p>
+<p>Cada caso é um caso. Na dose inicial de 2,5 mg, parte das pessoas não sente nada nas primeiras horas nem nos primeiros dias, e isso não significa que o tratamento não vai funcionar.</p>
+
+<h2>Primeira dose de Mounjaro: em quanto tempo faz efeito</h2>
+<p>A primeira dose é a pergunta mais comum de quem está começando. Usualmente, conforme a bula e os estudos, o tratamento inicia com 2,5 mg uma vez por semana, por 4 semanas. Essa dose serve para o organismo se adaptar. Ela não é a dose de tratamento, e o que se espera dela é diferente:</p>
+<ul>
+  <li><strong>Apetite:</strong> pode mudar já na primeira semana. Em algumas pessoas, nos primeiros dias; em outras, só depois da segunda ou terceira aplicação.</li>
+  <li><strong>Balança:</strong> costuma mudar pouco no primeiro mês. Uma queda de 1 a 3 kg é comum, e não perder nada também pode estar dentro do esperado.</li>
+  <li><strong>Efeitos colaterais:</strong> náusea leve, estômago cheio e intestino mais lento são os mais relatados, principalmente nos dias seguintes à aplicação.</li>
+</ul>
+<p>Não sentir nada com a primeira dose é mais comum do que parece e não indica falha. O histórico de cada paciente, o uso anterior de outros medicamentos e a tolerância mudam essa resposta, e é isso que a consulta avalia antes de decidir o próximo passo.</p>
+
+<h2>Uma dose de Mounjaro faz efeito por quantos dias</h2>
+<p>O Mounjaro é aplicado uma vez por semana porque a tirzepatida tem meia-vida de cerca de <strong>5 dias</strong>, segundo a bula. Isso quer dizer que, cinco dias depois da aplicação, ainda há aproximadamente metade da dose circulando. Uma aplicação cobre os 7 dias, mas não com a mesma força do começo ao fim.</p>
+<ul>
+  <li><strong>Dias 1 a 3:</strong> período de efeito mais forte, perto do pico no sangue.</li>
+  <li><strong>Dias 4 e 5:</strong> efeito ainda presente e mais estável.</li>
+  <li><strong>Dias 6 e 7:</strong> o nível está mais baixo. É quando algumas pessoas percebem a fome voltando um pouco, principalmente no primeiro mês.</li>
+</ul>
+<p>Com as aplicações seguidas, o nível do medicamento se acumula e fica estável depois de umas 4 semanas. A partir daí a oscilação entre o começo e o fim da semana tende a diminuir. Se a fome volta muito antes da próxima aplicação, vale levar isso à consulta: não é motivo para antecipar a dose por conta própria.</p>
+<p>Depois da última aplicação, o medicamento leva cerca de um mês para sair do organismo. O efeito no apetite vai diminuindo ao longo dessas semanas.</p>
+
+<h2>Tirzepatida: em quanto tempo faz efeito</h2>
+<p>Mounjaro é o nome comercial da tirzepatida. É a mesma substância, então os prazos deste artigo valem para as duas buscas: apetite nas primeiras semanas, balança a partir do segundo mês, resultado construído ao longo de 12 a 18 meses. O que muda o tempo de resposta não é o nome na caixa, e sim a dose, a constância das aplicações e a origem do produto.</p>
+
+<h2>Mounjaro semana a semana: o que costuma acontecer</h2>
 <h3>Semanas 1 a 4 (dose inicial, 2,5 mg)</h3>
 <p>A primeira dose é a menor, e ela existe para o organismo se adaptar, não para emagrecer. Mesmo assim, a maioria das pessoas nota já na primeira ou segunda semana:</p>
 <ul>
@@ -1247,7 +1291,7 @@ export const POSTS: Post[] = [
 <p><strong>Quer ver com os seus números?</strong> Use o <a href="/simulador-perda-de-peso">simulador de perda de peso</a> ou simule aqui mesmo:</p>
 <!--SIMULADOR-->
 
-<h2>O efeito por dose</h2>
+<h2>Em quanto tempo cada dose faz efeito: 2,5 mg, 5 mg, 7,5 mg, 10 mg e 15 mg</h2>
 <table>
   <thead><tr><th>Dose semanal</th><th>Quando costuma ser usada</th><th>O que esperar</th></tr></thead>
   <tbody>
@@ -1260,6 +1304,9 @@ export const POSTS: Post[] = [
 </table>
 <p>Esse é o esquema de referência da bula e dos estudos: início com 2,5 mg por 4 semanas e aumentos, no mínimo, a cada 4 semanas. Na prática cada caso é um caso: histórico, uso anterior, reações e outras condições mudam o ritmo, e isso é decidido em consulta. Subir mais rápido não antecipa o resultado e aumenta a náusea. Em alguns casos a médica mantém a mesma dose por mais tempo, justamente para o corpo acompanhar.</p>
 <!--CTA-->
+
+<h2>Em quanto tempo o Mounjaro começa a emagrecer</h2>
+<p>A fome cai antes de o peso cair. A perda de peso consistente costuma começar entre a 5ª e a 8ª semana, quando a dose passa de 2,5 para 5 mg, e ganha ritmo entre o terceiro e o sexto mês. Nos estudos, a média fica ao redor de 5% do peso em 3 meses e de 10% a 12% em 6 meses. Se a dúvida é o número, veja <a href="/blog/perda-de-peso-saudavel-quantos-kg-por-mes">quantos kg por mês é uma perda saudável</a>.</p>
 
 <h2>E se o Mounjaro não estiver fazendo efeito?</h2>
 <p>Essa pergunta aparece com frequência, quase sempre por um destes motivos:</p>

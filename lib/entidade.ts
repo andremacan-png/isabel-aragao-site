@@ -23,7 +23,7 @@ export const CLINICA = {
   horarioTexto: 'segunda a sexta, das 8h às 18h',
   cidadesAtendidas: ['São José', 'Florianópolis', 'Palhoça', 'Biguaçu'],
   instagram: 'https://www.instagram.com/dra.isabelaragao/',
-  doctoralia: 'https://www.doctoralia.com.br/isabel-aragao/medico-clinico-geral/florianopolis',
+  doctoralia: 'https://www.doctoralia.com.br/perfil/isabel-aragao',
 }
 
 export const MEDICA = {
