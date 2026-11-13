@@ -49,6 +49,7 @@ export const POSTS_3: Post[] = [
 <h2>Por que a fome volta no fim da semana</h2>
 <p>No começo do tratamento, o corpo ainda não acumulou o medicamento. Cada aplicação soma com o que sobrou da anterior, e o nível só fica estável depois de umas 4 semanas de uso contínuo. Até lá, a diferença entre o começo e o fim da semana é mais sentida.</p>
 <p>Outros fatores pesam: a dose inicial de 2,5 mg é de adaptação, noites mal dormidas aumentam a fome, e períodos de mais estresse também. Veja mais em <a href="/blog/mounjaro-tira-a-fome-em-quanto-tempo">em quanto tempo o Mounjaro tira a fome e por que ela volta</a>.</p>
+<div class="pratica"><strong>Na prática do consultório, com a Dra. Isabel Aragão:</strong> é normal sentir um pouco mais de fome perto da próxima aplicação, porque a meia-vida do medicamento é de 5 a 7 dias. Se isso se repete toda semana, ou se a fome fica descontrolada, é sinal de que a dose precisa ser ajustada.</div>
 <!--CTA-->
 
 <h2>Posso antecipar a dose?</h2>
@@ -123,6 +124,7 @@ ${FECHO}
   <li><strong>Cansaço</strong> nos primeiros dias, muitas vezes por comer e beber pouco</li>
 </ul>
 <p>Em geral são leves e passam em alguns dias. Eles podem reaparecer por pouco tempo a cada aumento de dose. Veja <a href="/blog/efeitos-colaterais-mounjaro-tirzepatida">o que é normal e o que merece atenção</a>.</p>
+<div class="pratica"><strong>Na prática do consultório, com a Dra. Isabel Aragão:</strong> na primeira semana é comum um enjoo leve, parecido com o do começo da gravidez: olhar a comida e sentir náusea. O intestino também muda. Quem ia ao banheiro todo dia pode passar a ir a cada dois dias, e isso é esperado, porque a quantidade de comida diminuiu. O que não pode é as fezes ficarem duras, em bolinhas. Nesse caso a paciente precisa me avisar, para tratarmos.</div>
 <!--CTA-->
 
 <h2>O que ajuda nas primeiras semanas</h2>
@@ -230,7 +232,7 @@ ${FECHO}
     faq: [
       { q: 'É normal tomar Mounjaro e não sentir nada?', a: 'Sim, principalmente na dose inicial. Usualmente o tratamento começa com 2,5 mg por 4 semanas, uma dose de adaptação. Parte das pessoas só percebe o efeito depois de algumas aplicações ou quando a dose sobe.' },
       { q: 'Não senti náusea nem efeito colateral. O remédio está funcionando?', a: 'Efeito colateral não é sinal de eficácia. Muitas pessoas respondem bem sem ter náusea. O que mostra resposta é o apetite, as medidas e a composição corporal ao longo das semanas.' },
-      { q: 'Quanto tempo devo esperar antes de concluir que não fez efeito?', a: 'Cada caso é um caso. Como referência, a avaliação de resultado costuma ser feita depois de pelo menos 8 a 12 semanas, já com a dose ajustada. Antes disso, é cedo.' },
+      { q: 'Quanto tempo devo esperar antes de concluir que não fez efeito?', a: 'Cada caso é um caso. Algumas pessoas precisam de pelo menos 15 dias para sentir algo, e a dose sobe aos poucos enquanto a fome continua. Na prática da Dra. Isabel, só se conclui que o medicamento não funcionou depois de 8 semanas na dose máxima sem perda de peso.' },
       { q: 'Posso aumentar a dose por conta própria?', a: 'Não. Conforme a bula, os aumentos acontecem a cada 4 semanas no mínimo e são definidos em consulta. Subir antes não antecipa o resultado e aumenta o risco de passar mal.' },
       { q: 'A caneta pode estar com defeito?', a: 'É raro, mas erros de aplicação acontecem: não destravar a caneta, retirar antes do segundo clique ou não manter o tempo indicado. Se sair líquido na pele, é sinal de que parte da dose se perdeu. Leve a dúvida à consulta.' },
       { q: 'Comprei tirzepatida pela internet e não senti nada. Por quê?', a: 'Produtos sem registro na Anvisa podem não conter a substância ou ter dose errada. Medicamento comprado em farmácia, com receita, é a única garantia do que está na caneta.' },
@@ -254,6 +256,7 @@ ${FECHO}
 <p>Não destravar a caneta, retirar antes da hora ou aplicar com a caneta fria e com pressa são erros possíveis. Se sair líquido na pele, parte da dose se perdeu.</p>
 <h3>7. Origem do produto</h3>
 <p>Tirzepatida comprada em site ou rede social, sem registro na Anvisa, pode não ter a substância ou ter dose errada. Veja <a href="/blog/canetas-emagrecedoras-registro-anvisa">quais canetas têm registro na Anvisa</a>.</p>
+<div class="pratica"><strong>Na prática do consultório, com a Dra. Isabel Aragão:</strong> algumas pacientes precisam de pelo menos 15 dias de medicação para sentir o efeito. Os resultados mais expressivos dos estudos foram com as doses mais altas. Por isso, se a fome continua, a dose vai subindo aos poucos. Só dá para dizer que o medicamento não funcionou quando a paciente ficou 8 semanas na dose máxima sem perder peso.</div>
 <!--CTA-->
 
 <h2>Não ter efeito colateral é mau sinal?</h2>
@@ -265,8 +268,8 @@ ${FECHO}
   <tbody>
     <tr><td><strong>Até 4 semanas</strong></td><td>Dose de adaptação. Não sentir nada é comum.</td></tr>
     <tr><td><strong>5 a 8 semanas</strong></td><td>Com o ajuste de dose, a maioria passa a perceber o efeito no apetite.</td></tr>
-    <tr><td><strong>8 a 12 semanas</strong></td><td>Já dá para avaliar a resposta com mais segurança, com bioimpedância e medidas.</td></tr>
-    <tr><td><strong>Mais de 12 semanas sem resposta</strong></td><td>Vale investigar a fundo: dose, hábitos, outros medicamentos e causas associadas.</td></tr>
+    <tr><td><strong>Meses seguintes</strong></td><td>Se a fome continua, a dose sobe aos poucos, com bioimpedância e medidas a cada etapa.</td></tr>
+    <tr><td><strong>8 semanas na dose máxima sem perder peso</strong></td><td>Só aqui dá para dizer que o medicamento não funcionou. Vale investigar hábitos, outros medicamentos e causas associadas.</td></tr>
   </tbody>
 </table>
 <p>São referências gerais. A médica define o tempo e o próximo passo a partir do seu caso.</p>
@@ -414,6 +417,7 @@ ${FECHO}
   <li><strong>Antes da menstruação</strong>, quando o apetite aumenta naturalmente</li>
 </ul>
 <p>Veja o detalhe dia a dia em <a href="/blog/uma-dose-de-mounjaro-faz-efeito-por-quantos-dias">por quantos dias uma dose faz efeito</a>.</p>
+<div class="pratica"><strong>Na prática do consultório, com a Dra. Isabel Aragão:</strong> é normal sentir um pouco mais de fome perto da próxima aplicação, porque a meia-vida do medicamento é de 5 a 7 dias. Se isso se repete toda semana, ou se a fome fica descontrolada, é sinal de que a dose precisa ser ajustada.</div>
 <!--CTA-->
 
 <h2>O que fazer quando a fome volta</h2>

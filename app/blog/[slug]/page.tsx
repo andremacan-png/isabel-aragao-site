@@ -118,6 +118,8 @@ const STYLES = `
   /* Resposta rápida (disputa o snippet) */
   .bp-content .resposta{background:var(--cream2);border-left:4px solid var(--ambar);border-radius:0 12px 12px 0;padding:14px 18px;margin:0 0 24px;font-size:15.5px;line-height:1.6;}
   .bp-content .resposta strong{color:var(--text);}
+  .bp-content .pratica{background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--roxo-mid);border-radius:0 12px 12px 0;padding:14px 18px;margin:20px 0 24px;font-size:15.5px;line-height:1.6;}
+  .bp-content .pratica strong{color:var(--text);}
   /* FAQ */
   .bp-faq{margin-top:40px;}
   .bp-faq-title{font-size:13px;font-weight:800;color:var(--text);margin-bottom:14px;text-transform:uppercase;letter-spacing:.08em;}

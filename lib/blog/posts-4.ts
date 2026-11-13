@@ -534,6 +534,7 @@ ${FECHO}
   <li><strong>Jantar:</strong> omelete ou sopa de legumes com carne desfiada</li>
 </ul>
 <p>É só um exemplo de estrutura, não uma prescrição. Quantidades e escolhas variam com o peso, a rotina e as preferências de cada pessoa.</p>
+<div class="pratica"><strong>Na prática do consultório, com a Dra. Isabel Aragão:</strong> o Mounjaro tem sido um ótimo recurso no tratamento da obesidade e do sobrepeso, mas depende de dois combinados: comer bem mesmo com pouca fome, para nutrir o corpo, e fazer atividade física. Sem isso, não é o ideal.</div>
 <!--CTA-->
 
 <h2>O que evitar ou reduzir</h2>
@@ -605,6 +606,7 @@ ${FECHO}
   <li>Quem não faz exercício de força</li>
   <li>Mulheres na menopausa</li>
 </ul>
+<div class="pratica"><strong>Na prática do consultório, com a Dra. Isabel Aragão:</strong> o tratamento depende de dois combinados: comer bem mesmo com pouca fome, para nutrir o corpo, e fazer atividade física. Em quem tem sarcopenia (pouca massa muscular), prefiro esperar a paciente firmar a atividade física antes de começar o medicamento.</div>
 <!--CTA-->
 
 <h2>Como evitar</h2>

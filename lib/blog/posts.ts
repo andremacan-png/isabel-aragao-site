@@ -1306,6 +1306,7 @@ export const POSTS: Post[] = [
   </tbody>
 </table>
 <p>Esse é o esquema de referência da bula e dos estudos: início com 2,5 mg por 4 semanas e aumentos, no mínimo, a cada 4 semanas. Na prática cada caso é um caso: histórico, uso anterior, reações e outras condições mudam o ritmo, e isso é decidido em consulta. Subir mais rápido não antecipa o resultado e aumenta a náusea. Em alguns casos a médica mantém a mesma dose por mais tempo, justamente para o corpo acompanhar.</p>
+<div class="pratica"><strong>Na prática do consultório, com a Dra. Isabel Aragão:</strong> ao passar para 5 mg, o mais comum é não ter mais efeito colateral, só menos fome. Antes de aumentar a dose eu olho duas coisas: a perda de peso e a fome. Não adianta aumentar se a paciente está sem comer. Quando ela come muito pouco, o metabolismo fica mais lento e o peso para de cair mesmo assim. Primeiro ela precisa voltar a comer. Peso parado, sozinho, não é motivo para subir a dose.</div>
 <!--CTA-->
 
 <h2>Em quanto tempo o Mounjaro começa a emagrecer</h2>
